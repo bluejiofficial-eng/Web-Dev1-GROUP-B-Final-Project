@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-B Co-op | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Sanity Client Libraries for future integration -->
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR (공통 네비게이션 바) -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Web-B</span> <span class="logo-text">Co-op</span>
+            </a>
+            <nav class="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about-profile.html">Company Profile</a>
+                        <a href="about-history.html">History & Timeline</a>
+                        <a href="about-bod.html">BOD & Officers</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="loans-regular.html">Regular Loan</a>
+                        <a href="loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support-calculator.html">Loan Calculator</a>
+                        <a href="support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO CAROUSEL / BANNER (메인 히어로 배너 섹션) -->
+    <section class="hero-section" id="hero-container">
+        <!-- 기본 정적 데이터 (나중에 Sanity 데이터가 이 영역에 동적으로 주입됩니다) -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80');">
+            <div class="container hero-content">
+                <span class="badge">Welcome to Web-B Co-op</span>
+                <h1>Building a Better Future Together</h1>
+                <p>Discover sustainable financial solutions, local trade opportunities, and community-driven growth with our trusted cooperative network.</p>
+                <div class="hero-buttons">
+                    <a href="membership.html" class="btn btn-primary">Join as Member</a>
+                    <a href="loans-regular.html" class="btn btn-secondary">Explore Loans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS SECTION (핵심 하이라이트 지표) -->
+    <section class="highlights-section">
+        <div class="container grid-3">
+            <div class="highlight-card">
+                <div class="icon-box">📊</div>
+                <h3>Competitive Rates</h3>
+                <p>Enjoy higher returns on savings and flexible, low-interest loan options tailored for your specific financial growth.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon-box">🌱</div>
+                <h3>Community Eco-System</h3>
+                <p>Every investment supports local farmers, small businesses, and community-driven initiatives through our CoopMart network.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon-box">🤝</div>
+                <h3>Member-Owned Trust</h3>
+                <p>As a true cooperative, our members are our owners. Decisions are made democratically with full transparency and shared benefits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SUMMARY (주요 서비스 요약 섹션) -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+                <p>Explore the full suite of financial, utility, and retail programs engineered exclusively for our union members.</p>
+            </div>
+            <div class="container grid-4">
+                <div class="service-box">
+                    <div class="service-icon">💰</div>
+                    <h4>Regular Loans</h4>
+                    <p>Low-interest multi-purpose micro-loans for everyday financial support.</p>
+                    <a href="loans-regular.html" class="text-link">Learn More &rarr;</a>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🛡️</div>
+                    <h4>Investments</h4>
+                    <p>Secure fixed-term capital growth and shared cooperative dividends.</p>
+                    <a href="investments.html" class="text-link">Learn More &rarr;</a>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🛒</div>
+                    <h4>CoopMart</h4>
+                    <p>Shop organic, high-quality community products at discounted member prices.</p>
+                    <a href="coopmart.html" class="text-link">Learn More &rarr;</a>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🧮</div>
+                    <h4>Loan Calculator</h4>
+                    <p>Quickly simulate your monthly amortization repayments instantly online.</p>
+                    <a href="support-calculator.html" class="text-link">Try Amortization &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & ARTICLES SECTION (최신 소식 목록) -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News & Announcements</h2>
+                <p>Stay up to date with the latest financial indicators, community events, and general cooperative notifications.</p>
+            </div>
+            <div class="grid-3" id="news-container">
+                <!-- Static Fallback Article 1 -->
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="news-body">
+                        <span class="news-tag">Announcement</span>
+                        <h4>Annual General Assembly 2026</h4>
+                        <p>Join us this coming month for our democratic voting session, financial transparency review, and new policy ratification updates.</p>
+                        <span class="news-date">May 22, 2026</span>
+                    </div>
+                </article>
+                <!-- Static Fallback Article 2 -->
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="news-body">
+                        <span class="news-tag">CoopMart</span>
+                        <h4>New Organic Supply in CoopMart</h4>
+                        <p>We are expanding our local farm supply chains! Enjoy fresh, direct-from-farm organic goods at all storefront branches starting this weekend.</p>
+                        <span class="news-date">May 18, 2026</span>
+                    </div>
+                </article>
+                <!-- Static Fallback Article 3 -->
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="news-body">
+                        <span class="news-tag">Financial</span>
+                        <h4>Interest Rate Adjustment Notification</h4>
+                        <p>In alignment with standard central banking indicators, we have optimized our investment dividend payouts to offer stable returns.</p>
+                        <span class="news-date">May 10, 2026</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (공통 푸터 섹션) -->
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>Web-B Co-op</h4>
+                <p>A democratic, member-owned cooperative financial institution focused on sustainable individual growth and resilient community eco-systems.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans-regular.html">Loan Products</a></li>
+                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p>📍 University of San Carlos, Cebu City, Philippines</p>
+                <p>📧 support@web-b-coop.org</p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Web-B Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Placeholder for Sanity Pull (Based on Professor's template structure) -->
+    <script>
+        // 이 부분에 나중에 우리 조의 projectId인 "ci5sxkoq"를 연동하여 
+        // Hero 배너나 News Articles 데이터를 Sanity DB에서 동적으로 가져와 갈아끼우게 됩니다!
+        const SANITY_CONFIG = {
+            projectId: "ci5sxkoq", 
+            dataset: "production",
+            apiVersion: "2024-01-01",
+            useCdn: true,
+        };
+        // 향후 연동팀이 이곳에 client.fetch() 로직을 구현할 예정입니다.
+    </script>
+</body>
+</html>

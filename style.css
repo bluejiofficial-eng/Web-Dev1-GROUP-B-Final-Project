@@ -1,0 +1,460 @@
+/* ==========================================================================
+   Web-B Co-op Global Stylesheet
+   Design Palette: Main White / Earth Green Footer / Cream & Light Beige Accents
+   ========================================================================== */
+
+/* 1. Reset & Global Base Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Main White Base */
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Grid Layout Helpers */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* 3. Typography & Section Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #1b3d22; /* Deep forest green variant for structural headers */
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #23743B; /* Earth Green Line Accent */
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 10px auto 0 auto;
+}
+
+/* 4. Navigation Bar (Header) */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.logo-green {
+    color: #23743B; /* Earth Green Brand */
+}
+
+.logo-text {
+    color: #1b3d22;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #23743B;
+}
+
+/* Dropdown Menu Architecture */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.08);
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    top: 100%;
+    margin-top: 18px; /* navbar bottom padding과 맞춰서 겹침 방지 */
+    left: 0;
+    z-index: 1100;
+}
+
+/* navbar link와 dropdown 사이의 gap을 가상 요소로 채워서
+   마우스가 이동 중에 dropdown이 사라지지 않도록 브릿지 처리 */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 100%;
+    height: 18px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #FFFDD0; /* Cream Accent on Hover */
+    color: #23743B;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 5. Hero Section (Carousel Base) */
+.hero-section {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    color: #ffffff;
+    max-width: 650px;
+}
+
+.badge {
+    background-color: #FFFDD0; /* Cream Accent */
+    color: #1b3d22;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* Buttons UI */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #23743B; /* Earth Green Button */
+    color: #ffffff;
+    margin-right: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #1b3d22;
+}
+
+.btn-secondary {
+    background-color: #F5E6C8; /* Light Beige Button */
+    color: #1b3d22;
+}
+
+.btn-secondary:hover {
+    background-color: #ebdcb9;
+}
+
+/* 6. Highlights Section */
+.highlights-section {
+    padding: 60px 0;
+    background-color: #fafafa;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 80px;
+}
+
+.highlight-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.highlight-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 7. Services Summary Section */
+.services-section {
+    padding-bottom: 80px;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    padding: 35px 25px;
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.service-box:hover {
+    border-color: #23743B;
+    background-color: #FFFDD0; /* Shifts to subtle cream background on hover */
+}
+
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.service-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    text-decoration: none;
+    color: #23743B;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* 8. News and Articles Section */
+.news-section {
+    padding: 80px 0;
+    background-color: #fdfdfd;
+    border-top: 1px solid #eaeaea;
+}
+
+.news-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+.news-img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.news-body {
+    padding: 25px;
+}
+
+.news-tag {
+    background-color: #F5E6C8; /* Light Beige Tag */
+    color: #1b3d22;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.news-body h4 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.news-body p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: #999;
+    display: block;
+}
+
+/* 9. Footer Section (Mandatory Earth Green) */
+.footer {
+    background-color: #23743B; /* Earth Green Base Color */
+    color: #ffffff;
+    padding: 70px 0 0 0;
+}
+
+.footer h4, .footer h5 {
+    color: #FFFDD0; /* Cream color for readability on Green footer */
+    margin-bottom: 20px;
+}
+
+.footer h4 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.footer h5 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid rgba(255, 253, 208, 0.2);
+    padding-bottom: 8px;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.footer-about p {
+    padding-right: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links ul li a:hover {
+    color: #FFFDD0; /* Hover highlights into Cream */
+}
+
+.footer-contact p {
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    background-color: #1b3d22; /* Slightly darker forest green for bottom copyright bar */
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
