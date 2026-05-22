@@ -11,13 +11,16 @@
 </head>
 <body>
 
-    <!-- NAVBAR (공통 네비게이션 바) -->
+    <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <span class="logo-green">Web-B</span> <span class="logo-text">Co-op</span>
             </a>
-            <nav class="nav-menu">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
@@ -54,9 +57,9 @@
         </div>
     </header>
 
-    <!-- HERO CAROUSEL / BANNER (메인 히어로 배너 섹션) -->
+    <!-- HERO CAROUSEL / BANNER  -->
     <section class="hero-section" id="hero-container">
-        <!-- 기본 정적 데이터 (나중에 Sanity 데이터가 이 영역에 동적으로 주입됩니다) -->
+        <!-- 기본 정적 데이터  -->
         <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80');">
             <div class="container hero-content">
                 <span class="badge">Welcome to Web-B Co-op</span>
@@ -70,7 +73,7 @@
         </div>
     </section>
 
-    <!-- HIGHLIGHTS SECTION (핵심 하이라이트 지표) -->
+    <!-- HIGHLIGHTS SECTION -->
     <section class="highlights-section">
         <div class="container grid-3">
             <div class="highlight-card">
@@ -91,7 +94,7 @@
         </div>
     </section>
 
-    <!-- SERVICES SUMMARY (주요 서비스 요약 섹션) -->
+    <!-- SERVICES SUMMARY  -->
     <section class="services-section">
         <div class="container">
             <div class="section-header">
@@ -127,7 +130,7 @@
         </div>
     </section>
 
-    <!-- NEWS & ARTICLES SECTION (최신 소식 목록) -->
+    <!-- NEWS & ARTICLES SECTION -->
     <section class="news-section">
         <div class="container">
             <div class="section-header">
@@ -169,7 +172,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (공통 푸터 섹션) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container grid-4">
             <div class="footer-about">
@@ -208,17 +211,31 @@
         </div>
     </footer>
 
+    <!-- Hamburger Menu Toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
     <!-- Script Placeholder for Sanity Pull (Based on Professor's template structure) -->
     <script>
-        // 이 부분에 나중에 우리 조의 projectId인 "ci5sxkoq"를 연동하여 
-        // Hero 배너나 News Articles 데이터를 Sanity DB에서 동적으로 가져와 갈아끼우게 됩니다!
+       
         const SANITY_CONFIG = {
             projectId: "ci5sxkoq", 
             dataset: "production",
             apiVersion: "2024-01-01",
             useCdn: true,
         };
-        // 향후 연동팀이 이곳에 client.fetch() 로직을 구현할 예정입니다.
     </script>
 </body>
 </html>
