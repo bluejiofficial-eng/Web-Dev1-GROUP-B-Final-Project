@@ -505,6 +505,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 6px !important;
 }
 
 .carousel-btn:hover {
@@ -634,4 +635,34 @@ h1, h2, h3, h4, h5, h6 {
     .modal-img  { height: 180px; }
     .modal-body { padding: 20px; }
     .modal-body h3 { font-size: 1.2rem; }
+}
+
+
+/* ==========================================================================
+   Jayden Custom Layout Tuning — Footer Spacing Fix
+   ========================================================================== */
+
+@media (min-width: 992px) {
+    /* 1. 회사소개(TerraLink) 섹션을 1.8배 더 넓히고, 나머지 링크 메뉴들을 정돈합니다. */
+    .footer .container.grid-4 {
+        grid-template-columns: 1.8fr 1fr 1fr 1.2fr !important;
+        gap: 40px !important; /* 칸 사이의 좌우 간격을 시원하게 넓힙니다. */
+    }
+}
+
+#footer-about-text {
+    line-height: 1.7 !important;
+    font-size: 0.92rem !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-align: justify; 
+    padding-right: 15px;
+}
+
+.footer-about h4 {
+    margin-bottom: 24px !important;
+    font-size: 1.6rem !important;
+}
+
+.footer {
+    padding: 85px 0 0 0 !important;
 }

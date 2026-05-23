@@ -230,7 +230,7 @@ async function loadHeroCarousel() {
 }
 
 // ============================================================
-// SANITY — Site Settings (footer 주소/이메일)
+// SANITY — Site Settings 
 // ============================================================
 async function loadSiteSettings() {
     const SETTINGS_QUERY = `*[_type == "siteSettings"][0]{ address, emails }`;
@@ -250,11 +250,47 @@ async function loadSiteSettings() {
 }
 
 // ============================================================
+// SANITY — About Us (Cooperative Live Vision Statement)
+// ============================================================
+async function loadCoopVision() {
+    const VISION_QUERY = `*[_type == "aboutUs"] { aboutCoop }`;
+    try {
+        const res = await client.fetch(VISION_QUERY);
+        
+        const aboutData = Array.isArray(res) ? res.find(doc => doc && doc.aboutCoop) : null;
+        
+        let footerAboutEl = document.getElementById('footer-about-text');
+        if (!footerAboutEl) {
+            footerAboutEl = document.querySelector('.footer-about p');
+        }
+
+        if (footerAboutEl) {
+            if (aboutData && aboutData.aboutCoop) {
+                if (Array.isArray(aboutData.aboutCoop)) {
+                    const extractedText = aboutData.aboutCoop
+                        .map(block => block.children ? block.children.map(c => c.text).join('') : '')
+                        .filter(Boolean)
+                        .join('\n');
+                    
+                    footerAboutEl.textContent = extractedText;
+                } else if (typeof aboutData.aboutCoop === 'string') {
+                    footerAboutEl.textContent = aboutData.aboutCoop;
+                }
+            } else {
+                footerAboutEl.textContent = "The USC and Community Multipurpose Cooperative envision to be a sustainable open-type cooperative by ensuring effective governance and management, expanding membership, adopting relevant infrastructure, leveraging on quality linkages and offering essential services.";
+            }
+        }
+    } catch (err) {
+        console.error("Failed to fetch Cooperative Vision statement:", err);
+    }
+}
+// ============================================================
 // INIT
 // ============================================================
 window.addEventListener('DOMContentLoaded', () => {
     createModal();
     renderStaticNews();
     loadHeroCarousel();
-    loadSiteSettings();
+    loadSiteSettings();    
+    loadCoopVision(); 
 });
