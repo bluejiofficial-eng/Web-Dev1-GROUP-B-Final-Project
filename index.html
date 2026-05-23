@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-B Co-op | Home</title>
+    <title>TerraLink | Home</title>
     <link rel="stylesheet" href="style.css">
     <!-- Sanity Client Libraries for future integration -->
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
@@ -11,19 +11,25 @@
 </head>
 <body>
 
-    <!-- NAVBAR (공통 네비게이션 바) -->
+    <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-green">Web-B</span> <span class="logo-text">Co-op</span>
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
             </a>
-            <nav class="nav-menu">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
                         <a href="about-profile.html">Company Profile</a>
                         <a href="about-history.html">History & Timeline</a>
                         <a href="about-bod.html">BOD & Officers</a>
+                        <a href="about-officers.html">Corporate Officers</a>
+                        <a href="about-awards.html">Awards & Distinction</a>
+                        <a href="about-gallery.html">Event Gallery</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -54,12 +60,11 @@
         </div>
     </header>
 
-    <!-- HERO CAROUSEL / BANNER (메인 히어로 배너 섹션) -->
+    <!-- HERO CAROUSEL / BANNER  -->
     <section class="hero-section" id="hero-container">
-        <!-- 기본 정적 데이터 (나중에 Sanity 데이터가 이 영역에 동적으로 주입됩니다) -->
         <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80');">
             <div class="container hero-content">
-                <span class="badge">Welcome to Web-B Co-op</span>
+                <span class="badge">Welcome to TerraLink Cooperative</span>
                 <h1>Building a Better Future Together</h1>
                 <p>Discover sustainable financial solutions, local trade opportunities, and community-driven growth with our trusted cooperative network.</p>
                 <div class="hero-buttons">
@@ -70,8 +75,14 @@
         </div>
     </section>
 
-    <!-- HIGHLIGHTS SECTION (핵심 하이라이트 지표) -->
+    <!-- HIGHLIGHTS SECTION -->
     <section class="highlights-section">
+        <div class="container">  
+            <div class="section-header">
+                <h2>Why Choose TerraLink?</h2>
+                <p>Empowering our community through sustainable financial solutions and member-owned trust.</p>
+            </div>
+
         <div class="container grid-3">
             <div class="highlight-card">
                 <div class="icon-box">📊</div>
@@ -89,9 +100,10 @@
                 <p>As a true cooperative, our members are our owners. Decisions are made democratically with full transparency and shared benefits.</p>
             </div>
         </div>
+        </div>
     </section>
 
-    <!-- SERVICES SUMMARY (주요 서비스 요약 섹션) -->
+    <!-- SERVICES SUMMARY  -->
     <section class="services-section">
         <div class="container">
             <div class="section-header">
@@ -127,7 +139,7 @@
         </div>
     </section>
 
-    <!-- NEWS & ARTICLES SECTION (최신 소식 목록) -->
+    <!-- NEWS & ARTICLES SECTION -->
     <section class="news-section">
         <div class="container">
             <div class="section-header">
@@ -135,46 +147,17 @@
                 <p>Stay up to date with the latest financial indicators, community events, and general cooperative notifications.</p>
             </div>
             <div class="grid-3" id="news-container">
-                <!-- Static Fallback Article 1 -->
-                <article class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="news-body">
-                        <span class="news-tag">Announcement</span>
-                        <h4>Annual General Assembly 2026</h4>
-                        <p>Join us this coming month for our democratic voting session, financial transparency review, and new policy ratification updates.</p>
-                        <span class="news-date">May 22, 2026</span>
-                    </div>
-                </article>
-                <!-- Static Fallback Article 2 -->
-                <article class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="news-body">
-                        <span class="news-tag">CoopMart</span>
-                        <h4>New Organic Supply in CoopMart</h4>
-                        <p>We are expanding our local farm supply chains! Enjoy fresh, direct-from-farm organic goods at all storefront branches starting this weekend.</p>
-                        <span class="news-date">May 18, 2026</span>
-                    </div>
-                </article>
-                <!-- Static Fallback Article 3 -->
-                <article class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="news-body">
-                        <span class="news-tag">Financial</span>
-                        <h4>Interest Rate Adjustment Notification</h4>
-                        <p>In alignment with standard central banking indicators, we have optimized our investment dividend payouts to offer stable returns.</p>
-                        <span class="news-date">May 10, 2026</span>
-                    </div>
-                </article>
+       
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (공통 푸터 섹션) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container grid-4">
             <div class="footer-about">
-                <h4>Web-B Co-op</h4>
-                <p>A democratic, member-owned cooperative financial institution focused on sustainable individual growth and resilient community eco-systems.</p>
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
             </div>
             <div class="footer-links">
                 <h5>Quick Links</h5>
@@ -196,29 +179,34 @@
             </div>
             <div class="footer-contact">
                 <h5>Contact Info</h5>
-                <p>📍 University of San Carlos, Cebu City, Philippines</p>
-                <p>📧 support@web-b-coop.org</p>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
                 <p>📞 +63 (32) 230-0100</p>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 Web-B Cooperative. All Rights Reserved. Designed by Group B.</p>
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Script Placeholder for Sanity Pull (Based on Professor's template structure) -->
+    <!-- Hamburger Menu Toggle -->
     <script>
-        // 이 부분에 나중에 우리 조의 projectId인 "ci5sxkoq"를 연동하여 
-        // Hero 배너나 News Articles 데이터를 Sanity DB에서 동적으로 가져와 갈아끼우게 됩니다!
-        const SANITY_CONFIG = {
-            projectId: "ci5sxkoq", 
-            dataset: "production",
-            apiVersion: "2024-01-01",
-            useCdn: true,
-        };
-        // 향후 연동팀이 이곳에 client.fetch() 로직을 구현할 예정입니다.
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
     </script>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
