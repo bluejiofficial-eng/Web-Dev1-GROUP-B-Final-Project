@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Company Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about-profile.html">Company Profile</a>
+                        <a href="about-history.html">History & Timeline</a>
+                        <a href="about-bod.html">BOD & Officers</a>
+                        <a href="about-officers.html">Corporate Officers</a>
+                        <a href="about-awards.html">Awards & Distinction</a>
+                        <a href="about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="loans-regular.html">Regular Loan</a>
+                        <a href="loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support-calculator.html">Loan Calculator</a>
+                        <a href="support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80');">
+                <div class="container hero-content">
+                    <span class="badge">About TerraLink Cooperative</span>
+                    <h1>Company Profile</h1>
+                    <p>Rooted in shared ownership, trusted financial services, and sustainable community growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="grid-4">
+                    <article class="news-card">
+                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80');"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Community Banking</span>
+                            <h4>Member-Owned Growth</h4>
+                            <p>TerraLink connects cooperative banking, shared ownership, and community-centered service for every member.</p>
+                        </div>
+                    </article>
+                    <article class="service-box">
+                        <span class="badge">Our Vision</span>
+                        <h2>Guided by Cooperative Purpose</h2>
+                        <div id="company-vision-text">
+                            <p>Loading TerraLink vision from Sanity...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Core Values</h2>
+                    <p>The values that guide TerraLink Cooperative in serving members and strengthening communities.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <div class="icon-box">✓</div>
+                        <h3>Integrity</h3>
+                        <p>We build trust through transparent governance, responsible decisions, and honest member service.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">◆</div>
+                        <h3>Solidarity</h3>
+                        <p>We grow together by supporting members, local partners, and the wider cooperative community.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">★</div>
+                        <h3>Service</h3>
+                        <p>We deliver practical financial solutions with care, accessibility, and long-term member welfare in mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans-regular.html">Loan Products</a></li>
+                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
