@@ -114,6 +114,7 @@ function closeModal() {
 // ============================================================
 function renderStaticNews() {
     const container = document.getElementById('news-container');
+    if (!container) return;
     container.innerHTML = '';
     STATIC_NEWS.forEach((article) => {
         const card = document.createElement('article');
@@ -141,6 +142,7 @@ let carouselTimer = null;
 
 function buildCarousel(heroItems) {
     const heroSection = document.getElementById('hero-container');
+    if (!heroSection) return;
     heroSection.innerHTML = '';
 
     // Slides wrapper
@@ -229,6 +231,140 @@ async function loadHeroCarousel() {
     }
 }
 
+function getInitials(name) {
+    if (typeof name !== 'string') return 'TL';
+    const parts = name.trim().split(/\s+/).filter(Boolean);
+    if (parts.length === 0) return 'TL';
+
+    return parts
+        .slice(0, 2)
+        .map((part) => part.charAt(0).toUpperCase())
+        .join('');
+}
+
+function getDirectorAvatarLabel(containerId) {
+    return containerId === 'officers-container' ? 'Corporate officer photo' : 'Director photo';
+}
+
+function renderDirectors(containerId, directors) {
+    const container = document.getElementById(containerId);
+    if (!container || !Array.isArray(directors) || directors.length === 0) return;
+
+    container.innerHTML = '';
+
+    directors.forEach((director) => {
+        if (!director || !director.name) return;
+
+        const card = document.createElement('article');
+        card.className = containerId === 'officers-container' ? 'service-box' : 'highlight-card';
+
+        const avatar = document.createElement('div');
+        avatar.className = containerId === 'officers-container' ? 'service-icon director-avatar' : 'director-avatar';
+
+        if (director.image && director.image.asset) {
+            avatar.classList.add('director-avatar--image');
+            avatar.style.backgroundImage = `url('${urlFor(director.image).width(320).height(320).fit('crop').url()}')`;
+            avatar.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
+            avatar.textContent = '';
+        } else {
+            avatar.textContent = getInitials(director.name);
+        }
+
+        const name = document.createElement('h3');
+        name.textContent = director.name;
+
+        const role = document.createElement('p');
+        role.className = 'director-role';
+        role.textContent = director.role || 'Director';
+
+        card.appendChild(avatar);
+        card.appendChild(name);
+        card.appendChild(role);
+        container.appendChild(card);
+    });
+}
+
+function renderTimelineEntries(entries) {
+    const container = document.getElementById('timeline-container');
+    if (!container || !Array.isArray(entries) || entries.length === 0) return;
+
+    container.innerHTML = '';
+
+    entries.forEach((entry) => {
+        if (!entry || !entry.title) return;
+
+        const item = document.createElement('article');
+        item.className = 'timeline-entry';
+
+        const hasImage = Boolean(entry.mainImage && entry.mainImage.asset);
+
+        if (hasImage) {
+            const imageWrap = document.createElement('div');
+            imageWrap.className = 'timeline-image-wrap';
+
+            const image = document.createElement('div');
+            image.className = 'timeline-image';
+            image.style.backgroundImage = `url('${urlFor(entry.mainImage).width(1200).height(675).fit('crop').url()}')`;
+
+            imageWrap.appendChild(image);
+            item.appendChild(imageWrap);
+        } else {
+            item.classList.add('timeline-entry--text-only');
+        }
+
+        const content = document.createElement('div');
+        content.className = 'timeline-content';
+
+        const meta = document.createElement('span');
+        meta.className = 'timeline-meta';
+        meta.textContent = [entry.eventDate, entry.category].filter(Boolean).join(' • ');
+
+        const title = document.createElement('h3');
+        title.textContent = entry.title;
+
+        const description = document.createElement('p');
+        description.textContent = entry.description || '';
+
+        content.appendChild(meta);
+        content.appendChild(title);
+        content.appendChild(description);
+
+        if (entry.keyMetric) {
+            const metric = document.createElement('span');
+            metric.className = 'timeline-metric';
+            metric.textContent = entry.keyMetric;
+            content.appendChild(metric);
+        }
+
+        item.appendChild(content);
+
+        container.appendChild(item);
+    });
+}
+
+async function loadDirectors() {
+    const DIRECTOR_QUERY = `*[_type == "director"] | order(_createdAt asc) { name, role, image }`;
+
+    try {
+        const directors = await client.fetch(DIRECTOR_QUERY);
+        renderDirectors('directors-container', directors);
+        renderDirectors('officers-container', directors);
+    } catch (err) {
+        console.error('Failed to fetch director data:', err);
+    }
+}
+
+async function loadTimeline() {
+    const TIMELINE_QUERY = `*[_type == "timeline"] | order(eventDate asc) { title, eventDate, category, description, keyMetric, mainImage }`;
+
+    try {
+        const timelineEntries = await client.fetch(TIMELINE_QUERY);
+        renderTimelineEntries(timelineEntries);
+    } catch (err) {
+        console.error('Failed to fetch timeline data:', err);
+    }
+}
+
 // ============================================================
 // SANITY — Site Settings 
 // ============================================================
@@ -253,11 +389,9 @@ async function loadSiteSettings() {
 // SANITY — About Us (Cooperative Live Vision Statement)
 // ============================================================
 async function loadCoopVision() {
-    const VISION_QUERY = `*[_type == "aboutUs"] { aboutCoop }`;
+    const ABOUT_QUERY = `*[_type == "aboutUs"][0]{ vision }`;
     try {
-        const res = await client.fetch(VISION_QUERY);
-        
-        const aboutData = Array.isArray(res) ? res.find(doc => doc && doc.aboutCoop) : null;
+        const aboutData = await client.fetch(ABOUT_QUERY);
         
         let footerAboutEl = document.getElementById('footer-about-text');
         if (!footerAboutEl) {
@@ -265,19 +399,19 @@ async function loadCoopVision() {
         }
 
         if (footerAboutEl) {
-            if (aboutData && aboutData.aboutCoop) {
-                if (Array.isArray(aboutData.aboutCoop)) {
-                    const extractedText = aboutData.aboutCoop
-                        .map(block => block.children ? block.children.map(c => c.text).join('') : '')
-                        .filter(Boolean)
-                        .join('\n');
-                    
-                    footerAboutEl.textContent = extractedText;
-                } else if (typeof aboutData.aboutCoop === 'string') {
-                    footerAboutEl.textContent = aboutData.aboutCoop;
-                }
+            if (aboutData && typeof aboutData.vision === 'string' && aboutData.vision.trim()) {
+                footerAboutEl.textContent = aboutData.vision.trim();
             } else {
                 footerAboutEl.textContent = "The USC and Community Multipurpose Cooperative envision to be a sustainable open-type cooperative by ensuring effective governance and management, expanding membership, adopting relevant infrastructure, leveraging on quality linkages and offering essential services.";
+            }
+        }
+
+        const companyVisionEl = document.getElementById('company-vision-text');
+        if (companyVisionEl) {
+            if (aboutData && typeof aboutData.vision === 'string' && aboutData.vision.trim()) {
+                companyVisionEl.textContent = aboutData.vision.trim();
+            } else {
+                companyVisionEl.textContent = 'Loading TerraLink vision from Sanity...';
             }
         }
     } catch (err) {
@@ -291,6 +425,8 @@ window.addEventListener('DOMContentLoaded', () => {
     createModal();
     renderStaticNews();
     loadHeroCarousel();
+    loadDirectors();
+    loadTimeline();
     loadSiteSettings();    
     loadCoopVision(); 
 });
