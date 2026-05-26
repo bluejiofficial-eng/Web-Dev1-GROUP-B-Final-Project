@@ -1,25 +1,28 @@
-# Prompt for creating new pages 
+# TerraLink Cooperative — Shared Development Prompt
 
- here's the shared prompt for creating new pages on our website. Every time you need to make a new page, just copy and paste the entire prompt into the AI. 
- The only part you need to change is Section 7 at the bottom — fill in your page filename, title, nav item, and a short description of the content. 
- Sections 1–6 are fixed, so don't touch them. 
+> Copy everything between **START PROMPT** and **END PROMPT** and paste it into Cursor. Only fill in **Section 8** with your assigned pages. Cursor will automatically generate all corresponding HTML files with base code.
 
-<br>
+---
 
-## Start prompt(copy the prompt until the 'End prompt')
+## START PROMPT
 
-You are an expert frontend developer working on "TerraLink Cooperative", a cooperative banking website. Generate a new HTML page that strictly follows our centralized modular project architecture.
+You are an expert frontend developer working on **"TerraLink Cooperative"**, a cooperative banking website. Generate new HTML pages that strictly follow our centralized modular project architecture.
 
-## 1. Link These External & Centralized Modular Files (Head Section)
+For each page in the assigned section, automatically create the corresponding HTML file with the correct filename, base structure, navbar, footer, and script. Apply Sanity integration only if the page requires dynamic data (see Section 6).
+
+---
+
+### 1. Link These Files (Head Section)
 
 ```html
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 ```
+
 ---
 
-## 2. Copy This Navbar Exactly
+### 2. Copy This Navbar Exactly
 
 ```html
 <header class="navbar">
@@ -72,7 +75,9 @@ You are an expert frontend developer working on "TerraLink Cooperative", a coope
 ```
 
 ---
-## 3. Copy This Footer Exactly
+
+### 3. Copy This Footer Exactly
+
 ```html
 <footer class="footer">
     <div class="container grid-4">
@@ -115,7 +120,7 @@ You are an expert frontend developer working on "TerraLink Cooperative", a coope
 
 ---
 
-## 4. Copy This Script Exactly (Before `</body>`)
+### 4. Copy This Script Exactly (Before `</body>`)
 
 ```html
 <script>
@@ -134,8 +139,10 @@ You are an expert frontend developer working on "TerraLink Cooperative", a coope
 </script>
 <script src="js/main.js"></script>
 ```
+
 ---
-## 5. Available Classes (from style.css)
+
+### 5. Available Classes (from style.css)
 
 | Purpose | Class |
 | :--- | :--- |
@@ -150,11 +157,12 @@ You are an expert frontend developer working on "TerraLink Cooperative", a coope
 | Tag / Badge | `.badge` / `.news-tag` |
 | Text link | `.text-link` |
 
-
 ---
-## 6. Sanity CMS Integration
-If your page requires dynamic data, use the setup below. Sanity Project ID: **ltk0qh4a**
 
+### 6. Sanity CMS Integration
+
+If your page requires dynamic data, use the setup below.
+**Sanity Project ID:** `ltk0qh4a`
 
 ```javascript
 const { createClient } = globalThis.SanityClient;
@@ -166,9 +174,9 @@ const client = createClient({
 });
 const builder = globalThis.SanityImageUrlBuilder(client);
 const urlFor = (source) => builder.image(source);
-
 ```
-Available document types and their query examples:
+
+**Available document types and query examples:**
 
 | Page | Document Type | Query |
 | :--- | :--- | :--- |
@@ -180,44 +188,64 @@ Available document types and their query examples:
 | `loans-special.html` | `loan` | `*[_type == "loan" && loanCategory == "special"]` |
 | `coopmart.html` | `hero` | `*[_type == "hero" && title match "Cooperative Mart"][0]` |
 
+**Available fields per document type:**
 
-Available fields per document type:
+| Document Type | Fields |
+| :--- | :--- |
+| `hero` | `title`, `subtitle`, `ctaLabel`, `backgroundImage` |
+| `loan` | `title`, `category`, `loanCategory`, `interestRate`, `maxTerm`, `marketingDescription`, `availability` |
+| `director` | `name`, `role` |
+| `timeline` | `title`, `description`, `eventDate`, `keyMetric`, `category`, `mainImage` |
+| `aboutUs` | `vision`, `history` |
+| `siteSettings` | `address`, `emails` |
 
-- hero → title, subtitle, ctaLabel, backgroundImage
-- loan → title, category, loanCategory, interestRate, maxTerm, marketingDescription, availability
-- director → name, role
-- timeline → title, description, eventDate, keyMetric, category, mainImage
-- aboutUs → vision, history
-
-Always wrap fetch calls in *async/await* with *try/catch* for error handling.
+> Always wrap fetch calls in `async/await` with `try/catch` for error handling.
 
 ---
-## 7. Core System Requirements
-- Do not write any additional media queries. style.css already includes all responsive breakpoints (768px / 480px).
+
+### 7. Core System Requirements
+
+- Do **not** write any additional media queries. `style.css` already includes all responsive breakpoints (768px / 480px).
 - No custom inline styles or overriding stylesheet declarations allowed.
-- Ensure grid items use existing classes .grid-3 / .grid-4 only.
+- Ensure grid items use existing classes `.grid-3` / `.grid-4` only.
 - Keep all code comments in English.
+- All files must be placed in the **root folder** of the project (not in subfolders).
+
 ---
 
-## 8. ⬇️ Page Request (Only fill this part in)
-Page filename: [filename].html Page title: TerraLink Cooperative | **[Page Name]** Active nav item: **[Which navbar item this page belongs to]** Sanity data needed: **[Document type and fields, or "None - static content"]** Page content: **[Describe what this page should contain]**
+### 8. ⬇️ Page Request (Only fill this part in)
 
-Sections 1–7 are fixed. Only fill in Section 8 and send it to the AI each time you need a new page.
+Below is the full page directory. **Only change the `Assigned pages` field** to your assigned section. Cursor will automatically generate all corresponding HTML files with base code, correct filenames, navbar, footer, and Sanity integration where needed.
 
-## End Prompt
+**Full Page Directory:**
 
-<br><br>
+| Section | Filenames |
+| :--- | :--- |
+| About Us | `about-profile.html`, `about-history.html`, `about-bod.html`, `about-officers.html`, `about-awards.html`, `about-gallery.html` |
+| Membership | `membership.html` |
+| Loans | `loans-regular.html`, `loans-special.html` |
+| Investments | `investments.html` |
+| CoopMart | `coopmart.html` |
+| Support | `support-helpdesk.html`, `support-application.html`, `support-calculator.html` |
+
+```
+Assigned pages: [e.g., About Us / Loans / Support]
+```
+
+## END PROMPT
+
 ---
-# File Name
-When creating your assigned pages, make sure the filename matches exactly as listed below. This is important so all the navigation links work correctly across the site.
-Please double-check your filename before pushing. All files should be placed in the root folder of the project.
+
+## File Name Reference
+
+When creating your assigned pages, make sure the filename matches exactly as listed below. This is important so all the navigation links work correctly across the site. Please double-check your filename before pushing. All files should be placed in the **root folder** of the project.
 
 | Page | Filename |
 | :--- | :--- |
 | Home | `index.html` |
-| About Us - History | `about-history.html` |
 | About Us - Company Profile | `about-profile.html` |
-| About Us - BOD | `about-bod.html` |
+| About Us - History & Timeline | `about-history.html` |
+| About Us - BOD & Officers | `about-bod.html` |
 | About Us - Corporate Officers | `about-officers.html` |
 | About Us - Awards and Distinction | `about-awards.html` |
 | About Us - Event Gallery | `about-gallery.html` |
@@ -230,12 +258,9 @@ Please double-check your filename before pushing. All files should be placed in 
 | Support - Online Membership Application | `support-application.html` |
 | Support - Loan Calculator | `support-calculator.html` |
 
-
-
 ---
 
-# Sanity DB Data Structure
-## Data Structure
+## Sanity DB Data Structure
 
 | Type (Table) | Fields | Count |
 | :--- | :--- | :--- |
@@ -245,3 +270,8 @@ Please double-check your filename before pushing. All files should be placed in 
 | `timeline` | `title`, `description`, `eventDate`, `keyMetric`, `category`, `mainImage` | 8 |
 | `aboutUs` | `vision`, `history (portable text)` | 1 |
 | `siteSettings` | `address`, `emails` | 1 |
+
+> To inspect the DB directly, open this URL in your browser and replace `loan` with any document type:
+> ```
+> https://ltk0qh4a.api.sanity.io/v2024-01-01/data/query/production?query=*[_type=="loan"][0]
+> ```
