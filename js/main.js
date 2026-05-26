@@ -153,6 +153,7 @@ function buildCarousel(heroItems) {
         const imgUrl = item.backgroundImage
             ? urlFor(item.backgroundImage).width(1920).height(1080).fit('crop').url()
             : 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80';
+        const ctaHref = item.ctaHref || getHeroCtaHref(item);
 
         const slide = document.createElement('div');
         slide.className = `hero-slide carousel-slide${index === 0 ? ' active' : ''}`;
@@ -163,8 +164,8 @@ function buildCarousel(heroItems) {
                 <h1>${item.title}</h1>
                 <p>${item.subtitle}</p>
                 <div class="hero-buttons">
-                    <a href="membership.html" class="btn btn-primary">${item.ctaLabel}</a>
-                    <a href="loans-regular.html" class="btn btn-secondary">Learn More</a>
+                    <a href="${ctaHref}" class="btn btn-primary">${item.ctaLabel}</a>
+                    <a href="loans/loans-regular.html" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         `;
@@ -218,7 +219,7 @@ function goToSlide(index) {
 
 async function loadHeroCarousel() {
     const HERO_QUERY = `*[_type == "hero"] | order(_createdAt asc) {
-        title, subtitle, ctaLabel, backgroundImage
+        title, subtitle, ctaLabel, ctaHref, backgroundImage
     }`;
 
     try {
@@ -229,6 +230,52 @@ async function loadHeroCarousel() {
     } catch (err) {
         console.error("Failed to fetch Hero data:", err);
     }
+}
+
+function getHeroCtaHref(item) {
+    const label = typeof item?.ctaLabel === 'string' ? item.ctaLabel.toLowerCase() : '';
+    const title = typeof item?.title === 'string' ? item.title.toLowerCase() : '';
+    const subtitle = typeof item?.subtitle === 'string' ? item.subtitle.toLowerCase() : '';
+
+    const combinedText = `${title} ${subtitle} ${label}`;
+
+    if (combinedText.includes('coopmart')) {
+        return 'coopmart.html';
+    }
+
+    if (combinedText.includes('journey') || combinedText.includes('history')) {
+        return 'about/about-history.html';
+    }
+
+    if (combinedText.includes('assembly') || combinedText.includes('voice') || combinedText.includes('direction')) {
+        return 'membership.html';
+    }
+
+    if (combinedText.includes('application') || combinedText.includes('apply')) {
+        return 'support/support-application.html';
+    }
+
+    if (combinedText.includes('calculator') || combinedText.includes('amortization')) {
+        return 'support/support-calculator.html';
+    }
+
+    if (combinedText.includes('loan')) {
+        return 'loans/loans-regular.html';
+    }
+
+    if (combinedText.includes('member') || combinedText.includes('join')) {
+        return 'membership.html';
+    }
+
+    if (combinedText.includes('save') || combinedText.includes('invest')) {
+        return 'investments.html';
+    }
+
+    if (label.includes('read more')) {
+        return 'about/about-profile.html';
+    }
+
+    return 'membership.html';
 }
 
 function getInitials(name) {
