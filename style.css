@@ -501,6 +501,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Loan category filter tab bar (loans pages) */
+.loan-category-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    margin-bottom: 30px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.loan-category-tabs > button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
 /* 7. Services Summary Section */
 .services-section {
     padding-bottom: 80px;
