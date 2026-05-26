@@ -278,12 +278,13 @@
             const categories = [...new Set(allLoans.map((loan) => loan.category).filter(Boolean))].sort();
 
             filtersEl.innerHTML = "";
+            filtersEl.hidden = false;
 
             const allBtn = document.createElement("button");
             allBtn.type = "button";
             allBtn.className = "btn btn-primary";
             allBtn.dataset.category = "all";
-            allBtn.textContent = "All";
+            allBtn.textContent = "All Categories";
             allBtn.setAttribute("aria-pressed", "true");
             filtersEl.appendChild(allBtn);
 
@@ -352,7 +353,7 @@
                             <p>Loan programs will appear here once they are published in Sanity CMS.</p>
                         </article>
                     `;
-                    filtersEl.innerHTML = "";
+                    filtersEl.hidden = true;
                     return;
                 }
 
