@@ -7,6 +7,126 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        .history-hero {
+            background-color: #1b3d22;
+            background-image: linear-gradient(rgba(27, 61, 34, 0.78), rgba(27, 61, 34, 0.78)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .history-stats {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .history-stat {
+            padding: 14px 22px;
+            color: #ffffff;
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .history-stat:first-child {
+            border-left: 0;
+        }
+
+        .history-stat strong {
+            display: block;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .history-stat span {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.82;
+        }
+
+        .nav-link.active,
+        .dropdown-content a[aria-current="page"] {
+            color: #23743B;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            align-items: stretch;
+        }
+
+        .timeline-dot-column {
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 34px;
+            left: 16px;
+            width: 10px;
+            height: 10px;
+            border: 0;
+            border-radius: 50%;
+            background-color: #23743B;
+            z-index: 2;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 39px;
+            bottom: -55px;
+            left: 20px;
+            width: 2px;
+            background-color: #23743B;
+            opacity: 0.35;
+        }
+
+        .timeline-row:last-child .timeline-line {
+            display: none;
+        }
+
+        .timeline-card {
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .timeline-card:focus {
+            outline: 3px solid rgba(35, 116, 59, 0.3);
+            outline-offset: 3px;
+        }
+
+        .timeline-card .badge {
+            margin: 16px 0 0;
+            background-color: #edf6ef;
+            color: #23743B;
+        }
+
+        .timeline-detail {
+            display: none;
+            margin: 12px 0 28px;
+            padding: 22px;
+            border-radius: 12px;
+            background-color: #1b3d22;
+            color: #ffffff;
+        }
+
+        .timeline-row.is-open .timeline-detail {
+            display: block;
+        }
+
+        .timeline-detail p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+        }
+
+        .timeline-detail .news-tag {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -19,10 +139,10 @@
             </button>
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
-                    <a href="#" class="nav-link">About Us</a>
+                    <a href="#" class="nav-link active">About Us</a>
                     <div class="dropdown-content">
                         <a href="about-profile.html">Company Profile</a>
-                        <a href="about-history.html">History & Timeline</a>
+                        <a href="about-history.html" aria-current="page">History & Timeline</a>
                         <a href="about-bod.html">BOD & Officers</a>
                         <a href="about-officers.html">Corporate Officers</a>
                         <a href="about-awards.html">Awards & Distinction</a>
@@ -62,8 +182,22 @@
             <div class="hero-slide history-hero">
                 <div class="container hero-content">
                     <span class="badge">About TerraLink Cooperative</span>
-                    <h1>Our History & Timeline</h1>
-                    <p>Explore the milestones that shaped TerraLink's growth as a trusted cooperative banking community.</p>
+                    <h1>Decades of Trusted Community</h1>
+                    <p>Explore the milestones that shaped TerraLink's growth as a member-owned cooperative built on service, shared progress, and local trust.</p>
+                    <div class="history-stats" aria-label="Timeline summary">
+                        <div class="history-stat">
+                            <strong id="years-active-stat">--</strong>
+                            <span>Years Active</span>
+                        </div>
+                        <div class="history-stat">
+                            <strong id="milestone-count-stat">--</strong>
+                            <span>Milestones</span>
+                        </div>
+                        <div class="history-stat">
+                            <strong id="founding-year-stat">--</strong>
+                            <span>Founded</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -73,7 +207,7 @@
                 <h2>Cooperative Milestones</h2>
                 <p>From founding moments to community achievements, each milestone reflects our member-owned mission.</p>
             </div>
-            <div class="container timeline-list" id="timeline-container">
+            <div class="container timeline-list" id="history-timeline">
                 <article class="service-box">
                     <h3>Loading timeline...</h3>
                     <p>Please wait while TerraLink history entries are loaded from Sanity.</p>
@@ -135,5 +269,174 @@
         });
     </script>
     <script src="js/main.js"></script>
+    <script>
+        const FALLBACK_TIMELINE = [
+            {
+                title: 'Cooperative Foundation',
+                description: 'TerraLink began as a community-first cooperative formed to provide dependable financial support and shared opportunities for local members.',
+                eventDate: '1998-01-01',
+                keyMetric: 'Founding milestone',
+                category: 'Foundation',
+                mainImage: null
+            },
+            {
+                title: 'Member Services Expansion',
+                description: 'The cooperative expanded its loan, savings, and member assistance programs to reach more households and small enterprises.',
+                eventDate: '2010-01-01',
+                keyMetric: 'Expanded member access',
+                category: 'Growth',
+                mainImage: null
+            },
+            {
+                title: 'Digital Service Improvements',
+                description: 'TerraLink strengthened its service channels with online applications, faster support, and improved access to cooperative information.',
+                eventDate: '2024-01-01',
+                keyMetric: 'Modernized services',
+                category: 'Innovation',
+                mainImage: null
+            }
+        ];
+
+        function getTimelineYear(eventDate) {
+            const parsedDate = new Date(eventDate);
+            return Number.isNaN(parsedDate.getTime()) ? 'TBA' : parsedDate.getFullYear();
+        }
+
+        function updateHistoryStats(entries) {
+            const yearsActiveStat = document.getElementById('years-active-stat');
+            const milestoneCountStat = document.getElementById('milestone-count-stat');
+            const foundingYearStat = document.getElementById('founding-year-stat');
+            const datedYears = entries
+                .map((entry) => getTimelineYear(entry.eventDate))
+                .filter((year) => Number.isInteger(year));
+            const foundingYear = datedYears.length ? Math.min(...datedYears) : new Date().getFullYear();
+            const yearsActive = Math.max(new Date().getFullYear() - foundingYear, 0);
+
+            yearsActiveStat.textContent = `${yearsActive}+`;
+            milestoneCountStat.textContent = entries.length;
+            foundingYearStat.textContent = foundingYear;
+        }
+
+        function createChip(text, className) {
+            const chip = document.createElement('span');
+            chip.className = className;
+            chip.textContent = text;
+            return chip;
+        }
+
+        function toggleTimelineRow(selectedRow) {
+            const isOpen = selectedRow.classList.contains('is-open');
+            document.querySelectorAll('#history-timeline .timeline-row').forEach((row) => {
+                row.classList.remove('is-open');
+                const card = row.querySelector('.timeline-card');
+                const panel = row.querySelector('.timeline-detail');
+                if (card) card.setAttribute('aria-expanded', 'false');
+                if (panel) panel.hidden = true;
+            });
+
+            if (!isOpen) {
+                selectedRow.classList.add('is-open');
+                selectedRow.querySelector('.timeline-card').setAttribute('aria-expanded', 'true');
+                selectedRow.querySelector('.timeline-detail').hidden = false;
+            }
+        }
+
+        function renderHistoryTimeline(entries) {
+            const container = document.getElementById('history-timeline');
+            if (!container) return;
+
+            container.innerHTML = '';
+            updateHistoryStats(entries);
+
+            entries.forEach((entry, index) => {
+                const year = getTimelineYear(entry.eventDate);
+                const row = document.createElement('article');
+                row.className = 'timeline-row';
+
+                const dotColumn = document.createElement('div');
+                dotColumn.className = 'timeline-dot-column';
+                dotColumn.setAttribute('aria-hidden', 'true');
+                dotColumn.appendChild(createChip('', 'timeline-dot'));
+                dotColumn.appendChild(createChip('', 'timeline-line'));
+
+                const content = document.createElement('div');
+
+                const card = document.createElement('div');
+                card.className = 'highlight-card timeline-card';
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-expanded', 'false');
+                card.setAttribute('aria-controls', `timeline-detail-${index}`);
+
+                card.appendChild(createChip(`${year} • ${entry.category || 'Milestone'}`, 'news-tag'));
+
+                const title = document.createElement('h3');
+                title.textContent = entry.title || 'TerraLink Milestone';
+                card.appendChild(title);
+
+                const description = document.createElement('p');
+                description.textContent = entry.description || 'A meaningful milestone in TerraLink Cooperative history.';
+                card.appendChild(description);
+
+                if (entry.keyMetric) {
+                    card.appendChild(createChip(entry.keyMetric, 'badge'));
+                }
+
+                const detail = document.createElement('div');
+                detail.className = 'timeline-detail';
+                detail.id = `timeline-detail-${index}`;
+                detail.hidden = true;
+
+                const detailText = document.createElement('p');
+                detailText.textContent = entry.description || 'A meaningful milestone in TerraLink Cooperative history.';
+                detail.appendChild(detailText);
+
+                if (entry.keyMetric) {
+                    detail.appendChild(createChip(entry.keyMetric, 'news-tag'));
+                }
+                detail.appendChild(createChip(entry.category || 'Milestone', 'news-tag'));
+
+                card.addEventListener('click', () => toggleTimelineRow(row));
+                card.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleTimelineRow(row);
+                    }
+                });
+
+                content.appendChild(card);
+                content.appendChild(detail);
+                row.appendChild(dotColumn);
+                row.appendChild(content);
+                container.appendChild(row);
+            });
+        }
+
+        async function loadHistoryTimeline() {
+            const TIMELINE_QUERY = `*[_type == "timeline"] | order(eventDate asc) {
+                title,
+                description,
+                eventDate,
+                keyMetric,
+                category,
+                mainImage
+            }`;
+
+            try {
+                const timelineEntries = await client.fetch(TIMELINE_QUERY);
+                if (Array.isArray(timelineEntries) && timelineEntries.length > 0) {
+                    renderHistoryTimeline(timelineEntries);
+                    return;
+                }
+
+                renderHistoryTimeline(FALLBACK_TIMELINE);
+            } catch (error) {
+                console.error('Failed to fetch history timeline data:', error);
+                renderHistoryTimeline(FALLBACK_TIMELINE);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadHistoryTimeline);
+    </script>
 </body>
 </html>
