@@ -7,6 +7,83 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        .faq-accordion {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid #e6e6e6;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #16311f;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #f1f7f2;
+            color: #2c6b3f;
+            font-size: 1.1rem;
+            line-height: 1;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .faq-item[open] summary {
+            border-bottom: 1px solid #edf2ee;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            background: #dff0e4;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #5d6b63;
+            line-height: 1.75;
+        }
+
+        .faq-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            color: #5b7a65;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .support-contact-grid {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -74,43 +151,55 @@
                     <h2>Frequently Asked Questions</h2>
                     <p>Browse the most common support topics for TerraLink members and applicants.</p>
                 </div>
-                <div class="grid-3">
-                    <article class="service-box">
-                        <div class="service-icon">01</div>
-                        <h4>How do I apply for membership?</h4>
-                        <p>Complete the membership form, prepare one valid ID, and submit your details at the service desk for verification.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">02</div>
-                        <h4>What documents are required?</h4>
-                        <p>For most requests, members only need a government-issued ID, an application form, and a recent 2x2 photo.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">03</div>
-                        <h4>How long is processing time?</h4>
-                        <p>Standard requests are processed within 3 to 5 business days, depending on the completeness of the submitted documents.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">04</div>
-                        <h4>Can I check loan options online?</h4>
-                        <p>Yes. Members may review loan estimates online using the calculator page before visiting the branch for final review.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">05</div>
-                        <h4>What if I submitted an incomplete form?</h4>
-                        <p>The support team will contact you and explain which details need to be corrected or resubmitted.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">06</div>
-                        <h4>When is the help desk available?</h4>
-                        <p>The help desk is open Monday to Friday from 8:00 AM to 5:00 PM, excluding holidays.</p>
-                    </article>
+                <div class="faq-accordion">
+                    <details class="faq-item" open>
+                        <summary><span>How do I apply for membership?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Complete the membership form, prepare one valid ID, and submit your details at the service desk for verification. New applicants may also request a short orientation schedule before final approval.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What documents are required?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>For most requests, members only need a government-issued ID, an application form, and a recent 2x2 photo. Some loan-related concerns may require additional income documents.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>How long is processing time?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Standard requests are processed within 3 to 5 business days, depending on the completeness of the submitted documents and the number of active applications in the queue.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>Can I check loan options online?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Yes. Members may review loan estimates online using the calculator page before visiting the branch for final review. This helps applicants compare monthly payments and choose the right option.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What if I submitted an incomplete form?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The support team will contact you and explain which details need to be corrected or resubmitted. You can return the updated form to the branch or send it by email if the request is still open.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>When is the help desk available?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The help desk is open Monday to Friday from 8:00 AM to 5:00 PM, excluding holidays. For quick questions, the hotline and email support channels are also available during office hours.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
 
         <section class="highlights-section">
-            <div class="container">
+            <div class="container support-contact-grid">
                 <div class="section-header">
                     <h2>Support Channels</h2>
                     <p>If your concern is not listed above, use one of the options below.</p>
@@ -124,7 +213,7 @@
                     <div class="highlight-card">
                         <div class="icon-box">✉</div>
                         <h3>Email Support</h3>
-                        <p>Send your message to support@terralinkcoop.example for follow-up assistance.</p>
+                        <p>Send your message to official.uscmpc@gmail.com for follow-up assistance.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="icon-box">⌂</div>
