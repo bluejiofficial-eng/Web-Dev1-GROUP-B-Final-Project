@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Help Desk & FAQ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide history-hero">
+                <div class="container hero-content">
+                    <span class="badge">Support Center</span>
+                    <h1>Help Desk & FAQ</h1>
+                    <p>Find quick answers to common questions about membership, loans, online applications, and cooperative services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Browse the most common support topics for TerraLink members and visitors.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="service-box">
+                        <div class="service-icon">01</div>
+                        <h4>How do I become a member?</h4>
+                        <p>Submit a valid ID, fill out the membership form, and visit the branch office for verification and orientation.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">02</div>
+                        <h4>What are the basic membership requirements?</h4>
+                        <p>Members must be at least 18 years old, submit one government-issued ID, and complete the application form.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">03</div>
+                        <h4>How long does application processing take?</h4>
+                        <p>Most membership applications are processed within 3 to 5 business days after documents are submitted.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">04</div>
+                        <h4>Can I apply for a loan online?</h4>
+                        <p>Yes. You may start the application online, then visit the branch if additional verification is needed.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">05</div>
+                        <h4>Where can I ask about my account?</h4>
+                        <p>You can contact the help desk by phone, email, or by visiting the cooperative office during business hours.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">06</div>
+                        <h4>What services are available for members?</h4>
+                        <p>TerraLink offers savings, loan services, investment options, and community retail support through CoopMart.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Support</h2>
+                    <p>If you still need help, reach out using any of the options below.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <div class="icon-box">☎</div>
+                        <h3>Phone</h3>
+                        <p>Call us at +63 (32) 230-0100 for quick assistance during office hours.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">✉</div>
+                        <h3>Email</h3>
+                        <p>Send your questions to official.uscmpc@gmail.com for follow-up support.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">⌂</div>
+                        <h3>Office Visit</h3>
+                        <p>Visit the TerraLink service desk for membership, loan, and online application concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments.html">Investment Dividends</a></li>
+                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
