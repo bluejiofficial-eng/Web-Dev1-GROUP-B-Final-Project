@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investments | TerraLink</title>
+  <link rel="stylesheet" href="investments.css">
+</head>
+<body class="inv-page-body">
+<section class="inv-module" id="inv-investments" aria-labelledby="inv-banner-title">
+  <section class="inv-banner">
+    <div class="inv-banner-content">
+      <p class="inv-eyebrow">Investments</p>
+      <h1 class="inv-banner-title" id="inv-banner-title">Grow Your Wealth with Smart Cooperative Investments</h1>
+      <p class="inv-banner-text">
+        Build a stronger financial future with secure, flexible, and member-focused investment plans designed
+        for cooperative members and their long-term goals.
+      </p>
+
+      <div class="inv-banner-actions">
+        <button class="inv-btn inv-btn-primary" type="button" id="inv-view-options-btn">
+          View Investment Options
+        </button>
+        <button class="inv-btn inv-btn-secondary" type="button" id="inv-apply-now-btn">
+          Apply Now
+        </button>
+      </div>
+
+      <div class="inv-trust-badges" aria-label="Investment trust badges">
+        <span class="inv-badge">Secure</span>
+        <span class="inv-badge">Flexible</span>
+        <span class="inv-badge">Member-Focused</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="inv-options" id="inv-options" aria-labelledby="inv-options-title">
+    <div class="inv-section-heading">
+      <p class="inv-eyebrow">Investment Options</p>
+      <h2 class="inv-section-title" id="inv-options-title">Choose a plan that fits your goals</h2>
+      <p class="inv-section-text">
+        Explore cooperative investment products built for steady saving, planned growth, and shared member value.
+      </p>
+    </div>
+
+    <div class="inv-card-grid">
+      <article class="inv-card">
+        <div class="inv-card-top">
+          <span class="inv-plan-label">Starter</span>
+          <h3 class="inv-card-title">Savings Investment Plan</h3>
+          <p class="inv-card-description">
+            A simple entry-level investment plan for members who want to grow savings gradually while keeping
+            funds easy to manage.
+          </p>
+        </div>
+        <dl class="inv-plan-details">
+          <div class="inv-detail-row">
+            <dt>Minimum Amount</dt>
+            <dd>PHP 1,000</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Investment Term</dt>
+            <dd>6 to 12 months</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Benefit</dt>
+            <dd>Steady returns with low starting capital</dd>
+          </div>
+        </dl>
+        <button
+          class="inv-learn-btn"
+          type="button"
+          data-inv-plan="Savings Investment Plan"
+          data-inv-description="This plan helps members begin investing with a low minimum amount and flexible contribution habits. It is ideal for short-term goals, emergency fund growth, and members who prefer a simple and secure cooperative product."
+          data-inv-minimum="PHP 1,000"
+          data-inv-term="6 to 12 months"
+          data-inv-benefit="Low entry requirement, consistent growth potential, and easy account monitoring."
+        >
+          Learn More
+        </button>
+      </article>
+
+      <article class="inv-card">
+        <div class="inv-card-top">
+          <span class="inv-plan-label">Stable</span>
+          <h3 class="inv-card-title">Time Deposit Investment</h3>
+          <p class="inv-card-description">
+            A fixed-term option for members who can set aside funds for a chosen period in exchange for
+            predictable earning potential.
+          </p>
+        </div>
+        <dl class="inv-plan-details">
+          <div class="inv-detail-row">
+            <dt>Minimum Amount</dt>
+            <dd>PHP 5,000</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Investment Term</dt>
+            <dd>3 to 24 months</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Benefit</dt>
+            <dd>Fixed-term growth with planned maturity</dd>
+          </div>
+        </dl>
+        <button
+          class="inv-learn-btn"
+          type="button"
+          data-inv-plan="Time Deposit Investment"
+          data-inv-description="This investment is designed for members who prefer a clear maturity period and a disciplined savings approach. Funds remain invested for the selected term, helping members plan around future expenses or financial milestones."
+          data-inv-minimum="PHP 5,000"
+          data-inv-term="3 to 24 months"
+          data-inv-benefit="Predictable investment period, maturity planning, and stronger saving discipline."
+        >
+          Learn More
+        </button>
+      </article>
+
+      <article class="inv-card">
+        <div class="inv-card-top">
+          <span class="inv-plan-label">Member Equity</span>
+          <h3 class="inv-card-title">Cooperative Share Capital</h3>
+          <p class="inv-card-description">
+            Strengthen your membership by building share capital that supports cooperative growth and shared
+            community success.
+          </p>
+        </div>
+        <dl class="inv-plan-details">
+          <div class="inv-detail-row">
+            <dt>Minimum Amount</dt>
+            <dd>PHP 2,500</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Investment Term</dt>
+            <dd>Long-term membership</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Benefit</dt>
+            <dd>Ownership participation and cooperative support</dd>
+          </div>
+        </dl>
+        <button
+          class="inv-learn-btn"
+          type="button"
+          data-inv-plan="Cooperative Share Capital"
+          data-inv-description="Share capital represents a member's ownership participation in the cooperative. It helps fund cooperative services while giving members a stronger connection to the organization's long-term stability and community mission."
+          data-inv-minimum="PHP 2,500"
+          data-inv-term="Long-term membership"
+          data-inv-benefit="Member participation, cooperative ownership value, and support for shared financial services."
+        >
+          Learn More
+        </button>
+      </article>
+
+      <article class="inv-card">
+        <div class="inv-card-top">
+          <span class="inv-plan-label">Growth</span>
+          <h3 class="inv-card-title">Growth Investment Plan</h3>
+          <p class="inv-card-description">
+            A higher-goal investment plan for members seeking stronger long-term growth through consistent
+            cooperative investing.
+          </p>
+        </div>
+        <dl class="inv-plan-details">
+          <div class="inv-detail-row">
+            <dt>Minimum Amount</dt>
+            <dd>PHP 10,000</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Investment Term</dt>
+            <dd>12 to 36 months</dd>
+          </div>
+          <div class="inv-detail-row">
+            <dt>Benefit</dt>
+            <dd>Longer-term growth for bigger financial goals</dd>
+          </div>
+        </dl>
+        <button
+          class="inv-learn-btn"
+          type="button"
+          data-inv-plan="Growth Investment Plan"
+          data-inv-description="This plan is intended for members with bigger goals such as education, business capital, home improvement, or long-term wealth building. It rewards patience and consistent cooperative participation."
+          data-inv-minimum="PHP 10,000"
+          data-inv-term="12 to 36 months"
+          data-inv-benefit="Higher growth potential, long-term planning support, and goal-focused investing."
+        >
+          Learn More
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <div class="inv-modal" id="inv-modal" aria-hidden="true">
+    <div class="inv-modal-backdrop" data-inv-close-modal></div>
+    <div class="inv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="inv-modal-title">
+      <button class="inv-modal-close" type="button" aria-label="Close investment details" data-inv-close-modal>
+        &times;
+      </button>
+      <p class="inv-eyebrow">Plan Details</p>
+      <h2 class="inv-modal-title" id="inv-modal-title">Investment Plan</h2>
+      <p class="inv-modal-description" id="inv-modal-description"></p>
+
+      <div class="inv-modal-details">
+        <div class="inv-modal-detail">
+          <span>Minimum Amount</span>
+          <strong id="inv-modal-minimum"></strong>
+        </div>
+        <div class="inv-modal-detail">
+          <span>Investment Term</span>
+          <strong id="inv-modal-term"></strong>
+        </div>
+        <div class="inv-modal-detail">
+          <span>Benefit Summary</span>
+          <strong id="inv-modal-benefit"></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="investments.js"></script>
+</body>
+</html>
