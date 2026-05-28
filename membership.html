@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Membership</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Sanity Client Libraries for future integration -->
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about/about-profile.html">Company Profile</a>
+                        <a href="about/about-history.html">History & Timeline</a>
+                        <a href="about/about-bod.html">BOD & Officers</a>
+                        <a href="about/about-officers.html">Corporate Officers</a>
+                        <a href="about/about-awards.html">Awards & Distinction</a>
+                        <a href="about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="loans/loans-regular.html">Regular Loan</a>
+                        <a href="loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support/support-calculator.html">Loan Calculator</a>
+                        <a href="support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-slide history-hero">
+            <div class="container hero-content">
+                <span class="badge">TerraLink Membership</span>
+                <h1>Become a Member of a Cooperative That Grows With You</h1>
+                <p>Join TerraLink Cooperative and gain access to inclusive financial services, shared ownership benefits, and a trusted community committed to long-term progress.</p>
+                <div class="hero-buttons">
+                    <a href="support/support-application.html" class="btn btn-primary">Apply for Membership</a>
+                    <a href="#membership-benefits" class="btn btn-secondary">View Benefits</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP BENEFITS -->
+    <section class="highlights-section" id="membership-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Membership Benefits</h2>
+                <p>Enjoy practical advantages designed to support your financial stability and everyday needs.</p>
+            </div>
+            <div class="container grid-3">
+                <div class="highlight-card">
+                    <div class="icon-box">💳</div>
+                    <h3>Priority Access to Services</h3>
+                    <p>Members receive first access to cooperative loan programs, savings products, and support services.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon-box">📈</div>
+                    <h3>Dividend Participation</h3>
+                    <p>Qualified members share in annual cooperative earnings through patronage refunds and dividends.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon-box">🛒</div>
+                    <h3>Exclusive CoopMart Offers</h3>
+                    <p>Get member-only discounts on selected products and services from TerraLink CoopMart partners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELIGIBILITY REQUIREMENTS -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Eligibility and Requirements</h2>
+                <p>Applicants should meet the cooperative's standard membership qualifications before submission.</p>
+            </div>
+            <div class="container grid-4">
+                <div class="service-box">
+                    <div class="service-icon">✅</div>
+                    <h4>Basic Qualification</h4>
+                    <p>Must be at least 18 years old and willing to comply with TerraLink Cooperative policies and bylaws.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🪪</div>
+                    <h4>Valid Identification</h4>
+                    <p>Submit one government-issued ID and supporting personal information for account verification.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">📝</div>
+                    <h4>Membership Application</h4>
+                    <p>Complete the official application form and attend the required membership orientation session.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">💰</div>
+                    <h4>Initial Capital Share</h4>
+                    <p>Pay the prescribed membership fee and initial share capital contribution upon approval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP TYPES -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Membership Types</h2>
+                <p>Choose the membership option that matches your role and participation level in the cooperative.</p>
+            </div>
+            <div class="grid-3">
+                <div class="news-card">
+                    <div class="news-body">
+                        <span class="news-tag">Regular Member</span>
+                        <h4>Full Voting and Dividend Privileges</h4>
+                        <p>Regular members maintain active share capital and are eligible for voting rights, loans, and annual patronage benefits.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-body">
+                        <span class="news-tag">Associate Member</span>
+                        <h4>Access to Core Cooperative Services</h4>
+                        <p>Associate members may access selected products and programs while completing requirements for regular membership conversion.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-body">
+                        <span class="news-tag">Institutional Member</span>
+                        <h4>Partnership-Based Cooperative Enrollment</h4>
+                        <p>Organizations and groups can enroll through institutional arrangements subject to cooperative screening and board approval.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Membership Journey Today</h2>
+                <p>Take the next step toward cooperative ownership and inclusive financial growth with TerraLink.</p>
+            </div>
+            <div class="container">
+                <a href="support/support-application.html" class="btn btn-primary">Join Now</a>
+                <a href="support/support-application.html" class="btn btn-secondary">Apply for Membership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hamburger Menu Toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
