@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink Cooperative | Loan Calculator</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support-calculator.html">Loan Calculator</a>
+                        <a href="support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Tools</span>
+                    <h2>Amortization Calculator</h2>
+                    <p>Estimate your monthly payments and total interest before you apply.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <article class="highlight-card">
+                    <div class="grid-4">
+                        <div>
+                            <h3>Loan Details</h3>
+                            <form id="loan-calculator-form">
+                                <p>
+                                    <label for="loan-amount">Loan Amount</label><br>
+                                    <input type="number" id="loan-amount" name="loanAmount" min="10000" max="500000" placeholder="PHP 10,000 - PHP 500,000" required>
+                                </p>
+                                <p>
+                                    <label for="interest-rate">Annual Interest Rate</label><br>
+                                    <input type="number" id="interest-rate" name="interestRate" min="0.1" step="0.01" placeholder="e.g. 12%" required>
+                                </p>
+                                <p>
+                                    <label for="loan-term">Loan Term</label><br>
+                                    <select id="loan-term" name="loanTerm" required>
+                                        <option value="">Select term</option>
+                                        <option value="6">6 months</option>
+                                        <option value="12">12 months</option>
+                                        <option value="18">18 months</option>
+                                        <option value="24">24 months</option>
+                                        <option value="36">36 months</option>
+                                        <option value="48">48 months</option>
+                                        <option value="60">60 months</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <button type="submit" class="btn btn-primary">Calculate</button>
+                                </p>
+                            </form>
+                        </div>
+
+                        <div>
+                            <h3>Results</h3>
+                            <p><span class="news-tag">Monthly Payment</span></p>
+                            <h2 id="monthly-payment">PHP 0.00</h2>
+                            <p><span class="news-tag">Total Payment</span> <strong id="total-payment">PHP 0.00</strong></p>
+                            <p><span class="news-tag">Total Interest</span> <strong id="total-interest">PHP 0.00</strong></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Amortization Breakdown (First 12 Months)</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Month No.</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="schedule-body">
+                                <tr>
+                                    <td>1</td>
+                                    <td>PHP 0.00</td>
+                                    <td>PHP 0.00</td>
+                                    <td>PHP 0.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Full schedule available upon loan approval.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Smart Borrowing Tips</h2>
+                    <p>Use these reminders before submitting your loan request.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="service-box">
+                        <div class="service-icon">1</div>
+                        <h4>Borrow What You Need</h4>
+                        <p>Avoid over-borrowing to keep repayments manageable.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">2</div>
+                        <h4>Check Your Cash Flow</h4>
+                        <p>Make sure monthly income covers the amortization comfortably.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">3</div>
+                        <h4>Plan for Early Payoff</h4>
+                        <p>Ask about prepayment options to save on interest.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <article class="service-box">
+                    <div class="section-header">
+                        <h2>Ready to Apply?</h2>
+                        <p>Choose your next step and start your TerraLink loan journey.</p>
+                    </div>
+                    <div class="grid-3">
+                        <div></div>
+                        <a href="../loans/loans-regular.html" class="btn btn-primary">Explore Regular Loans</a>
+                        <a href="support-application.html" class="btn btn-secondary">Apply Online</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments.html">Investment Dividends</a></li>
+                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('loan-calculator-form');
+        const monthlyPaymentEl = document.getElementById('monthly-payment');
+        const totalPaymentEl = document.getElementById('total-payment');
+        const totalInterestEl = document.getElementById('total-interest');
+        const scheduleBody = document.getElementById('schedule-body');
+
+        const formatCurrency = (value) =>
+            new Intl.NumberFormat('en-PH', {
+                style: 'currency',
+                currency: 'PHP',
+                minimumFractionDigits: 2
+            }).format(value);
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const principal = Number(document.getElementById('loan-amount').value);
+            const annualRate = Number(document.getElementById('interest-rate').value);
+            const termMonths = Number(document.getElementById('loan-term').value);
+
+            if (!principal || !annualRate || !termMonths) {
+                return;
+            }
+
+            const monthlyRate = annualRate / 12 / 100;
+            const factor = Math.pow(1 + monthlyRate, termMonths);
+            const monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
+            const totalPayment = monthlyPayment * termMonths;
+            const totalInterest = totalPayment - principal;
+
+            monthlyPaymentEl.textContent = formatCurrency(monthlyPayment);
+            totalPaymentEl.textContent = formatCurrency(totalPayment);
+            totalInterestEl.textContent = formatCurrency(totalInterest);
+
+            scheduleBody.innerHTML = '';
+            let remainingBalance = principal;
+            const rowLimit = Math.min(termMonths, 12);
+
+            for (let month = 1; month <= rowLimit; month += 1) {
+                const interestPayment = remainingBalance * monthlyRate;
+                const principalPayment = monthlyPayment - interestPayment;
+                remainingBalance = Math.max(remainingBalance - principalPayment, 0);
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${month}</td>
+                    <td>${formatCurrency(principalPayment)}</td>
+                    <td>${formatCurrency(interestPayment)}</td>
+                    <td>${formatCurrency(remainingBalance)}</td>
+                `;
+                scheduleBody.appendChild(row);
+            }
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

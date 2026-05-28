@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink Cooperative | Online Membership Application</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support-calculator.html">Loan Calculator</a>
+                        <a href="support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Join Us</span>
+                    <h2>Apply for Membership Online</h2>
+                    <p>Submit your pre-application form today and our staff will contact you to guide you through the next steps.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="grid-3">
+                    <article class="service-box">
+                        <div class="service-icon">1</div>
+                        <h3>Step 1 - Fill Out the Form</h3>
+                        <p>Complete your personal and employment details.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">2</div>
+                        <h3>Step 2 - Submit Requirements</h3>
+                        <p>Upload or bring your valid ID and documents.</p>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">3</div>
+                        <h3>Step 3 - Await Confirmation</h3>
+                        <p>Our team will reach out within 3-5 business days.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <article class="highlight-card">
+                    <div class="section-header">
+                        <h2>Membership Pre-Application Form</h2>
+                        <p>Please complete all required fields below.</p>
+                    </div>
+
+                    <form action="#" method="post">
+                        <p>
+                            <label for="full-name">Full Name</label><br>
+                            <input type="text" id="full-name" name="fullName" required>
+                        </p>
+                        <p>
+                            <label for="date-of-birth">Date of Birth</label><br>
+                            <input type="date" id="date-of-birth" name="dateOfBirth" required>
+                        </p>
+                        <p>
+                            <label for="civil-status">Civil Status</label><br>
+                            <select id="civil-status" name="civilStatus" required>
+                                <option value="">Select civil status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="separated">Separated</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="contact-number">Contact Number</label><br>
+                            <input type="tel" id="contact-number" name="contactNumber" required>
+                        </p>
+                        <p>
+                            <label for="email-address">Email Address</label><br>
+                            <input type="email" id="email-address" name="emailAddress" required>
+                        </p>
+                        <p>
+                            <label for="home-address">Home Address</label><br>
+                            <textarea id="home-address" name="homeAddress" rows="4" required></textarea>
+                        </p>
+                        <p>
+                            <label for="employer-business">Employer / Business Name</label><br>
+                            <input type="text" id="employer-business" name="employerBusinessName" required>
+                        </p>
+                        <p>
+                            <label for="monthly-income-range">Monthly Income Range</label><br>
+                            <select id="monthly-income-range" name="monthlyIncomeRange" required>
+                                <option value="">Select income range</option>
+                                <option value="below-10000">Below PHP 10,000</option>
+                                <option value="10000-20000">PHP 10,000-PHP 20,000</option>
+                                <option value="20001-50000">PHP 20,001-PHP 50,000</option>
+                                <option value="above-50000">Above PHP 50,000</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="membership-type">Type of Membership</label><br>
+                            <select id="membership-type" name="membershipType" required>
+                                <option value="">Select membership type</option>
+                                <option value="regular">Regular</option>
+                                <option value="associate">Associate</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="referral-source">How did you hear about us?</label><br>
+                            <select id="referral-source" name="referralSource" required>
+                                <option value="">Select one option</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="referral">Referral</option>
+                                <option value="branch-visit">Branch Visit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </p>
+                        <p>
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </p>
+                    </form>
+
+                    <p>This is a pre-application form only. Submission does not guarantee membership approval. A TerraLink officer will contact you to guide you through the next steps.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Requirements Checklist</h2>
+                    <p>Prepare these documents to help us process your membership application faster.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="highlight-card">
+                        <div class="icon-box">🪪</div>
+                        <h3>Valid Government-Issued ID</h3>
+                        <p>Bring at least one valid government-issued identification card.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">📑</div>
+                        <h3>Proof of Income</h3>
+                        <p>Submit your latest payslip, ITR, or certificate of employment.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">📷</div>
+                        <h3>1x1 or 2x2 ID Photo</h3>
+                        <p>Provide a recent photo for your membership profile records.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments.html">Investment Dividends</a></li>
+                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
