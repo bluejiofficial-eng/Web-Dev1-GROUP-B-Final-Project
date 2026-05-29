@@ -1,222 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investments | TerraLink</title>
-  <link rel="stylesheet" href="investments.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Investments</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body class="inv-page-body">
-<section class="inv-module" id="inv-investments" aria-labelledby="inv-banner-title">
-  <section class="inv-banner">
-    <div class="inv-banner-content">
-      <p class="inv-eyebrow">Investments</p>
-      <h1 class="inv-banner-title" id="inv-banner-title">Grow Your Wealth with Smart Cooperative Investments</h1>
-      <p class="inv-banner-text">
-        Build a stronger financial future with secure, flexible, and member-focused investment plans designed
-        for cooperative members and their long-term goals.
-      </p>
+<body>
 
-      <div class="inv-banner-actions">
-        <button class="inv-btn inv-btn-primary" type="button" id="inv-view-options-btn">
-          View Investment Options
-        </button>
-        <button class="inv-btn inv-btn-secondary" type="button" id="inv-apply-now-btn">
-          Apply Now
-        </button>
-      </div>
-
-      <div class="inv-trust-badges" aria-label="Investment trust badges">
-        <span class="inv-badge">Secure</span>
-        <span class="inv-badge">Flexible</span>
-        <span class="inv-badge">Member-Focused</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="inv-options" id="inv-options" aria-labelledby="inv-options-title">
-    <div class="inv-section-heading">
-      <p class="inv-eyebrow">Investment Options</p>
-      <h2 class="inv-section-title" id="inv-options-title">Choose a plan that fits your goals</h2>
-      <p class="inv-section-text">
-        Explore cooperative investment products built for steady saving, planned growth, and shared member value.
-      </p>
-    </div>
-
-    <div class="inv-card-grid">
-      <article class="inv-card">
-        <div class="inv-card-top">
-          <span class="inv-plan-label">Starter</span>
-          <h3 class="inv-card-title">Savings Investment Plan</h3>
-          <p class="inv-card-description">
-            A simple entry-level investment plan for members who want to grow savings gradually while keeping
-            funds easy to manage.
-          </p>
+    <!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about/about-profile.html">Company Profile</a>
+                        <a href="about/about-history.html">History & Timeline</a>
+                        <a href="about/about-bod.html">BOD & Officers</a>
+                        <a href="about/about-officers.html">Corporate Officers</a>
+                        <a href="about/about-awards.html">Awards & Distinction</a>
+                        <a href="about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="loans/loans-regular.html">Regular Loan</a>
+                        <a href="loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support/support-calculator.html">Loan Calculator</a>
+                        <a href="support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <dl class="inv-plan-details">
-          <div class="inv-detail-row">
-            <dt>Minimum Amount</dt>
-            <dd>PHP 1,000</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Investment Term</dt>
-            <dd>6 to 12 months</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Benefit</dt>
-            <dd>Steady returns with low starting capital</dd>
-          </div>
-        </dl>
-        <button
-          class="inv-learn-btn"
-          type="button"
-          data-inv-plan="Savings Investment Plan"
-          data-inv-description="This plan helps members begin investing with a low minimum amount and flexible contribution habits. It is ideal for short-term goals, emergency fund growth, and members who prefer a simple and secure cooperative product."
-          data-inv-minimum="PHP 1,000"
-          data-inv-term="6 to 12 months"
-          data-inv-benefit="Low entry requirement, consistent growth potential, and easy account monitoring."
-        >
-          Learn More
-        </button>
-      </article>
+    </header>
 
-      <article class="inv-card">
-        <div class="inv-card-top">
-          <span class="inv-plan-label">Stable</span>
-          <h3 class="inv-card-title">Time Deposit Investment</h3>
-          <p class="inv-card-description">
-            A fixed-term option for members who can set aside funds for a chosen period in exchange for
-            predictable earning potential.
-          </p>
-        </div>
-        <dl class="inv-plan-details">
-          <div class="inv-detail-row">
-            <dt>Minimum Amount</dt>
-            <dd>PHP 5,000</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Investment Term</dt>
-            <dd>3 to 24 months</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Benefit</dt>
-            <dd>Fixed-term growth with planned maturity</dd>
-          </div>
-        </dl>
-        <button
-          class="inv-learn-btn"
-          type="button"
-          data-inv-plan="Time Deposit Investment"
-          data-inv-description="This investment is designed for members who prefer a clear maturity period and a disciplined savings approach. Funds remain invested for the selected term, helping members plan around future expenses or financial milestones."
-          data-inv-minimum="PHP 5,000"
-          data-inv-term="3 to 24 months"
-          data-inv-benefit="Predictable investment period, maturity planning, and stronger saving discipline."
-        >
-          Learn More
-        </button>
-      </article>
+    <main>
+        <!-- INVESTMENTS HERO / BANNER -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Investment Opportunities</span>
+                    <h1>Grow Your Future with TerraLink Investments</h1>
+                    <p>Build long-term financial security through safe, member-centered investment opportunities designed for cooperative members and future investors.</p>
+                    <a href="#investment-options" class="btn btn-primary">View Investment Options</a>
+                    <a href="membership.html" class="btn btn-secondary">Apply for Membership</a>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <span class="badge">Secure Cooperative Plans</span>
+                        <h3>Trusted Investment Support</h3>
+                        <p>Plans are guided by cooperative values and responsible member-focused service.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="badge">Flexible Terms</span>
+                        <h3>Options That Fit Your Goals</h3>
+                        <p>Members can choose investment opportunities that match their savings timeline.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="badge">Member-Focused Growth</span>
+                        <h3>Growth With Shared Purpose</h3>
+                        <p>Investment participation supports personal goals and cooperative development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <article class="inv-card">
-        <div class="inv-card-top">
-          <span class="inv-plan-label">Member Equity</span>
-          <h3 class="inv-card-title">Cooperative Share Capital</h3>
-          <p class="inv-card-description">
-            Strengthen your membership by building share capital that supports cooperative growth and shared
-            community success.
-          </p>
-        </div>
-        <dl class="inv-plan-details">
-          <div class="inv-detail-row">
-            <dt>Minimum Amount</dt>
-            <dd>PHP 2,500</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Investment Term</dt>
-            <dd>Long-term membership</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Benefit</dt>
-            <dd>Ownership participation and cooperative support</dd>
-          </div>
-        </dl>
-        <button
-          class="inv-learn-btn"
-          type="button"
-          data-inv-plan="Cooperative Share Capital"
-          data-inv-description="Share capital represents a member's ownership participation in the cooperative. It helps fund cooperative services while giving members a stronger connection to the organization's long-term stability and community mission."
-          data-inv-minimum="PHP 2,500"
-          data-inv-term="Long-term membership"
-          data-inv-benefit="Member participation, cooperative ownership value, and support for shared financial services."
-        >
-          Learn More
-        </button>
-      </article>
+        <!-- INVESTMENT OPTIONS SECTION -->
+        <section class="services-section" id="investment-options">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Investment Options</h2>
+                    <p>Choose from flexible cooperative investment plans designed to help members save, grow, and participate in shared financial success.</p>
+                </div>
+                <div class="grid-4">
+                    <article class="service-box">
+                        <div class="service-icon">&#8369;</div>
+                        <h4>Savings Investment Plan</h4>
+                        <p>A simple and accessible investment option for members who want steady savings growth while keeping funds manageable.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;1,000</p>
+                        <p><strong>Term:</strong> Flexible</p>
+                        <p><strong>Benefit:</strong> Ideal for beginners and regular savers.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">TD</div>
+                        <h4>Time Deposit Investment</h4>
+                        <p>A fixed-term investment option that allows members to earn better returns by keeping funds deposited for a chosen period.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;5,000</p>
+                        <p><strong>Term:</strong> 6 to 12 months</p>
+                        <p><strong>Benefit:</strong> Better earning potential with secure placement.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">SC</div>
+                        <h4>Cooperative Share Capital</h4>
+                        <p>An ownership-based investment where members contribute capital and may receive dividends based on cooperative performance.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;2,000</p>
+                        <p><strong>Term:</strong> Long-term membership</p>
+                        <p><strong>Benefit:</strong> Builds member ownership and cooperative participation.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">GP</div>
+                        <h4>Growth Investment Plan</h4>
+                        <p>A goal-oriented investment option for members who want to prepare for future needs such as education, business, or family plans.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;3,000</p>
+                        <p><strong>Term:</strong> 12 months or more</p>
+                        <p><strong>Benefit:</strong> Supports long-term financial planning.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-      <article class="inv-card">
-        <div class="inv-card-top">
-          <span class="inv-plan-label">Growth</span>
-          <h3 class="inv-card-title">Growth Investment Plan</h3>
-          <p class="inv-card-description">
-            A higher-goal investment plan for members seeking stronger long-term growth through consistent
-            cooperative investing.
-          </p>
-        </div>
-        <dl class="inv-plan-details">
-          <div class="inv-detail-row">
-            <dt>Minimum Amount</dt>
-            <dd>PHP 10,000</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Investment Term</dt>
-            <dd>12 to 36 months</dd>
-          </div>
-          <div class="inv-detail-row">
-            <dt>Benefit</dt>
-            <dd>Longer-term growth for bigger financial goals</dd>
-          </div>
-        </dl>
-        <button
-          class="inv-learn-btn"
-          type="button"
-          data-inv-plan="Growth Investment Plan"
-          data-inv-description="This plan is intended for members with bigger goals such as education, business capital, home improvement, or long-term wealth building. It rewards patience and consistent cooperative participation."
-          data-inv-minimum="PHP 10,000"
-          data-inv-term="12 to 36 months"
-          data-inv-benefit="Higher growth potential, long-term planning support, and goal-focused investing."
-        >
-          Learn More
-        </button>
-      </article>
-    </div>
-  </section>
+        <!-- WHY INVEST WITH TERRALINK SECTION -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Invest With TerraLink?</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <div class="icon-box">01</div>
+                        <h3>Community-Based Growth</h3>
+                        <p>Every investment supports cooperative growth while helping members access better financial opportunities.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">02</div>
+                        <h3>Transparent Cooperative Management</h3>
+                        <p>TerraLink values responsible handling of member funds, clear policies, and cooperative accountability.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">03</div>
+                        <h3>Member-Centered Opportunities</h3>
+                        <p>Investment options are designed around members' needs, goals, and long-term financial security.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div class="inv-modal" id="inv-modal" aria-hidden="true">
-    <div class="inv-modal-backdrop" data-inv-close-modal></div>
-    <div class="inv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="inv-modal-title">
-      <button class="inv-modal-close" type="button" aria-label="Close investment details" data-inv-close-modal>
-        &times;
-      </button>
-      <p class="inv-eyebrow">Plan Details</p>
-      <h2 class="inv-modal-title" id="inv-modal-title">Investment Plan</h2>
-      <p class="inv-modal-description" id="inv-modal-description"></p>
+        <!-- INVESTMENT REMINDER SECTION -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Member Reminder</span>
+                    <h2>Invest Responsibly</h2>
+                    <p>Investment returns may vary depending on cooperative performance, chosen plan, and approved terms. Members are encouraged to review requirements before applying.</p>
+                </div>
+            </div>
+        </section>
 
-      <div class="inv-modal-details">
-        <div class="inv-modal-detail">
-          <span>Minimum Amount</span>
-          <strong id="inv-modal-minimum"></strong>
+        <!-- FINAL CALL-TO-ACTION SECTION -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Start Building Your Financial Future Today</h2>
+                    <p>Join TerraLink Cooperative and explore investment opportunities designed to help members save, grow, and participate in shared success.</p>
+                    <a href="membership.html" class="btn btn-primary">Apply for Membership</a>
+                    <a href="support/support-helpdesk.html" class="btn btn-secondary">Contact Support</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
         </div>
-        <div class="inv-modal-detail">
-          <span>Investment Term</span>
-          <strong id="inv-modal-term"></strong>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
         </div>
-        <div class="inv-modal-detail">
-          <span>Benefit Summary</span>
-          <strong id="inv-modal-benefit"></strong>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script src="investments.js"></script>
+    </footer>
+
+    <!-- Hamburger Menu Toggle -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navMenu.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
+<script src="js/main.js"></script>
 </body>
 </html>
