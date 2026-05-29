@@ -249,6 +249,19 @@
                 navMenu.classList.remove('open');
             });
         });
+
+        // Make the About Us, Loans, and Support dropdown folders open in a new browser tab.
+        // Only dropdowns that contain a submenu (.dropdown-content) are treated as folders,
+        // so single links like Membership, Investments, and CoopMart are left unchanged.
+        navMenu.querySelectorAll('.dropdown').forEach(folder => {
+            if (!folder.querySelector('.dropdown-content')) return;
+            folder.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href || href === '#') return;
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener');
+            });
+        });
     </script>
     <script src="../js/main.js"></script>
 </body>
