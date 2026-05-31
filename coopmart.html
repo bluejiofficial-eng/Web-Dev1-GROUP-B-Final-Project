@@ -6,7 +6,7 @@
     <title>TerraLink | CoopMart</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="coopmart-page">
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -42,6 +42,22 @@
         </div>
     </header>
 
+    <div class="background-flash" aria-hidden="true"></div>
+
+    <section class="hero-section coopmart-hero">
+        <div class="hero-slide">
+            <div class="container hero-content">
+                <span class="badge">CoopMart Marketplace</span>
+                <h1>Fresh products, cooperative values</h1>
+                <p>Enjoy curated member savings and locally sourced essentials in a premium shopping experience.</p>
+                <div class="hero-buttons">
+                    <a href="#featured-items" class="btn btn-primary">Browse Featured Items</a>
+                    <a href="membership.html" class="btn btn-secondary">Join TerraLink</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main class="container">
         <section class="section-header">
             <h1>CoopMart</h1>
@@ -68,7 +84,7 @@
             </div>
         </section>
 
-        <section class="products-list">
+        <section class="products-list" id="featured-items">
             <h2>Featured Products</h2>
             <div class="container grid-4">
                 <article class="product-card">
