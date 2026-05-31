@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink Cooperative | Help Desk & FAQ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support-calculator.html">Loan Calculator</a>
+                        <a href="support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide helpdesk-hero">
+                <div class="container hero-content">
+                    <span class="badge">Support Center</span>
+                    <h1>How can we help you?</h1>
+                    <p>Find answers to common questions about membership, loans, and services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="grid-3">
+                    <article class="highlight-card">
+                        <div class="icon-box">👥</div>
+                        <h3>How do I become a member?</h3>
+                        <p>Complete the membership application form, submit one valid ID, and attend the orientation to finalize your enrollment.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">📄</div>
+                        <h3>What documents are needed for a loan?</h3>
+                        <p>Prepare a completed loan form, valid IDs, proof of income, and any required supporting documents based on the loan type.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">⏳</div>
+                        <h3>How long does loan approval take?</h3>
+                        <p>Most applications are reviewed within 3 to 7 business days after all required documents are submitted.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">💵</div>
+                        <h3>What is the minimum share capital?</h3>
+                        <p>The minimum initial share capital starts at PHP 1,000, subject to the cooperative's latest membership guidelines.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">🖥️</div>
+                        <h3>Can I apply for a loan online?</h3>
+                        <p>Yes. You can use our Online Application page to submit your request and receive updates from our support team.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">📈</div>
+                        <h3>What are the loan interest rates?</h3>
+                        <p>Interest rates vary by product. Visit the Loans page to compare current regular and special loan offers.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">🏦</div>
+                        <h3>How do I check my account balance?</h3>
+                        <p>You may check your balance through branch assistance, official support channels, or your registered member account access.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">🎯</div>
+                        <h3>What is the dividend payout schedule?</h3>
+                        <p>Dividend distributions are typically released annually after financial review and board approval.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="icon-box">✍️</div>
+                        <h3>How do I update my personal information?</h3>
+                        <p>Submit an update request at your nearest branch or through official online channels with valid supporting documents.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="service-box">
+                    <div class="section-header">
+                        <h2>Still have questions?</h2>
+                        <p>Our team is ready to assist you.</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="support-application.html" class="btn btn-primary">Contact Us</a>
+                        <a href="../about/about-profile.html" class="btn btn-secondary">Visit a Branch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments.html">Investment Dividends</a></li>
+                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
