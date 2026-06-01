@@ -15,6 +15,8 @@ const client = createClient(SANITY_CONFIG);
 const builder = globalThis.SanityImageUrlBuilder(client);
 const urlFor = (source) => builder.image(source);
 
+window.terralinkSanity = { client, urlFor };
+
 // ============================================================
 // NEWS DATA (Static — 6 articles)
 // ============================================================
@@ -293,42 +295,150 @@ function getDirectorAvatarLabel(containerId) {
     return containerId === 'officers-container' ? 'Corporate officer photo' : 'Director photo';
 }
 
+function getLeaderProfileExtras(director, index) {
+    const role = director.role || 'Cooperative Leader';
+    const name = director.name || 'TerraLink Officer';
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '.').replace(/^\.+|\.+$/g, '');
+
+    return {
+        description: director.bio || director.description ||
+            `${name} serves as ${role} at TerraLink Cooperative, supporting transparent governance, member-focused programs, and sustainable community growth.`,
+        email: director.email || `${slug || `leader${index + 1}`}@terralink.coop`,
+        phone: director.phone || '+63 (32) 230-0100'
+    };
+}
+
+function createLeaderModal() {
+    const existing = document.getElementById('leader-modal');
+    if (existing && existing.querySelector('.modal-box--large')) return;
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'leader-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-box modal-box--split modal-box--large">
+            <button class="modal-close" id="leader-modal-close" type="button" aria-label="Close">&times;</button>
+            <div class="modal-split">
+                <div class="modal-split__media" id="leader-modal-img" role="img" aria-hidden="true"></div>
+                <div class="modal-split__body modal-body">
+                    <p class="director-role" id="leader-modal-role"></p>
+                    <h3 id="leader-modal-name"></h3>
+                    <p id="leader-modal-desc"></p>
+                    <div class="leader-modal-meta">
+                        <p><strong>Email:</strong> <span id="leader-modal-email"></span></p>
+                        <p><strong>Phone:</strong> <span id="leader-modal-phone"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('leader-modal-close').addEventListener('click', closeLeaderModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeLeaderModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLeaderModal();
+    });
+}
+
+function openLeaderModal(director, imageUrl) {
+    createLeaderModal();
+    const extras = director.description
+        ? director
+        : getLeaderProfileExtras(director, 0);
+    const imgEl = document.getElementById('leader-modal-img');
+
+    if (imageUrl) {
+        imgEl.style.backgroundImage = `url('${imageUrl}')`;
+        imgEl.style.display = 'block';
+    } else {
+        imgEl.style.backgroundImage = 'linear-gradient(135deg, #23743B, #1b3d22)';
+        imgEl.style.display = 'block';
+    }
+
+    document.getElementById('leader-modal-role').textContent = director.role || 'Director';
+    document.getElementById('leader-modal-name').textContent = director.name;
+    document.getElementById('leader-modal-desc').textContent = extras.description;
+    document.getElementById('leader-modal-email').textContent = extras.email;
+    document.getElementById('leader-modal-phone').textContent = extras.phone;
+    document.getElementById('leader-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLeaderModal() {
+    const modal = document.getElementById('leader-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 function renderDirectors(containerId, directors) {
     const container = document.getElementById(containerId);
     if (!container || !Array.isArray(directors) || directors.length === 0) return;
 
     container.innerHTML = '';
+    container.classList.add('leader-grid');
+    createLeaderModal();
 
-    directors.forEach((director) => {
+    directors.forEach((director, index) => {
         if (!director || !director.name) return;
 
-        const card = document.createElement('article');
-        card.className = containerId === 'officers-container' ? 'service-box' : 'highlight-card';
+        const extras = getLeaderProfileExtras(director, index);
+        const profile = { ...director, ...extras };
 
-        const avatar = document.createElement('div');
-        avatar.className = containerId === 'officers-container' ? 'service-icon director-avatar' : 'director-avatar';
+        let imageUrl = '';
+        const card = document.createElement('article');
+        card.className = 'leader-card about-reveal';
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `View profile for ${director.name}`);
+
+        const media = document.createElement('div');
+        media.className = 'leader-card__media';
 
         if (director.image && director.image.asset) {
-            avatar.classList.add('director-avatar--image');
-            avatar.style.backgroundImage = `url('${urlFor(director.image).width(320).height(320).fit('crop').url()}')`;
-            avatar.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
-            avatar.textContent = '';
+            imageUrl = urlFor(director.image).width(600).height(600).fit('crop').url();
+            media.style.backgroundImage = `url('${imageUrl}')`;
+            media.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
         } else {
-            avatar.textContent = getInitials(director.name);
+            media.classList.add('leader-card__media--initials');
+            media.textContent = getInitials(director.name);
         }
 
+        const info = document.createElement('div');
+        info.className = 'leader-card__info';
+
         const name = document.createElement('h3');
+        name.className = 'leader-card__name';
         name.textContent = director.name;
 
         const role = document.createElement('p');
-        role.className = 'director-role';
+        role.className = 'leader-card__role';
         role.textContent = director.role || 'Director';
 
-        card.appendChild(avatar);
-        card.appendChild(name);
-        card.appendChild(role);
+        info.appendChild(name);
+        info.appendChild(role);
+        card.appendChild(media);
+        card.appendChild(info);
+
+        const openProfile = () => openLeaderModal(profile, imageUrl);
+        card.addEventListener('click', openProfile);
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProfile();
+            }
+        });
+
         container.appendChild(card);
     });
+
+    if (typeof window.initAboutPageAnimations === 'function') {
+        window.initAboutPageAnimations();
+    }
 }
 
 function renderTimelineEntries(entries) {
@@ -390,7 +500,7 @@ function renderTimelineEntries(entries) {
 }
 
 async function loadDirectors() {
-    const DIRECTOR_QUERY = `*[_type == "director"] | order(_createdAt asc) { name, role, image }`;
+    const DIRECTOR_QUERY = `*[_type == "director"] | order(_createdAt asc) { name, role, image, bio, description, email, phone }`;
 
     try {
         const directors = await client.fetch(DIRECTOR_QUERY);

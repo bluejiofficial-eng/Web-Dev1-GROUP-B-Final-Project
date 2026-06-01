@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="about-page">
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -60,25 +60,27 @@
     <main>
         <section class="hero-section">
             <div class="hero-slide bod-hero">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
-                    <h1>Board of Directors & Officers</h1>
+                    <h1>Board of Directors</h1>
                     <p>Meet the cooperative leaders guiding TerraLink through transparent governance and member-first service.</p>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="leader-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Meet the Leadership Team</h2>
-                    <p>Our directors and officers work together to protect member interests and strengthen cooperative growth.</p>
+                <div class="section-header about-reveal">
+                    <h2>Board of Directors</h2>
+                    <p>Hover over a profile to highlight, then click to view biography and contact details. Leadership data is loaded from Sanity CMS.</p>
                 </div>
-                <div class="grid-3" id="directors-container">
-                    <article class="highlight-card">
-                        <div class="director-avatar">TL</div>
-                        <h3>Loading leadership...</h3>
-                        <p class="director-role">Please wait while profiles are loaded from Sanity.</p>
+                <div id="directors-container" class="leader-grid">
+                    <article class="leader-card" aria-busy="true">
+                        <div class="leader-card__media leader-card__media--initials">TL</div>
+                        <div class="leader-card__info">
+                            <h3 class="leader-card__name">Loading leadership...</h3>
+                            <p class="leader-card__role">Please wait while profiles load.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -138,5 +140,6 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
 </body>
 </html>
