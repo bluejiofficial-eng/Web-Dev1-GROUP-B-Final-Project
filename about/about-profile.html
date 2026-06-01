@@ -8,8 +8,8 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
-    <!-- NAVBAR  -->
+<body class="about-page">
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -41,10 +41,10 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
                 </div>
                 <div class="dropdown">
                     <a href="../news.html" class="nav-link">News</a>
@@ -66,7 +66,7 @@
     <main>
         <section class="hero-section">
             <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80');">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
                     <h1>Company Profile</h1>
                     <p>Rooted in shared ownership, trusted financial services, and sustainable community growth.</p>
@@ -74,50 +74,77 @@
             </div>
         </section>
 
-        <section class="news-section">
+        <section class="profile-intro">
+            <div class="container profile-intro__grid">
+                <div class="profile-intro__media about-reveal" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80');" role="img" aria-label="TerraLink cooperative team meeting"></div>
+                <div class="profile-intro__content about-reveal">
+                    <span class="badge">Who We Are</span>
+                    <h2>A Member-Owned Cooperative Built on Trust</h2>
+                    <p>TerraLink Cooperative delivers community banking, savings and loan programs, and member services designed for long-term financial wellness.</p>
+                    <p>Founded on democratic ownership, we put members at the center of every decision—from dividend policies to outreach programs that strengthen local livelihoods.</p>
+                    <div class="profile-intro__tags">
+                        <span class="profile-tag">Member-Owned</span>
+                        <span class="profile-tag">Transparent Governance</span>
+                        <span class="profile-tag">Community Growth</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-stats">
+            <div class="container profile-stats__grid" data-reveal-stagger>
+                <div class="profile-stat about-reveal">
+                    <strong data-count="15" data-suffix="+">0</strong>
+                    <span>Years of Cooperative Service</span>
+                </div>
+                <div class="profile-stat about-reveal">
+                    <strong data-count="2400" data-suffix="+">0</strong>
+                    <span>Active Member-Owners</span>
+                </div>
+                <div class="profile-stat about-reveal">
+                    <strong data-count="12">0</strong>
+                    <span>Community Programs Annually</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-vision">
             <div class="container">
-                <div class="grid-4">
-                    <article class="news-card">
-                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80');"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Community Banking</span>
-                            <h4>Member-Owned Growth</h4>
-                            <p>TerraLink connects cooperative banking, shared ownership, and community-centered service for every member.</p>
-                        </div>
-                    </article>
-                    <article class="service-box">
+                <div class="profile-vision__card about-reveal">
+                    <div class="profile-vision__icon" aria-hidden="true">V</div>
+                    <div>
                         <span class="badge">Our Vision</span>
                         <h2>Guided by Cooperative Purpose</h2>
                         <div id="company-vision-text">
                             <p>Loading TerraLink vision from Sanity...</p>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="profile-values">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header about-reveal">
                     <h2>Our Core Values</h2>
-                    <p>The values that guide TerraLink Cooperative in serving members and strengthening communities.</p>
+                    <p>The principles that shape how TerraLink serves members, partners, and the wider community.</p>
                 </div>
-                <div class="grid-3">
-                    <div class="highlight-card">
-                        <div class="icon-box">✓</div>
+                <div class="profile-values__grid" data-reveal-stagger>
+                    <article class="profile-value-card about-reveal">
+                        <div class="value-num">01</div>
                         <h3>Integrity</h3>
-                        <p>We build trust through transparent governance, responsible decisions, and honest member service.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">◆</div>
+                        <p>We build trust through transparent governance, responsible decisions, and honest member service at every branch and program.</p>
+                    </article>
+                    <article class="profile-value-card about-reveal">
+                        <div class="value-num">02</div>
                         <h3>Solidarity</h3>
-                        <p>We grow together by supporting members, local partners, and the wider cooperative community.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">★</div>
+                        <p>We grow together by supporting members, local producers, and civic partners who share our commitment to shared prosperity.</p>
+                    </article>
+                    <article class="profile-value-card about-reveal">
+                        <div class="value-num">03</div>
                         <h3>Service</h3>
-                        <p>We deliver practical financial solutions with care, accessibility, and long-term member welfare in mind.</p>
-                    </div>
+                        <p>We deliver practical financial solutions with care, accessibility, and long-term member welfare as our highest priority.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -141,8 +168,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -176,5 +203,6 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
 </body>
 </html>

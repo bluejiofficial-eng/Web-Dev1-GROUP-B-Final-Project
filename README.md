@@ -24,18 +24,25 @@
  │    ├── support-helpdesk.html
  │    ├── support-application.html
  │    └── support-calculator.html
+ ├── 📁 investments/
+ │    ├── investments.html
+ │    ├── investments.css
+ │    └── investments.js
+ ├── 📁 coop/
+ │    ├── coopmart.html
+ │    ├── coopmart-fresh-produce.html
+ │    ├── coopmart-local-staples.html
+ │    └── coopmart-eco-goods.html
  ├── 📁 js/
  │    └── main.js
  ├── index.html
  ├── membership.html
- ├── investments.html
- ├── coopmart.html
  ├── style.css
  └── README.md
 ```
 
-> **Note:** Files inside `about/`, `loans/`, and `support/` folders use `../` prefix for all paths.
-> Files in the root folder (`membership.html`, `investments.html`, `coopmart.html`) use normal paths.
+> **Note:** Files inside `about/`, `loans/`, `support/`, `investments/`, and `coop/` folders use `../` prefix for all paths.
+> Files in the root folder (`index.html`, `membership.html`) use normal paths.
 
 ---
 
@@ -56,7 +63,7 @@ For each page in the assigned section, automatically create the corresponding HT
 <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 ```
 
-**For files in the root folder (`membership.html`, `investments.html`, `coopmart.html`):**
+**For files in the root folder (`index.html`, `membership.html`):**
 ```html
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
@@ -100,10 +107,10 @@ For each page in the assigned section, automatically create the corresponding HT
                 </div>
             </div>
             <div class="dropdown">
-                <a href="../investments.html" class="nav-link">Investments</a>
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
             </div>
             <div class="dropdown">
-                <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
             </div>
             <div class="dropdown">
                 <a href="../news.html" class="nav-link">News</a>
@@ -121,7 +128,7 @@ For each page in the assigned section, automatically create the corresponding HT
 </header>
 ```
 
-**For files in the root folder (`membership.html`, `investments.html`, `coopmart.html`):**
+**For files in the root folder (`index.html`, `membership.html`):**
 ```html
 <header class="navbar">
     <div class="container nav-container">
@@ -154,10 +161,10 @@ For each page in the assigned section, automatically create the corresponding HT
                 </div>
             </div>
             <div class="dropdown">
-                <a href="investments.html" class="nav-link">Investments</a>
+                <a href="investments/investments.html" class="nav-link">Investments</a>
             </div>
             <div class="dropdown">
-                <a href="coopmart.html" class="nav-link">CoopMart</a>
+                <a href="coop/coopmart.html" class="nav-link">CoopMart</a>
             </div>
             <div class="dropdown">
                 <a href="news.html" class="nav-link">News</a>
@@ -198,8 +205,8 @@ For each page in the assigned section, automatically create the corresponding HT
         <div class="footer-links">
             <h5>Services</h5>
             <ul>
-                <li><a href="investments.html">Investment Dividends</a></li>
-                <li><a href="coopmart.html">CoopMart Stores</a></li>
+                <li><a href="investments/investments.html">Investment Dividends</a></li>
+                <li><a href="coop/coopmart.html">CoopMart Stores</a></li>
                 <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
                 <li><a href="support/support-application.html">Online Membership</a></li>
             </ul>
@@ -309,7 +316,7 @@ const urlFor = (source) => builder.image(source);
 | `about-officers.html` | `director` | `*[_type == "director"]` |
 | `loans-regular.html` | `loan` | `*[_type == "loan" && loanCategory == "regular"]` |
 | `loans-special.html` | `loan` | `*[_type == "loan" && loanCategory == "special"]` |
-| `coopmart.html` | `hero` | `*[_type == "hero" && title match "Cooperative Mart"][0]` |
+| `coop/coopmart.html` | `hero` | `*[_type == "hero" && title match "Cooperative Mart"][0]` |
 
 **Available fields per document type:**
 
@@ -347,8 +354,8 @@ Below is the full page directory. **Only change the `Assigned pages` field** to 
 | About Us | `about/` | `about-profile.html`, `about-history.html`, `about-bod.html`, `about-officers.html`, `about-awards.html`, `about-gallery.html` |
 | Membership | root | `membership.html` |
 | Loans | `loans/` | `loans-regular.html`, `loans-special.html` |
-| Investments | root | `investments.html` |
-| CoopMart | root | `coopmart.html` |
+| Investments | investments | `investments/investments.html` |
+| CoopMart | coop | `coop/coopmart.html` |
 | Support | `support/` | `support-helpdesk.html`, `support-application.html`, `support-calculator.html` |
 
 ```
@@ -371,10 +378,10 @@ Assigned pages: [e.g., About Us / Loans / Support]
 | About Us - Awards and Distinction | `about/` | `about-awards.html` |
 | About Us - Event Gallery | `about/` | `about-gallery.html` |
 | Membership | root | `membership.html` |
-| Investments | root | `investments.html` |
+| Investments | investments | `investments/investments.html` |
 | Loans - Regular Loan | `loans/` | `loans-regular.html` |
 | Loans - Special Loan | `loans/` | `loans-special.html` |
-| CoopMart | root | `coopmart.html` |
+| CoopMart | coop | `coop/coopmart.html` |
 | Support - Help Desk | `support/` | `support-helpdesk.html` |
 | Support - Online Membership Application | `support/` | `support-application.html` |
 | Support - Loan Calculator | `support/` | `support-calculator.html` |

@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="about-page">
 <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
@@ -41,10 +41,10 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
                 </div>
                 <div class="dropdown">
                     <a href="../news.html" class="nav-link">News</a>
@@ -63,10 +63,11 @@
 
 
 
+
     <main>
         <section class="hero-section">
             <div class="hero-slide officers-hero">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
                     <h1>Corporate Officers</h1>
                     <p>Meet the operational team supporting TerraLink's member services, cooperative programs, and daily management.</p>
@@ -74,17 +75,19 @@
             </div>
         </section>
 
-        <section class="news-section">
+        <section class="leader-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Corporate Team</h2>
-                    <p>These officers help turn cooperative goals into reliable service, accountable operations, and meaningful member support.</p>
+                <div class="section-header about-reveal">
+                    <h2>Corporate Officers</h2>
+                    <p>Hover over a profile to highlight, then click to view biography and contact details. Officer data is loaded from Sanity CMS.</p>
                 </div>
-                <div class="grid-4" id="officers-container">
-                    <article class="service-box">
-                        <div class="service-icon">🧑‍💼</div>
-                        <h4>Loading corporate team...</h4>
-                        <p>Please wait while officer profiles are loaded from Sanity.</p>
+                <div id="officers-container" class="leader-grid">
+                    <article class="leader-card" aria-busy="true">
+                        <div class="leader-card__media leader-card__media--initials">TL</div>
+                        <div class="leader-card__info">
+                            <h3 class="leader-card__name">Loading corporate team...</h3>
+                            <p class="leader-card__role">Please wait while profiles load.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -109,8 +112,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -144,5 +147,6 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
 </body>
 </html>

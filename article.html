@@ -43,10 +43,10 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="investments.html" class="nav-link">Investments</a>
+                    <a href="investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="coop/coopmart.html" class="nav-link">CoopMart</a>
                 </div>
                 <div class="dropdown">
                     <a href="news.html" class="nav-link">News</a>
@@ -92,8 +92,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="investments.html">Investment Dividends</a></li>
-                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -112,7 +112,20 @@
         </div>
     </footer>
 
-    <!-- Main Scripts -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
