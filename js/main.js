@@ -28,112 +28,112 @@ const urlFor = (source) => (builder ? builder.image(source) : null);
 // ============================================================
 const STATIC_NEWS = [
     {
-        tag: "Financial",
+        tags: ["Financial", "Report", "Q2"],
         title: "Q2 Financial Performance Report",
         body: "Our Q2 financial results show a 15% increase in total assets, driven by strong member deposits and successful loan deployments. View the full report online.",
         date: "June 10, 2026",
         img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Loans",
+        tags: ["Loans", "Solar", "Sustainability"],
         title: "New Solar Loan Initiative",
         body: "To support sustainable living, TerraLink introduces the Solar Home Loan. Enjoy special low rates for installing solar panels in your residence.",
         date: "June 5, 2026",
         img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "CoopMart",
+        tags: ["CoopMart", "Local", "Events"],
         title: "CoopMart Local Artisan Fair",
         body: "Join us this weekend as CoopMart hosts a local artisan fair. Support community makers and discover unique handcrafted products.",
         date: "June 1, 2026",
         img: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Community",
+        tags: ["Community", "Education", "Youth"],
         title: "Youth Financial Literacy Workshop",
         body: "Empowering the next generation! Enroll your children in our upcoming free financial literacy workshop designed for teens and young adults.",
         date: "May 30, 2026",
         img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Membership",
+        tags: ["Membership", "Health", "Partnership"],
         title: "Expanded Health Insurance Options",
         body: "We have partnered with leading healthcare providers to offer exclusive health insurance packages at discounted rates for all regular members.",
         date: "May 25, 2026",
         img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Announcement",
+        tags: ["Announcement", "Assembly", "Voting"],
         title: "Annual General Assembly 2026",
         body: "Join us this coming month for our democratic voting session, financial transparency review, and new policy ratification updates. All members are encouraged to attend and participate in the decision-making process that shapes our cooperative's future.",
         date: "May 22, 2026",
         img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "CoopMart",
+        tags: ["CoopMart", "Organic", "Agriculture"],
         title: "New Organic Supply in CoopMart",
         body: "We are expanding our local farm supply chains! Enjoy fresh, direct-from-farm organic goods at all storefront branches starting this weekend. Products include seasonal vegetables, root crops, and certified organic rice from our partner farms.",
         date: "May 18, 2026",
         img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Announcement",
+        tags: ["Announcement", "Digital", "App"],
         title: "Digital Banking App Update",
         body: "Our mobile app just got better! The latest update includes instant fund transfers, a unified dashboard, and enhanced security features.",
         date: "May 15, 2026",
         img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Community",
+        tags: ["Community", "Grant", "Farming"],
         title: "Agricultural Support Grant",
         body: "TerraLink has allocated a special grant to assist local partner farmers in upgrading their irrigation systems ahead of the dry season.",
         date: "May 12, 2026",
         img: "https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c1b?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Financial",
+        tags: ["Financial", "Rates", "Policy"],
         title: "Interest Rate Adjustment Notification",
         body: "In alignment with standard central banking indicators, we have optimized our investment dividend payouts to offer stable returns. Members with active time deposits will receive updated passbooks at the nearest branch within the month.",
         date: "May 10, 2026",
         img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Financial",
+        tags: ["Financial", "Dividends", "Investment"],
         title: "Investment Dividend Distribution",
         body: "Good news for our investors! The semi-annual dividend distribution for Growth Investment Plans has been processed and credited to member accounts.",
         date: "May 8, 2026",
         img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Membership",
+        tags: ["Membership", "Onboarding", "Batch"],
         title: "New Member Onboarding — Batch 2026",
         body: "We are now accepting new member applications for the second batch of 2026. Applicants must submit valid government-issued ID, two 2x2 photos, and a duly accomplished membership form. Processing time is 3–5 business days.",
         date: "May 5, 2026",
         img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "CoopMart",
+        tags: ["CoopMart", "Eco-friendly", "Campaign"],
         title: "CoopMart Zero-Waste Campaign",
         body: "As part of our eco-drive, CoopMart is implementing a bring-your-own-bag policy. Members using reusable bags will receive bonus loyalty points.",
         date: "May 2, 2026",
         img: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Loans",
+        tags: ["Loans", "Relief", "Calamity"],
         title: "Special Loan Program for Calamity Victims",
         body: "TerraLink Cooperative is extending a zero-interest emergency loan program for members affected by recent calamities. Eligible members may apply for up to ₱20,000 with a 12-month repayment period. Applications are open until June 30, 2026.",
         date: "April 28, 2026",
         img: "https://images.unsplash.com/photo-1604594849809-dfedbc827105?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Announcement",
+        tags: ["Announcement", "Meeting", "Townhall"],
         title: "Member Townhall Meeting Schedule",
         body: "Have your voice heard. We are scheduling virtual townhall meetings next month to discuss upcoming cooperative policies and new product developments.",
         date: "April 20, 2026",
         img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tag: "Community",
+        tags: ["Community", "Environment", "Volunteer"],
         title: "TerraLink Eco-Drive: Tree Planting Event",
         body: "As part of our commitment to sustainable community growth, TerraLink Cooperative will be hosting a tree planting event this June. Members, officers, and volunteers are welcome to join. Registration is free and open to all member families.",
         date: "April 15, 2026",
@@ -151,7 +151,7 @@ const STATIC_NEWS = [
 let currentNewsPage = 1;
 const NEWS_PER_PAGE = 6;
 
-function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
+function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-desc', page = 1) {
     const container = document.getElementById('news-container');
     if (!container) return;
     container.innerHTML = '';
@@ -166,11 +166,19 @@ function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
     // 검색 필터 적용
     if (searchTerm) {
         const lowerTerm = searchTerm.toLowerCase();
-        filteredNews = filteredNews.filter(article => 
-            article.title.toLowerCase().includes(lowerTerm) || 
-            article.body.toLowerCase().includes(lowerTerm) ||
-            article.tag.toLowerCase().includes(lowerTerm)
-        );
+        filteredNews = filteredNews.filter(article => {
+            if (searchType === 'title') {
+                return article.title.toLowerCase().includes(lowerTerm);
+            } else if (searchType === 'body') {
+                return article.body.toLowerCase().includes(lowerTerm);
+            } else if (searchType === 'tag') {
+                    return article.tags.some(tag => tag.toLowerCase().includes(lowerTerm));
+            } else {
+                return article.title.toLowerCase().includes(lowerTerm) || 
+                       article.body.toLowerCase().includes(lowerTerm) ||
+                           article.tags.some(tag => tag.toLowerCase().includes(lowerTerm));
+            }
+        });
     }
 
     // 메인 페이지(index.html)도 항상 최신순 정렬을 적용하기 위해 조건문 밖으로 이동
@@ -214,10 +222,13 @@ function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
     paginatedNews.forEach((article) => {
         const card = document.createElement('article');
         card.className = 'news-card';
+
+            const tagsHtml = article.tags.map(t => `<span class="news-tag" style="margin-bottom: 0;">${t}</span>`).join('');
+
         card.innerHTML = `
             <div class="news-img" style="background-image: url('${article.img}');"></div>
             <div class="news-body">
-                <span class="news-tag">${article.tag}</span>
+                    <div style="margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px;">${tagsHtml}</div>
                 <h4>${article.title}</h4>
                 <p>${article.body}</p>
                 <span class="news-date">${article.date}</span>
@@ -240,7 +251,7 @@ function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
             prevBtn.style.padding = '8px 16px';
             prevBtn.disabled = currentNewsPage === 1;
             if (!prevBtn.disabled) {
-                prevBtn.addEventListener('click', () => renderStaticNews(searchTerm, sortBy, currentNewsPage - 1));
+                prevBtn.addEventListener('click', () => renderStaticNews(searchTerm, searchType, sortBy, currentNewsPage - 1));
             } else {
                 prevBtn.style.opacity = '0.5';
                 prevBtn.style.cursor = 'not-allowed';
@@ -255,7 +266,7 @@ function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
                 btn.style.padding = '8px 16px';
                 btn.style.minWidth = '40px';
                 btn.addEventListener('click', () => {
-                    renderStaticNews(searchTerm, sortBy, i);
+                    renderStaticNews(searchTerm, searchType, sortBy, i);
                     document.querySelector('.news-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
                 paginationContainer.appendChild(btn);
@@ -268,7 +279,7 @@ function renderStaticNews(searchTerm = '', sortBy = 'date-desc', page = 1) {
             nextBtn.style.padding = '8px 16px';
             nextBtn.disabled = currentNewsPage === totalPages;
             if (!nextBtn.disabled) {
-                nextBtn.addEventListener('click', () => renderStaticNews(searchTerm, sortBy, currentNewsPage + 1));
+                nextBtn.addEventListener('click', () => renderStaticNews(searchTerm, searchType, sortBy, currentNewsPage + 1));
             } else {
                 nextBtn.style.opacity = '0.5';
                 nextBtn.style.cursor = 'not-allowed';
@@ -294,9 +305,13 @@ function renderNewsDetail() {
         const hasPrev = currentIndex > 0;
         const hasNext = currentIndex < STATIC_NEWS.length - 1;
 
+        const tagsHtml = article.tags.map(t => `<span class="news-tag" style="margin-bottom: 0; font-size: 0.9rem; padding: 6px 14px;">${t}</span>`).join('');
+
         detailContainer.innerHTML = `
             <div class="news-detail-header" style="max-width: 800px; margin: 0 auto 30px; text-align: center;">
-                <span class="news-tag" style="margin-bottom: 15px; font-size: 0.9rem; padding: 6px 14px;">${article.tag}</span>
+                <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+                    ${tagsHtml}
+                </div>
                 <h1 style="margin-bottom: 15px; font-size: 2.5rem; color: #1b3d22;">${article.title}</h1>
                 <span class="news-date" style="color: #666; font-size: 1rem;">${article.date}</span>
             </div>
@@ -678,18 +693,22 @@ async function loadCoopVision() {
 window.addEventListener('DOMContentLoaded', () => {
     // Search & Sort Elements for news.html
     const searchInput = document.getElementById('news-search');
+    const searchType = document.getElementById('news-search-type');
     const sortSelect = document.getElementById('news-sort');
 
     if (searchInput && sortSelect) {
-        // news.html: 현재 드롭다운 세팅(기본 최신순)에 맞춰 초기 렌더링 적용
-        renderStaticNews(searchInput.value, sortSelect.value, 1);
+        const getSearchType = () => searchType ? searchType.value : 'all';
         
-        const updateNews = () => renderStaticNews(searchInput.value, sortSelect.value, 1);
+        // news.html: 현재 드롭다운 세팅(기본 최신순)에 맞춰 초기 렌더링 적용
+        renderStaticNews(searchInput.value, getSearchType(), sortSelect.value, 1);
+        
+        const updateNews = () => renderStaticNews(searchInput.value, getSearchType(), sortSelect.value, 1);
         searchInput.addEventListener('input', updateNews);
+        if (searchType) searchType.addEventListener('change', updateNews);
         sortSelect.addEventListener('change', updateNews);
     } else {
         // index.html: 무조건 가장 최신순(date-desc)으로 렌더링하여 최신 뉴스 3개 보장
-        renderStaticNews('', 'date-desc', 1);
+        renderStaticNews('', 'all', 'date-desc', 1);
     }
 
     renderNewsDetail();
