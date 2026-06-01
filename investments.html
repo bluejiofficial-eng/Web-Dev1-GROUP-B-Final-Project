@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Investments</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        #investments-hero .section-header {
+            margin-bottom: 24px;
+        }
+
+        #investments-hero .section-header p,
+        #investment-cta .section-header p {
+            margin: 8px auto 8px auto;
+        }
+
+        #investment-reminder-group {
+            padding-bottom: 44px;
+        }
+
+        #investment-reminder-group .section-header {
+            margin-bottom: 1px;
+        }
+
+        #investment-reminder-group .section-header:last-child {
+            margin-bottom: 0;
+        }
+
+        #member-reminder-box p {
+            margin: 8px auto 0 auto;
+        }
+
+        #investment-cta {
+            padding: 42px 0;
+            margin-bottom: 0;
+        }
+
+        #investment-cta .section-header {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about/about-profile.html">Company Profile</a>
+                        <a href="about/about-history.html">History & Timeline</a>
+                        <a href="about/about-bod.html">BOD & Officers</a>
+                        <a href="about/about-officers.html">Corporate Officers</a>
+                        <a href="about/about-awards.html">Awards & Distinction</a>
+                        <a href="about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="loans/loans-regular.html">Regular Loan</a>
+                        <a href="loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support/support-calculator.html">Loan Calculator</a>
+                        <a href="support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- INVESTMENTS HERO / BANNER -->
+        <section class="highlights-section" id="investments-hero">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Investment Opportunities</span>
+                    <h1>Grow Your Future with TerraLink Investments</h1>
+                    <p>Build long-term financial security through safe, member-centered investment opportunities designed for cooperative members and future investors.</p>
+                    <a href="#investment-options" class="btn btn-primary">View Investment Options</a>
+                    <a href="membership.html" class="btn btn-secondary">Apply for Membership</a>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <span class="badge">Secure Cooperative Plans</span>
+                        <h3>Trusted Investment Support</h3>
+                        <p>Plans are guided by cooperative values and responsible member-focused service.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="badge">Flexible Terms</span>
+                        <h3>Options That Fit Your Goals</h3>
+                        <p>Members can choose investment opportunities that match their savings timeline.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="badge">Member-Focused Growth</span>
+                        <h3>Growth With Shared Purpose</h3>
+                        <p>Investment participation supports personal goals and cooperative development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTMENT OPTIONS SECTION -->
+        <section class="services-section" id="investment-options">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Investment Options</h2>
+                    <p>Choose from flexible cooperative investment plans designed to help members save, grow, and participate in shared financial success.</p>
+                </div>
+                <div class="grid-4">
+                    <article class="service-box">
+                        <div class="service-icon">&#8369;</div>
+                        <h4>Savings Investment Plan</h4>
+                        <p>A simple and accessible investment option for members who want steady savings growth while keeping funds manageable.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;1,000</p>
+                        <p><strong>Term:</strong> Flexible</p>
+                        <p><strong>Benefit:</strong> Ideal for beginners and regular savers.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">TD</div>
+                        <h4>Time Deposit Investment</h4>
+                        <p>A fixed-term investment option that allows members to earn better returns by keeping funds deposited for a chosen period.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;5,000</p>
+                        <p><strong>Term:</strong> 6 to 12 months</p>
+                        <p><strong>Benefit:</strong> Better earning potential with secure placement.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">SC</div>
+                        <h4>Cooperative Share Capital</h4>
+                        <p>An ownership-based investment where members contribute capital and may receive dividends based on cooperative performance.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;2,000</p>
+                        <p><strong>Term:</strong> Long-term membership</p>
+                        <p><strong>Benefit:</strong> Builds member ownership and cooperative participation.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                    <article class="service-box">
+                        <div class="service-icon">GP</div>
+                        <h4>Growth Investment Plan</h4>
+                        <p>A goal-oriented investment option for members who want to prepare for future needs such as education, business, or family plans.</p>
+                        <p><strong>Minimum Investment:</strong> &#8369;3,000</p>
+                        <p><strong>Term:</strong> 12 months or more</p>
+                        <p><strong>Benefit:</strong> Supports long-term financial planning.</p>
+                        <a href="support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY INVEST WITH TERRALINK SECTION -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Invest With TerraLink?</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <div class="icon-box">01</div>
+                        <h3>Community-Based Growth</h3>
+                        <p>Every investment supports cooperative growth while helping members access better financial opportunities.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">02</div>
+                        <h3>Transparent Cooperative Management</h3>
+                        <p>TerraLink values responsible handling of member funds, clear policies, and cooperative accountability.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">03</div>
+                        <h3>Member-Centered Opportunities</h3>
+                        <p>Investment options are designed around members' needs, goals, and long-term financial security.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMBER REMINDER AND RESPONSIBLE INVESTING SECTION -->
+        <section class="services-section" id="investment-reminder-group">
+            <div class="container">
+                <div class="section-header" id="member-reminder-box">
+                    <span class="badge">Member Reminder</span>
+
+                </div>
+                <div class="section-header">
+                    <h2>Invest Responsibly</h2>
+                    <p>Investment returns may vary depending on cooperative performance, selected plans, and approved terms. Members are encouraged to review all requirements and investment details before participating.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CALL-TO-ACTION SECTION -->
+        <section class="highlights-section" id="investment-cta">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Start Building Your Financial Future Today</h2>
+                    <p>Join TerraLink Cooperative and explore investment opportunities designed to help members save, grow, and participate in shared success.</p>
+                    <a href="membership.html" class="btn btn-primary">Apply for Membership</a>
+                    <a href="support/support-helpdesk.html" class="btn btn-secondary">Contact Support</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hamburger Menu Toggle -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navMenu.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
