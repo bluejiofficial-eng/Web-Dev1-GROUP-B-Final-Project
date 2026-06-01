@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | CoopMart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body class="coopmart-page">
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about/about-profile.html">Company Profile</a>
+                        <a href="about/about-history.html">History & Timeline</a>
+                        <a href="about/about-bod.html">BOD & Officers</a>
+                        <a href="about/about-officers.html">Corporate Officers</a>
+                        <a href="about/about-awards.html">Awards & Distinction</a>
+                        <a href="about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown"><a href="membership.html" class="nav-link">Membership</a></div>
+                <div class="dropdown"><a href="loans/loans-regular.html" class="nav-link">Loans</a></div>
+                <div class="dropdown"><a href="investments.html" class="nav-link">Investments</a></div>
+                <div class="dropdown"><a href="coopmart.html" class="nav-link">CoopMart</a></div>
+                <div class="dropdown"><a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="support/support-calculator.html">Loan Calculator</a>
+                        <a href="support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="background-flash" aria-hidden="true"></div>
+
+    <section class="hero-section coopmart-hero">
+        <div class="hero-slide" style="background-image: url('Images/CoopMartBanner.png');">
+            <div class="container hero-content">
+                <span class="badge">CoopMart Marketplace</span>
+                <h1>Fresh products, cooperative values</h1>
+                <p>Enjoy curated member savings and locally sourced essentials in a premium shopping experience.</p>
+                <div class="hero-buttons">
+                    <a href="#featured-items" class="btn btn-primary">Browse Featured Items</a>
+                    <a href="membership.html" class="btn btn-secondary">Join TerraLink</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section-header">
+            <h1>CoopMart</h1>
+            <p>Local, organic, member-first retail — products from partner farms and community producers.</p>
+        </section>
+
+        <section class="coopmart-intro">
+            <div class="grid-3">
+                <a href="coopmart-fresh-produce.html" class="service-box">
+                    <div class="service-icon" aria-hidden="true">🌾</div>
+                    <h4>Fresh Produce</h4>
+                    <p>Seasonal vegetables and fruits sourced directly from our partner farms.</p>
+                </a>
+                <a href="coopmart-local-staples.html" class="service-box">
+                    <div class="service-icon" aria-hidden="true">🍚</div>
+                    <h4>Local Staples</h4>
+                    <p>Certified rice, grains, and household essentials at cooperative pricing.</p>
+                </a>
+                <a href="coopmart-eco-goods.html" class="service-box">
+                    <div class="service-icon" aria-hidden="true">🧴</div>
+                    <h4>Eco Goods</h4>
+                    <p>Sustainable toiletries, cleaning items, and zero-waste alternatives.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="products-list" id="featured-items">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Selected items with member pricing. We prefer Sanity-managed data when available.</p>
+            </div>
+            <div class="products-grid grid-4" aria-live="polite">
+                <!-- Product cards rendered here. Static fallbacks below will be replaced when Sanity returns results. -->
+                <article class="product-card">
+                    <div class="product-img product-img-1" role="img" aria-label="Organic Vegetables Box"></div>
+                    <h4>Organic Vegetables Box</h4>
+                    <p class="price">Member price: ₱250</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-2" role="img" aria-label="Local Rice 5kg"></div>
+                    <h4>Local Rice (5kg)</h4>
+                    <p class="price">Member price: ₱400</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-3" role="img" aria-label="Handmade Soap Set"></div>
+                    <h4>Handmade Soap Set</h4>
+                    <p class="price">Member price: ₱120</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-4" role="img" aria-label="Compost Starter Kit"></div>
+                    <h4>Compost Starter Kit</h4>
+                    <p class="price">Member price: ₱350</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Category Sections merged from subpages -->
+        <section class="category-section" id="fresh-produce">
+            <div class="section-header">
+                <h2>Fresh Produce</h2>
+                <p>Market-fresh produce made for members — locally grown bundles and seasonal picks.</p>
+            </div>
+            <div class="products-grid grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-5" role="img" aria-label="Seasonal Vegetable Basket"></div>
+                    <h4>Seasonal Vegetable Basket</h4>
+                    <p class="price">Member price: ₱280</p>
+                    <p class="product-specs">Specs: 5–6 varieties, organic greens, ready for meal prep.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-6" role="img" aria-label="Organic Fruit Pack"></div>
+                    <h4>Organic Fruit Pack</h4>
+                    <p class="price">Member price: ₱320</p>
+                    <p class="product-specs">Specs: mixed fruits, pesticide-free, 6 pieces per pack.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-7" role="img" aria-label="Herb Garden Bundle"></div>
+                    <h4>Herb Garden Bundle</h4>
+                    <p class="price">Member price: ₱180</p>
+                    <p class="product-specs">Specs: basil, cilantro, mint; fresh-cut herbs in one bundle.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="category-section" id="local-staples">
+            <div class="section-header">
+                <h2>Local Staples</h2>
+                <p>Everyday essentials sourced from trusted partners at cooperative pricing.</p>
+            </div>
+            <div class="products-grid grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-6" role="img" aria-label="Premium Rice 5kg"></div>
+                    <h4>Premium Rice 5kg</h4>
+                    <p class="price">Member price: ₱420</p>
+                    <p class="product-specs">Specs: heirloom grain, premium milling, aroma-rich.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-7" role="img" aria-label="Virgin Coconut Oil"></div>
+                    <h4>Virgin Coconut Oil</h4>
+                    <p class="price">Member price: ₱260</p>
+                    <p class="product-specs">Specs: cold-pressed, unrefined, 1-liter bottle.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-8" role="img" aria-label="Cassava Flour"></div>
+                    <h4>Cassava Flour</h4>
+                    <p class="price">Member price: ₱150</p>
+                    <p class="product-specs">Specs: gluten-free, 500g pack, versatile for baking.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="category-section" id="eco-goods">
+            <div class="section-header">
+                <h2>Eco Goods</h2>
+                <p>Earth-friendly essentials: toiletries, reusable items, and zero-waste alternatives.</p>
+            </div>
+            <div class="products-grid grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-3" role="img" aria-label="Handmade Soap Set"></div>
+                    <h4>Handmade Soap Set</h4>
+                    <p class="price">Member price: ₱120</p>
+                    <p class="product-specs">Specs: 4 natural bars, aromatic herbs, plastic-free packaging.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-8" role="img" aria-label="Bamboo Toothbrush Pack"></div>
+                    <h4>Bamboo Toothbrush Pack</h4>
+                    <p class="price">Member price: ₱95</p>
+                    <p class="product-specs">Specs: 4-brush set, biodegradable handles, soft bristles.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-9" role="img" aria-label="Reusable Produce Bags"></div>
+                    <h4>Reusable Produce Bags</h4>
+                    <p class="price">Member price: ₱140</p>
+                    <p class="product-specs">Specs: 5 mesh bags, washable cotton, lightweight.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-10" role="img" aria-label="Beeswax Wrap Set"></div>
+                    <h4>Beeswax Wrap Set</h4>
+                    <p class="price">Member price: ₱220</p>
+                    <p class="product-specs">Specs: 3 sizes, washable and reusable for food storage.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="membership.html">Membership Qualifications</a></li>
+                    <li><a href="loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // If Sanity UMD isn't available, leave the static fallbacks in place.
+                if (!globalThis.SanityClient || !globalThis.SanityImageUrlBuilder) return;
+
+                const client = globalThis.SanityClient.createClient({
+                    projectId: "ltk0qh4a",
+                    dataset: "production",
+                    apiVersion: "2024-01-01",
+                    useCdn: true,
+                });
+                const builder = globalThis.SanityImageUrlBuilder(client);
+                const urlFor = (source) => builder.image(source);
+
+                // Load hero data (CoopMart)
+                try {
+                    const data = await client.fetch(`*[_type == "hero" && title == "Cooperative Mart"][0]{ title, subtitle, ctaLabel, backgroundImage }`);
+                    if (data) {
+                        const heroSection = document.querySelector('.coopmart-hero');
+                        const heroSlide = heroSection?.querySelector('.hero-slide');
+                        const heroTitle = heroSection?.querySelector('h1');
+                        const heroSubtitle = heroSection?.querySelector('p');
+                        const heroPrimaryButton = heroSection?.querySelector('.btn-primary');
+
+                        if (heroSlide && data.backgroundImage) {
+                            heroSlide.style.backgroundImage = `url('${urlFor(data.backgroundImage).width(1920).height(1080).fit('crop').url()}')`;
+                        }
+                        if (heroTitle && data.title) heroTitle.textContent = data.title;
+                        if (heroSubtitle && data.subtitle) heroSubtitle.textContent = data.subtitle;
+                        if (heroPrimaryButton && data.ctaLabel) heroPrimaryButton.textContent = data.ctaLabel;
+                    }
+                } catch (err) {
+                    console.warn('No CoopMart hero data or fetch failed:', err);
+                }
+
+                // Load featured products (Sanity-managed). Fallback: keep static cards.
+                try {
+                    const products = await client.fetch(`*[_type == "product" && featured == true] | order(_createdAt desc)[0..7]{ title, price, mainImage, slug }`);
+                    const grid = document.querySelector('#featured-items .products-grid');
+                    if (grid && Array.isArray(products) && products.length > 0) {
+                        grid.innerHTML = '';
+                        products.forEach(p => {
+                            const card = document.createElement('article');
+                            card.className = 'product-card';
+
+                            const imgWrap = document.createElement('div');
+                            imgWrap.className = 'product-img';
+                            if (p.mainImage) {
+                                imgWrap.style.backgroundImage = `url('${urlFor(p.mainImage).width(800).height(600).fit('crop').url()}')`;
+                                imgWrap.setAttribute('role', 'img');
+                                imgWrap.setAttribute('aria-label', p.title || 'Product image');
+                            }
+
+                            const title = document.createElement('h4');
+                            title.textContent = p.title || 'Untitled';
+
+                            const price = document.createElement('p');
+                            price.className = 'price';
+                            price.textContent = p.price ? `Member price: ₱${p.price}` : 'Member price: —';
+
+                            card.appendChild(imgWrap);
+                            card.appendChild(title);
+                            card.appendChild(price);
+
+                            grid.appendChild(card);
+                        });
+                    }
+                } catch (err) {
+                    console.warn('Failed to load CoopMart products from Sanity:', err);
+                }
+            } catch (error) {
+                console.error('CoopMart initialization error:', error);
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

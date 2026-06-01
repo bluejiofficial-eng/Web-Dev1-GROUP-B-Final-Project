@@ -101,7 +101,7 @@ function openModal(article) {
     document.getElementById('modal-body-text').textContent = article.body;
     document.getElementById('modal-date').textContent  = article.date;
     document.getElementById('modal-overlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Disable background scrolling
 }
 
 function closeModal() {
@@ -116,6 +116,7 @@ function renderStaticNews() {
     const container = document.getElementById('news-container');
     if (!container) return;
     container.innerHTML = '';
+
     STATIC_NEWS.forEach((article) => {
         const card = document.createElement('article');
         card.className = 'news-card';
@@ -190,7 +191,7 @@ function buildCarousel(heroItems) {
     heroItems.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.className = `carousel-dot${i === 0 ? ' active' : ''}`;
-        dot.addEventListener('click', () => goToSlide(i));
+        dot.addEventListener('click', () => goToSlide(i)); 
         dots.appendChild(dot);
     });
 
@@ -278,13 +279,15 @@ function getHeroCtaHref(item) {
     return 'membership.html';
 }
 
+//index.html에 들어가 있지 않은 기능
+
 function getInitials(name) {
     if (typeof name !== 'string') return 'TL';
     const parts = name.trim().split(/\s+/).filter(Boolean);
     if (parts.length === 0) return 'TL';
 
     return parts
-        .slice(0, 2)
+        .slice(0, 2) 
         .map((part) => part.charAt(0).toUpperCase())
         .join('');
 }
@@ -412,20 +415,30 @@ async function loadTimeline() {
     }
 }
 
+
+
+
+
 // ============================================================
 // SANITY — Site Settings 
 // ============================================================
 async function loadSiteSettings() {
+ 
     const SETTINGS_QUERY = `*[_type == "siteSettings"][0]{ address, emails }`;
+ 
     try {
         const settings = await client.fetch(SETTINGS_QUERY);
+        
         if (settings) {
             const addressEl = document.getElementById('footer-address');
             const emailEl   = document.getElementById('footer-email');
+ 
             if (addressEl && settings.address)
                 addressEl.textContent = `📍 ${settings.address}`;
+ 
             if (emailEl && settings.emails && settings.emails.length > 0)
                 emailEl.textContent = `📧 ${settings.emails[0]}`;
+
         }
     } catch (err) {
         console.error("Failed to fetch Site Settings:", err);
@@ -436,11 +449,14 @@ async function loadSiteSettings() {
 // SANITY — About Us (Cooperative Live Vision Statement)
 // ============================================================
 async function loadCoopVision() {
+    
     const ABOUT_QUERY = `*[_type == "aboutUs"][0]{ vision }`;
+    
     try {
         const aboutData = await client.fetch(ABOUT_QUERY);
         
         let footerAboutEl = document.getElementById('footer-about-text');
+    
         if (!footerAboutEl) {
             footerAboutEl = document.querySelector('.footer-about p');
         }
@@ -453,6 +469,7 @@ async function loadCoopVision() {
             }
         }
 
+        // index.html 파일과 관계 없음
         const companyVisionEl = document.getElementById('company-vision-text');
         if (companyVisionEl) {
             if (aboutData && typeof aboutData.vision === 'string' && aboutData.vision.trim()) {
@@ -461,6 +478,7 @@ async function loadCoopVision() {
                 companyVisionEl.textContent = 'Loading TerraLink vision from Sanity...';
             }
         }
+        // 이 부분까지 관계 없음
     } catch (err) {
         console.error("Failed to fetch Cooperative Vision statement:", err);
     }

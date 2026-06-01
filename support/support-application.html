@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,82 +7,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
-    <style>
-        /* Form input styling */
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #1b3d22;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            background: #ffffff;
-            font-size: 0.95rem;
-            color: #2b2b2b;
-            box-sizing: border-box;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #23743B;
-            box-shadow: 0 0 0 3px rgba(35,116,59,0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-            line-height: 1.5;
-        }
-
-        /* Form card */
-        .form-card {
-            background: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 40px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-
-        .form-grid .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-card {
-                padding: 24px;
-            }
-        }
-    </style>
+    <!-- Per-page styles moved to style.css (.application-*, see SUPPORT section) -->
 </head>
 <body>
     <header class="navbar">
@@ -134,9 +59,8 @@
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero-section">
-            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-slide history-hero">
                 <div class="container hero-content">
                     <span class="badge">Support Center</span>
                     <h1>Online Membership Application</h1>
@@ -145,90 +69,89 @@
             </div>
         </section>
 
-        <!-- CHECKLIST -->
-        <section class="highlights-section">
+        <section class="news-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Application Checklist</h2>
                     <p>Use this quick guide before submitting your online membership application.</p>
                 </div>
-                <div class="grid-3">
-                    <div class="highlight-card">
-                        <div class="icon-box">✓</div>
+                <div class="grid-3 application-checklist-grid">
+                    <div class="service-box">
+                        <div class="service-icon">1</div>
                         <h3>Valid ID</h3>
                         <p>Prepare a government-issued ID and basic personal information for verification.</p>
                     </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">✎</div>
+                    <div class="service-box">
+                        <div class="service-icon">2</div>
                         <h3>Application Form</h3>
                         <p>Fill out the membership form completely and review all required details before submitting.</p>
                     </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">★</div>
-                        <h3>Photos & Records</h3>
+                    <div class="service-box">
+                        <div class="service-icon">3</div>
+                        <h3>Photos &amp; Records</h3>
                         <p>Have your recent photo and supporting documents ready for the review process.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- APPLICATION STEPS -->
-        <section class="services-section">
+        <section class="highlights-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Application Steps</h2>
                     <p>Follow these simple steps to complete the online application smoothly.</p>
                 </div>
-                <div class="grid-3">
-                    <div class="service-box">
-                        <div class="service-icon">1️⃣</div>
-                        <h4>Prepare Your Details</h4>
+                <div class="grid-3 application-steps-grid">
+                    <div class="highlight-card">
+                        <div class="icon-box">1</div>
+                        <h3>Prepare Your Details</h3>
                         <p>Gather your full name, email address, contact number, home address, and date of birth before starting the form.</p>
                     </div>
-                    <div class="service-box">
-                        <div class="service-icon">2️⃣</div>
-                        <h4>Review Your Information</h4>
+                    <div class="highlight-card">
+                        <div class="icon-box">2</div>
+                        <h3>Review Your Information</h3>
                         <p>Check every field carefully so the information matches your ID and other membership records.</p>
                     </div>
-                    <div class="service-box">
-                        <div class="service-icon">3️⃣</div>
-                        <h4>Submit for Review</h4>
+                    <div class="highlight-card">
+                        <div class="icon-box">3</div>
+                        <h3>Submit for Review</h3>
                         <p>After submission, the support team will verify your details and contact you if anything needs to be updated.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- FORM -->
-                <form id="membership-application-form">
-                    <div class="form-card">
-                        <div class="section-header" style="margin-bottom: 32px;">
-                            <h2>Membership Application Form</h2>
-                            <p>Fill out the form below to prepare your membership application for review.</p>
-                        </div>
-
-                        <div class="form-grid">
-                            <div class="form-group">
+        <section class="highlights-section application-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Membership Application Form</h2>
+                    <p>Fill out the form below to prepare your membership application for review.</p>
+                </div>
+                <form id="membership-application-form" class="application-form" novalidate>
+                    <div class="application-form-card">
+                        <div class="application-form-grid">
+                            <div class="application-form-group">
                                 <label for="full-name">Full Name</label>
                                 <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
                             </div>
-                            <div class="form-group">
+                            <div class="application-form-group">
                                 <label for="email-address">Email Address</label>
                                 <input type="email" id="email-address" name="email-address" placeholder="Enter your email">
                             </div>
-                            <div class="form-group">
+                            <div class="application-form-group">
                                 <label for="contact-number">Contact Number</label>
                                 <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number">
                             </div>
-                            <div class="form-group">
+                            <div class="application-form-group">
                                 <label for="date-of-birth">Date of Birth</label>
                                 <input type="date" id="date-of-birth" name="date-of-birth">
                             </div>
-                            <div class="form-group full-width">
+                            <div class="application-form-group full-width">
                                 <label for="home-address">Home Address</label>
                                 <textarea id="home-address" name="home-address" placeholder="Enter your home address"></textarea>
                             </div>
                         </div>
-
-                        <div class="form-actions">
+                        <div class="application-form-actions">
                             <button type="submit" class="btn btn-primary">Submit Application</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                         </div>
@@ -278,33 +201,39 @@
 
     <script>
         const hamburger = document.getElementById('hamburger');
-        const navMenu   = document.getElementById('nav-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const applicationForm = document.getElementById('membership-application-form');
+
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
             navMenu.classList.toggle('open');
         });
-        navMenu.querySelectorAll('a').forEach(link => {
+
+        navMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('open');
                 navMenu.classList.remove('open');
             });
         });
 
-        const applicationForm = document.getElementById('membership-application-form');
         applicationForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            const fields = [
-                document.getElementById('full-name'),
-                document.getElementById('email-address'),
-                document.getElementById('contact-number'),
-                document.getElementById('home-address'),
-                document.getElementById('date-of-birth')
-            ];
-            const isValid = fields.every(f => f.value.trim() !== '');
+
+            const requiredFields = [
+                'full-name',
+                'email-address',
+                'contact-number',
+                'home-address',
+                'date-of-birth',
+            ].map((id) => document.getElementById(id));
+
+            const isValid = requiredFields.every((field) => field.value.trim() !== '');
+
             if (!isValid) {
                 alert('Please fill out all fields before submitting.');
                 return;
             }
+
             alert('Your membership application has been submitted successfully!');
             applicationForm.reset();
         });

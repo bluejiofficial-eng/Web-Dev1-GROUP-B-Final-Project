@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,216 +7,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
-    <style>
-        .calculator-hero {
-            background-image: linear-gradient(135deg, rgba(20, 67, 41, 0.82), rgba(61, 120, 82, 0.72)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .calculator-panel {
-            margin-top: 26px;
-            display: grid;
-            gap: 22px;
-        }
-
-        .calculator-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            overflow: hidden;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
-        }
-
-        .calculator-table th,
-        .calculator-table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #edf2ee;
-            text-align: left;
-        }
-
-        .calculator-table th {
-            background: #f4f8f5;
-            color: #1d3a26;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .estimate-box {
-            border-radius: 20px;
-            background: linear-gradient(145deg, #f4faf5, #ffffff);
-            border: 1px solid #e1ebe3;
-            padding: 28px;
-            box-shadow: 0 14px 32px rgba(16, 44, 25, 0.06);
-        }
-
-        .estimate-label {
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #5c7d65;
-            margin-bottom: 10px;
-        }
-
-        .estimate-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #184328;
-            line-height: 1.05;
-            margin-bottom: 12px;
-        }
-
-        .estimate-note {
-            color: #5f6f66;
-            line-height: 1.7;
-        }
-
-        .calculator-summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-        }
-
-        .summary-card {
-            background: #fff;
-            border: 1px solid #e6ede8;
-            border-radius: 18px;
-            padding: 20px;
-            box-shadow: 0 10px 24px rgba(16, 44, 25, 0.05);
-        }
-
-        .summary-card span {
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #678171;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .summary-card strong {
-            font-size: 1.35rem;
-            color: #1c3525;
-        }
-
-        .calculator-form-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-            gap: 22px;
-            margin-top: 18px;
-        }
-
-        .calculator-form-card,
-        .calculator-result-card {
-            background: #ffffff;
-            border: 1px solid #e6ede8;
-            border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
-        }
-
-        .calculator-form {
-            display: grid;
-            gap: 16px;
-        }
-
-        .form-field label {
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #56705f;
-            margin-bottom: 8px;
-        }
-
-        .form-field input {
-            width: 100%;
-            border: 1px solid #d8e4db;
-            border-radius: 12px;
-            padding: 14px 16px;
-            font-size: 1rem;
-            color: #1c3525;
-            background: #fbfdfb;
-            outline: none;
-        }
-
-        .form-field input:focus {
-            border-color: #23743B;
-            box-shadow: 0 0 0 3px rgba(35, 116, 59, 0.12);
-        }
-
-        .form-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        .calculator-result-card {
-            display: grid;
-            gap: 14px;
-            align-content: start;
-        }
-
-        .result-line {
-            padding: 14px 0;
-            border-bottom: 1px solid #edf2ee;
-        }
-
-        .result-line:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .result-line span {
-            display: block;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #678171;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .result-line strong {
-            font-size: 1.55rem;
-            color: #184328;
-        }
-
-        .calculator-note {
-            margin-top: 10px;
-            color: #5f6f66;
-            line-height: 1.65;
-        }
-
-        .calculator-quick-section {
-            padding-top: 56px;
-            padding-bottom: 46px;
-            margin-bottom: 18px;
-        }
-
-        .calculator-tips-section {
-            padding-top: 48px;
-            padding-bottom: 68px;
-            margin-bottom: 22px;
-        }
-
-        .calculator-tips-section .grid-3 {
-            gap: 22px;
-        }
-
-        @media (max-width: 900px) {
-            .calculator-form-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Per-page styles moved to style.css (.calculator-*, see SUPPORT section) -->
 </head>
 <body>
     <header class="navbar">
@@ -284,106 +75,108 @@
                     <h2>Before You Compute</h2>
                     <p>Use this page as a quick guide while you review loan choices and repayment plans.</p>
                 </div>
-                <div class="grid-3">
-                    <article class="service-box">
-                        <div class="service-icon">₱</div>
-                        <h4>Principal</h4>
-                        <p>Choose the amount you plan to borrow before checking the estimated payment. The sample estimate below uses a principal of ₱50,000.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">%</div>
-                        <h4>Interest</h4>
-                        <p>Review the current loan interest rate so you can estimate the total cost. For this sample, we used a flat monthly rate of 1.25%.</p>
-                    </article>
-                    <article class="service-box">
-                        <div class="service-icon">⏱</div>
-                        <h4>Term</h4>
-                        <p>Select a repayment term that fits your budget and payment capacity. In this example, the term is set to 12 months.</p>
-                    </article>
-                </div>
-                <div class="calculator-panel">
-                    <div class="section-header" style="margin-top: 18px;">
-                        <h2>Repayment Breakdown</h2>
-                        <p>Use this compact sample table to understand how a fixed monthly installment can be divided across the term.</p>
+                <div class="grid-3 calculator-guides-grid">
+                    <div class="service-box">
+                        <div class="service-icon">1</div>
+                        <h3>Principal</h3>
+                        <p>Choose the amount you plan to borrow before checking the estimated payment.</p>
                     </div>
-
-                    <table class="calculator-table">
-                        <thead>
-                            <tr>
-                                <th>Term</th>
-                                <th>Principal Portion</th>
-                                <th>Interest Portion</th>
-                                <th>Monthly Payment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Month 1</td>
-                                <td>₱3,835</td>
-                                <td>₱625</td>
-                                <td>₱4,460</td>
-                            </tr>
-                            <tr>
-                                <td>Month 6</td>
-                                <td>₱3,960</td>
-                                <td>₱500</td>
-                                <td>₱4,460</td>
-                            </tr>
-                            <tr>
-                                <td>Month 12</td>
-                                <td>₱4,405</td>
-                                <td>₱55</td>
-                                <td>₱4,460</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="service-box">
+                        <div class="service-icon">2</div>
+                        <h3>Interest</h3>
+                        <p>Review the current loan interest rate so you can estimate the total cost.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">3</div>
+                        <h3>Term</h3>
+                        <p>Select a repayment term that fits your budget and payment capacity.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section calculator-quick-section">
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Repayment Breakdown</h2>
+                    <p>Use this compact sample table to understand how a fixed monthly installment can be divided across the term.</p>
+                </div>
+                <table class="calculator-table">
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Principal Portion</th>
+                            <th>Interest Portion</th>
+                            <th>Monthly Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Month 1</td>
+                            <td>&#8369;3,835</td>
+                            <td>&#8369;625</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                        <tr>
+                            <td>Month 6</td>
+                            <td>&#8369;3,960</td>
+                            <td>&#8369;500</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                        <tr>
+                            <td>Month 12</td>
+                            <td>&#8369;4,405</td>
+                            <td>&#8369;55</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="highlights-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Quick Calculator</h2>
                     <p>Enter a sample loan amount and term to see a simple monthly estimate update instantly.</p>
                 </div>
-
-                <div class="calculator-form-grid">
-                    <div class="calculator-form-card">
-                        <form class="calculator-form" id="loan-calculator-form">
-                            <div class="form-field">
-                                <label for="loan-principal">Loan Amount (₱)</label>
-                                <input id="loan-principal" type="number" min="1000" step="1000" value="50000">
-                            </div>
-                            <div class="form-field">
-                                <label for="loan-rate">Monthly Interest Rate (%)</label>
-                                <input id="loan-rate" type="number" min="0" step="0.01" value="1.25">
-                            </div>
-                            <div class="form-field">
-                                <label for="loan-term">Term (Months)</label>
-                                <input id="loan-term" type="number" min="1" step="1" value="12">
-                            </div>
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-primary" id="calculate-loan-btn">Calculate</button>
-                                <button type="button" class="btn btn-secondary" id="reset-loan-btn">Reset</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="calculator-result-card" aria-live="polite">
-                        <div class="result-line">
-                            <span>Monthly Payment</span>
-                            <strong id="monthly-payment-result">₱4,460</strong>
+                <div class="calculator-panel">
+                    <div class="calculator-form-grid">
+                        <div class="calculator-form-card">
+                            <form class="calculator-form" id="loan-calculator-form" novalidate>
+                                <div class="form-field">
+                                    <label for="loan-principal">Loan Amount (&#8369;)</label>
+                                    <input id="loan-principal" type="number" min="1000" step="1000" value="50000">
+                                </div>
+                                <div class="form-field">
+                                    <label for="loan-rate">Monthly Interest Rate (%)</label>
+                                    <input id="loan-rate" type="number" min="0" step="0.01" value="1.25">
+                                </div>
+                                <div class="form-field">
+                                    <label for="loan-term">Term (Months)</label>
+                                    <input id="loan-term" type="number" min="1" step="1" value="12">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary" id="calculate-loan-btn">Calculate</button>
+                                    <button type="reset" class="btn btn-secondary" id="reset-loan-btn">Reset</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="result-line">
-                            <span>Total Interest</span>
-                            <strong id="total-interest-result">₱3,520</strong>
+                        <div class="calculator-result-card" aria-live="polite">
+                            <div class="result-line">
+                                <span>Monthly Payment</span>
+                                <strong id="monthly-payment-result">&#8369;4,460</strong>
+                            </div>
+                            <div class="result-line">
+                                <span>Total Interest</span>
+                                <strong id="total-interest-result">&#8369;3,520</strong>
+                            </div>
+                            <div class="result-line">
+                                <span>Total Payable</span>
+                                <strong id="total-payable-result">&#8369;53,520</strong>
+                            </div>
+                            <p class="calculator-note" id="calculator-note">Based on a &#8369;50,000 loan, 1.25% monthly rate, and 12-month term.</p>
                         </div>
-                        <div class="result-line">
-                            <span>Total Payable</span>
-                            <strong id="total-payable-result">₱53,520</strong>
-                        </div>
-                        <p class="calculator-note" id="calculator-note">Based on a ₱50,000 loan, 1.25% monthly rate, and 12-month term.</p>
                     </div>
                 </div>
             </div>
@@ -395,7 +188,7 @@
                     <h2>Calculator Tips</h2>
                     <p>These reminders help members prepare a more accurate loan estimate before they apply.</p>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3 calculator-tips-grid">
                     <div class="highlight-card">
                         <div class="icon-box">1</div>
                         <h3>Check Budget</h3>
@@ -454,30 +247,18 @@
         </div>
     </footer>
 
+
     <script>
         const hamburger = document.getElementById('hamburger');
-        const navMenu   = document.getElementById('nav-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            navMenu.classList.toggle('open');
-        });
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                navMenu.classList.remove('open');
-            });
-        });
-
+        const navMenu = document.getElementById('nav-menu');
+        const calculatorForm = document.getElementById('loan-calculator-form');
         const principalInput = document.getElementById('loan-principal');
         const rateInput = document.getElementById('loan-rate');
         const termInput = document.getElementById('loan-term');
-        const calculateBtn = document.getElementById('calculate-loan-btn');
-        const resetBtn = document.getElementById('reset-loan-btn');
         const monthlyPaymentResult = document.getElementById('monthly-payment-result');
         const totalInterestResult = document.getElementById('total-interest-result');
         const totalPayableResult = document.getElementById('total-payable-result');
         const calculatorNote = document.getElementById('calculator-note');
-
         const currencyFormatter = new Intl.NumberFormat('en-PH', {
             style: 'currency',
             currency: 'PHP',
@@ -489,23 +270,14 @@
             const monthlyRatePercent = Number(rateInput.value);
             const termMonths = Number(termInput.value);
 
-            if (!principal || !termMonths || principal < 1000 || termMonths < 1 || monthlyRatePercent < 0) {
-                monthlyPaymentResult.textContent = 'Please check inputs';
-                totalInterestResult.textContent = '—';
-                totalPayableResult.textContent = '—';
-                calculatorNote.textContent = 'Enter a valid amount, interest rate, and term to calculate the estimate.';
+            if (!principal || termMonths <= 0 || monthlyRatePercent < 0) {
                 return;
             }
 
             const monthlyRate = monthlyRatePercent / 100;
-            let monthlyPayment;
-
-            if (monthlyRate === 0) {
-                monthlyPayment = principal / termMonths;
-            } else {
-                const factor = Math.pow(1 + monthlyRate, termMonths);
-                monthlyPayment = principal * (monthlyRate * factor) / (factor - 1);
-            }
+            const monthlyPayment = monthlyRate === 0
+                ? principal / termMonths
+                : (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termMonths));
 
             const totalPayable = monthlyPayment * termMonths;
             const totalInterest = totalPayable - principal;
@@ -516,17 +288,25 @@
             calculatorNote.textContent = `Based on a ${currencyFormatter.format(principal)} loan, ${monthlyRatePercent}% monthly rate, and ${termMonths}-month term.`;
         }
 
-        function resetCalculator() {
-            principalInput.value = 50000;
-            rateInput.value = 1.25;
-            termInput.value = 12;
-            calculateLoan();
-        }
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
 
-        calculateBtn.addEventListener('click', calculateLoan);
-        resetBtn.addEventListener('click', resetCalculator);
-        [principalInput, rateInput, termInput].forEach((field) => {
-            field.addEventListener('input', calculateLoan);
+        navMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        calculatorForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            calculateLoan();
+        });
+
+        calculatorForm.addEventListener('reset', () => {
+            window.setTimeout(calculateLoan, 0);
         });
 
         calculateLoan();

@@ -10,11 +10,282 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffffff;
     color: #2b2b2b;
     line-height: 1.6;
+}
+
+body.coopmart-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #eef5ed;
+    color: #1b3132;
+    overflow-x: hidden;
+}
+
+body.coopmart-page::before,
+body.coopmart-page::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+body.coopmart-page::before {
+    background-image: url('Images/CoopMartIMG1.png');
+    animation: coopmart-bg-one 6s ease-in-out infinite;
+}
+
+body.coopmart-page::after {
+    background-image: url('Images/CoopMartIMG2.png');
+    animation: coopmart-bg-two 6s ease-in-out infinite;
+}
+
+body.coopmart-page .background-flash {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255,255,255,0.12);
+    opacity: 0;
+    pointer-events: none;
+    animation: coopmart-flash 8s ease-in-out infinite;
+}
+
+@keyframes coopmart-bg-one {
+    0%, 44% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes coopmart-bg-two {
+    0%, 44% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes coopmart-flash {
+    0%, 40%, 60%, 100% { opacity: 0; }
+    45%, 50%, 55% { opacity: 0.16; }
+}
+
+body.coopmart-page .navbar {
+    background-color: rgba(255,255,255,0.78);
+    backdrop-filter: blur(20px);
+}
+
+body.coopmart-page .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.coopmart-page main.container {
+    background: rgba(255,255,255,0.92);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+    padding: 36px 0 40px;
+}
+
+body.coopmart-page .section-header {
+    padding-top: 40px;
+    margin-bottom: 50px;
+}
+
+body.coopmart-page .product-card,
+body.coopmart-page .service-box {
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(255,255,255,0.82);
+}
+
+body.coopmart-page .product-card .product-img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 14px;
+}
+
+body.coopmart-page .product-img-1 {
+    background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80');
+}
+
+body.coopmart-page .product-img-2 {
+    background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80');
+}
+
+body.coopmart-page .product-img-3 {
+    background-image: url('Images/HandmadeSoapsetCoopMart.png');
+}
+
+body.coopmart-page .product-img-4 {
+    background-image: url('https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80');
+}
+
+body.coopmart-page .service-box {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.coopmart-page .service-box:hover {
+    background-color: #fff5b8;
+    border-color: #f7d35f;
+    box-shadow: 0 18px 36px rgba(62, 83, 27, 0.14);
+    transform: translateY(-3px);
+}
+
+body.coopmart-page .product-card .product-specs {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+body.coopmart-page .product-img-5 {
+    background-image: url('Images/CoopMartIMG1.png');
+}
+
+body.coopmart-page .product-img-6 {
+    background-image: url('Images/CoopMartIMG2.png');
+}
+
+body.coopmart-page .product-img-7 {
+    background-image: url('Images/CoopMartIMG1.png');
+}
+
+body.coopmart-page .product-img-8 {
+    background-image: url('Images/CoopMartIMG2.png');
+}
+
+body.coopmart-page .product-img-9 {
+    background-image: url('Images/HandmadeSoapsetCoopMart.png');
+}
+
+body.coopmart-page .product-img-10 {
+    background-image: url('Images/CoopMartIMG1.png');
+}
+
+#featured-items {
+    scroll-margin-top: 110px;
+}
+
+body.coopmart-page .coopmart-hero .hero-slide {
+    min-height: 360px;
+    background: rgba(16, 34, 16, 0.20);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero image handling: prefer inline/background-image set on .hero-slide */
+body.coopmart-page .coopmart-hero .hero-slide {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+}
+
+/* subtle dark overlay on left side for improved text contrast */
+body.coopmart-page .coopmart-hero .hero-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8,20,10,0.55) 0%, rgba(8,20,10,0.12) 35%, rgba(0,0,0,0) 60%);
+    z-index: 0;
+    border-radius: 0;
+}
+
+body.coopmart-page .coopmart-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+body.coopmart-page .coopmart-hero .hero-content {
+    color: #ffffff;
+    text-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+body.coopmart-page .coopmart-hero .hero-content p {
+    color: rgba(255,255,255,0.92);
+}
+
+/* ========================================================================== 
+   INVESTMENTS PAGE OVERRIDES
+   ========================================================================== */
+#investments-hero .section-header {
+    margin-bottom: 24px;
+}
+
+#investments-hero .section-header p,
+#investment-cta .section-header p {
+    margin: 8px auto 8px auto;
+}
+
+#investment-reminder-group {
+    padding-bottom: 44px;
+}
+
+#investment-reminder-group .section-header {
+    margin-bottom: 1px;
+}
+
+#investment-reminder-group .section-header:last-child {
+    margin-bottom: 0;
+}
+
+#member-reminder-box p {
+    margin: 8px auto 0 auto;
+}
+
+#investment-cta {
+    padding: 42px 0;
+    margin-bottom: 0;
+}
+
+#investment-cta .section-header {
+    margin-bottom: 0;
+}
+
+body.coopmart-page .coopmart-hero .btn-primary,
+body.coopmart-page .coopmart-hero .btn-secondary {
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+body.coopmart-page .coopmart-hero .btn-secondary {
+    background-color: rgba(245,230,200,0.94);
+    color: #1b3d22;
+}
+
+body.coopmart-page .coopmart-hero .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+body.coopmart-page .coopmart-hero .btn-secondary:hover {
+    background-color: rgba(235,220,185,0.96);
+}
+
+body.coopmart-page .footer {
+    background-color: rgba(35,116,59,0.95);
 }
 
 .container {
@@ -155,6 +426,250 @@ h1, h2, h3, h4, h5, h6 {
     height: 18px;
 }
 
+/* ==========================================================================
+   SUPPORT: Application & Calculator Page Styles (moved from page-local <style>)
+   These rules were previously duplicated inside individual support pages.
+   Keeping them here centralizes styling and avoids repetition.
+   ========================================================================== */
+
+/* Application page styles */
+.application-checklist-grid,
+.application-steps-grid {
+    gap: 22px;
+}
+
+.application-form-section {
+    padding-top: 0;
+}
+
+.application-form-card {
+    background: #ffffff;
+    border: 1px solid #e6ece8;
+    border-radius: 20px;
+    box-shadow: 0 14px 32px rgba(16, 44, 25, 0.06);
+    padding: 32px;
+}
+
+.application-form {
+    display: block;
+}
+
+.application-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 22px;
+}
+
+.application-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.application-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.application-form-group label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1b3d22;
+}
+
+.application-form-group input,
+.application-form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dbe5dd;
+    border-radius: 10px;
+    background: #fff;
+    color: #203126;
+    font: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.application-form-group input:focus,
+.application-form-group textarea:focus {
+    outline: none;
+    border-color: #23743B;
+    box-shadow: 0 0 0 3px rgba(35, 116, 59, 0.12);
+}
+
+.application-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.application-form-actions .btn {
+    min-width: 170px;
+}
+
+.application-guides-grid {
+    gap: 22px;
+}
+
+/* Calculator page styles */
+.calculator-hero {
+    background-size: cover;
+    background-position: center;
+}
+
+.calculator-panel {
+    margin-top: 26px;
+    display: grid;
+    gap: 22px;
+}
+
+.calculator-guides-grid,
+.calculator-tips-grid {
+    gap: 22px;
+}
+
+.calculator-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.calculator-form-card,
+.calculator-result-card {
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e1ebe3;
+    box-shadow: 0 14px 32px rgba(16, 44, 25, 0.06);
+    padding: 28px;
+}
+
+.calculator-form {
+    display: grid;
+    gap: 18px;
+}
+
+.calculator-form .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calculator-form .form-field label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1b3d22;
+}
+
+.calculator-form .form-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dbe5dd;
+    border-radius: 10px;
+    font: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculator-form .form-field input:focus {
+    outline: none;
+    border-color: #23743B;
+    box-shadow: 0 0 0 3px rgba(35, 116, 59, 0.12);
+}
+
+.calculator-form .form-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.calculator-form .form-actions .btn {
+    min-width: 150px;
+}
+
+.calculator-result-card {
+    background: linear-gradient(145deg, #f4faf5, #ffffff);
+}
+
+.result-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #edf2ee;
+}
+
+.result-line:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-line span {
+    color: #5b6e61;
+    font-weight: 600;
+}
+
+.result-line strong {
+    color: #16311f;
+    font-size: 1.15rem;
+}
+
+.calculator-note {
+    margin-top: 18px;
+    color: #5d6b63;
+    line-height: 1.7;
+}
+
+.calculator-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
+}
+
+.calculator-table th,
+.calculator-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf2ee;
+    text-align: left;
+}
+
+.calculator-table th {
+    background: #f4f8f5;
+    color: #1d3a26;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+    .calculator-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .application-form-card,
+    .calculator-form-card,
+    .calculator-result-card {
+        padding: 22px;
+    }
+
+    .application-form-actions .btn,
+    .calculator-form .form-actions .btn {
+        width: 100%;
+    }
+}
+
 .dropdown-content a {
     color: #333;
     padding: 12px 16px;
@@ -235,6 +750,18 @@ h1, h2, h3, h4, h5, h6 {
     background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80');
 }
 
+.helpdesk-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1920&q=80');
+}
+
+.calculator-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80');
+}
+
+.application-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80');
+}
+
 .hero-content {
     color: #ffffff;
     max-width: 650px;
@@ -300,6 +827,19 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ebdcb9;
 }
 
+/* Centered call-to-action button group */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-buttons .btn-primary {
+    margin-right: 0;
+}
+
 /* 6. Highlights Section */
 .highlights-section {
     padding: 60px 0;
@@ -334,6 +874,67 @@ h1, h2, h3, h4, h5, h6 {
 .highlight-card p {
     color: #666;
     font-size: 0.95rem;
+}
+
+/* Forms inside highlight cards (online application + loan calculator) */
+.highlight-card form,
+#loan-calculator-form {
+    text-align: left;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.highlight-card label,
+#loan-calculator-form label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #1b3d22;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.highlight-card input,
+.highlight-card select,
+.highlight-card textarea,
+#loan-calculator-form input,
+#loan-calculator-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9e2d9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    color: #2b2b2b;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.highlight-card input:focus,
+.highlight-card select:focus,
+.highlight-card textarea:focus,
+#loan-calculator-form input:focus,
+#loan-calculator-form select:focus {
+    outline: none;
+    border-color: #23743B;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(35, 116, 59, 0.12);
+}
+
+.highlight-card textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Center submit button row inside forms */
+.highlight-card form p:last-child,
+#loan-calculator-form p:last-child {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.highlight-card form p:last-child .btn,
+#loan-calculator-form p:last-child .btn {
+    margin-right: 0;
 }
 
 .director-avatar {
@@ -499,6 +1100,32 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-content p {
         font-size: 0.88rem;
     }
+}
+
+/* Loan category filter tabs (loans pages) */
+.loan-category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 30px;
+}
+
+.loan-category-tabs > button {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    line-height: 1.2;
+}
+
+.loan-category-tabs > button.btn-primary {
+    border-color: #23743B;
+}
+
+.loan-category-tabs > button.btn-secondary {
+    border-color: #ebdcb9;
 }
 
 /* 7. Services Summary Section */
