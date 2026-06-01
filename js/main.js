@@ -249,6 +249,7 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
             prevBtn.className = 'btn btn-secondary';
             prevBtn.textContent = 'Prev';
             prevBtn.style.padding = '8px 16px';
+            prevBtn.style.margin = '0';
             prevBtn.disabled = currentNewsPage === 1;
             if (!prevBtn.disabled) {
                 prevBtn.addEventListener('click', () => renderStaticNews(searchTerm, searchType, sortBy, currentNewsPage - 1));
@@ -265,6 +266,7 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
                 btn.textContent = i;
                 btn.style.padding = '8px 16px';
                 btn.style.minWidth = '40px';
+                btn.style.margin = '0';
                 btn.addEventListener('click', () => {
                     renderStaticNews(searchTerm, searchType, sortBy, i);
                     document.querySelector('.news-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -277,6 +279,7 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
             nextBtn.className = 'btn btn-secondary';
             nextBtn.textContent = 'Next';
             nextBtn.style.padding = '8px 16px';
+            nextBtn.style.margin = '0';
             nextBtn.disabled = currentNewsPage === totalPages;
             if (!nextBtn.disabled) {
                 nextBtn.addEventListener('click', () => renderStaticNews(searchTerm, searchType, sortBy, currentNewsPage + 1));

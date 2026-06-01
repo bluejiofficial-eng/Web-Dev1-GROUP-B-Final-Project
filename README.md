@@ -106,6 +106,9 @@ For each page in the assigned section, automatically create the corresponding HT
                 <a href="../coopmart.html" class="nav-link">CoopMart</a>
             </div>
             <div class="dropdown">
+                <a href="../news.html" class="nav-link">News</a>
+            </div>
+            <div class="dropdown">
                 <a href="#" class="nav-link">Support</a>
                 <div class="dropdown-content">
                     <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
@@ -155,6 +158,9 @@ For each page in the assigned section, automatically create the corresponding HT
             </div>
             <div class="dropdown">
                 <a href="coopmart.html" class="nav-link">CoopMart</a>
+            </div>
+            <div class="dropdown">
+                <a href="news.html" class="nav-link">News</a>
             </div>
             <div class="dropdown">
                 <a href="#" class="nav-link">Support</a>
