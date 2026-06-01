@@ -289,7 +289,11 @@ function renderNewsDetail() {
     const id = urlParams.get('id');
 
     if (id !== null && STATIC_NEWS[id]) {
-        const article = STATIC_NEWS[id];
+        const currentIndex = parseInt(id, 10);
+        const article = STATIC_NEWS[currentIndex];
+        const hasPrev = currentIndex > 0;
+        const hasNext = currentIndex < STATIC_NEWS.length - 1;
+
         detailContainer.innerHTML = `
             <div class="news-detail-header" style="max-width: 800px; margin: 0 auto 30px; text-align: center;">
                 <span class="news-tag" style="margin-bottom: 15px; font-size: 0.9rem; padding: 6px 14px;">${article.tag}</span>
@@ -299,8 +303,10 @@ function renderNewsDetail() {
             <div class="news-detail-img" style="width: 100%; max-width: 900px; margin: 0 auto 40px; height: 450px; background-image: url('${article.img}'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);"></div>
             <div class="news-detail-body" style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: #444; text-align: justify;">
                 <p>${article.body}</p>
-                <div style="margin-top: 40px; text-align: center;">
-                    <a href="news.html" class="btn btn-secondary">← Back to News</a>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eaeaea;">
+                    ${hasPrev ? '<a href="article.html?id=' + (currentIndex - 1) + '" class="btn btn-secondary">&larr; Previous</a>' : '<div style="width: 110px;"></div>'}
+                    <a href="news.html" class="btn btn-primary">View All News</a>
+                    ${hasNext ? '<a href="article.html?id=' + (currentIndex + 1) + '" class="btn btn-secondary">Next &rarr;</a>' : '<div style="width: 110px;"></div>'}
                 </div>
             </div>
         `;
