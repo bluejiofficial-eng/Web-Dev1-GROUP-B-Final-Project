@@ -676,22 +676,26 @@ async function loadCoopVision() {
 // INIT
 // ============================================================
 window.addEventListener('DOMContentLoaded', () => {
-    renderStaticNews();
+    // Search & Sort Elements for news.html
+    const searchInput = document.getElementById('news-search');
+    const sortSelect = document.getElementById('news-sort');
+
+    if (searchInput && sortSelect) {
+        // news.html: 현재 드롭다운 세팅(기본 최신순)에 맞춰 초기 렌더링 적용
+        renderStaticNews(searchInput.value, sortSelect.value, 1);
+        
+        const updateNews = () => renderStaticNews(searchInput.value, sortSelect.value, 1);
+        searchInput.addEventListener('input', updateNews);
+        sortSelect.addEventListener('change', updateNews);
+    } else {
+        // index.html: 무조건 가장 최신순(date-desc)으로 렌더링하여 최신 뉴스 3개 보장
+        renderStaticNews('', 'date-desc', 1);
+    }
+
     renderNewsDetail();
     loadHeroCarousel();
     loadDirectors();
     loadTimeline();
     loadSiteSettings();    
     loadCoopVision(); 
-
-    // Search & Sort Event Listeners for news.html
-    const searchInput = document.getElementById('news-search');
-    const sortSelect = document.getElementById('news-sort');
-
-    if (searchInput && sortSelect) {
-        // Reset to page 1 whenever a new search or sort is applied
-        const updateNews = () => renderStaticNews(searchInput.value, sortSelect.value, 1);
-        searchInput.addEventListener('input', updateNews);
-        sortSelect.addEventListener('change', updateNews);
-    }
 });
