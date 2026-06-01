@@ -240,7 +240,7 @@ function getHeroCtaHref(item) {
     const combinedText = `${title} ${subtitle} ${label}`;
 
     if (combinedText.includes('coopmart')) {
-        return 'coopmart.html';
+        return 'coop/coopmart.html';
     }
 
     if (combinedText.includes('journey') || combinedText.includes('history')) {
@@ -268,7 +268,7 @@ function getHeroCtaHref(item) {
     }
 
     if (combinedText.includes('save') || combinedText.includes('invest')) {
-        return 'investments.html';
+        return 'investments/investments.html';
     }
 
     if (label.includes('read more')) {

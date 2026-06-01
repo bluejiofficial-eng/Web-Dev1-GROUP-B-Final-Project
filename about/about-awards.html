@@ -40,10 +40,10 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -128,8 +128,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -159,6 +159,19 @@
             link.addEventListener('click', () => {
                 hamburger.classList.remove('open');
                 navMenu.classList.remove('open');
+            });
+        });
+
+        // Make the About Us, Loans, and Support dropdown folders open in a new browser tab.
+        // Only dropdowns that contain a submenu (.dropdown-content) are treated as folders,
+        // so single links like Membership, Investments, and CoopMart are left unchanged.
+        navMenu.querySelectorAll('.dropdown').forEach(folder => {
+            if (!folder.querySelector('.dropdown-content')) return;
+            folder.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href || href === '#') return;
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener');
             });
         });
     </script>
