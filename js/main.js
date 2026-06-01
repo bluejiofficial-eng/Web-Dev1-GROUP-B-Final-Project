@@ -88,7 +88,7 @@ const STATIC_NEWS = [
         title: "Agricultural Support Grant",
         body: "TerraLink has allocated a special grant to assist local partner farmers in upgrading their irrigation systems ahead of the dry season.",
         date: "May 12, 2026",
-        img: "https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c1b?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80"
     },
     {
         tags: ["Financial", "Rates", "Policy"],
@@ -141,9 +141,6 @@ const STATIC_NEWS = [
     }
 ];
 
-// ============================================================
-// MODAL (Removed in favor of redirecting to news.html)
-// ============================================================
 
 // ============================================================
 // RENDER — Static news cards with Search & Sort
