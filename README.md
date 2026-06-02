@@ -34,8 +34,13 @@
  │    ├── coopmart-local-staples.html
  │    └── coopmart-eco-goods.html
  ├── 📁 js/
- │    └── main.js
+ │    ├── main.js
+ │    ├── about-animations.js
+ │    ├── about-history.js
+ │    └── about-pages.js
  ├── index.html
+ ├── news.html
+ ├── article.html
  ├── membership.html
  ├── style.css
  └── README.md
@@ -286,6 +291,8 @@ For each page in the assigned section, automatically create the corresponding HT
 | Buttons | `.btn.btn-primary` / `.btn.btn-secondary` |
 | Tag / Badge | `.badge` / `.news-tag` |
 | Text link | `.text-link` |
+| Scroll Reveal | `.reveal-on-scroll` (추가 시 스크롤 등장 애니메이션 적용) |
+| Article Base | `.article-section` (기사 본문 섹션용 패딩 적용) |
 
 ---
 
@@ -295,15 +302,20 @@ If your page requires dynamic data, use the setup below.
 **Sanity Project ID:** `ltk0qh4a`
 
 ```javascript
-const { createClient } = globalThis.SanityClient;
-const client = createClient({
-    projectId: "ltk0qh4a",
-    dataset: "production",
-    apiVersion: "2024-01-01",
-    useCdn: true,
-});
-const builder = globalThis.SanityImageUrlBuilder(client);
-const urlFor = (source) => builder.image(source);
+let mainSanityClient = null;
+let builder = null;
+if (typeof globalThis.SanityClient !== 'undefined') {
+    mainSanityClient = globalThis.SanityClient.createClient({
+        projectId: "ltk0qh4a",
+        dataset: "production",
+        apiVersion: "2024-01-01",
+        useCdn: true,
+    });
+    if (typeof globalThis.SanityImageUrlBuilder !== 'undefined') {
+        builder = globalThis.SanityImageUrlBuilder(mainSanityClient);
+    }
+}
+const urlFor = (source) => (builder ? builder.image(source) : null);
 ```
 
 **Available document types and query examples:**
@@ -353,6 +365,7 @@ Below is the full page directory. **Only change the `Assigned pages` field** to 
 | :--- | :--- | :--- |
 | About Us | `about/` | `about-profile.html`, `about-history.html`, `about-bod.html`, `about-officers.html`, `about-awards.html`, `about-gallery.html` |
 | Membership | root | `membership.html` |
+| News | root | `news.html`, `article.html` |
 | Loans | `loans/` | `loans-regular.html`, `loans-special.html` |
 | Investments | investments | `investments/investments.html` |
 | CoopMart | coop | `coop/coopmart.html` |
@@ -378,6 +391,8 @@ Assigned pages: [e.g., About Us / Loans / Support]
 | About Us - Awards and Distinction | `about/` | `about-awards.html` |
 | About Us - Event Gallery | `about/` | `about-gallery.html` |
 | Membership | root | `membership.html` |
+| News & Announcements | root | `news.html` |
+| News Detail | root | `article.html` |
 | Investments | investments | `investments/investments.html` |
 | Loans - Regular Loan | `loans/` | `loans-regular.html` |
 | Loans - Special Loan | `loans/` | `loans-special.html` |
