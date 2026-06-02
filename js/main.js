@@ -30,117 +30,180 @@ const STATIC_NEWS = [
     {
         tags: ["Financial", "Report", "Q2", "Performance"],
         title: "Q2 Financial Performance Report",
-        body: "TerraLink closes Q2 2026 with a 15% increase in total assets, reaching a new cooperative milestone. Strong member deposit growth and strategic loan deployments across key sectors were the primary drivers. Net savings also grew by 9% compared to the same period last year. Members may access the full audited report through the online portal or request a printed copy at any branch.",
+        body: `TerraLink Multipurpose Cooperative formally closes Q2 2026 with an exceptional 15% increase in total assets, marking an outstanding milestone in our fiscal history. This growth was primarily fueled by a record-breaking surge in regular and institutional member deposits, alongside aggressive yet prudently managed loan deployments across key micro-retail and agricultural sectors.
+
+Our net savings institutional reserves also expanded by 9% compared to the same period last year, solidifying our overall asset quality. This sustained financial health allows the cooperative to maintain competitive dividend baselines for the next half of the year. The Board of Directors extends its deepest gratitude to our loyal members for their unwavering trust.
+
+Members may access the full, audited financial statements through the secured online portal or request a printed copy at any branch office. Moving forward into Q3, our treasury management team will focus on expanding green asset investments and strengthening our structural liquidity buffers to ensure long-term stability and resilience against inflationary pressures.`,
         date: "June 10, 2026",
         img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Loans", "Solar", "Sustainability", "Green"],
         title: "New Solar Loan Initiative",
-        body: "TerraLink introduces the Solar Home Loan — a dedicated financing program to help members transition to clean, renewable energy. Enjoy preferential rates starting at 4.5% per annum, with flexible repayment terms of up to 60 months. The program covers solar panel installation, inverter systems, and battery storage units. Applications are now open at all branch offices.",
+        body: `To actively support eco-friendly transitions and sustainable community development, TerraLink proudly introduces the Solar Home Loan Initiative. This dedicated financing program is specifically designed to help regular members shift to clean, renewable energy without facing immediate financial strain.
+
+The cooperative offers highly competitive preferential interest rates starting at just 4.5% per annum, with flexible and accommodating repayment timelines stretching up to 60 full months. The loan package comprehensively covers the direct purchase and structural installation of high-tier solar panel setups, hybrid inverter systems, and deep-cycle battery storage units.
+
+By minimizing initial capital barriers, we aim to drastically reduce the monthly electricity expenses of our member households while directly contributing to carbon footprint reduction. Applications are now officially accepted at all regional branch offices and via our mobile app's dedicated credit facility window. Interested members must submit their latest utility bills and a professional site technical assessment form, which can be arranged through our certified solar installer partners.`,
         date: "June 5, 2026",
         img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["CoopMart", "Local", "Events", "Community"],
         title: "CoopMart Local Artisan Fair",
-        body: "CoopMart is proud to host its first Local Artisan Fair this weekend at all major branch locations. Discover handcrafted goods from over 30 community makers — from woven baskets and pottery to natural soaps and locally roasted coffee. All purchases directly support partner micro-entrepreneurs. Entry is free for all TerraLink members and their families.",
+        body: `CoopMart is incredibly proud to host its first comprehensive Local Artisan Fair this coming weekend at all major satellite and main branch parking complexes. This community-centric event aims to showcase unique, high-quality handcrafted items produced by over 30 talented community makers and micro-entrepreneurs.
+
+Visitors can look forward to exploring diverse booths featuring hand-woven traditional baskets, functional ceramic pottery, organic natural soap gift sets, and premium locally roasted highland coffee blends. By eliminating standard middleman retail fees, 100% of the event proceeds will go directly to supporting the livelihood of our partner micro-retailers.
+
+In addition, the cooperative has sponsored live acoustic music sessions and local food trucks to create a vibrant weekend atmosphere for everyone. Entry is completely free of charge for all registered TerraLink members, their immediate dependents, and the general public. Come join us to discover exceptional local talent, support community enterprise development, and enjoy a rewarding weekend shopping experience with friends and family.`,
         date: "June 1, 2026",
         img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Community", "Education", "Youth", "Financial Literacy"],
         title: "Youth Financial Literacy Workshop",
-        body: "TerraLink believes financial empowerment starts young. Our upcoming free workshop, open to teens and young adults aged 13–22, covers budgeting basics, understanding savings and interest, and responsible credit use. Sessions run every Saturday in June at the Main Branch Training Hall. Parents are encouraged to accompany younger participants. Seats are limited — register at the branch or through the app.",
+        body: `TerraLink firmly believes that sustainable financial empowerment and structural poverty alleviation start with educating the younger generation. Our Education Committee is hosting a free summer workshop series open to teenagers and young adults aged 13 to 22 years old.
+
+The comprehensive curriculum covers essential budgeting principles, saving frameworks, compound interest dynamics, and the critical dangers of irresponsible credit card or digital loan use. Sessions are scheduled to run every Saturday throughout June inside the Main Branch's newly renovated Training Hall.
+
+To make the learning process highly engaging, our financial experts will utilize interactive board games, mobile budgeting simulation tools, and group case studies. Parents are strongly encouraged to accompany younger participants to foster healthy financial conversations at home. Complimentary snacks, learning modules, and a certificate of completion will be provided to all attendees. Seats are strictly limited to ensure an optimal teacher-to-student ratio, so please secure a slot early through the member mobile application.`,
         date: "May 30, 2026",
         img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Membership", "Health", "Partnership", "Insurance"],
         title: "Expanded Health Insurance Options",
-        body: "Your health is our priority. TerraLink has partnered with three leading healthcare providers to offer exclusive group health insurance packages available only to regular members. Plans start at ₱350/month and include outpatient consultations, annual physical exams, and emergency hospitalization coverage. Visit any branch to compare plans and enroll. Coverage begins within 15 days of activation.",
+        body: `Your comprehensive well-being and physical health remain the highest operational priority for the TerraLink Cooperative management team. We have successfully signed a mutual partnership agreement with three of the country's leading healthcare insurance providers to offer exclusive group medical packages.
+
+These customized health plans are available at subsidized rates exclusively for regular members in good standing, with premium baselines starting at an affordable ₱350 per month. The coverage features free unlimited outpatient consultations at accredited hospitals, annual preventative physical check-ups, and extensive emergency inpatient hospitalization support.
+
+Members can also choose to add their immediate family dependents to the policy at a similarly discounted rate during this open enrollment window. Please visit any active branch office to speak with a dedicated insurance representative, compare coverage matrix tables, and fill out the medical history declaration sheets. Active insurance coverage will officially commence within exactly 15 days following the successful validation of the first monthly premium payment.`,
         date: "May 25, 2026",
         img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Announcement", "Assembly", "Governance", "Voting"],
         title: "Annual General Assembly 2026",
-        body: "All members are invited to TerraLink's Annual General Assembly, the cooperative's most important democratic event of the year. The assembly will include the presentation of audited financial statements, election of new board directors, ratification of amended by-laws, and open-floor discussions on proposed policy changes. Attendance is strongly encouraged, as quorum is required for binding resolutions. Date, time, and venue details will be announced via SMS and the member portal.",
+        body: `All registered members are cordially invited to attend TerraLink’s highly anticipated Annual General Assembly, the primary democratic governance event of our cooperative. This year's assembly focuses on reinforcing structural transparency, discussing fiscal achievements, and voting for key corporate changes.
+
+The formal agenda will include the comprehensive presentation of audited financial statements, election of new members to the Board of Directors, and ratification of critical by-law amendments. Furthermore, we will hold a dedicated open-floor forum to address member questions regarding dividend distribution timelines and proposed micro-loan policy updates.
+
+Active physical or virtual attendance is strongly urged, as reaching a strict legal quorum is mandatory to pass binding organizational resolutions. Complete logistics regarding date schedules, digital streaming access tokens, and localized assembly venues will be pushed out via broadcast SMS and the member portal. Let us actively participate in the collective decision-making process that constructively shapes the progressive future of our shared cooperative institution.`,
         date: "May 22, 2026",
         img: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["CoopMart", "Organic", "Agriculture", "Local Produce"],
         title: "New Organic Supply in CoopMart",
-        body: "Fresh, farm-to-table is now a reality at CoopMart. Starting this weekend, all storefront branches will carry a new line of certified organic produce sourced directly from TerraLink's partner farms. Available items include seasonal vegetables, native root crops, heirloom rice varieties, and free-range eggs. Prices are kept member-friendly to make healthy eating accessible to all. New stock arrives every Friday morning.",
+        body: `An authentic, highly sustainable farm-to-table shopping experience is finally arriving across all physical retail branches of our CoopMart stores. Starting this upcoming weekend, all storefront locations will unveil a dedicated fresh-produce aisle showcasing certified organic items sourced from our local partner farms.
+
+Available stock will include premium seasonal vegetables, native root crops, premium organic brown and heirloom rice varieties, and farm-fresh free-range eggs. By directly connecting rural agricultural cooperatives with urban consumers, we effectively remove expensive third-party distributor markups.
+
+This operational model ensures that prices remain exceptionally member-friendly, making healthy nutritional choices genuinely accessible to all family income brackets. New fresh shipments are scheduled to arrive every Friday morning to guarantee peak freshness for weekend shoppers. Cooperative members who purchase from the organic aisle will also enjoy an additional 2% point discount upon presenting their valid digital membership cards at the checkout counters.`,
         date: "May 18, 2026",
         img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Announcement", "Digital", "App", "Technology"],
         title: "Digital Banking App Update",
-        body: "We have rolled out a major update to the TerraLink mobile app. Version 3.2 introduces instant peer-to-peer fund transfers between members, a redesigned dashboard with real-time balance and dividend tracking, biometric login support, and end-to-end encrypted messaging with our support team. The update is available now on both the App Store and Google Play. Existing users will be prompted to update automatically.",
+        body: `We are thrilled to announce the official public deployment of a massive architectural update to the TerraLink mobile banking application. Version 3.2 introduces seamless, instant peer-to-peer fund transfers between cooperative members entirely free of any service charges.
+
+The home screen features a completely redesigned graphical dashboard that provides real-time balance tracking, accumulated dividend computations, and active loan repayment schedules. To significantly improve user data safety, the app now fully integrates native biometric fingerprint and facial recognition support alongside multi-factor authentication protocols.
+
+Additionally, members can now access an end-to-end encrypted live chat channel to communicate directly with our customer support and credit assessment teams. The update is currently available for download on both the Apple App Store and Google Play Store. Existing users will receive an automated system prompt to update their application upon their next login sequence under a stable internet connection.`,
         date: "May 15, 2026",
         img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Community", "Grant", "Farming", "Agriculture"],
         title: "Agricultural Support Grant",
-        body: "As part of TerraLink's commitment to rural livelihood support, a ₱2.5 million agricultural grant has been allocated to assist partner farmers in Cebu's upland barangays ahead of the dry season. Funds will be used to upgrade drip irrigation systems, install water catchment facilities, and procure drought-resistant seed varieties. Fourteen farming households are expected to benefit from the first disbursement phase.",
+        body: `As a cornerstone of TerraLink’s institutional mandate to protect rural livelihoods, a ₱2.5 million agricultural support grant has been officially approved. This fund is strictly dedicated to assisting vulnerable partner smallholder farmers operating within Cebu's critical upland agricultural barangays ahead of the intense dry season.
+
+The financial grant will be utilized to install automated drip irrigation setups, build robust rainwater harvesting facilities, and purchase premium climate-resilient seed varieties. Over fourteen farming households have been thoroughly screened and selected to receive capital disbursements during the initial phase of implementation.
+
+Local agricultural engineers from our community outreach office will provide on-site technical supervision to ensure correct equipment deployment. By fortifying our farmers against harsh seasonal weather shifts, we protect local food supply chains and secure stable family income baselines. Regular progress updates and field reports will be published monthly via the sustainability section of our official cooperative website.`,
         date: "May 12, 2026",
         img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Financial", "Rates", "Policy", "Time Deposit"],
         title: "Interest Rate Adjustment Notification",
-        body: "In response to updated central banking benchmarks, TerraLink has adjusted its time deposit interest rates effective June 1, 2026. Regular savings accounts remain at 2.5% per annum, while 12-month time deposits have been revised to 5.0%. Members with existing time deposits will receive updated passbooks reflecting the new rates at any branch within the month. For questions, contact our financial services desk.",
+        body: `In direct response to recent benchmark updates and monetary policy shifts announced by the central banking authority, TerraLink has strategically adjusted its interest rate tiers. These modifications will formally take effect on June 1, 2026, aiming to optimize member yields while preserving our asset-liability balancing margins.
+
+While our standard regular savings accounts will comfortably maintain their stable baseline of 2.5% per annum, our high-yield 12-month time deposits are receiving an upward revision to an attractive 5.0%. This policy change offers a secure, high-performing shelter for members looking to protect their hard-earned capital reserves against volatile market fluctuations.
+
+Members holding active time deposit accounts are advised to visit their nearest branch location at their earliest convenience to receive official passbook validations. For detailed conversations regarding customized wealth growth or alternative capital placements, please secure an appointment with our financial services advisory desk.`,
         date: "May 10, 2026",
         img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Financial", "Dividends", "Investment", "Members"],
         title: "Investment Dividend Distribution",
-        body: "TerraLink is pleased to announce that the semi-annual dividend distribution for all Growth Investment Plan holders has been successfully processed. Dividends have been credited directly to member accounts as of May 8, 2026. The average payout rate this period is 7.2% — reflecting the cooperative's strong financial performance. Members may verify their credited amount through the app, passbook update, or by visiting their nearest branch.",
+        body: `The executive management of TerraLink Cooperative is extremely pleased to communicate that the semi-annual dividend distribution has been successfully executed. All qualified Growth Investment Plan accounts have been systematically reviewed, audited, and credited as of the end of the business day on May 8, 2026.
+
+Thanks to our disciplined risk management and profitable loan deployments, the average annualized payout rate for this cycle reached a stellar 7.2%. This performance continues to outpace standard commercial banking alternatives, reflecting our commitment to maximizing real value returns for our investing members.
+
+Members can easily verify their precise credited dividend amounts by logging into the mobile app, request a physical passbook printout, or visit any local branch teller counter. The board remains fully committed to maintaining this upward momentum by pursuing low-risk, diversified financial portfolios throughout the remainder of the fiscal year.`,
         date: "May 8, 2026",
         img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Membership", "Onboarding", "Batch", "New Members"],
         title: "New Member Onboarding — Batch 2026",
-        body: "TerraLink is now accepting applications for the second membership batch of 2026. Joining the cooperative opens access to exclusive loan products, investment plans, CoopMart benefits, and community programs. Requirements include a valid government-issued ID, two 2x2 ID photos, and a completed membership application form. A one-time membership share capital of ₱500 is required upon approval. Processing takes 3–5 business days. Visit any branch to get started.",
+        body: `TerraLink is officially welcoming applications for our second comprehensive cooperative membership onboarding intake for the fiscal year 2026. Becoming an active member of our growing institution unlocks immediate entry to competitive micro-loan products, high-yielding investment plans, and exclusive shopping rewards at CoopMart outlets.
+
+The mandatory onboarding documentation checklist requires the presentation of one valid government-issued photo ID card, two recent 2x2 colored ID pictures, and a fully accomplished membership form. Upon receiving formal committee approval, a one-time minimum share capital contribution of ₱500 must be deposited to establish regular membership standing.
+
+The standard background verification and account creation process requires approximately 3 to 5 business days to complete. Interested individuals are encouraged to drop by any nearby branch office to participate in our mandatory pre-membership educational seminar or complete the preliminary application modules online via our web portal.`,
         date: "May 5, 2026",
         img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["CoopMart", "Eco-friendly", "Campaign", "Sustainability"],
         title: "CoopMart Zero-Waste Campaign",
-        body: "CoopMart is going green — and we want you with us. Starting May 15, all CoopMart branches will implement a strict bring-your-own-bag policy as part of TerraLink's broader sustainability commitment. Members who bring reusable bags will earn 5 bonus loyalty points per transaction, redeemable for discounts on future purchases. Reusable bags are also available at the checkout counter for ₱25. Together, let's reduce plastic waste one shopping trip at a time.",
+        body: `CoopMart is embarking on an ambitious green retail journey, and we are callously inviting our entire cooperative family to actively join the movement. Starting next week, all CoopMart brick-and-mortar retail outlets will enforce a strict bring-your-own-bag policy to reduce single-use checkout plastic waste.
+
+To encourage this sustainable shift, members who bring reusable shopping bags will instantly earn 5 bonus loyalty points per commercial transaction. These accumulated eco-points can be seamlessly redeemed for cash discounts during future checkout sessions or donated directly to community tree-planting funds.
+
+For shoppers caught without a bag, heavy-duty reusable canvas totes will be available for purchase at all cashier counters for a nominal fee of ₱25. We deeply appreciate your cooperative understanding and active partnership as we systematically reshape our daily consumer habits to protect our local ecosystems.`,
         date: "May 2, 2026",
         img: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Loans", "Relief", "Calamity", "Emergency"],
         title: "Special Loan Program for Calamity Victims",
-        body: "TerraLink stands with members affected by recent natural calamities. The Cooperative has launched a zero-interest emergency loan program offering up to ₱20,000 per qualified member, with a 12-month repayment period and a 3-month grace period before first payment. Required documents include proof of calamity impact, a valid ID, and accomplished application form. Applications are accepted at all branch offices until June 30, 2026. Recovery assistance officers are available on-site to assist applicants.",
+        body: `In swift response to the severe damage caused by recent natural weather disturbances, TerraLink is mobilizing an emergency financial relief loan facility. This zero-interest calamity assistance program is structured to provide urgent capital relief of up to ₱20,000 per affected member household.
+
+To ensure maximum breathing room for recovery, the loan features a relaxed 12-month total repayment schedule paired with an absolute 3-month payment grace period. Eligible applicants must simply present basic proof of locality impact, a valid membership identification card, and a completed emergency credit request sheet.
+
+Our internal credit committee has streamlined the approval workflow, reducing target processing times down to an unprecedented 24-hour turnaround matrix. Special recovery assistance officers have been deployed across on-site field tents to help members navigate the application paperwork without standing in long branch lines. This program will remain fully open for applications until June 30, 2026.`,
         date: "April 28, 2026",
         img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Announcement", "Meeting", "Townhall", "Policy"],
         title: "Member Townhall Meeting Schedule",
-        body: "Your voice matters. TerraLink will be hosting a series of virtual townhall meetings next month to gather member feedback on upcoming policy updates and new product proposals. Sessions will be facilitated by board directors and department heads. Topics include proposed changes to loan eligibility criteria, expansion of CoopMart branches, and the rollout of the new digital savings product. Meeting links and schedules will be sent via email and SMS. Members may also submit questions in advance through the app.",
+        body: `Because democratic participation and collective transparency form the absolute core of our organizational identity, TerraLink is scheduling a series of virtual townhall meetings. These digital sessions are designed to gather direct member feedback on upcoming micro-credit adjustment models and structural product rollouts before final board votes.
+
+Key discussion topics include proposed updates to multi-purpose loan eligibility matrices, geographical expansion plans for new CoopMart branches, and technical details on our upcoming high-yield digital savings product. The virtual meetings will be hosted via a secure video conferencing link, featuring live question-and-answer panels with our board directors and department heads.
+
+Complete scheduling parameters and individual digital entry tokens will be broadcasted to all active emails and registered mobile numbers over the coming week. Members who cannot attend live are highly encouraged to submit their questions in advance using the mobile app’s townhall forum tab.`,
         date: "April 20, 2026",
         img: "https://images.unsplash.com/photo-1591522811280-a8759970b03f?auto=format&fit=crop&w=600&q=80"
     },
     {
         tags: ["Community", "Environment", "Volunteer", "Eco-Drive"],
         title: "TerraLink Eco-Drive: Tree Planting Event",
-        body: "Join us this June as TerraLink hosts its annual Eco-Drive Tree Planting Event at partner reforestation sites in the uplands of Cebu. Over 1,000 native seedlings will be planted by volunteers from the cooperative's staff, member families, and youth groups. The event is free and open to all registered members and their dependents. Refreshments and transportation from the main branch will be provided. To sign up, fill out the volunteer form at any branch or through the TerraLink mobile app before June 5.",
+        body: `TerraLink is officially opening registration for our annual Eco-Drive Tree Planting Event, a major environmental volunteer milestone organized by our Community Development Committee. This year, our target is to successfully plant over 1,000 native seedling varieties across critical public watershed protection zones in the upland regions of Cebu.
+
+The cooperative will provide free round-trip bus transportation from our main corporate headquarters directly to the planting sites, alongside complimentary snacks, hydration packs, and specialized planting tools. This outdoor volunteer event is completely free and open to all registered cooperative members, youth civic groups, and environmental enthusiasts.
+
+It offers an excellent opportunity for family bonding while taking real, measurable action to combat local deforestation and climate impacts. Volunteer registration modules will remain open until June 5, 2026, accessible through any physical branch customer desk or via the community events tab inside the TerraLink mobile application.`,
         date: "April 15, 2026",
         img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
     }
 ];
-
 
 // ============================================================
 // RENDER — Static news cards with Search & Sort
@@ -216,9 +279,12 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
         paginatedNews = filteredNews.slice(startIndex, endIndex);
     }
 
-    paginatedNews.forEach((article) => {
+    paginatedNews.forEach((article, index) => {
         const card = document.createElement('article');
-        card.className = 'news-card';
+        card.className = isHomePage ? 'news-card' : 'news-card reveal-on-scroll';
+        if (!isHomePage) {
+            card.style.transitionDelay = `${(index % NEWS_PER_PAGE) * 0.1}s`;
+        }
 
             const tagsHtml = article.tags.map(t => `<span class="news-tag" style="margin-bottom: 0;">${t}</span>`).join('');
 
@@ -300,6 +366,9 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
             paginationContainer.appendChild(nextBtn);
         }
     }
+
+    // 새롭게 추가된 동적 카드들에 대해 옵저버 감지 시작
+    if (typeof observeElements === 'function') observeElements();
 }
 
 // ============================================================
@@ -325,16 +394,16 @@ function renderNewsDetail() {
         const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
         detailContainer.innerHTML = `
-            <div class="news-detail-header">
+            <div class="news-detail-header reveal-on-scroll">
                 <div class="news-detail-tags">
                     ${tagsHtml}
                 </div>
                 <h1>${article.title}</h1>
                 <span class="news-date">${article.date} &nbsp;&bull;&nbsp; ${readTime} min read</span>
             </div>
-            <div class="news-detail-img" style="background-image: url('${article.img}');"></div>
-            <div class="news-detail-body">
-                <p>${article.body}</p>
+            <div class="news-detail-img reveal-on-scroll" style="background-image: url('${article.img}'); transition-delay: 0.15s;"></div>
+            <div class="news-detail-body reveal-on-scroll" style="transition-delay: 0.3s;">
+                ${article.body.split(/\n\s*\n/).map(para => `<p>${para.trim()}</p>`).join('\n                ')}
                 <div class="news-detail-actions">
                     ${hasPrev ? '<a href="article.html?id=' + (currentIndex - 1) + '" class="btn btn-secondary">&larr; Previous</a>' : '<div class="btn-placeholder"></div>'}
                     <a href="news.html" class="btn btn-primary">View All News</a>
@@ -342,6 +411,8 @@ function renderNewsDetail() {
                 </div>
             </div>
         `;
+
+        if (typeof observeElements === 'function') observeElements();
     } else {
         detailContainer.innerHTML = `
             <div style="text-align: center; padding: 50px 0;">
@@ -813,6 +884,25 @@ async function loadCoopVision() {
             }
         }
 }
+
+// ============================================================
+// GLOBAL SCROLL REVEAL ANIMATIONS
+// ============================================================
+const globalScrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+
+function observeElements() {
+    document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach(el => {
+        globalScrollObserver.observe(el);
+    });
+}
+
 // ============================================================
 // INIT
 // ============================================================
@@ -843,4 +933,5 @@ window.addEventListener('DOMContentLoaded', () => {
     loadTimeline();
     loadSiteSettings();    
     loadCoopVision(); 
+    observeElements();
 });

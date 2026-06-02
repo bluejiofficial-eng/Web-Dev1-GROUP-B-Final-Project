@@ -2969,7 +2969,7 @@ body.history-page .history-timeline.timeline-list {
 }
 
 /* 본문 첫 글자 강조 (Drop Cap) - 매거진 스타일 */
-.news-detail-body p::first-letter {
+.news-detail-body p:first-of-type::first-letter {
     float: left;
     font-size: 3.8rem;
     line-height: 0.85;
@@ -2980,6 +2980,10 @@ body.history-page .history-timeline.timeline-list {
 }
 
 .news-detail-body p {
+    margin-bottom: 24px;
+}
+
+.news-detail-body p:last-of-type {
     margin-bottom: 0;
 }
 
@@ -3029,5 +3033,62 @@ body.history-page .history-timeline.timeline-list {
 
     .btn-placeholder {
         display: none;
+    }
+}
+
+/* ==========================================================================
+   Global Hero Content Animations (Home, News, etc.)
+   ========================================================================== */
+/* 1. 기본 상태: 텍스트를 숨기고 살짝 아래로 내려놓음 */
+.hero-slide .hero-content > * {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+/* 2. 애니메이션 실행: 정적 히어로 페이지 및 현재 활성화된 슬라이드 */
+.hero-slide:not(.carousel-slide) .hero-content > *,
+.carousel-slide.active .hero-content > * {
+    animation: heroFadeInUp 0.8s ease-out forwards;
+}
+
+/* 3. 각 요소별 딜레이 (순차적으로 나타나도록 함) */
+.hero-slide .hero-content > *:nth-child(1) { animation-delay: 0.15s; }
+.hero-slide .hero-content > *:nth-child(2) { animation-delay: 0.3s; }
+.hero-slide .hero-content > *:nth-child(3) { animation-delay: 0.45s; }
+.hero-slide .hero-content > *:nth-child(4) { animation-delay: 0.6s; }
+.hero-slide .hero-content > *:nth-child(5) { animation-delay: 0.75s; }
+
+@keyframes heroFadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Global Scroll Reveal Animations
+   ========================================================================== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-slide .hero-content > * {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
