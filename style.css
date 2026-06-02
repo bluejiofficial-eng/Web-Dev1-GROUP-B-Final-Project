@@ -91,19 +91,12 @@ body.coopmart-page .container {
 }
 
 body.coopmart-page main.container {
-<<<<<<< HEAD
-    background: rgba(255,255,255,0.92);
-    border-radius: 16px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.06);
-    padding: 36px 0 40px;
-=======
     background: rgba(255, 255, 255, 0.82);
     border-radius: 24px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
     padding: 48px 32px 64px;
     margin-top: 24px;
     margin-bottom: 48px;
->>>>>>> e68e67f4c80cfbff789d4fd8a34f04d922cb0643
 }
 
 body.coopmart-page .section-header {
@@ -207,10 +200,6 @@ body.coopmart-page .product-card .product-img {
     height: 200px;
     background-size: cover;
     background-position: center;
-<<<<<<< HEAD
-    border-radius: 12px;
-    margin-bottom: 14px;
-=======
     border-radius: 0;
     margin-bottom: 0;
     flex-shrink: 0;
@@ -247,7 +236,6 @@ body.coopmart-page .product-card > p:not(.product-specs):has(+ .product-specs) {
 body.coopmart-page .product-card > p:not(.product-specs) + .product-specs {
     padding-top: 0;
     margin-top: 0;
->>>>>>> e68e67f4c80cfbff789d4fd8a34f04d922cb0643
 }
 
 body.coopmart-page .product-img-1 {
@@ -1376,6 +1364,37 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
     color: #999;
     display: block;
+}
+
+/* ==========================================================================
+   News Marquee Animation (Home Page)
+   ========================================================================== */
+.news-marquee-viewport {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 15px 0; /* Hover 시 카드 그림자가 잘리지 않도록 여백 추가 */
+}
+
+.news-marquee-viewport:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-track .news-card {
+    width: 320px; /* 기존 minmax(320px) 설정과 동일하게 고정 */
+    flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 15px)); } /* 정확히 절반 위치(아이템 길이+Gap)로 이동하여 완벽한 루프 생성 */
 }
 
 /* 9. Footer Section */

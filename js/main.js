@@ -202,8 +202,8 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
     let totalPages = 1;
 
     if (isHomePage) {
-        // 메인 페이지: 전체 뉴스 중 정렬된 최신 3개만 잘라서 표시
-        paginatedNews = filteredNews.slice(0, 3);
+        // 메인 페이지: 마키(전광판) 효과를 위해 최신 뉴스 6개 추출
+        paginatedNews = filteredNews.slice(0, 6);
     } else {
         // 뉴스 전체 페이지: 페이지네이션 적용
         totalPages = Math.ceil(filteredNews.length / NEWS_PER_PAGE);
@@ -236,6 +236,19 @@ function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-de
         });
         container.appendChild(card);
     });
+
+    // 메인 페이지(index.html) 무한 스크롤 전광판을 위한 노드 복제
+    if (isHomePage && container.children.length > 0) {
+        const originalChildren = Array.from(container.children);
+        originalChildren.forEach((child, index) => {
+            const clone = child.cloneNode(true);
+            const article = paginatedNews[index];
+            clone.addEventListener('click', () => {
+                window.location.href = `article.html?id=${article.originalIndex}`;
+            });
+            container.appendChild(clone);
+        });
+    }
 
     // Render Pagination Controls
     if (!isHomePage && paginationContainer) {
