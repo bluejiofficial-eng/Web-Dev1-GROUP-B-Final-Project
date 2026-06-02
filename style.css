@@ -1384,7 +1384,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 30px;
     width: max-content;
-    animation: marqueeScroll 25s linear infinite;
+    animation: marqueeScroll 40s linear infinite; /* 숫자가 커질수록 느려집니다 (예: 40s) */
 }
 
 .marquee-track .news-card {
@@ -2882,4 +2882,152 @@ body.history-page .history-timeline.timeline-list {
     .modal-img  { height: 180px; }
     .modal-body { padding: 20px; }
     .modal-body h3 { font-size: 1.2rem; }
+}
+
+
+/* ==========================================================================
+   ARTICLE DETAIL PAGE — Design Improvements
+   style.css 맨 아래에 붙여넣기
+   ========================================================================== */
+
+/* 0. Section Base */
+.article-section {
+    background-color: #ffffff;
+    padding: 80px 0 100px;
+    min-height: 60vh;
+}
+
+/* 1. 전체 섹션 배경 & 패딩 정리 */
+.highlights-section {
+    background-color: #ffffff !important;
+    padding: 64px 0 80px !important;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+/* 2. 태그 — pill 형태로 개선 */
+#news-detail-container .news-tag {
+    border-radius: 999px !important;
+    font-size: 0.78rem !important;
+    padding: 5px 14px !important;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+
+/* 상세 헤더 영역 */
+.news-detail-header {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.news-detail-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* 3. 제목 타이포그래피 */
+#news-detail-container h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em;
+    color: #1b3d22 !important;
+    margin-bottom: 15px !important;
+}
+
+/* 4. 날짜 스타일 */
+#news-detail-container .news-date {
+    font-size: 1rem !important;
+    color: #999 !important;
+    letter-spacing: 0.02em;
+}
+
+/* 5. 이미지 — 비율 고정 + 부드러운 그림자 */
+.news-detail-img {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    height: 420px !important;
+    margin-bottom: 44px !important;
+}
+
+/* 6. 본문 텍스트 — justify 제거, 가독성 개선 */
+.news-detail-body {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left !important;
+    font-size: 1.08rem !important;
+    line-height: 1.85 !important;
+    color: #444 !important;
+}
+
+/* 본문 첫 글자 강조 (Drop Cap) - 매거진 스타일 */
+.news-detail-body p::first-letter {
+    float: left;
+    font-size: 3.8rem;
+    line-height: 0.85;
+    font-weight: 800;
+    color: #23743B;
+    margin-right: 12px;
+    margin-top: 6px;
+}
+
+.news-detail-body p {
+    margin-bottom: 0;
+}
+
+/* 7. 하단 네비게이션 버튼 영역 (Flexbox) */
+.news-detail-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eaeaea;
+}
+
+/* 8. Previous / Next / View All 버튼 간격 */
+.news-detail-body .btn-secondary {
+    min-width: 110px;
+    text-align: center;
+}
+
+.news-detail-body .btn-primary {
+    margin-right: 0 !important;
+}
+
+.btn-placeholder {
+    width: 110px;
+}
+
+/* 9. 반응형 — 모바일에서 이미지 높이 조정 */
+@media (max-width: 768px) {
+    .news-detail-img {
+        height: 240px !important;
+    }
+
+    #news-detail-container h1 {
+        font-size: 1.65rem !important;
+    }
+
+    .news-detail-body {
+        font-size: 1rem !important;
+    }
+
+    .news-detail-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center !important;
+    }
+
+    .btn-placeholder {
+        display: none;
+    }
 }

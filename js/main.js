@@ -28,114 +28,114 @@ const urlFor = (source) => (builder ? builder.image(source) : null);
 // ============================================================
 const STATIC_NEWS = [
     {
-        tags: ["Financial", "Report", "Q2"],
+        tags: ["Financial", "Report", "Q2", "Performance"],
         title: "Q2 Financial Performance Report",
-        body: "Our Q2 financial results show a 15% increase in total assets, driven by strong member deposits and successful loan deployments. View the full report online.",
+        body: "TerraLink closes Q2 2026 with a 15% increase in total assets, reaching a new cooperative milestone. Strong member deposit growth and strategic loan deployments across key sectors were the primary drivers. Net savings also grew by 9% compared to the same period last year. Members may access the full audited report through the online portal or request a printed copy at any branch.",
         date: "June 10, 2026",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Loans", "Solar", "Sustainability"],
+        tags: ["Loans", "Solar", "Sustainability", "Green"],
         title: "New Solar Loan Initiative",
-        body: "To support sustainable living, TerraLink introduces the Solar Home Loan. Enjoy special low rates for installing solar panels in your residence.",
+        body: "TerraLink introduces the Solar Home Loan — a dedicated financing program to help members transition to clean, renewable energy. Enjoy preferential rates starting at 4.5% per annum, with flexible repayment terms of up to 60 months. The program covers solar panel installation, inverter systems, and battery storage units. Applications are now open at all branch offices.",
         date: "June 5, 2026",
-        img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["CoopMart", "Local", "Events"],
+        tags: ["CoopMart", "Local", "Events", "Community"],
         title: "CoopMart Local Artisan Fair",
-        body: "Join us this weekend as CoopMart hosts a local artisan fair. Support community makers and discover unique handcrafted products.",
+        body: "CoopMart is proud to host its first Local Artisan Fair this weekend at all major branch locations. Discover handcrafted goods from over 30 community makers — from woven baskets and pottery to natural soaps and locally roasted coffee. All purchases directly support partner micro-entrepreneurs. Entry is free for all TerraLink members and their families.",
         date: "June 1, 2026",
-        img: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Community", "Education", "Youth"],
+        tags: ["Community", "Education", "Youth", "Financial Literacy"],
         title: "Youth Financial Literacy Workshop",
-        body: "Empowering the next generation! Enroll your children in our upcoming free financial literacy workshop designed for teens and young adults.",
+        body: "TerraLink believes financial empowerment starts young. Our upcoming free workshop, open to teens and young adults aged 13–22, covers budgeting basics, understanding savings and interest, and responsible credit use. Sessions run every Saturday in June at the Main Branch Training Hall. Parents are encouraged to accompany younger participants. Seats are limited — register at the branch or through the app.",
         date: "May 30, 2026",
-        img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Membership", "Health", "Partnership"],
+        tags: ["Membership", "Health", "Partnership", "Insurance"],
         title: "Expanded Health Insurance Options",
-        body: "We have partnered with leading healthcare providers to offer exclusive health insurance packages at discounted rates for all regular members.",
+        body: "Your health is our priority. TerraLink has partnered with three leading healthcare providers to offer exclusive group health insurance packages available only to regular members. Plans start at ₱350/month and include outpatient consultations, annual physical exams, and emergency hospitalization coverage. Visit any branch to compare plans and enroll. Coverage begins within 15 days of activation.",
         date: "May 25, 2026",
-        img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Announcement", "Assembly", "Voting"],
+        tags: ["Announcement", "Assembly", "Governance", "Voting"],
         title: "Annual General Assembly 2026",
-        body: "Join us this coming month for our democratic voting session, financial transparency review, and new policy ratification updates. All members are encouraged to attend and participate in the decision-making process that shapes our cooperative's future.",
+        body: "All members are invited to TerraLink's Annual General Assembly, the cooperative's most important democratic event of the year. The assembly will include the presentation of audited financial statements, election of new board directors, ratification of amended by-laws, and open-floor discussions on proposed policy changes. Attendance is strongly encouraged, as quorum is required for binding resolutions. Date, time, and venue details will be announced via SMS and the member portal.",
         date: "May 22, 2026",
-        img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["CoopMart", "Organic", "Agriculture"],
+        tags: ["CoopMart", "Organic", "Agriculture", "Local Produce"],
         title: "New Organic Supply in CoopMart",
-        body: "We are expanding our local farm supply chains! Enjoy fresh, direct-from-farm organic goods at all storefront branches starting this weekend. Products include seasonal vegetables, root crops, and certified organic rice from our partner farms.",
+        body: "Fresh, farm-to-table is now a reality at CoopMart. Starting this weekend, all storefront branches will carry a new line of certified organic produce sourced directly from TerraLink's partner farms. Available items include seasonal vegetables, native root crops, heirloom rice varieties, and free-range eggs. Prices are kept member-friendly to make healthy eating accessible to all. New stock arrives every Friday morning.",
         date: "May 18, 2026",
-        img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Announcement", "Digital", "App"],
+        tags: ["Announcement", "Digital", "App", "Technology"],
         title: "Digital Banking App Update",
-        body: "Our mobile app just got better! The latest update includes instant fund transfers, a unified dashboard, and enhanced security features.",
+        body: "We have rolled out a major update to the TerraLink mobile app. Version 3.2 introduces instant peer-to-peer fund transfers between members, a redesigned dashboard with real-time balance and dividend tracking, biometric login support, and end-to-end encrypted messaging with our support team. The update is available now on both the App Store and Google Play. Existing users will be prompted to update automatically.",
         date: "May 15, 2026",
-        img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Community", "Grant", "Farming"],
+        tags: ["Community", "Grant", "Farming", "Agriculture"],
         title: "Agricultural Support Grant",
-        body: "TerraLink has allocated a special grant to assist local partner farmers in upgrading their irrigation systems ahead of the dry season.",
+        body: "As part of TerraLink's commitment to rural livelihood support, a ₱2.5 million agricultural grant has been allocated to assist partner farmers in Cebu's upland barangays ahead of the dry season. Funds will be used to upgrade drip irrigation systems, install water catchment facilities, and procure drought-resistant seed varieties. Fourteen farming households are expected to benefit from the first disbursement phase.",
         date: "May 12, 2026",
-        img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80"
+        img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Financial", "Rates", "Policy"],
+        tags: ["Financial", "Rates", "Policy", "Time Deposit"],
         title: "Interest Rate Adjustment Notification",
-        body: "In alignment with standard central banking indicators, we have optimized our investment dividend payouts to offer stable returns. Members with active time deposits will receive updated passbooks at the nearest branch within the month.",
+        body: "In response to updated central banking benchmarks, TerraLink has adjusted its time deposit interest rates effective June 1, 2026. Regular savings accounts remain at 2.5% per annum, while 12-month time deposits have been revised to 5.0%. Members with existing time deposits will receive updated passbooks reflecting the new rates at any branch within the month. For questions, contact our financial services desk.",
         date: "May 10, 2026",
-        img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        tags: ["Financial", "Dividends", "Investment"],
-        title: "Investment Dividend Distribution",
-        body: "Good news for our investors! The semi-annual dividend distribution for Growth Investment Plans has been processed and credited to member accounts.",
-        date: "May 8, 2026",
         img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Membership", "Onboarding", "Batch"],
+        tags: ["Financial", "Dividends", "Investment", "Members"],
+        title: "Investment Dividend Distribution",
+        body: "TerraLink is pleased to announce that the semi-annual dividend distribution for all Growth Investment Plan holders has been successfully processed. Dividends have been credited directly to member accounts as of May 8, 2026. The average payout rate this period is 7.2% — reflecting the cooperative's strong financial performance. Members may verify their credited amount through the app, passbook update, or by visiting their nearest branch.",
+        date: "May 8, 2026",
+        img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        tags: ["Membership", "Onboarding", "Batch", "New Members"],
         title: "New Member Onboarding — Batch 2026",
-        body: "We are now accepting new member applications for the second batch of 2026. Applicants must submit valid government-issued ID, two 2x2 photos, and a duly accomplished membership form. Processing time is 3–5 business days.",
+        body: "TerraLink is now accepting applications for the second membership batch of 2026. Joining the cooperative opens access to exclusive loan products, investment plans, CoopMart benefits, and community programs. Requirements include a valid government-issued ID, two 2x2 ID photos, and a completed membership application form. A one-time membership share capital of ₱500 is required upon approval. Processing takes 3–5 business days. Visit any branch to get started.",
         date: "May 5, 2026",
         img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["CoopMart", "Eco-friendly", "Campaign"],
+        tags: ["CoopMart", "Eco-friendly", "Campaign", "Sustainability"],
         title: "CoopMart Zero-Waste Campaign",
-        body: "As part of our eco-drive, CoopMart is implementing a bring-your-own-bag policy. Members using reusable bags will receive bonus loyalty points.",
+        body: "CoopMart is going green — and we want you with us. Starting May 15, all CoopMart branches will implement a strict bring-your-own-bag policy as part of TerraLink's broader sustainability commitment. Members who bring reusable bags will earn 5 bonus loyalty points per transaction, redeemable for discounts on future purchases. Reusable bags are also available at the checkout counter for ₱25. Together, let's reduce plastic waste one shopping trip at a time.",
         date: "May 2, 2026",
-        img: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Loans", "Relief", "Calamity"],
+        tags: ["Loans", "Relief", "Calamity", "Emergency"],
         title: "Special Loan Program for Calamity Victims",
-        body: "TerraLink Cooperative is extending a zero-interest emergency loan program for members affected by recent calamities. Eligible members may apply for up to ₱20,000 with a 12-month repayment period. Applications are open until June 30, 2026.",
+        body: "TerraLink stands with members affected by recent natural calamities. The Cooperative has launched a zero-interest emergency loan program offering up to ₱20,000 per qualified member, with a 12-month repayment period and a 3-month grace period before first payment. Required documents include proof of calamity impact, a valid ID, and accomplished application form. Applications are accepted at all branch offices until June 30, 2026. Recovery assistance officers are available on-site to assist applicants.",
         date: "April 28, 2026",
-        img: "https://images.unsplash.com/photo-1604594849809-dfedbc827105?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Announcement", "Meeting", "Townhall"],
+        tags: ["Announcement", "Meeting", "Townhall", "Policy"],
         title: "Member Townhall Meeting Schedule",
-        body: "Have your voice heard. We are scheduling virtual townhall meetings next month to discuss upcoming cooperative policies and new product developments.",
+        body: "Your voice matters. TerraLink will be hosting a series of virtual townhall meetings next month to gather member feedback on upcoming policy updates and new product proposals. Sessions will be facilitated by board directors and department heads. Topics include proposed changes to loan eligibility criteria, expansion of CoopMart branches, and the rollout of the new digital savings product. Meeting links and schedules will be sent via email and SMS. Members may also submit questions in advance through the app.",
         date: "April 20, 2026",
-        img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80"
+        img: "https://images.unsplash.com/photo-1591522811280-a8759970b03f?auto=format&fit=crop&w=600&q=80"
     },
     {
-        tags: ["Community", "Environment", "Volunteer"],
+        tags: ["Community", "Environment", "Volunteer", "Eco-Drive"],
         title: "TerraLink Eco-Drive: Tree Planting Event",
-        body: "As part of our commitment to sustainable community growth, TerraLink Cooperative will be hosting a tree planting event this June. Members, officers, and volunteers are welcome to join. Registration is free and open to all member families.",
+        body: "Join us this June as TerraLink hosts its annual Eco-Drive Tree Planting Event at partner reforestation sites in the uplands of Cebu. Over 1,000 native seedlings will be planted by volunteers from the cooperative's staff, member families, and youth groups. The event is free and open to all registered members and their dependents. Refreshments and transportation from the main branch will be provided. To sign up, fill out the volunteer form at any branch or through the TerraLink mobile app before June 5.",
         date: "April 15, 2026",
         img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
     }
@@ -318,23 +318,27 @@ function renderNewsDetail() {
         const hasPrev = currentIndex > 0;
         const hasNext = currentIndex < STATIC_NEWS.length - 1;
 
-        const tagsHtml = article.tags.map(t => `<span class="news-tag" style="margin-bottom: 0; font-size: 0.9rem; padding: 6px 14px;">${t}</span>`).join('');
+        const tagsHtml = article.tags.map(t => `<span class="news-tag">${t}</span>`).join('');
+
+        // 예상 읽기 시간 계산 (단어 수 기준, 평균 200단어/분)
+        const wordCount = article.body.trim().split(/\s+/).length;
+        const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
         detailContainer.innerHTML = `
-            <div class="news-detail-header" style="max-width: 800px; margin: 0 auto 30px; text-align: center;">
-                <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+            <div class="news-detail-header">
+                <div class="news-detail-tags">
                     ${tagsHtml}
                 </div>
-                <h1 style="margin-bottom: 15px; font-size: 2.5rem; color: #1b3d22;">${article.title}</h1>
-                <span class="news-date" style="color: #666; font-size: 1rem;">${article.date}</span>
+                <h1>${article.title}</h1>
+                <span class="news-date">${article.date} &nbsp;&bull;&nbsp; ${readTime} min read</span>
             </div>
-            <div class="news-detail-img" style="width: 100%; max-width: 900px; margin: 0 auto 40px; height: 450px; background-image: url('${article.img}'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);"></div>
-            <div class="news-detail-body" style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: #444; text-align: justify;">
+            <div class="news-detail-img" style="background-image: url('${article.img}');"></div>
+            <div class="news-detail-body">
                 <p>${article.body}</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eaeaea;">
-                    ${hasPrev ? '<a href="article.html?id=' + (currentIndex - 1) + '" class="btn btn-secondary">&larr; Previous</a>' : '<div style="width: 110px;"></div>'}
+                <div class="news-detail-actions">
+                    ${hasPrev ? '<a href="article.html?id=' + (currentIndex - 1) + '" class="btn btn-secondary">&larr; Previous</a>' : '<div class="btn-placeholder"></div>'}
                     <a href="news.html" class="btn btn-primary">View All News</a>
-                    ${hasNext ? '<a href="article.html?id=' + (currentIndex + 1) + '" class="btn btn-secondary">Next &rarr;</a>' : '<div style="width: 110px;"></div>'}
+                    ${hasNext ? '<a href="article.html?id=' + (currentIndex + 1) + '" class="btn btn-secondary">Next &rarr;</a>' : '<div class="btn-placeholder"></div>'}
                 </div>
             </div>
         `;
@@ -365,7 +369,7 @@ function buildCarousel(heroItems) {
     wrapper.className = 'carousel-wrapper';
 
     heroItems.forEach((item, index) => {
-        const imgUrl = item.backgroundImage
+        const imgUrl = (builder && item.backgroundImage)
             ? urlFor(item.backgroundImage).width(1920).height(1080).fit('crop').url()
             : 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80';
         const ctaHref = item.ctaHref || getHeroCtaHref(item);
@@ -615,7 +619,7 @@ function renderDirectors(containerId, directors) {
         const media = document.createElement('div');
         media.className = 'leader-card__media';
 
-        if (director.image && director.image.asset) {
+        if (builder && director.image && director.image.asset) {
             imageUrl = urlFor(director.image).width(600).height(600).fit('crop').url();
             media.style.backgroundImage = `url('${imageUrl}')`;
             media.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
@@ -669,7 +673,7 @@ function renderTimelineEntries(entries) {
         const item = document.createElement('article');
         item.className = 'timeline-entry';
 
-        const hasImage = Boolean(entry.mainImage && entry.mainImage.asset);
+        const hasImage = Boolean(builder && entry.mainImage && entry.mainImage.asset);
 
         if (hasImage) {
             const imageWrap = document.createElement('div');
@@ -677,7 +681,8 @@ function renderTimelineEntries(entries) {
 
             const image = document.createElement('div');
             image.className = 'timeline-image';
-            image.style.backgroundImage = `url('${urlFor(entry.mainImage).width(1200).height(675).fit('crop').url()}')`;
+            const imgUrl = urlFor(entry.mainImage).width(1200).height(675).fit('crop').url();
+            image.style.backgroundImage = `url('${imgUrl}')`;
 
             imageWrap.appendChild(image);
             item.appendChild(imageWrap);
