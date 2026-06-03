@@ -38,6 +38,26 @@
             margin-right: 0;
         }
 
+        .membership-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .membership-cta-actions .btn-primary {
+            margin-right: 0;
+        }
+
+        .footer-contact-icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
         @media (max-width: 768px) {
             .hero-section {
                 height: auto;
@@ -161,17 +181,23 @@
             </div>
             <div class="container grid-3">
                 <div class="highlight-card">
-                    <div class="icon-box">💳</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/credit%20card%20icon.png" alt="">
+                    </div>
                     <h3>Priority Access to Services</h3>
                     <p>Members receive first access to cooperative loan programs, savings products, and support services.</p>
                 </div>
                 <div class="highlight-card">
-                    <div class="icon-box">📈</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/participants%20icon.png" alt="">
+                    </div>
                     <h3>Dividend Participation</h3>
                     <p>Qualified members share in annual cooperative earnings through patronage refunds and dividends.</p>
                 </div>
                 <div class="highlight-card">
-                    <div class="icon-box">🛒</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/discount%20icon.png" alt="">
+                    </div>
                     <h3>Exclusive CoopMart Offers</h3>
                     <p>Get member-only discounts on selected products and services from TerraLink CoopMart partners.</p>
                 </div>
@@ -188,22 +214,30 @@
             </div>
             <div class="container grid-4">
                 <div class="service-box">
-                    <div class="service-icon">✅</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/checkmark%20icon.png" alt="">
+                    </div>
                     <h4>Basic Qualification</h4>
                     <p>Must be at least 18 years old and willing to comply with TerraLink Cooperative policies and bylaws.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">🪪</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/identification%20id%20icon.png" alt="">
+                    </div>
                     <h4>Valid Identification</h4>
                     <p>Submit one government-issued ID and supporting personal information for account verification.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">📝</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/membership%20icon.png" alt="">
+                    </div>
                     <h4>Membership Application</h4>
                     <p>Complete the official application form and attend the required membership orientation session.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">💰</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/loans%20icon.png" alt="">
+                    </div>
                     <h4>Initial Capital Share</h4>
                     <p>Pay the prescribed membership fee and initial share capital contribution upon approval.</p>
                 </div>
@@ -251,7 +285,7 @@
                 <h2>Start Your Membership Journey Today</h2>
                 <p>Take the next step toward cooperative ownership and inclusive financial growth with TerraLink.</p>
             </div>
-            <div class="container">
+            <div class="membership-cta-actions">
                 <a href="support/support-application.html" class="btn btn-primary">Join Now</a>
                 <a href="support/support-application.html" class="btn btn-secondary">Apply for Membership</a>
             </div>
@@ -287,7 +321,7 @@
                 <h5>Contact Info</h5>
                 <p id="footer-address"></p>
                 <p id="footer-email"></p>
-                <p>📞 +63 (32) 230-0100</p>
+                <p><img class="footer-contact-icon" src="Images/assets/phone%20icon.png" alt="" aria-hidden="true"> +63 (32) 230-0100</p>
             </div>
         </div>
         <div class="footer-bottom">
