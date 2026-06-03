@@ -235,6 +235,18 @@ h1, h2, h3, h4, h5, h6 {
     background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80');
 }
 
+.helpdesk-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1920&q=80');
+}
+
+.calculator-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80');
+}
+
+.application-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80');
+}
+
 .hero-content {
     color: #ffffff;
     max-width: 650px;
@@ -300,6 +312,19 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ebdcb9;
 }
 
+/* Centered call-to-action button group */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-buttons .btn-primary {
+    margin-right: 0;
+}
+
 /* 6. Highlights Section */
 .highlights-section {
     padding: 60px 0;
@@ -334,6 +359,67 @@ h1, h2, h3, h4, h5, h6 {
 .highlight-card p {
     color: #666;
     font-size: 0.95rem;
+}
+
+/* Forms inside highlight cards (online application + loan calculator) */
+.highlight-card form,
+#loan-calculator-form {
+    text-align: left;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.highlight-card label,
+#loan-calculator-form label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #1b3d22;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.highlight-card input,
+.highlight-card select,
+.highlight-card textarea,
+#loan-calculator-form input,
+#loan-calculator-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9e2d9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    color: #2b2b2b;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.highlight-card input:focus,
+.highlight-card select:focus,
+.highlight-card textarea:focus,
+#loan-calculator-form input:focus,
+#loan-calculator-form select:focus {
+    outline: none;
+    border-color: #23743B;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(35, 116, 59, 0.12);
+}
+
+.highlight-card textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Center submit button row inside forms */
+.highlight-card form p:last-child,
+#loan-calculator-form p:last-child {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.highlight-card form p:last-child .btn,
+#loan-calculator-form p:last-child .btn {
+    margin-right: 0;
 }
 
 .director-avatar {
