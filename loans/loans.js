@@ -28,13 +28,26 @@
         "member-reliability": "Member Reliability",
     };
 
+    const ICONS = {
+        application: "../Images/assets/application%20icon.png",
+        clipboard: "../Images/assets/clipbaord%20icon.png",
+        compassion: "../Images/assets/compassion%20icon.png",
+        graph: "../Images/assets/graph%20icon.png",
+        handshake: "../Images/assets/handshake%20icon.png",
+        health: "../Images/assets/health%20icon.png",
+        home: "../Images/assets/house%20icon.png",
+        milestone: "../Images/assets/milestone%20icon.png",
+        phone: "../Images/assets/phone%20icon.png",
+        assistant: "../Images/assets/virtual%20assistant%20icon.png",
+    };
+
     const CATEGORY_ICONS = {
-        "home-better-living": "🏠",
-        "growth-legacy": "🌱",
-        "health-compassion": "💚",
-        "business-financial-freedom": "📈",
-        "milestones-memories": "🎉",
-        "member-reliability": "🤝",
+        "home-better-living": ICONS.home,
+        "growth-legacy": ICONS.milestone,
+        "health-compassion": ICONS.health,
+        "business-financial-freedom": ICONS.graph,
+        "milestones-memories": ICONS.milestone,
+        "member-reliability": ICONS.compassion,
     };
 
     const TYPE_LABEL = loanCategory === "special" ? "special" : "regular";
@@ -51,7 +64,16 @@
     }
 
     function getCategoryIcon(value) {
-        return CATEGORY_ICONS[value] || "💰";
+        return CATEGORY_ICONS[value] || ICONS.application;
+    }
+
+    function createIconImage(src, className) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "";
+        img.setAttribute("aria-hidden", "true");
+        if (className) img.className = className;
+        return img;
     }
 
     function displayField(value) {
@@ -105,7 +127,7 @@
         const icon = document.createElement("span");
         icon.className = "loan-card-icon";
         icon.setAttribute("aria-hidden", "true");
-        icon.textContent = getCategoryIcon(loan.category);
+        icon.appendChild(createIconImage(getCategoryIcon(loan.category)));
 
         const titleWrap = document.createElement("div");
         titleWrap.className = "loan-card-title-wrap";
@@ -177,14 +199,22 @@
         return card;
     }
 
-    function renderStateCard(icon, title, message) {
+    function renderStateCard(iconSrc, title, message) {
         const card = document.createElement("article");
         card.className = "loan-card loan-card--state";
-        card.innerHTML = `
-            <div class="service-icon">${icon}</div>
-            <h4>${title}</h4>
-            <p>${message}</p>
-        `;
+        const iconWrap = document.createElement("div");
+        iconWrap.className = "service-icon";
+        iconWrap.appendChild(createIconImage(iconSrc));
+
+        const heading = document.createElement("h4");
+        heading.textContent = title;
+
+        const body = document.createElement("p");
+        body.textContent = message;
+
+        card.appendChild(iconWrap);
+        card.appendChild(heading);
+        card.appendChild(body);
         return card;
     }
 
@@ -201,7 +231,7 @@
         if (visibleLoans.length === 0) {
             loansGrid.appendChild(
                 renderStateCard(
-                    "📋",
+                    ICONS.clipboard,
                     "No loans in this category",
                     `There are no ${TYPE_LABEL} loan products here right now. Try another filter or explore our other loan lineup.`
                 )
@@ -258,7 +288,7 @@
         loansGrid.innerHTML = "";
         loansGrid.appendChild(
             renderStateCard(
-                "⚠️",
+                ICONS.assistant,
                 "Unable to load loans",
                 "We could not retrieve loan products at this time. Please refresh the page or try again later."
             )
@@ -273,10 +303,10 @@
                 const addressEl = document.getElementById("footer-address");
                 const emailEl = document.getElementById("footer-email");
                 if (addressEl && settings.address) {
-                    addressEl.textContent = `📍 ${settings.address}`;
+                    addressEl.textContent = settings.address;
                 }
                 if (emailEl && settings.emails && settings.emails.length > 0) {
-                    emailEl.textContent = `📧 ${settings.emails[0]}`;
+                    emailEl.textContent = settings.emails[0];
                 }
             }
         } catch (err) {
@@ -293,7 +323,7 @@
                 loansGrid.innerHTML = "";
                 loansGrid.appendChild(
                     renderStateCard(
-                        "📋",
+                        ICONS.clipboard,
                         `No ${TYPE_LABEL} loans yet`,
                         "New programs will appear here once they are published. In the meantime, use the calculator or speak with our loan desk."
                     )
