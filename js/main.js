@@ -592,8 +592,10 @@ function getLeaderProfileExtras(director, index) {
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '.').replace(/^\.+|\.+$/g, '');
 
     return {
-        description: director.bio || director.description ||
-            `${name} serves as ${role} at TerraLink Cooperative, supporting transparent governance, member-focused programs, and sustainable community growth.`,
+        description: director.bio || director.description || [
+            `${name} serves as ${role} at TerraLink Cooperative, where they champion transparent governance, member-focused programs, and sustainable community growth. With a deep commitment to cooperative principles, they help guide strategic decisions that keep members at the heart of every initiative.`,
+            `Beyond day-to-day responsibilities, ${name} actively supports financial literacy outreach, local producer partnerships, and the long-term resilience of the cooperative. Their leadership reflects TerraLink's enduring vision of building a better future together.`
+        ].join('\n\n'),
         email: director.email || `${slug || `leader${index + 1}`}@terralink.coop`,
         phone: director.phone || '+63 (32) 230-0100'
     };
@@ -615,7 +617,7 @@ function createLeaderModal() {
                 <div class="modal-split__body modal-body">
                     <p class="director-role" id="leader-modal-role"></p>
                     <h3 id="leader-modal-name"></h3>
-                    <p id="leader-modal-desc"></p>
+                    <div id="leader-modal-desc"></div>
                     <div class="leader-modal-meta">
                         <p><strong>Email:</strong> <span id="leader-modal-email"></span></p>
                         <p><strong>Phone:</strong> <span id="leader-modal-phone"></span></p>
@@ -645,14 +647,27 @@ function openLeaderModal(director, imageUrl) {
     if (imageUrl) {
         imgEl.style.backgroundImage = `url('${imageUrl}')`;
         imgEl.style.display = 'block';
+        imgEl.classList.remove('modal-split__media--placeholder');
     } else {
-        imgEl.style.backgroundImage = 'linear-gradient(135deg, #23743B, #1b3d22)';
+        imgEl.style.backgroundImage = '';
         imgEl.style.display = 'block';
+        imgEl.classList.add('modal-split__media--placeholder');
     }
 
     document.getElementById('leader-modal-role').textContent = director.role || 'Director';
     document.getElementById('leader-modal-name').textContent = director.name;
-    document.getElementById('leader-modal-desc').textContent = extras.description;
+
+    const descEl = document.getElementById('leader-modal-desc');
+    descEl.innerHTML = '';
+    String(extras.description)
+        .split(/\n{2,}/)
+        .map((para) => para.trim())
+        .filter(Boolean)
+        .forEach((para) => {
+            const p = document.createElement('p');
+            p.textContent = para;
+            descEl.appendChild(p);
+        });
     document.getElementById('leader-modal-email').textContent = extras.email;
     document.getElementById('leader-modal-phone').textContent = extras.phone;
     document.getElementById('leader-modal').classList.add('active');
@@ -695,8 +710,8 @@ function renderDirectors(containerId, directors) {
             media.style.backgroundImage = `url('${imageUrl}')`;
             media.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
         } else {
-            media.classList.add('leader-card__media--initials');
-            media.textContent = getInitials(director.name);
+            media.classList.add('leader-card__media--placeholder');
+            media.setAttribute('aria-label', getDirectorAvatarLabel(containerId));
         }
 
         const info = document.createElement('div');

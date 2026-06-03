@@ -972,6 +972,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
+.icon-box img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
 .highlight-card h3 {
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -1236,7 +1242,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 7. Services Summary Section */
 .services-section {
+    background-color: #23743b;
+    padding-top: 80px;
     padding-bottom: 80px;
+}
+
+.services-section .section-header h2 {
+    color: #ffffff;
+    font-size: 2.8rem;
+}
+
+.services-section .section-header h2::after {
+    background-color: #FFFDD0;
+}
+
+.services-section .section-header p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .service-box {
@@ -1253,8 +1274,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.service-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
 .service-box h4 {
@@ -1693,6 +1721,23 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #e8f0e9;
 }
 
+.modal-split__media--placeholder {
+    position: relative;
+    background: linear-gradient(135deg, #23743B, #1b3d22);
+}
+
+.modal-split__media--placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 62%;
+    height: 62%;
+    background-color: #ffffff;
+    -webkit-mask: url('Images/assets/officer placeholder icon.png') center / contain no-repeat;
+    mask: url('Images/assets/officer placeholder icon.png') center / contain no-repeat;
+}
+
 .modal-split__body {
     padding: 36px 32px;
     overflow-y: auto;
@@ -1963,6 +2008,29 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, #ffffff, #e8f5e9);
 }
 
+.leader-card__media--placeholder {
+    position: relative;
+    background: linear-gradient(135deg, #e8f0e9, #c8dcc9);
+}
+
+.leader-card__media--placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    background-color: #23743B;
+    -webkit-mask: url('Images/assets/officer placeholder icon.png') center / contain no-repeat;
+    mask: url('Images/assets/officer placeholder icon.png') center / contain no-repeat;
+    transition: background-color 0.25s ease;
+}
+
+.leader-card:hover .leader-card__media--placeholder,
+.leader-card:focus-visible .leader-card__media--placeholder {
+    background: linear-gradient(135deg, #ffffff, #e8f5e9);
+}
+
 .leader-card__info {
     padding: 22px 18px 26px;
     display: flex;
@@ -1994,6 +2062,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .leader-card__hint {
     display: none;
+}
+
+#leader-modal-desc p {
+    margin-bottom: 14px;
+}
+
+#leader-modal-desc p:last-child {
+    margin-bottom: 0;
 }
 
 .leader-modal-meta {
