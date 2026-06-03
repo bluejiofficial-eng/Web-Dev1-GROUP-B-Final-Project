@@ -1242,21 +1242,25 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 7. Services Summary Section */
 .services-section {
-    background-color: #23743b;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
-.services-section .section-header h2 {
+/* Green services background is exclusive to the home page (index.html) */
+.home .services-section {
+    background-color: #23743b;
+}
+
+.home .services-section .section-header h2 {
     color: #ffffff;
     font-size: 2.8rem;
 }
 
-.services-section .section-header h2::after {
+.home .services-section .section-header h2::after {
     background-color: #FFFDD0;
 }
 
-.services-section .section-header p {
+.home .services-section .section-header p {
     color: rgba(255, 255, 255, 0.85);
 }
 
