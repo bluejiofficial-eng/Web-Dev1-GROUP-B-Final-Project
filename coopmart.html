@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraLink | CoopMart</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-section-hidden {
+            display: none !important;
+        }
+        .coopmart-category {
+            margin-bottom: 50px;
+        }
+        .coopmart-category .section-header {
+            text-align: left;
+        }
+        @media (max-width: 720px) {
+            .coopmart-category .section-header {
+                text-align: center;
+            }
+        }
+    </style>
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
@@ -66,24 +82,114 @@
             <p>Local, organic, member-first retail — products from partner farms and community producers.</p>
         </section>
 
-        <section class="coopmart-intro">
+        <section class="coopmart-intro" id="categories">
             <div class="grid-3">
-                <a href="coopmart-fresh-produce.html" class="service-box">
+                <a href="#fresh-produce" class="service-box">
                     <div class="service-icon">🌾</div>
                     <h4>Fresh Produce</h4>
                     <p>Seasonal vegetables and fruits sourced directly from our partner farms.</p>
                 </a>
-                <a href="coopmart-local-staples.html" class="service-box">
+                <a href="#local-staples" class="service-box">
                     <div class="service-icon">🍚</div>
                     <h4>Local Staples</h4>
                     <p>Certified rice, grains, and household essentials at cooperative pricing.</p>
                 </a>
-                <a href="coopmart-eco-goods.html" class="service-box">
+                <a href="#eco-goods" class="service-box">
                     <div class="service-icon">🧴</div>
                     <h4>Eco Goods</h4>
                     <p>Sustainable toiletries, cleaning items, and zero-waste alternatives.</p>
                 </a>
             </div>
+        </section>
+
+        <section class="coopmart-category" id="fresh-produce">
+            <div class="section-header">
+                <h2>Fresh Produce</h2>
+                <p>Explore locally grown vegetables and fruit bundles curated for healthy family meals.</p>
+            </div>
+            <div class="container grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-5"></div>
+                    <h4>Seasonal Vegetable Basket</h4>
+                    <p>Member price: ₱280</p>
+                    <p class="product-caption">Harvested by local farms, this basket is fresh, crisp, and ready to cook.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-6"></div>
+                    <h4>Organic Fruit Pack</h4>
+                    <p>Member price: ₱320</p>
+                    <p class="product-caption">Made by community growers, every fruit is naturally sweet and sun-ripened.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-7"></div>
+                    <h4>Herb Garden Bundle</h4>
+                    <p>Member price: ₱180</p>
+                    <p class="product-caption">A fragrant set of homegrown herbs, ideal for seasoning meals with fresh flavor.</p>
+                </article>
+            </div>
+            <a href="#categories" class="btn btn-secondary">Back to categories</a>
+        </section>
+
+        <section class="coopmart-category" id="local-staples">
+            <div class="section-header">
+                <h2>Local Staples</h2>
+                <p>Value-packed essentials sourced from trusted cooperative partners.</p>
+            </div>
+            <div class="container grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-6"></div>
+                    <h4>Premium Rice 5kg</h4>
+                    <p>Member price: ₱420</p>
+                    <p class="product-caption">Locally milled and naturally fragrant, grown by community farmers.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-7"></div>
+                    <h4>Virgin Coconut Oil</h4>
+                    <p>Member price: ₱260</p>
+                    <p class="product-caption">Cold-pressed from fresh coconuts, offering a smooth and mildly sweet flavor.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-8"></div>
+                    <h4>Cassava Flour</h4>
+                    <p>Member price: ₱150</p>
+                    <p class="product-caption">Made from local cassava, this flour is light, gluten-free, and subtly sweet.</p>
+                </article>
+            </div>
+            <a href="#categories" class="btn btn-secondary">Back to categories</a>
+        </section>
+
+        <section class="coopmart-category" id="eco-goods">
+            <div class="section-header">
+                <h2>Eco Goods</h2>
+                <p>Earth-friendly products designed for sustainable daily living.</p>
+            </div>
+            <div class="container grid-4">
+                <article class="product-card">
+                    <div class="product-img product-img-3"></div>
+                    <h4>Handmade Soap Set</h4>
+                    <p>Member price: ₱120</p>
+                    <p class="product-caption">Crafted by local artisans with gentle botanicals and herbal scent.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-8"></div>
+                    <h4>Bamboo Toothbrush Pack</h4>
+                    <p>Member price: ₱95</p>
+                    <p class="product-caption">Sustainably made with biodegradable handles for everyday use.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-9"></div>
+                    <h4>Reusable Produce Bags</h4>
+                    <p>Member price: ₱140</p>
+                    <p class="product-caption">Lightweight, washable, and designed to replace single-use plastic.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-10"></div>
+                    <h4>Beeswax Wrap Set</h4>
+                    <p>Member price: ₱220</p>
+                    <p class="product-caption">Reusable and naturally scented, perfect for wrapping snacks and food.</p>
+                </article>
+            </div>
+            <a href="#categories" class="btn btn-secondary">Back to categories</a>
         </section>
 
         <section class="products-list" id="featured-items">
@@ -168,6 +274,68 @@
                 navMenu.classList.remove('open');
             });
         });
+
+        const pageTitle = document.querySelector('title');
+        const heroBadge = document.querySelector('.hero-content .badge');
+        const heroHeading = document.querySelector('.hero-content h1');
+        const heroCopy = document.querySelector('.hero-content p');
+
+        const categoryMeta = {
+            'fresh-produce': {
+                badge: 'Fresh Produce',
+                heading: 'Market-fresh produce made for members',
+                copy: 'Explore locally grown vegetables and fruit bundles curated for healthy family meals.',
+                title: 'TerraLink | CoopMart — Fresh Produce'
+            },
+            'local-staples': {
+                badge: 'Local Staples',
+                heading: 'Everyday essentials from trusted partners',
+                copy: 'Browse staple goods sourced for affordability and cooperative value.',
+                title: 'TerraLink | CoopMart — Local Staples'
+            },
+            'eco-goods': {
+                badge: 'Eco Goods',
+                heading: 'Eco-friendly products for sustainable living',
+                copy: 'View a selection of earth-friendly goods, toiletries and reusable essentials.',
+                title: 'TerraLink | CoopMart — Eco Goods'
+            }
+        };
+
+        const sectionMap = {
+            categories: ['section-header', 'categories', 'featured-items'],
+            'fresh-produce': ['section-header', 'fresh-produce'],
+            'local-staples': ['section-header', 'local-staples'],
+            'eco-goods': ['section-header', 'eco-goods']
+        };
+
+        const sections = Array.from(document.querySelectorAll('main.container > section'));
+
+        function showView(hash) {
+            const viewKey = hash.replace('#', '') || 'categories';
+            const activeKey = sectionMap[viewKey] ? viewKey : 'categories';
+            sections.forEach(section => {
+                const visible = sectionMap[activeKey].includes(section.id);
+                section.classList.toggle('page-section-hidden', !visible);
+            });
+
+            if (activeKey === 'categories') {
+                heroBadge.textContent = 'CoopMart Marketplace';
+                heroHeading.textContent = 'Fresh products, cooperative values';
+                heroCopy.textContent = 'Enjoy curated member savings and locally sourced essentials in a premium shopping experience.';
+                pageTitle.textContent = 'TerraLink | CoopMart';
+            } else {
+                const meta = categoryMeta[activeKey];
+                heroBadge.textContent = meta.badge;
+                heroHeading.textContent = meta.heading;
+                heroCopy.textContent = meta.copy;
+                pageTitle.textContent = meta.title;
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('hashchange', () => showView(location.hash));
+        showView(location.hash);
     </script>
     <script src="js/main.js"></script>
 </body>

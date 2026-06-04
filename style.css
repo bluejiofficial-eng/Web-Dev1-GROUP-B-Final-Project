@@ -292,6 +292,28 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px auto 0 auto;
 }
 
+.coopmart-category {
+    text-align: center;
+}
+
+.coopmart-category .section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.coopmart-category .section-header h2 {
+    margin: 0;
+}
+
+.coopmart-category .btn-secondary {
+    display: inline-block;
+    margin: 32px auto 0;
+}
+
 /* 4. Navigation Bar (Header) Base */
 .navbar {
     background-color: #ffffff;
