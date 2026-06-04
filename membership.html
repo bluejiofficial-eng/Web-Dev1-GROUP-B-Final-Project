@@ -8,6 +8,97 @@
     <!-- Sanity Client Libraries for future integration -->
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        .hero-slide .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .hero-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .hero-buttons-inner {
+            display: inline-flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-buttons .btn-primary {
+            margin-right: 0;
+        }
+
+        .membership-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .membership-cta-actions .btn-primary {
+            margin-right: 0;
+        }
+
+        .footer-contact-icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: auto;
+            }
+
+            .hero-slide {
+                padding: 36px 0 44px;
+            }
+
+            .hero-slide .hero-content {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .hero-slide .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.15;
+            }
+
+            .hero-slide .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 24px;
+            }
+
+            .hero-buttons {
+                margin-top: 0;
+            }
+
+            .hero-buttons-inner {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+
+            .hero-buttons-inner .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -43,10 +134,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="investments.html" class="nav-link">Investments</a>
+                    <a href="investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -60,6 +154,7 @@
         </div>
     </header>
 
+
     <!-- HERO SECTION -->
     <section class="hero-section">
         <div class="hero-slide history-hero">
@@ -67,9 +162,11 @@
                 <span class="badge">TerraLink Membership</span>
                 <h1>Become a Member of a Cooperative That Grows With You</h1>
                 <p>Join TerraLink Cooperative and gain access to inclusive financial services, shared ownership benefits, and a trusted community committed to long-term progress.</p>
-                <div class="hero-buttons">
-                    <a href="support/support-application.html" class="btn btn-primary">Apply for Membership</a>
-                    <a href="#membership-benefits" class="btn btn-secondary">View Benefits</a>
+                <div class="hero-buttons" style="width: 100%; text-align: center; margin-top: 10px;">
+                    <div class="hero-buttons-inner" style="display: inline-flex; justify-content: center; align-items: center; gap: 18px; flex-wrap: wrap;">
+                        <a href="support/support-application.html" class="btn btn-primary">Apply for Membership</a>
+                        <a href="#membership-benefits" class="btn btn-secondary">View Benefits</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,17 +181,23 @@
             </div>
             <div class="container grid-3">
                 <div class="highlight-card">
-                    <div class="icon-box">💳</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/credit%20card%20icon.png" alt="">
+                    </div>
                     <h3>Priority Access to Services</h3>
                     <p>Members receive first access to cooperative loan programs, savings products, and support services.</p>
                 </div>
                 <div class="highlight-card">
-                    <div class="icon-box">📈</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/participants%20icon.png" alt="">
+                    </div>
                     <h3>Dividend Participation</h3>
                     <p>Qualified members share in annual cooperative earnings through patronage refunds and dividends.</p>
                 </div>
                 <div class="highlight-card">
-                    <div class="icon-box">🛒</div>
+                    <div class="icon-box">
+                        <img src="Images/assets/discount%20icon.png" alt="">
+                    </div>
                     <h3>Exclusive CoopMart Offers</h3>
                     <p>Get member-only discounts on selected products and services from TerraLink CoopMart partners.</p>
                 </div>
@@ -111,22 +214,30 @@
             </div>
             <div class="container grid-4">
                 <div class="service-box">
-                    <div class="service-icon">✅</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/checkmark%20icon.png" alt="">
+                    </div>
                     <h4>Basic Qualification</h4>
                     <p>Must be at least 18 years old and willing to comply with TerraLink Cooperative policies and bylaws.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">🪪</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/identification%20id%20icon.png" alt="">
+                    </div>
                     <h4>Valid Identification</h4>
                     <p>Submit one government-issued ID and supporting personal information for account verification.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">📝</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/membership%20icon.png" alt="">
+                    </div>
                     <h4>Membership Application</h4>
                     <p>Complete the official application form and attend the required membership orientation session.</p>
                 </div>
                 <div class="service-box">
-                    <div class="service-icon">💰</div>
+                    <div class="service-icon">
+                        <img src="Images/assets/loans%20icon.png" alt="">
+                    </div>
                     <h4>Initial Capital Share</h4>
                     <p>Pay the prescribed membership fee and initial share capital contribution upon approval.</p>
                 </div>
@@ -174,7 +285,7 @@
                 <h2>Start Your Membership Journey Today</h2>
                 <p>Take the next step toward cooperative ownership and inclusive financial growth with TerraLink.</p>
             </div>
-            <div class="container">
+            <div class="membership-cta-actions">
                 <a href="support/support-application.html" class="btn btn-primary">Join Now</a>
                 <a href="support/support-application.html" class="btn btn-secondary">Apply for Membership</a>
             </div>
@@ -200,8 +311,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="investments.html">Investment Dividends</a></li>
-                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -210,7 +321,7 @@
                 <h5>Contact Info</h5>
                 <p id="footer-address"></p>
                 <p id="footer-email"></p>
-                <p>📞 +63 (32) 230-0100</p>
+                <p><img class="footer-contact-icon" src="Images/assets/phone%20icon.png" alt="" aria-hidden="true"> +63 (32) 230-0100</p>
             </div>
         </div>
         <div class="footer-bottom">

@@ -8,7 +8,8 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="about-page">
+    <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -16,17 +17,17 @@
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
-                        <a href="about-profile.html">Company Profile</a>
-                        <a href="about-history.html">History & Timeline</a>
-                        <a href="about-bod.html">BOD & Officers</a>
-                        <a href="about-officers.html">Corporate Officers</a>
-                        <a href="about-awards.html">Awards & Distinction</a>
-                        <a href="about-gallery.html">Event Gallery</a>
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -40,10 +41,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -60,7 +64,7 @@
     <main>
         <section class="hero-section">
             <div class="hero-slide awards-hero">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
                     <h1>Awards & Distinction</h1>
                     <p>Celebrating the recognitions earned through accountable leadership, member trust, and community service.</p>
@@ -68,43 +72,61 @@
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="awards-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header about-reveal">
                     <h2>Recognition & Achievements</h2>
-                    <p>TerraLink Cooperative continues to grow through service excellence, responsible governance, and programs that uplift members.</p>
+                    <p>TerraLink Cooperative continues to earn distinction through service excellence, responsible governance, and community impact.</p>
                 </div>
-                <div class="grid-3">
-                    <div class="highlight-card">
-                        <div class="icon-box">🏆</div>
-                        <h3>Best Cooperative Award 2024</h3>
-                        <p>Recognized for outstanding member service, transparent governance, and sustainable cooperative growth.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">🥇</div>
-                        <h3>CDA Outstanding Cooperative</h3>
-                        <p>Awarded for strong compliance, sound management practices, and meaningful community development programs.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">🌟</div>
-                        <h3>Community Impact Excellence</h3>
-                        <p>Honored for programs that support local families, small enterprises, and livelihood opportunities.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">🎖️</div>
-                        <h3>Financial Inclusion Champion</h3>
-                        <p>Recognized for expanding access to affordable loans, savings programs, and cooperative education.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">📜</div>
-                        <h3>Governance Merit Citation</h3>
-                        <p>Cited for maintaining member-first policies, ethical operations, and responsible financial stewardship.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">🤝</div>
-                        <h3>Cooperative Partnership Award</h3>
-                        <p>Celebrated for building trusted partnerships with local producers, member groups, and civic organizations.</p>
-                    </div>
+                <div class="awards-timeline" data-reveal-stagger>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80" alt="Trophy award ceremony">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2024</span>
+                            <h3>Best Cooperative Award</h3>
+                            <p>Recognized for outstanding member service, transparent governance, and sustainable cooperative growth across all branches.</p>
+                        </div>
+                    </article>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Gold medal recognition">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2024</span>
+                            <h3>CDA Outstanding Cooperative</h3>
+                            <p>Awarded for strong compliance, sound management practices, and meaningful community development programs.</p>
+                        </div>
+                    </article>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80" alt="Community volunteers at outreach">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2023</span>
+                            <h3>Community Impact Excellence</h3>
+                            <p>Honored for programs that support local families, small enterprises, and livelihood opportunities in partner barangays.</p>
+                        </div>
+                    </article>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Financial planning and inclusion">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2023</span>
+                            <h3>Financial Inclusion Champion</h3>
+                            <p>Recognized for expanding access to affordable loans, savings programs, and cooperative financial education.</p>
+                        </div>
+                    </article>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Governance documents and meeting">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2022</span>
+                            <h3>Governance Merit Citation</h3>
+                            <p>Cited for maintaining member-first policies, ethical operations, and responsible financial stewardship.</p>
+                        </div>
+                    </article>
+                    <article class="award-item about-reveal">
+                        <img class="award-item__image" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Partnership handshake">
+                        <div class="award-item__body">
+                            <span class="award-item__year">2022</span>
+                            <h3>Cooperative Partnership Award</h3>
+                            <p>Celebrated for building trusted partnerships with local producers, member groups, and civic organizations.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -128,8 +150,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -163,5 +185,6 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
 </body>
 </html>

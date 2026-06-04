@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraLink | Special Loan Programs</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="loans.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="loans-page" data-loan-category="special">
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -16,7 +18,7 @@
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
@@ -40,10 +42,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -57,44 +62,122 @@
         </div>
     </header>
 
+
     <main>
         <section class="hero-section">
-            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(27,61,34,0.55)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1920&q=80');">
                 <div class="container hero-content">
                     <span class="badge">TerraLink Cooperative Loans</span>
-                    <h1>Special Loan Programs</h1>
-                    <p>Time-sensitive and purpose-driven financing for emergencies, calamity relief, and member situations that need cooperative support fast.</p>
+                    <h1>Support When Life Moves Fast</h1>
+                    <p>Special loan programs for emergencies, calamity relief, and urgent member needs — responsive financing from a cooperative that stands with you.</p>
+                    <div class="loans-hero-actions">
+                        <a href="#loan-products" class="btn btn-primary">View Special Programs</a>
+                        <a href="../support/support-helpdesk.html" class="btn btn-secondary">Talk to Help Desk</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="services-section">
+        <nav class="loans-type-nav" aria-label="Loan program type">
+            <div class="container">
+                <div class="loans-type-nav-inner">
+                    <a href="loans-regular.html" class="loans-type-link">Regular Loans</a>
+                    <a href="loans-special.html" class="loans-type-link is-active" aria-current="page">Special Programs</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="loans-benefits">
             <div class="container">
                 <div class="section-header">
-                    <h2>Available Special Loans</h2>
-                    <p>Review rates, terms, and eligibility for TerraLink's targeted special loan offerings.</p>
+                    <h2>Built for Urgent Member Needs</h2>
+                    <p>When timing matters, TerraLink special programs offer purpose-driven support with cooperative care.</p>
                 </div>
-                <div class="loan-category-tabs" id="category-filters" role="tablist" aria-label="Loan category filters"></div>
-                <div class="grid-3" id="loans-grid">
-                    <article class="service-box">
-                        <div class="service-icon">⏳</div>
-                        <h4>Loading loan programs...</h4>
-                        <p>Please wait while we fetch the latest special loan programs from Sanity.</p>
+                <div class="grid-3">
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/phone%20icon.png" alt="">
+                        </span>
+                        <h3>Emergency-Ready</h3>
+                        <p>Programs designed for situations that can't wait — with eligibility and terms spelled out clearly.</p>
+                    </article>
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/compassion%20icon.png" alt="">
+                        </span>
+                        <h3>Cooperative Compassion</h3>
+                        <p>Financing rooted in member solidarity, not profit-first lending from big banks.</p>
+                    </article>
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/virtual%20assistant%20icon.png" alt="">
+                        </span>
+                        <h3>Real People to Help</h3>
+                        <p>Questions before you apply? Our help desk and loan team are ready to guide you.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="loans-steps">
             <div class="container">
                 <div class="section-header">
-                    <h2>Plan Your Next Step</h2>
-                    <p>Estimate monthly payments or start your loan application online.</p>
+                    <h2>How to Access a Special Loan</h2>
+                    <p>Move quickly with confidence — know what's available, what's required, and how to apply.</p>
                 </div>
-                <div style="text-align: center;">
+                <div class="loans-steps-grid">
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">1</div>
+                        <h3>Find Your Program</h3>
+                        <p>Review active special loans below and filter by category when available.</p>
+                    </article>
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">2</div>
+                        <h3>Confirm Requirements</h3>
+                        <p>Open any card to see eligibility documents and availability windows.</p>
+                    </article>
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">3</div>
+                        <h3>Submit &amp; Follow Up</h3>
+                        <p>Apply online or reach out to the help desk for hands-on assistance.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="loan-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Special Loan Programs</h2>
+                    <p>Targeted financing for time-sensitive needs — updated live from our cooperative catalog.</p>
+                </div>
+                <div class="loans-toolbar">
+                    <span class="loans-toolbar-label">Filter by category</span>
+                    <span class="loans-count" id="loans-count" aria-live="polite">Loading…</span>
+                </div>
+                <div class="loan-category-tabs" id="category-filters" role="tablist" aria-label="Loan category filters"></div>
+                <div class="grid-3" id="loans-grid">
+                    <article class="loan-card loan-card--state">
+                        <div class="service-icon">
+                            <img src="../Images/assets/virtual%20assistant%20icon.png" alt="">
+                        </div>
+                        <h4>Loading loan programs…</h4>
+                        <p>Fetching the latest special loan programs for you.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="loans-cta">
+            <div class="container">
+                <h2>Need Help Choosing a Program?</h2>
+                <p>Our help desk can walk you through eligibility, documents, and next steps — or jump straight to the calculator and application.</p>
+                <div class="loans-cta-actions">
+                    <a href="../support/support-helpdesk.html" class="btn btn-primary">Help Desk &amp; FAQ</a>
+                    <a href="../support/support-application.html" class="btn btn-secondary">Apply Online</a>
                     <a href="../support/support-calculator.html" class="btn btn-secondary">Loan Calculator</a>
-                    <a href="../support/support-application.html" class="btn btn-primary">Apply Online</a>
                 </div>
+                <p class="loans-cta-note">Looking for standard financing? <a href="loans-regular.html">Browse regular loans</a>.</p>
             </div>
         </section>
     </main>
@@ -117,8 +200,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -127,7 +210,7 @@
                 <h5>Contact Info</h5>
                 <p id="footer-address"></p>
                 <p id="footer-email"></p>
-                <p>📞 +63 (32) 230-0100</p>
+                <p><img class="footer-contact-icon" src="../Images/assets/phone%20icon.png" alt="" aria-hidden="true"> +63 (32) 230-0100</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -137,240 +220,7 @@
         </div>
     </footer>
 
-    <script>
-        const { createClient } = globalThis.SanityClient;
-        const client = createClient({
-            projectId: "ltk0qh4a",
-            dataset: "production",
-            apiVersion: "2024-01-01",
-            useCdn: true,
-        });
-
-        const LOANS_QUERY = `*[_type == "loan" && loanCategory == "special"]{
-            title, category, loanCategory, interestRate, maxTerm, marketingDescription, availability, requirements
-        } | order(category asc, title asc)`;
-
-        const SETTINGS_QUERY = `*[_type == "siteSettings"][0]{ address, emails }`;
-
-        const CATEGORY_LABELS = {
-            "home-better-living": "Home & Better Living",
-            "growth-legacy": "Growth & Legacy",
-            "health-compassion": "Health & Compassion",
-            "business-financial-freedom": "Business & Financial Freedom",
-            "milestones-memories": "Milestones & Memories",
-            "member-reliability": "Member Reliability",
-        };
-
-        let allLoans = [];
-        let activeCategory = "all";
-
-        const loansGrid = document.getElementById("loans-grid");
-        const filtersEl = document.getElementById("category-filters");
-
-        function getCategoryLabel(value) {
-            return CATEGORY_LABELS[value] || value || "General";
-        }
-
-        function displayField(value) {
-            return value ? String(value) : "—";
-        }
-
-        function buildRequirementsContent(requirements) {
-            const wrap = document.createElement("div");
-
-            if (!Array.isArray(requirements) || requirements.length === 0) {
-                wrap.textContent = "No requirements listed.";
-                return wrap;
-            }
-
-            const list = document.createElement("ul");
-            requirements.forEach((item) => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                list.appendChild(li);
-            });
-            wrap.appendChild(list);
-            return wrap;
-        }
-
-        function renderLoanCard(loan) {
-            const card = document.createElement("article");
-            card.className = "service-box";
-            card.dataset.category = loan.category || "";
-
-            const badge = document.createElement("span");
-            badge.className = "news-tag";
-            badge.textContent = getCategoryLabel(loan.category);
-
-            const title = document.createElement("h4");
-            title.textContent = loan.title || "Untitled Loan";
-
-            const description = document.createElement("p");
-            description.textContent = loan.marketingDescription || "";
-
-            const metaWrap = document.createElement("div");
-
-            const rateBox = document.createElement("span");
-            rateBox.className = "timeline-metric";
-            rateBox.textContent = `Interest Rate: ${displayField(loan.interestRate)}`;
-
-            const termBox = document.createElement("span");
-            termBox.className = "timeline-metric";
-            termBox.textContent = `Max Term: ${displayField(loan.maxTerm)}`;
-
-            metaWrap.appendChild(rateBox);
-            metaWrap.appendChild(document.createTextNode(" "));
-            metaWrap.appendChild(termBox);
-
-            const availability = document.createElement("p");
-            availability.className = "director-role";
-            availability.textContent = loan.availability
-                ? `Availability: ${loan.availability}`
-                : "";
-
-            const details = document.createElement("details");
-            const summary = document.createElement("summary");
-            summary.textContent = "View Requirements";
-            details.appendChild(summary);
-            details.appendChild(buildRequirementsContent(loan.requirements));
-
-            const applyBtn = document.createElement("a");
-            applyBtn.href = "../support/support-application.html";
-            applyBtn.className = "btn btn-primary";
-            applyBtn.textContent = "Apply Now";
-
-            card.appendChild(badge);
-            card.appendChild(title);
-            card.appendChild(description);
-            card.appendChild(metaWrap);
-            if (loan.availability) card.appendChild(availability);
-            card.appendChild(details);
-            card.appendChild(applyBtn);
-
-            return card;
-        }
-
-        function renderLoans() {
-            loansGrid.innerHTML = "";
-
-            const visibleLoans = activeCategory === "all"
-                ? allLoans
-                : allLoans.filter((loan) => loan.category === activeCategory);
-
-            if (visibleLoans.length === 0) {
-                const empty = document.createElement("article");
-                empty.className = "service-box";
-                empty.innerHTML = `
-                    <div class="service-icon">📋</div>
-                    <h4>No loans found</h4>
-                    <p>There are no special loan programs in this category right now. Try another filter or check back soon.</p>
-                `;
-                loansGrid.appendChild(empty);
-                return;
-            }
-
-            visibleLoans.forEach((loan) => {
-                loansGrid.appendChild(renderLoanCard(loan));
-            });
-        }
-
-        function renderFilters() {
-            const categories = [...new Set(allLoans.map((loan) => loan.category).filter(Boolean))].sort();
-
-            filtersEl.innerHTML = "";
-            filtersEl.hidden = false;
-
-            const allBtn = document.createElement("button");
-            allBtn.type = "button";
-            allBtn.className = "btn btn-primary";
-            allBtn.dataset.category = "all";
-            allBtn.textContent = "All Categories";
-            allBtn.setAttribute("aria-pressed", "true");
-            filtersEl.appendChild(allBtn);
-
-            categories.forEach((category) => {
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.className = "btn btn-secondary";
-                btn.dataset.category = category;
-                btn.textContent = getCategoryLabel(category);
-                btn.setAttribute("aria-pressed", "false");
-                filtersEl.appendChild(btn);
-            });
-
-            filtersEl.querySelectorAll("button").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    activeCategory = btn.dataset.category;
-                    filtersEl.querySelectorAll("button").forEach((item) => {
-                        const isActive = item.dataset.category === activeCategory;
-                        item.classList.toggle("btn-primary", isActive);
-                        item.classList.toggle("btn-secondary", !isActive);
-                        item.setAttribute("aria-pressed", isActive ? "true" : "false");
-                    });
-                    renderLoans();
-                });
-            });
-        }
-
-        function showLoadError() {
-            loansGrid.innerHTML = `
-                <article class="service-box">
-                    <div class="service-icon">⚠️</div>
-                    <h4>Unable to load loans</h4>
-                    <p>We could not retrieve special loan programs at this time. Please refresh the page or try again later.</p>
-                </article>
-            `;
-        }
-
-        async function loadSiteSettings() {
-            try {
-                const settings = await client.fetch(SETTINGS_QUERY);
-                if (settings) {
-                    const addressEl = document.getElementById("footer-address");
-                    const emailEl = document.getElementById("footer-email");
-                    if (addressEl && settings.address) {
-                        addressEl.textContent = `📍 ${settings.address}`;
-                    }
-                    if (emailEl && settings.emails && settings.emails.length > 0) {
-                        emailEl.textContent = `📧 ${settings.emails[0]}`;
-                    }
-                }
-            } catch (err) {
-                console.error("Failed to fetch Site Settings:", err);
-            }
-        }
-
-        async function loadLoans() {
-            try {
-                const loans = await client.fetch(LOANS_QUERY);
-                allLoans = Array.isArray(loans) ? loans : [];
-
-                if (allLoans.length === 0) {
-                    loansGrid.innerHTML = `
-                        <article class="service-box">
-                            <div class="service-icon">📋</div>
-                            <h4>No special loans available</h4>
-                            <p>Loan programs will appear here once they are published in Sanity CMS.</p>
-                        </article>
-                    `;
-                    filtersEl.hidden = true;
-                    return;
-                }
-
-                renderFilters();
-                renderLoans();
-            } catch (err) {
-                console.error("Failed to fetch special loans:", err);
-                showLoadError();
-            }
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-            loadLoans();
-            loadSiteSettings();
-        });
-    </script>
-
+    <script src="loans.js"></script>
     <script>
         const hamburger = document.getElementById('hamburger');
         const navMenu   = document.getElementById('nav-menu');
