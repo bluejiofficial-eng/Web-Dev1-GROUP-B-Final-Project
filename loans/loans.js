@@ -228,6 +228,7 @@
         allBtn.dataset.category = "all";
         allBtn.textContent = "All Categories";
         allBtn.setAttribute("aria-pressed", "true");
+        allBtn.setAttribute("aria-label", "Show all loan categories");
         filtersEl.appendChild(allBtn);
 
         categories.forEach((category) => {
@@ -237,6 +238,7 @@
             btn.dataset.category = category;
             btn.textContent = getCategoryLabel(category);
             btn.setAttribute("aria-pressed", "false");
+            btn.setAttribute("aria-label", `Show loans in ${getCategoryLabel(category)}`);
             filtersEl.appendChild(btn);
         });
 
