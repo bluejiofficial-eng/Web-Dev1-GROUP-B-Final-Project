@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Help Desk & FAQ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        .faq-accordion {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid #e6e6e6;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #16311f;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #f1f7f2;
+            color: #2c6b3f;
+            font-size: 1.1rem;
+            line-height: 1;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .faq-item[open] summary {
+            border-bottom: 1px solid #edf2ee;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            background: #dff0e4;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #5d6b63;
+            line-height: 1.75;
+        }
+
+        .faq-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            color: #5b7a65;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .support-contact-grid {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide history-hero">
+                <div class="container hero-content">
+                    <span class="badge">Support Center</span>
+                    <h1>Help Desk & FAQ</h1>
+                    <p>Find quick answers to common questions about membership, loans, online applications, and cooperative services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Browse the most common support topics for TerraLink members and applicants.</p>
+                </div>
+                <div class="faq-accordion">
+                    <details class="faq-item" open>
+                        <summary><span>How do I apply for membership?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Complete the membership form, prepare one valid ID, and submit your details at the service desk for verification. New applicants may also request a short orientation schedule before final approval.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What documents are required?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>For most requests, members only need a government-issued ID, an application form, and a recent 2x2 photo. Some loan-related concerns may require additional income documents.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>How long is processing time?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Standard requests are processed within 3 to 5 business days, depending on the completeness of the submitted documents and the number of active applications in the queue.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>Can I check loan options online?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Yes. Members may review loan estimates online using the calculator page before visiting the branch for final review. This helps applicants compare monthly payments and choose the right option.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What if I submitted an incomplete form?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The support team will contact you and explain which details need to be corrected or resubmitted. You can return the updated form to the branch or send it by email if the request is still open.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>When is the help desk available?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The help desk is open Monday to Friday from 8:00 AM to 5:00 PM, excluding holidays. For quick questions, the hotline and email support channels are also available during office hours.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container support-contact-grid">
+                <div class="section-header">
+                    <h2>Support Channels</h2>
+                    <p>If your concern is not listed above, use one of the options below.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/phone%20icon.png" alt="">
+                        </div>
+                        <h3>Hotline</h3>
+                        <p>Call +63 (32) 230-0100 for urgent membership and account concerns.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/mail%20icon.png" alt="">
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>Send your message to official.uscmpc@gmail.com for follow-up assistance.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/branch%20icon.png" alt="">
+                        </div>
+                        <h3>Branch Visit</h3>
+                        <p>Visit the front desk for membership, loan, account, and online application inquiries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="service-box">
+                    <div class="section-header">
+                        <h2>Still have questions?</h2>
+                        <p>Our team is ready to assist you.</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="support-application.html" class="btn btn-primary">Contact Us</a>
+                        <a href="../about/about-profile.html" class="btn btn-secondary">Visit a Branch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

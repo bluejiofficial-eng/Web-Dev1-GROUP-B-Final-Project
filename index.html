@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="home">
 
     <!-- NAVBAR  -->
     <header class="navbar">
@@ -43,10 +43,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="investments.html" class="nav-link">Investments</a>
+                    <a href="investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -78,24 +81,24 @@
     <!-- HIGHLIGHTS SECTION -->
     <section class="highlights-section">
         <div class="container">  
-            <div class="section-header">
+            <div class="section-header reveal-on-scroll">
                 <h2>Why Choose TerraLink?</h2>
                 <p>Empowering our community through sustainable financial solutions and member-owned trust.</p>
             </div>
 
-        <div class="container grid-3">
-            <div class="highlight-card">
-                <div class="icon-box">📊</div>
+        <div class="grid-3">
+            <div class="highlight-card reveal-on-scroll">
+                <div class="icon-box"><img src="Images/assets/graph icon.png" alt="Competitive rates icon"></div>
                 <h3>Competitive Rates</h3>
                 <p>Enjoy higher returns on savings and flexible, low-interest loan options tailored for your specific financial growth.</p>
             </div>
-            <div class="highlight-card">
-                <div class="icon-box">🌱</div>
+            <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                <div class="icon-box"><img src="Images/assets/plant icon.png" alt="Community eco-system icon"></div>
                 <h3>Community Eco-System</h3>
                 <p>Every investment supports local farmers, small businesses, and community-driven initiatives through our CoopMart network.</p>
             </div>
-            <div class="highlight-card">
-                <div class="icon-box">🤝</div>
+            <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                <div class="icon-box"><img src="Images/assets/handshake icon.png" alt="Member-owned trust icon"></div>
                 <h3>Member-Owned Trust</h3>
                 <p>As a true cooperative, our members are our owners. Decisions are made democratically with full transparency and shared benefits.</p>
             </div>
@@ -106,31 +109,31 @@
     <!-- SERVICES SUMMARY  -->
     <section class="services-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal-on-scroll">
                 <h2>Our Core Services</h2>
                 <p>Explore the full suite of financial, utility, and retail programs engineered exclusively for our union members.</p>
             </div>
-            <div class="container grid-4">
-                <div class="service-box">
-                    <div class="service-icon">💰</div>
+            <div class="grid-4">
+                <div class="service-box reveal-on-scroll">
+                    <div class="service-icon"><img src="Images/assets/loans icon.png" alt="Regular loans icon"></div>
                     <h4>Regular Loans</h4>
                     <p>Low-interest multi-purpose micro-loans for everyday financial support.</p>
                     <a href="loans/loans-regular.html" class="text-link">Learn More &rarr;</a>
                 </div>
-                <div class="service-box">
-                    <div class="service-icon">🛡️</div>
+                <div class="service-box reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><img src="Images/assets/shield icon.png" alt="Investments icon"></div>
                     <h4>Investments</h4>
                     <p>Secure fixed-term capital growth and shared cooperative dividends.</p>
-                    <a href="investments.html" class="text-link">Learn More &rarr;</a>
+                    <a href="investments/investments.html" class="text-link">Learn More &rarr;</a>
                 </div>
-                <div class="service-box">
-                    <div class="service-icon">🛒</div>
+                <div class="service-box reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><img src="Images/assets/cart icon.png" alt="CoopMart icon"></div>
                     <h4>CoopMart</h4>
                     <p>Shop organic, high-quality community products at discounted member prices.</p>
-                    <a href="coopmart.html" class="text-link">Learn More &rarr;</a>
+                    <a href="coop/coopmart.html" class="text-link">Learn More &rarr;</a>
                 </div>
-                <div class="service-box">
-                    <div class="service-icon">🧮</div>
+                <div class="service-box reveal-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><img src="Images/assets/calculator icon.png" alt="Loan calculator icon"></div>
                     <h4>Loan Calculator</h4>
                     <p>Quickly simulate your monthly amortization repayments instantly online.</p>
                     <a href="support/support-calculator.html" class="text-link">Try Amortization &rarr;</a>
@@ -142,12 +145,15 @@
     <!-- NEWS & ARTICLES SECTION -->
     <section class="news-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal-on-scroll">
                 <h2>Latest News & Announcements</h2>
                 <p>Stay up to date with the latest financial indicators, community events, and general cooperative notifications.</p>
             </div>
-            <div class="grid-3" id="news-container">
-       
+            <div class="news-marquee-viewport reveal-on-scroll" style="transition-delay: 0.15s;">
+                <div class="marquee-track" id="news-container"></div>
+            </div>
+            <div class="reveal-on-scroll" style="text-align: center; margin-top: 40px; transition-delay: 0.3s;">
+                <a href="news.html" class="btn btn-secondary">View All News</a>
             </div>
         </div>
     </section>
@@ -171,8 +177,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="investments.html">Investment Dividends</a></li>
-                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="support/support-application.html">Online Membership</a></li>
                 </ul>

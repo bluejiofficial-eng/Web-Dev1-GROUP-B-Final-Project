@@ -1,0 +1,321 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Loan Calculator</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <!-- Per-page styles moved to style.css (.calculator-*, see SUPPORT section) -->
+</head>
+<body>
+<!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide calculator-hero">
+                <div class="container hero-content">
+                    <span class="badge">Support Center</span>
+                    <h1>Loan Calculator</h1>
+                    <p>Estimate monthly repayments and compare loan terms before you apply.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Before You Compute</h2>
+                    <p>Use this page as a quick guide while you review loan choices and repayment plans.</p>
+                </div>
+                <div class="grid-3 calculator-guides-grid">
+                    <div class="service-box">
+                        <div class="service-icon">1</div>
+                        <h3>Principal</h3>
+                        <p>Choose the amount you plan to borrow before checking the estimated payment.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">2</div>
+                        <h3>Interest</h3>
+                        <p>Review the current loan interest rate so you can estimate the total cost.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">3</div>
+                        <h3>Term</h3>
+                        <p>Select a repayment term that fits your budget and payment capacity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Repayment Breakdown</h2>
+                    <p>Use this compact sample table to understand how a fixed monthly installment can be divided across the term.</p>
+                </div>
+                <table class="calculator-table">
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Principal Portion</th>
+                            <th>Interest Portion</th>
+                            <th>Monthly Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Month 1</td>
+                            <td>&#8369;3,835</td>
+                            <td>&#8369;625</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                        <tr>
+                            <td>Month 6</td>
+                            <td>&#8369;3,960</td>
+                            <td>&#8369;500</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                        <tr>
+                            <td>Month 12</td>
+                            <td>&#8369;4,405</td>
+                            <td>&#8369;55</td>
+                            <td>&#8369;4,460</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Quick Calculator</h2>
+                    <p>Enter a sample loan amount and term to see a simple monthly estimate update instantly.</p>
+                </div>
+                <div class="calculator-panel">
+                    <div class="calculator-form-grid">
+                        <div class="calculator-form-card">
+                            <form class="calculator-form" id="loan-calculator-form" novalidate>
+                                <div class="form-field">
+                                    <label for="loan-principal">Loan Amount (&#8369;)</label>
+                                    <input id="loan-principal" type="number" min="1000" step="1000" value="50000">
+                                </div>
+                                <div class="form-field">
+                                    <label for="loan-rate">Monthly Interest Rate (%)</label>
+                                    <input id="loan-rate" type="number" min="0" step="0.01" value="1.25">
+                                </div>
+                                <div class="form-field">
+                                    <label for="loan-term">Term (Months)</label>
+                                    <input id="loan-term" type="number" min="1" step="1" value="12">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary" id="calculate-loan-btn">Calculate</button>
+                                    <button type="reset" class="btn btn-secondary" id="reset-loan-btn">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="calculator-result-card" aria-live="polite">
+                            <div class="result-line">
+                                <span>Monthly Payment</span>
+                                <strong id="monthly-payment-result">&#8369;4,460</strong>
+                            </div>
+                            <div class="result-line">
+                                <span>Total Interest</span>
+                                <strong id="total-interest-result">&#8369;3,520</strong>
+                            </div>
+                            <div class="result-line">
+                                <span>Total Payable</span>
+                                <strong id="total-payable-result">&#8369;53,520</strong>
+                            </div>
+                            <p class="calculator-note" id="calculator-note">Based on a &#8369;50,000 loan, 1.25% monthly rate, and 12-month term.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section calculator-tips-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Calculator Tips</h2>
+                    <p>These reminders help members prepare a more accurate loan estimate before they apply.</p>
+                </div>
+                <div class="grid-3 calculator-tips-grid">
+                    <div class="highlight-card">
+                        <div class="icon-box">1</div>
+                        <h3>Check Budget</h3>
+                        <p>Make sure the monthly installment fits within your regular income and expenses.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">2</div>
+                        <h3>Include Fees</h3>
+                        <p>Add any possible processing fee or service charge before finalizing the loan amount.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">3</div>
+                        <h3>Ask Support</h3>
+                        <p>If the estimate looks too high, visit the help desk page for guidance and assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const calculatorForm = document.getElementById('loan-calculator-form');
+        const principalInput = document.getElementById('loan-principal');
+        const rateInput = document.getElementById('loan-rate');
+        const termInput = document.getElementById('loan-term');
+        const monthlyPaymentResult = document.getElementById('monthly-payment-result');
+        const totalInterestResult = document.getElementById('total-interest-result');
+        const totalPayableResult = document.getElementById('total-payable-result');
+        const calculatorNote = document.getElementById('calculator-note');
+        const currencyFormatter = new Intl.NumberFormat('en-PH', {
+            style: 'currency',
+            currency: 'PHP',
+            maximumFractionDigits: 0,
+        });
+
+        function calculateLoan() {
+            const principal = Number(principalInput.value);
+            const monthlyRatePercent = Number(rateInput.value);
+            const termMonths = Number(termInput.value);
+
+            if (!principal || termMonths <= 0 || monthlyRatePercent < 0) {
+                return;
+            }
+
+            const monthlyRate = monthlyRatePercent / 100;
+            const monthlyPayment = monthlyRate === 0
+                ? principal / termMonths
+                : (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termMonths));
+
+            const totalPayable = monthlyPayment * termMonths;
+            const totalInterest = totalPayable - principal;
+
+            monthlyPaymentResult.textContent = currencyFormatter.format(monthlyPayment);
+            totalInterestResult.textContent = currencyFormatter.format(totalInterest);
+            totalPayableResult.textContent = currencyFormatter.format(totalPayable);
+            calculatorNote.textContent = `Based on a ${currencyFormatter.format(principal)} loan, ${monthlyRatePercent}% monthly rate, and ${termMonths}-month term.`;
+        }
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        navMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        calculatorForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            calculateLoan();
+        });
+
+        calculatorForm.addEventListener('reset', () => {
+            window.setTimeout(calculateLoan, 0);
+        });
+
+        calculateLoan();
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

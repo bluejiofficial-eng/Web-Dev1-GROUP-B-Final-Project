@@ -1,0 +1,249 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Online Application</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <!-- Per-page styles moved to style.css (.application-*, see SUPPORT section) -->
+</head>
+<body>
+<!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide history-hero">
+                <div class="container hero-content">
+                    <span class="badge">Support Center</span>
+                    <h1>Online Membership Application</h1>
+                    <p>Start your membership journey by preparing the documents and information needed for your application.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Application Checklist</h2>
+                    <p>Use this quick guide before submitting your online membership application.</p>
+                </div>
+                <div class="grid-3 application-checklist-grid">
+                    <div class="service-box">
+                        <div class="service-icon">1</div>
+                        <h3>Valid ID</h3>
+                        <p>Prepare a government-issued ID and basic personal information for verification.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">2</div>
+                        <h3>Application Form</h3>
+                        <p>Fill out the membership form completely and review all required details before submitting.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">3</div>
+                        <h3>Photos &amp; Records</h3>
+                        <p>Have your recent photo and supporting documents ready for the review process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Application Steps</h2>
+                    <p>Follow these simple steps to complete the online application smoothly.</p>
+                </div>
+                <div class="grid-3 application-steps-grid">
+                    <div class="highlight-card">
+                        <div class="icon-box">1</div>
+                        <h3>Prepare Your Details</h3>
+                        <p>Gather your full name, email address, contact number, home address, and date of birth before starting the form.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">2</div>
+                        <h3>Review Your Information</h3>
+                        <p>Check every field carefully so the information matches your ID and other membership records.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">3</div>
+                        <h3>Submit for Review</h3>
+                        <p>After submission, the support team will verify your details and contact you if anything needs to be updated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section application-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Membership Application Form</h2>
+                    <p>Fill out the form below to prepare your membership application for review.</p>
+                </div>
+                <form id="membership-application-form" class="application-form" novalidate>
+                    <div class="application-form-card">
+                        <div class="application-form-grid">
+                            <div class="application-form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
+                            </div>
+                            <div class="application-form-group">
+                                <label for="email-address">Email Address</label>
+                                <input type="email" id="email-address" name="email-address" placeholder="Enter your email">
+                            </div>
+                            <div class="application-form-group">
+                                <label for="contact-number">Contact Number</label>
+                                <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number">
+                            </div>
+                            <div class="application-form-group">
+                                <label for="date-of-birth">Date of Birth</label>
+                                <input type="date" id="date-of-birth" name="date-of-birth">
+                            </div>
+                            <div class="application-form-group full-width">
+                                <label for="home-address">Home Address</label>
+                                <textarea id="home-address" name="home-address" placeholder="Enter your home address"></textarea>
+                            </div>
+                        </div>
+                        <div class="application-form-actions">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const applicationForm = document.getElementById('membership-application-form');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        navMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        applicationForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const requiredFields = [
+                'full-name',
+                'email-address',
+                'contact-number',
+                'home-address',
+                'date-of-birth',
+            ].map((id) => document.getElementById(id));
+
+            const isValid = requiredFields.every((field) => field.value.trim() !== '');
+
+            if (!isValid) {
+                alert('Please fill out all fields before submitting.');
+                return;
+            }
+
+            alert('Your membership application has been submitted successfully!');
+            applicationForm.reset();
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

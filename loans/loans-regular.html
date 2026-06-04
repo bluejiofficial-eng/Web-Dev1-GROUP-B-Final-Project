@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | Regular Loan Products</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="loans.css">
+    <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+</head>
+<body class="loans-page" data-loan-category="regular">
+<!-- NAVBAR  -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-green">Terra</span><span class="logo-text">Link</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>        
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../membership.html" class="nav-link">Membership</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                    <div class="dropdown-content">
+                        <a href="../loans/loans-regular.html">Regular Loan</a>
+                        <a href="../loans/loans-special.html">Special Loan</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(27,61,34,0.55)), url('https://images.unsplash.com/photo-1554224311-beee415c201f?auto=format&fit=crop&w=1920&q=80');">
+                <div class="container hero-content">
+                    <span class="badge">TerraLink Cooperative Loans</span>
+                    <h1>Finance What Matters — On Your Terms</h1>
+                    <p>From home improvements to business growth, TerraLink regular loans put members first with fair rates, clear terms, and a team that knows your story.</p>
+                    <div class="loans-hero-actions">
+                        <a href="#loan-products" class="btn btn-primary">Browse Loan Products</a>
+                        <a href="../support/support-calculator.html" class="btn btn-secondary">Estimate Payments</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="loans-type-nav" aria-label="Loan program type">
+            <div class="container">
+                <div class="loans-type-nav-inner">
+                    <a href="loans-regular.html" class="loans-type-link is-active" aria-current="page">Regular Loans</a>
+                    <a href="loans-special.html" class="loans-type-link">Special Programs</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="loans-benefits">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Members Choose TerraLink</h2>
+                    <p>Cooperative lending built around trust, transparency, and real support — not just paperwork.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/handshake%20icon.png" alt="">
+                        </span>
+                        <h3>Member-First Rates</h3>
+                        <p>Competitive interest and terms designed for cooperative members, not corporate shareholders.</p>
+                    </article>
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/clipbaord%20icon.png" alt="">
+                        </span>
+                        <h3>Clear Requirements</h3>
+                        <p>Every product lists what you need upfront — expand any card to review eligibility before you apply.</p>
+                    </article>
+                    <article class="loan-benefit-card">
+                        <span class="loan-benefit-icon" aria-hidden="true">
+                            <img src="../Images/assets/application%20icon.png" alt="">
+                        </span>
+                        <h3>Guided Application</h3>
+                        <p>Use our online calculator and application tools, or visit a branch — we're with you at every step.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="loans-steps">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How Borrowing Works</h2>
+                    <p>Three simple steps from exploring options to submitting your application.</p>
+                </div>
+                <div class="loans-steps-grid">
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">1</div>
+                        <h3>Explore &amp; Compare</h3>
+                        <p>Browse categories below and filter by purpose — home, health, business, and more.</p>
+                    </article>
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">2</div>
+                        <h3>Check the Numbers</h3>
+                        <p>Use the loan calculator to preview monthly payments before you commit.</p>
+                    </article>
+                    <article class="loan-step">
+                        <div class="loan-step-num" aria-hidden="true">3</div>
+                        <h3>Apply With Confidence</h3>
+                        <p>Submit your application online with requirements already in hand.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="loan-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Regular Loan Products</h2>
+                    <p>Find the right fit for your goals — rates, terms, and requirements update live from our catalog.</p>
+                </div>
+                <div class="loans-toolbar">
+                    <span class="loans-toolbar-label">Filter by category</span>
+                    <span class="loans-count" id="loans-count" aria-live="polite">Loading…</span>
+                </div>
+                <div class="loan-category-tabs" id="category-filters" role="tablist" aria-label="Loan category filters"></div>
+                <div class="grid-3" id="loans-grid">
+                    <article class="loan-card loan-card--state">
+                        <div class="service-icon">
+                            <img src="../Images/assets/virtual%20assistant%20icon.png" alt="">
+                        </div>
+                        <h4>Loading loan products…</h4>
+                        <p>Fetching the latest regular loan programs for you.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="loans-cta">
+            <div class="container">
+                <h2>Ready to Take the Next Step?</h2>
+                <p>Run the numbers with our calculator or start your application today — our loan team is here if you have questions.</p>
+                <div class="loans-cta-actions">
+                    <a href="../support/support-application.html" class="btn btn-primary">Apply Online</a>
+                    <a href="../support/support-calculator.html" class="btn btn-secondary">Loan Calculator</a>
+                    <a href="../support/support-helpdesk.html" class="btn btn-secondary">Help Desk &amp; FAQ</a>
+                </div>
+                <p class="loans-cta-note">Already a member? Log in details are on the application form. New to TerraLink? <a href="../membership.html">Learn about membership</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p><img class="footer-contact-icon" src="../Images/assets/phone%20icon.png" alt="" aria-hidden="true"> +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="loans.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu   = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
