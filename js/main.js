@@ -147,7 +147,7 @@ function openProductModal(product) {
 }
 
 function initProductCards() {
-    const cards = document.querySelectorAll('.product-card');
+    const cards = document.querySelectorAll('.product-card:not([data-product-id])');
     if (!cards.length) return;
 
     cards.forEach((card) => {

@@ -11,13 +11,107 @@
         }
         .coopmart-category {
             margin-bottom: 50px;
+            text-align: center;
         }
         .coopmart-category .section-header {
-            text-align: left;
+            margin: 0 auto 30px;
+            max-width: 720px;
         }
-        @media (max-width: 720px) {
-            .coopmart-category .section-header {
-                text-align: center;
+        .product-detail,
+        .product-preview {
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .product-preview {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.48);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow: auto;
+        }
+        .product-detail-panel {
+            width: 100%;
+            max-width: 980px;
+            padding: 36px;
+            background: rgba(255,255,255,0.98);
+            border: 1px solid rgba(36,71,30,0.12);
+            border-radius: 28px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+        }
+        .product-detail-panel .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+        .product-detail-card {
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        .product-detail-card h3 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+        .product-detail-card .product-price {
+            color: #23743B;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .product-badge {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: #E8F3E4;
+            color: #1b3d22;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .product-meta {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+        .product-meta li {
+            color: #4A4A4A;
+            font-size: 0.98rem;
+        }
+        .product-feature-list p {
+            margin: 8px 0;
+            color: #505050;
+            font-size: 1rem;
+        }
+        .detail-grid .product-img {
+            min-height: 320px;
+            border-radius: 22px;
+            background-size: cover;
+            background-position: center;
+        }
+        .preview-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .product-detail .btn-secondary {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -84,17 +178,17 @@
 
         <section class="coopmart-intro" id="categories">
             <div class="grid-3">
-                <a href="#fresh-produce" class="service-box">
+                <a href="Coopmart Categories/fresh-produce.html" class="service-box">
                     <div class="service-icon">🌾</div>
                     <h4>Fresh Produce</h4>
                     <p>Seasonal vegetables and fruits sourced directly from our partner farms.</p>
                 </a>
-                <a href="#local-staples" class="service-box">
+                <a href="Coopmart Categories/local-staples.html" class="service-box">
                     <div class="service-icon">🍚</div>
                     <h4>Local Staples</h4>
                     <p>Certified rice, grains, and household essentials at cooperative pricing.</p>
                 </a>
-                <a href="#eco-goods" class="service-box">
+                <a href="Coopmart Categories/eco-goods.html" class="service-box">
                     <div class="service-icon">🧴</div>
                     <h4>Eco Goods</h4>
                     <p>Sustainable toiletries, cleaning items, and zero-waste alternatives.</p>
@@ -108,19 +202,19 @@
                 <p>Explore locally grown vegetables and fruit bundles curated for healthy family meals.</p>
             </div>
             <div class="container grid-4">
-                <article class="product-card">
+                <article class="product-card" data-product-id="seasonal-vegetable-basket" role="button" tabindex="0">
                     <div class="product-img product-img-5"></div>
                     <h4>Seasonal Vegetable Basket</h4>
                     <p>Member price: ₱280</p>
                     <p class="product-caption">Harvested by local farms, this basket is fresh, crisp, and ready to cook.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="organic-fruit-pack" role="button" tabindex="0">
                     <div class="product-img product-img-6"></div>
                     <h4>Organic Fruit Pack</h4>
                     <p>Member price: ₱320</p>
                     <p class="product-caption">Made by community growers, every fruit is naturally sweet and sun-ripened.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="herb-garden-bundle" role="button" tabindex="0">
                     <div class="product-img product-img-7"></div>
                     <h4>Herb Garden Bundle</h4>
                     <p>Member price: ₱180</p>
@@ -136,19 +230,19 @@
                 <p>Value-packed essentials sourced from trusted cooperative partners.</p>
             </div>
             <div class="container grid-4">
-                <article class="product-card">
+                <article class="product-card" data-product-id="premium-rice-5kg" role="button" tabindex="0">
                     <div class="product-img product-img-6"></div>
                     <h4>Premium Rice 5kg</h4>
                     <p>Member price: ₱420</p>
                     <p class="product-caption">Locally milled and naturally fragrant, grown by community farmers.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="virgin-coconut-oil" role="button" tabindex="0">
                     <div class="product-img product-img-7"></div>
                     <h4>Virgin Coconut Oil</h4>
                     <p>Member price: ₱260</p>
                     <p class="product-caption">Cold-pressed from fresh coconuts, offering a smooth and mildly sweet flavor.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="cassava-flour" role="button" tabindex="0">
                     <div class="product-img product-img-8"></div>
                     <h4>Cassava Flour</h4>
                     <p>Member price: ₱150</p>
@@ -164,25 +258,25 @@
                 <p>Earth-friendly products designed for sustainable daily living.</p>
             </div>
             <div class="container grid-4">
-                <article class="product-card">
+                <article class="product-card" data-product-id="handmade-soap-set" role="button" tabindex="0">
                     <div class="product-img product-img-3"></div>
                     <h4>Handmade Soap Set</h4>
                     <p>Member price: ₱120</p>
                     <p class="product-caption">Crafted by local artisans with gentle botanicals and herbal scent.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="bamboo-toothbrush-pack" role="button" tabindex="0">
                     <div class="product-img product-img-8"></div>
                     <h4>Bamboo Toothbrush Pack</h4>
                     <p>Member price: ₱95</p>
                     <p class="product-caption">Sustainably made with biodegradable handles for everyday use.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="reusable-produce-bags" role="button" tabindex="0">
                     <div class="product-img product-img-9"></div>
                     <h4>Reusable Produce Bags</h4>
                     <p>Member price: ₱140</p>
                     <p class="product-caption">Lightweight, washable, and designed to replace single-use plastic.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="beeswax-wrap-set" role="button" tabindex="0">
                     <div class="product-img product-img-10"></div>
                     <h4>Beeswax Wrap Set</h4>
                     <p>Member price: ₱220</p>
@@ -195,30 +289,85 @@
         <section class="products-list" id="featured-items">
             <h2>Featured Products</h2>
             <div class="container grid-4">
-                <article class="product-card">
+                <article class="product-card" data-product-id="organic-vegetables-box" role="button" tabindex="0">
                     <div class="product-img product-img-1"></div>
                     <h4>Organic Vegetables Box</h4>
                     <p>Member price: ₱250</p>
                     <p class="product-caption">Harvested by partner farms, crisp and leafy with every purchase.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="local-rice-5kg" role="button" tabindex="0">
                     <div class="product-img product-img-2"></div>
                     <h4>Local Rice (5kg)</h4>
                     <p>Member price: ₱400</p>
                     <p class="product-caption">Grown by local producers, this rice cooks fluffy and naturally fragrant.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="handmade-soap-set" role="button" tabindex="0">
                     <div class="product-img product-img-3"></div>
                     <h4>Handmade Soap Set</h4>
                     <p>Member price: ₱120</p>
                     <p class="product-caption">Crafted by coop artisans with gentle botanicals and a sweet herbal scent.</p>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-product-id="compost-starter-kit" role="button" tabindex="0">
                     <div class="product-img product-img-4"></div>
                     <h4>Compost Starter Kit</h4>
                     <p>Member price: ₱350</p>
                     <p class="product-caption">Perfect for beginning gardeners who want rich, earthy soil goodness.</p>
                 </article>
+            </div>
+        </section>
+
+        <section class="product-preview page-section-hidden" id="product-preview">
+            <div class="product-detail-panel">
+                <div class="section-header">
+                    <h2 id="preview-title">Product Preview</h2>
+                    <p id="preview-summary">A quick product overview with the option to view full details.</p>
+                </div>
+                <div class="detail-grid">
+                    <div class="product-img product-img-1" id="preview-image"></div>
+                    <div class="product-detail-card">
+                        <span class="product-badge" id="preview-category"></span>
+                        <h3 id="preview-product-name"></h3>
+                        <p class="product-price" id="preview-price"></p>
+                        <p id="preview-description"></p>
+                        <ul class="product-meta">
+                            <li><strong>Origin:</strong> <span id="preview-origin"></span></li>
+                            <li><strong>Weight / Size:</strong> <span id="preview-weight"></span></li>
+                            <li><strong>Availability:</strong> <span id="preview-availability"></span></li>
+                            <li><strong>Storage:</strong> <span id="preview-storage"></span></li>
+                        </ul>
+                        <div class="product-feature-list" id="preview-features"></div>
+                        <div class="preview-actions">
+                            <button class="btn btn-secondary" id="preview-back">Back</button>
+                            <button class="btn btn-primary" id="preview-open-detail">View product info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-detail page-section-hidden" id="product-detail">
+            <div class="product-detail-panel">
+                <div class="section-header">
+                    <h2 id="detail-title">Product Detail</h2>
+                    <p id="detail-summary">Everything you need to know about this CoopMart product.</p>
+                </div>
+                <div class="detail-grid">
+                    <div class="product-img product-img-1" id="detail-image"></div>
+                    <div class="product-detail-card">
+                        <span class="product-badge" id="detail-category"></span>
+                        <h3 id="detail-product-name"></h3>
+                        <p class="product-price" id="detail-price"></p>
+                        <p id="detail-description"></p>
+                        <ul class="product-meta">
+                            <li><strong>Origin:</strong> <span id="detail-origin"></span></li>
+                            <li><strong>Weight / Size:</strong> <span id="detail-weight"></span></li>
+                            <li><strong>Availability:</strong> <span id="detail-availability"></span></li>
+                            <li><strong>Storage:</strong> <span id="detail-storage"></span></li>
+                        </ul>
+                        <div class="product-feature-list" id="detail-features"></div>
+                        <button class="btn btn-secondary" id="detail-back">Back to category</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -308,15 +457,296 @@
             'eco-goods': ['section-header', 'eco-goods']
         };
 
+        const productDetails = {
+            'seasonal-vegetable-basket': {
+                title: 'Seasonal Vegetable Basket',
+                summary: 'Fresh farm produce packed for everyday family meals.',
+                category: 'Fresh Produce',
+                price: '₱280',
+                description: 'A curated basket of leafy greens, root vegetables, and salad favorites sourced from partner farms within 24 hours of harvest.',
+                origin: 'Local partner farms',
+                weight: '2 kg basket',
+                availability: 'Available for pickup and delivery',
+                storage: 'Refrigerate and use within 4 days',
+                features: ['Rich in vitamins A and C', 'Ready to roast, steam or sauté', 'Perfect for healthy weekly meal planning'],
+                imageClass: 'product-img-5'
+            },
+            'organic-fruit-pack': {
+                title: 'Organic Fruit Pack',
+                summary: 'A lively fruit selection for snacks, juices and desserts.',
+                category: 'Fresh Produce',
+                price: '₱320',
+                description: 'A mix of seasonal fruits harvested by community growers. Bright, sweet, and ideal for breakfast, smoothies, or family snacks.',
+                origin: 'Community growers',
+                weight: '3 kg pack',
+                availability: 'Available while seasonal stocks last',
+                storage: 'Keep cool and consume within 5 days',
+                features: ['Sun-ripened for natural sweetness', 'Includes mangoes, bananas, and citrus', 'Excellent source of dietary fiber'],
+                imageClass: 'product-img-6'
+            },
+            'herb-garden-bundle': {
+                title: 'Herb Garden Bundle',
+                summary: 'Fresh herbs to brighten every dish and beverage.',
+                category: 'Fresh Produce',
+                price: '₱180',
+                description: 'A fragrant collection of basil, lemongrass, and mint grown by our cooperative farmers, ready to enhance soups, sauces, and teas.',
+                origin: 'Local herb growers',
+                weight: '350 g bundle',
+                availability: 'Ready for same-day pickup',
+                storage: 'Store in water or wrapped in damp cloth',
+                features: ['Adds fresh flavor to every meal', 'Suitable for cooking and herbal drinks', 'Aromatic and pesticide-free'],
+                imageClass: 'product-img-7'
+            },
+            'premium-rice-5kg': {
+                title: 'Premium Rice 5kg',
+                summary: 'A full bag of fragrant, locally milled rice.',
+                category: 'Local Staples',
+                price: '₱420',
+                description: 'Golden rice produced by cooperative members. The grain cooks fluffy, holds texture well, and brings a naturally sweet aroma to the table.',
+                origin: 'Member rice farms',
+                weight: '5 kg',
+                availability: 'Available for delivery',
+                storage: 'Store in a cool dry place',
+                features: ['Naturally fragrant grain', 'Perfect for daily family meals', 'Non-GMO and locally grown'],
+                imageClass: 'product-img-6'
+            },
+            'virgin-coconut-oil': {
+                title: 'Virgin Coconut Oil',
+                summary: 'A pure, cold-pressed coconut oil for kitchen and skin.',
+                category: 'Local Staples',
+                price: '₱260',
+                description: 'Extracted from fresh coconuts and minimally processed to preserve flavor, nutrients, and natural benefits for cooking and personal care.',
+                origin: 'Local coconut farms',
+                weight: '500 ml bottle',
+                availability: 'In stock now',
+                storage: 'Keep in a cool dry place',
+                features: ['Cold-pressed for freshness', 'Ideal for sautéing, baking, and skin care', 'No additives or preservatives'],
+                imageClass: 'product-img-7'
+            },
+            'cassava-flour': {
+                title: 'Cassava Flour',
+                summary: 'Gluten-free flour made from locally harvested cassava.',
+                category: 'Local Staples',
+                price: '₱150',
+                description: 'Fine-textured flour crafted from freshly peeled cassava. Great for baking, pancakes, and traditional recipes with a naturally sweet finish.',
+                origin: 'Local cassava producers',
+                weight: '1 kg bag',
+                availability: 'Ready for dispatch',
+                storage: 'Keep sealed in a dry place',
+                features: ['Gluten-free and light', 'Excellent for baking and cooking', 'Sustainably sourced'],
+                imageClass: 'product-img-8'
+            },
+            'handmade-soap-set': {
+                title: 'Handmade Soap Set',
+                summary: 'Gentle soaps made with local botanicals.',
+                category: 'Eco Goods',
+                price: '₱120',
+                description: 'A set of artisan soaps crafted from coconut oil, herbs, and natural scents. Designed to nourish skin while reducing plastic packaging waste.',
+                origin: 'Cooperative artisans',
+                weight: '4 bars',
+                availability: 'Limited batch release',
+                storage: 'Store in a dry place between uses',
+                features: ['Pesticide-free botanical ingredients', 'Ideal for sensitive skin', 'Comes in recyclable packaging'],
+                imageClass: 'product-img-3'
+            },
+            'bamboo-toothbrush-pack': {
+                title: 'Bamboo Toothbrush Pack',
+                summary: 'Eco-friendly toothbrushes with biodegradable handles.',
+                category: 'Eco Goods',
+                price: '₱95',
+                description: 'A two-pack of soft-bristle toothbrushes made with responsibly harvested bamboo. A sustainable swap for plastic tubes and a cleaner daily routine.',
+                origin: 'Sustainable suppliers',
+                weight: '2 brushes',
+                availability: 'In stock',
+                storage: 'Store dry after use',
+                features: ['Biodegradable handle', 'Soft bristles for gentle cleaning', 'Packaged in recycled materials'],
+                imageClass: 'product-img-8'
+            },
+            'reusable-produce-bags': {
+                title: 'Reusable Produce Bags',
+                summary: 'Washable bags built to replace plastic produce packaging.',
+                category: 'Eco Goods',
+                price: '₱140',
+                description: 'A set of mesh bags designed to carry fruits, vegetables and bulk groceries. These breathable bags are machine washable and built for repeated use.',
+                origin: 'Sustainable textile makers',
+                weight: '4 bags',
+                availability: 'Generally available',
+                storage: 'Air dry after washing',
+                features: ['Washable and reusable', 'Breathable mesh for produce', 'Reduces single-use plastic waste'],
+                imageClass: 'product-img-9'
+            },
+            'beeswax-wrap-set': {
+                title: 'Beeswax Wrap Set',
+                summary: 'Reusable food wraps made from beeswax and cotton.',
+                category: 'Eco Goods',
+                price: '₱220',
+                description: 'A set of three reusable wraps ideal for covering bowls, wrapping snacks, and keeping food fresh without plastic. Made with sustainably sourced beeswax and organic cotton.',
+                origin: 'Local coop makers',
+                weight: '3-wrap set',
+                availability: 'Stock may vary',
+                storage: 'Wash with cool water only',
+                features: ['Zero-waste food storage', 'Reusable and naturally scented', 'Works for sandwiches, produce, and leftovers'],
+                imageClass: 'product-img-10'
+            },
+            'organic-vegetables-box': {
+                title: 'Organic Vegetables Box',
+                summary: 'A chef-ready box of organic vegetables for balanced meals.',
+                category: 'Featured',
+                price: '₱250',
+                description: 'A premium box containing leafy greens, root vegetables, and salad-ready produce harvested using organic practices from our partner farms.',
+                origin: 'Organic farm partners',
+                weight: '2.5 kg box',
+                availability: 'Available for weekly delivery',
+                storage: 'Refrigerate immediately',
+                features: ['Organic certified where available', 'Perfect for family meal prep', 'Rich in antioxidants'],
+                imageClass: 'product-img-1'
+            },
+            'local-rice-5kg': {
+                title: 'Local Rice (5kg)',
+                summary: 'A staple rice bag grown and milled by cooperative members.',
+                category: 'Featured',
+                price: '₱400',
+                description: 'Rich, fragrant rice selected for perfect everyday cooking. Produced from locally grown grain and milled with care to preserve flavor.',
+                origin: 'Cooperative rice growers',
+                weight: '5 kg',
+                availability: 'In stock for delivery',
+                storage: 'Store in an airtight container',
+                features: ['Premium grain quality', 'Soft and fluffy when cooked', 'Good source of energy'],
+                imageClass: 'product-img-2'
+            },
+            'compost-starter-kit': {
+                title: 'Compost Starter Kit',
+                summary: 'Everything a new gardener needs to begin composting.',
+                category: 'Eco Goods',
+                price: '₱350',
+                description: 'A starter kit including compostable liners, organic soil activator, and easy instructions to help members build healthy, nutrient-rich compost at home.',
+                origin: 'Sustainable gardening suppliers',
+                weight: '1.2 kg kit',
+                availability: 'While stocks last',
+                storage: 'Store in a cool dry place',
+                features: ['Supports sustainable gardening', 'Includes organic compost starter', 'Great for backyard and container gardens'],
+                imageClass: 'product-img-4'
+            }
+        };
+
         const sections = Array.from(document.querySelectorAll('main.container > section'));
+        const previewSection = document.getElementById('product-preview');
+        const detailSection = document.getElementById('product-detail');
+        const previewElements = {
+            title: document.getElementById('preview-title'),
+            summary: document.getElementById('preview-summary'),
+            name: document.getElementById('preview-product-name'),
+            price: document.getElementById('preview-price'),
+            description: document.getElementById('preview-description'),
+            category: document.getElementById('preview-category'),
+            origin: document.getElementById('preview-origin'),
+            weight: document.getElementById('preview-weight'),
+            availability: document.getElementById('preview-availability'),
+            storage: document.getElementById('preview-storage'),
+            features: document.getElementById('preview-features'),
+            image: document.getElementById('preview-image')
+        };
+        const detailElements = {
+            title: document.getElementById('detail-title'),
+            summary: document.getElementById('detail-summary'),
+            name: document.getElementById('detail-product-name'),
+            price: document.getElementById('detail-price'),
+            description: document.getElementById('detail-description'),
+            category: document.getElementById('detail-category'),
+            origin: document.getElementById('detail-origin'),
+            weight: document.getElementById('detail-weight'),
+            availability: document.getElementById('detail-availability'),
+            storage: document.getElementById('detail-storage'),
+            features: document.getElementById('detail-features'),
+            image: document.getElementById('detail-image')
+        };
+        const productCards = document.querySelectorAll('.product-card[data-product-id]');
+        const previewOpenDetailButton = document.getElementById('preview-open-detail');
+        const previewBackButton = document.getElementById('preview-back');
+        const detailBackButton = document.getElementById('detail-back');
+        let activeProductId = null;
+        let currentCategoryKey = 'categories';
+
+        function renderProductSection(product, targetElements) {
+            targetElements.name.textContent = product.title;
+            targetElements.price.textContent = `Member price: ${product.price}`;
+            targetElements.description.textContent = product.description;
+            targetElements.category.textContent = product.category;
+            targetElements.origin.textContent = product.origin;
+            targetElements.weight.textContent = product.weight;
+            targetElements.availability.textContent = product.availability;
+            targetElements.storage.textContent = product.storage;
+            targetElements.features.innerHTML = product.features.map(feature => `<p>• ${feature}</p>`).join('');
+            targetElements.image.className = `product-img ${product.imageClass || 'product-img-1'}`;
+        }
+
+        function openProductDetail(productId, updateHash = false) {
+            const product = productDetails[productId];
+            if (!product) {
+                showView(`#${currentCategoryKey}`);
+                return;
+            }
+            activeProductId = productId;
+            sections.forEach(section => section.classList.add('page-section-hidden'));
+            detailSection.classList.remove('page-section-hidden');
+            previewSection.classList.add('page-section-hidden');
+
+            heroBadge.textContent = product.category;
+            heroHeading.textContent = product.title;
+            heroCopy.textContent = product.description;
+            pageTitle.textContent = `TerraLink | CoopMart — ${product.title}`;
+
+            detailElements.title.textContent = product.title;
+            detailElements.summary.textContent = product.summary;
+            renderProductSection(product, detailElements);
+            if (updateHash) {
+                location.hash = productId;
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openProductPreview(productId) {
+            const product = productDetails[productId];
+            if (!product) {
+                location.hash = '#categories';
+                return;
+            }
+            activeProductId = productId;
+            previewSection.classList.remove('page-section-hidden');
+            detailSection.classList.add('page-section-hidden');
+
+            heroBadge.textContent = product.category;
+            heroHeading.textContent = product.title;
+            heroCopy.textContent = product.summary;
+            pageTitle.textContent = `TerraLink | CoopMart — ${product.title}`;
+
+            previewElements.title.textContent = `${product.title}`;
+            previewElements.summary.textContent = product.summary;
+            renderProductSection(product, previewElements);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function returnToCategory() {
+            previewSection.classList.add('page-section-hidden');
+            detailSection.classList.add('page-section-hidden');
+            showView(`#${currentCategoryKey}`);
+        }
 
         function showView(hash) {
             const viewKey = hash.replace('#', '') || 'categories';
+            if (productDetails[viewKey]) {
+                openProductDetail(viewKey, false);
+                return;
+            }
+
             const activeKey = sectionMap[viewKey] ? viewKey : 'categories';
+            currentCategoryKey = activeKey;
             sections.forEach(section => {
                 const visible = sectionMap[activeKey].includes(section.id);
                 section.classList.toggle('page-section-hidden', !visible);
             });
+            previewSection.classList.add('page-section-hidden');
+            detailSection.classList.add('page-section-hidden');
 
             if (activeKey === 'categories') {
                 heroBadge.textContent = 'CoopMart Marketplace';
@@ -333,6 +763,25 @@
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        productCards.forEach(card => {
+            const productId = card.dataset.productId;
+            card.addEventListener('click', () => openProductPreview(productId));
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openProductPreview(productId);
+                }
+            });
+        });
+
+        previewBackButton.addEventListener('click', () => returnToCategory());
+        previewOpenDetailButton.addEventListener('click', () => {
+            if (activeProductId) {
+                openProductDetail(activeProductId, true);
+            }
+        });
+        detailBackButton.addEventListener('click', () => returnToCategory());
 
         window.addEventListener('hashchange', () => showView(location.hash));
         showView(location.hash);

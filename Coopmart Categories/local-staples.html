@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraLink | CoopMart Local Staples</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="coopmart-page">
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo"><span class="logo-green">Terra</span><span class="logo-text">Link</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="dropdown"><a href="#" class="nav-link">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
+                    </div>
+                </div>
+                <div class="dropdown"><a href="../membership.html" class="nav-link">Membership</a></div>
+                <div class="dropdown"><a href="../loans/loans-regular.html" class="nav-link">Loans</a></div>
+                <div class="dropdown"><a href="../investments.html" class="nav-link">Investments</a></div>
+                <div class="dropdown"><a href="../coopmart.html" class="nav-link">CoopMart</a></div>
+                <div class="dropdown"><a href="#" class="nav-link">Support</a>
+                    <div class="dropdown-content">
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="background-flash" aria-hidden="true"></div>
+
+    <section class="hero-section coopmart-hero">
+        <div class="hero-slide">
+            <div class="container hero-content">
+                <span class="badge">Local Staples</span>
+                <h1>Everyday essentials from trusted partners</h1>
+                <p>Browse staple goods sourced for affordability and cooperative value.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Browse Local Staples</a>
+                    <a href="../coopmart.html" class="btn btn-secondary">Back to CoopMart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section-header">
+            <h1>Local Staples</h1>
+            <p>Certified rice, grains, cooking oil and pantry essentials from our cooperative suppliers.</p>
+        </section>
+
+        <section class="products-list" id="products">
+            <div class="container grid-4">
+                <article class="product-card" data-product-id="premium-rice-5kg" role="button" tabindex="0">
+                    <div class="product-img product-img-6"></div>
+                    <h4>Premium Rice 5kg</h4>
+                    <p>Member price: ₱420</p>
+                    <p class="product-caption">Locally milled rice with a fragrant finish for everyday meals.</p>
+                </article>
+                <article class="product-card" data-product-id="virgin-coconut-oil" role="button" tabindex="0">
+                    <div class="product-img product-img-7"></div>
+                    <h4>Virgin Coconut Oil</h4>
+                    <p>Member price: ₱260</p>
+                    <p class="product-caption">Cold-pressed and pure for cooking, baking, and natural skin care.</p>
+                </article>
+                <article class="product-card" data-product-id="cassava-flour" role="button" tabindex="0">
+                    <div class="product-img product-img-8"></div>
+                    <h4>Cassava Flour</h4>
+                    <p>Member price: ₱150</p>
+                    <p class="product-caption">Gluten-free flour made from fresh cassava, perfect for baking.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="product-preview page-section-hidden" id="product-preview">
+            <div class="product-detail-panel">
+                <div class="section-header">
+                    <h2 id="preview-title">Product Preview</h2>
+                    <p id="preview-summary">A quick product overview with the option to view full details.</p>
+                </div>
+                <div class="detail-grid">
+                    <div class="product-img product-img-1" id="preview-image"></div>
+                    <div class="product-detail-card">
+                        <span class="product-badge" id="preview-category"></span>
+                        <h3 id="preview-product-name"></h3>
+                        <p class="product-price" id="preview-price"></p>
+                        <p id="preview-description"></p>
+                        <ul class="product-meta">
+                            <li><strong>Origin:</strong> <span id="preview-origin"></span></li>
+                            <li><strong>Weight / Size:</strong> <span id="preview-weight"></span></li>
+                            <li><strong>Availability:</strong> <span id="preview-availability"></span></li>
+                            <li><strong>Storage:</strong> <span id="preview-storage"></span></li>
+                        </ul>
+                        <div class="product-feature-list" id="preview-features"></div>
+                        <div class="preview-actions">
+                            <button class="btn btn-secondary" id="preview-back">Back</button>
+                            <button class="btn btn-primary" id="preview-open-detail">View product info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-detail page-section-hidden" id="product-detail">
+            <div class="product-detail-panel">
+                <div class="section-header">
+                    <h2 id="detail-title">Product Detail</h2>
+                    <p id="detail-summary">Everything you need to know about this CoopMart product.</p>
+                </div>
+                <div class="detail-grid">
+                    <div class="product-img product-img-1" id="detail-image"></div>
+                    <div class="product-detail-card">
+                        <span class="product-badge" id="detail-category"></span>
+                        <h3 id="detail-product-name"></h3>
+                        <p class="product-price" id="detail-price"></p>
+                        <p id="detail-description"></p>
+                        <ul class="product-meta">
+                            <li><strong>Origin:</strong> <span id="detail-origin"></span></li>
+                            <li><strong>Weight / Size:</strong> <span id="detail-weight"></span></li>
+                            <li><strong>Availability:</strong> <span id="detail-availability"></span></li>
+                            <li><strong>Storage:</strong> <span id="detail-storage"></span></li>
+                        </ul>
+                        <div class="product-feature-list" id="detail-features"></div>
+                        <button class="btn btn-secondary" id="detail-back">Back to category</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-4">
+            <div class="footer-about">
+                <h4>TerraLink</h4>
+                <p id="footer-about-text"></p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="../investments.html">Investment Dividends</a></li>
+                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p id="footer-address"></p>
+                <p id="footer-email"></p>
+                <p>📞 +63 (32) 230-0100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TerraLink Cooperative. All Rights Reserved. Designed by Group B.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/coopmart-products.js"></script>
+</body>
+</html>
