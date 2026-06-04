@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,90 +100,92 @@
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="highlights-section calculator-shell-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Repayment Breakdown</h2>
-                    <p>Use this compact sample table to understand how a fixed monthly installment can be divided across the term.</p>
-                </div>
-                <table class="calculator-table">
-                    <thead>
-                        <tr>
-                            <th>Term</th>
-                            <th>Principal Portion</th>
-                            <th>Interest Portion</th>
-                            <th>Monthly Payment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Month 1</td>
-                            <td>&#8369;3,835</td>
-                            <td>&#8369;625</td>
-                            <td>&#8369;4,460</td>
-                        </tr>
-                        <tr>
-                            <td>Month 6</td>
-                            <td>&#8369;3,960</td>
-                            <td>&#8369;500</td>
-                            <td>&#8369;4,460</td>
-                        </tr>
-                        <tr>
-                            <td>Month 12</td>
-                            <td>&#8369;4,405</td>
-                            <td>&#8369;55</td>
-                            <td>&#8369;4,460</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="highlights-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Quick Calculator</h2>
-                    <p>Enter a sample loan amount and term to see a simple monthly estimate update instantly.</p>
-                </div>
-                <div class="calculator-panel">
-                    <div class="calculator-form-grid">
-                        <div class="calculator-form-card">
-                            <form class="calculator-form" id="loan-calculator-form" novalidate>
-                                <div class="form-field">
-                                    <label for="loan-principal">Loan Amount (&#8369;)</label>
-                                    <input id="loan-principal" type="number" min="1000" step="1000" value="50000">
-                                </div>
-                                <div class="form-field">
-                                    <label for="loan-rate">Monthly Interest Rate (%)</label>
-                                    <input id="loan-rate" type="number" min="0" step="0.01" value="1.25">
-                                </div>
-                                <div class="form-field">
-                                    <label for="loan-term">Term (Months)</label>
-                                    <input id="loan-term" type="number" min="1" step="1" value="12">
-                                </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary" id="calculate-loan-btn">Calculate</button>
-                                    <button type="reset" class="btn btn-secondary" id="reset-loan-btn">Reset</button>
-                                </div>
+                <article class="highlight-card calculator-shell">
+                    <div class="calculator-top-grid">
+                        <div class="calculator-panel calculator-panel--form">
+                            <h3>Loan Details</h3>
+                            <form id="loan-calculator-form" class="calculator-form">
+                                <p class="form-field">
+                                    <label for="loan-product">Loan Product</label>
+                                    <select id="loan-product" name="loanProduct">
+                                        <option value="">Loading regular loans...</option>
+                                    </select>
+                                    <small id="loan-product-hint">Select a loan product to auto-fill its typical rate and term.</small>
+                                </p>
+                                <p class="form-field">
+                                    <label for="loan-amount">Loan Amount</label>
+                                    <input type="number" id="loan-amount" name="loanAmount" min="10000" max="500000" placeholder="PHP 10,000 - PHP 500,000" required>
+                                </p>
+                                <p class="form-field">
+                                    <label for="interest-rate">Annual Interest Rate</label>
+                                    <input type="number" id="interest-rate" name="interestRate" min="0.1" step="0.01" placeholder="e.g. 12%" required>
+                                </p>
+                                <p class="form-field">
+                                    <label for="loan-term">Loan Term</label>
+                                    <select id="loan-term" name="loanTerm" required>
+                                        <option value="">Select term</option>
+                                        <option value="6">6 months</option>
+                                        <option value="12">12 months</option>
+                                        <option value="18">18 months</option>
+                                        <option value="24">24 months</option>
+                                        <option value="36">36 months</option>
+                                        <option value="48">48 months</option>
+                                        <option value="60">60 months</option>
+                                    </select>
+                                </p>
+                                <p class="form-action">
+                                    <button type="submit" class="btn btn-primary">Calculate</button>
+                                </p>
                             </form>
                         </div>
-                        <div class="calculator-result-card" aria-live="polite">
-                            <div class="result-line">
-                                <span>Monthly Payment</span>
-                                <strong id="monthly-payment-result">&#8369;4,460</strong>
+
+                        <div class="calculator-panel calculator-panel--results">
+                            <h3>Results</h3>
+                            <div class="calculator-kpi calculator-kpi--featured">
+                                <p><span class="news-tag">Monthly Payment</span></p>
+                                <h2 id="monthly-payment">PHP 0.00</h2>
                             </div>
-                            <div class="result-line">
-                                <span>Total Interest</span>
-                                <strong id="total-interest-result">&#8369;3,520</strong>
+                            <div class="calculator-kpi-grid">
+                                <article class="calculator-kpi">
+                                    <p><span class="news-tag">Total Payment</span></p>
+                                    <strong id="total-payment">PHP 0.00</strong>
+                                </article>
+                                <article class="calculator-kpi">
+                                    <p><span class="news-tag">Total Interest</span></p>
+                                    <strong id="total-interest">PHP 0.00</strong>
+                                </article>
                             </div>
-                            <div class="result-line">
-                                <span>Total Payable</span>
-                                <strong id="total-payable-result">&#8369;53,520</strong>
-                            </div>
-                            <p class="calculator-note" id="calculator-note">Based on a &#8369;50,000 loan, 1.25% monthly rate, and 12-month term.</p>
+                            <p class="calculator-note">Figures are estimates based on standard amortization and may vary on final approval.</p>
                         </div>
                     </div>
-                </div>
+
+                    <div class="calculator-panel calculator-panel--schedule">
+                        <h3>Amortization Breakdown (First 12 Months)</h3>
+                        <div class="calculator-table-wrap">
+                            <table class="calculator-table">
+                                <thead>
+                                    <tr>
+                                        <th>Month No.</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="schedule-body">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>PHP 0.00</td>
+                                        <td>PHP 0.00</td>
+                                        <td>PHP 0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="calculator-note">Full schedule available upon loan approval.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -254,67 +256,197 @@
 
 
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        const calculatorForm = document.getElementById('loan-calculator-form');
-        const principalInput = document.getElementById('loan-principal');
-        const rateInput = document.getElementById('loan-rate');
-        const termInput = document.getElementById('loan-term');
-        const monthlyPaymentResult = document.getElementById('monthly-payment-result');
-        const totalInterestResult = document.getElementById('total-interest-result');
-        const totalPayableResult = document.getElementById('total-payable-result');
-        const calculatorNote = document.getElementById('calculator-note');
-        const currencyFormatter = new Intl.NumberFormat('en-PH', {
-            style: 'currency',
-            currency: 'PHP',
-            maximumFractionDigits: 0,
+        const form = document.getElementById('loan-calculator-form');
+        const loanProductEl = document.getElementById('loan-product');
+        const loanProductHintEl = document.getElementById('loan-product-hint');
+        const monthlyPaymentEl = document.getElementById('monthly-payment');
+        const totalPaymentEl = document.getElementById('total-payment');
+        const totalInterestEl = document.getElementById('total-interest');
+        const scheduleBody = document.getElementById('schedule-body');
+
+        const { createClient } = globalThis.SanityClient;
+        const client = createClient({
+            projectId: 'ltk0qh4a',
+            dataset: 'production',
+            apiVersion: '2024-01-01',
+            useCdn: true
         });
 
-        function calculateLoan() {
-            const principal = Number(principalInput.value);
-            const monthlyRatePercent = Number(rateInput.value);
-            const termMonths = Number(termInput.value);
+        const LOAN_OPTIONS_QUERY = `*[_type == "loan" && loanCategory == "regular"]{
+            title, interestRate, maxTerm
+        } | order(title asc)`;
 
-            if (!principal || termMonths <= 0 || monthlyRatePercent < 0) {
+        const formatCurrency = (value) =>
+            new Intl.NumberFormat('en-PH', {
+                style: 'currency',
+                currency: 'PHP',
+                minimumFractionDigits: 2
+            }).format(value);
+
+        const parseRateNumber = (rateValue) => {
+            if (typeof rateValue === 'number') {
+                return rateValue;
+            }
+
+            if (typeof rateValue !== 'string') {
+                return null;
+            }
+
+            const cleaned = rateValue.replace(/[^0-9.]/g, '');
+            const parsed = Number(cleaned);
+            return Number.isFinite(parsed) ? parsed : null;
+        };
+
+        const parseMaxTermMonths = (termValue) => {
+            if (typeof termValue === 'number') {
+                return termValue;
+            }
+
+            if (typeof termValue !== 'string') {
+                return null;
+            }
+
+            const lower = termValue.toLowerCase();
+            const match = lower.match(/(\d+(?:\.\d+)?)/);
+            if (!match) {
+                return null;
+            }
+
+            const value = Number(match[1]);
+            if (!Number.isFinite(value)) {
+                return null;
+            }
+
+            if (lower.includes('year')) {
+                return Math.round(value * 12);
+            }
+
+            return Math.round(value);
+        };
+
+        const getNearestAvailableTerm = (months) => {
+            const termOptions = Array.from(document.getElementById('loan-term').options)
+                .map((option) => Number(option.value))
+                .filter((value) => Number.isFinite(value) && value > 0)
+                .sort((a, b) => a - b);
+
+            if (termOptions.length === 0 || !Number.isFinite(months) || months <= 0) {
+                return null;
+            }
+
+            for (const option of termOptions) {
+                if (option >= months) {
+                    return option;
+                }
+            }
+
+            return termOptions[termOptions.length - 1];
+        };
+
+        const populateLoanProducts = (loans) => {
+            loanProductEl.innerHTML = '<option value="">Choose a loan product</option>';
+
+            loans.forEach((loan, index) => {
+                const option = document.createElement('option');
+                option.value = String(index);
+                option.textContent = loan.title || `Regular Loan ${index + 1}`;
+                option.dataset.rate = loan.interestRate ?? '';
+                option.dataset.maxTerm = loan.maxTerm ?? '';
+                loanProductEl.appendChild(option);
+            });
+
+            loanProductEl.disabled = loans.length === 0;
+            loanProductHintEl.textContent = loans.length
+                ? 'Select a loan product to auto-fill its typical rate and term.'
+                : 'No regular loan options are available right now.';
+        };
+
+        const handleLoanProductChange = () => {
+            const selectedOption = loanProductEl.options[loanProductEl.selectedIndex];
+            if (!selectedOption || !selectedOption.value) {
+                loanProductHintEl.textContent = 'Select a loan product to auto-fill its typical rate and term.';
                 return;
             }
 
-            const monthlyRate = monthlyRatePercent / 100;
-            const monthlyPayment = monthlyRate === 0
-                ? principal / termMonths
-                : (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termMonths));
+            const rate = parseRateNumber(selectedOption.dataset.rate);
+            const maxTermMonths = parseMaxTermMonths(selectedOption.dataset.maxTerm);
 
-            const totalPayable = monthlyPayment * termMonths;
-            const totalInterest = totalPayable - principal;
+            if (Number.isFinite(rate)) {
+                document.getElementById('interest-rate').value = rate;
+            }
 
-            monthlyPaymentResult.textContent = currencyFormatter.format(monthlyPayment);
-            totalInterestResult.textContent = currencyFormatter.format(totalInterest);
-            totalPayableResult.textContent = currencyFormatter.format(totalPayable);
-            calculatorNote.textContent = `Based on a ${currencyFormatter.format(principal)} loan, ${monthlyRatePercent}% monthly rate, and ${termMonths}-month term.`;
-        }
+            const nearestTerm = getNearestAvailableTerm(maxTermMonths);
+            if (nearestTerm) {
+                document.getElementById('loan-term').value = String(nearestTerm);
+            }
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            navMenu.classList.toggle('open');
-        });
+            const details = [];
+            if (selectedOption.dataset.rate) {
+                details.push(`Rate: ${selectedOption.dataset.rate}`);
+            }
+            if (selectedOption.dataset.maxTerm) {
+                details.push(`Max Term: ${selectedOption.dataset.maxTerm}`);
+            }
 
-        navMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                navMenu.classList.remove('open');
-            });
-        });
+            loanProductHintEl.textContent = details.length
+                ? details.join(' | ')
+                : 'You can manually set interest rate and term for this product.';
+        };
 
-        calculatorForm.addEventListener('submit', (event) => {
+        const loadLoanProducts = async () => {
+            try {
+                const loans = await client.fetch(LOAN_OPTIONS_QUERY);
+                populateLoanProducts(Array.isArray(loans) ? loans : []);
+            } catch (error) {
+                loanProductEl.disabled = true;
+                loanProductHintEl.textContent = 'Unable to load loan products. You can still calculate manually.';
+                console.error('Failed to load regular loan options:', error);
+            }
+        };
+
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
-            calculateLoan();
+
+            const principal = Number(document.getElementById('loan-amount').value);
+            const annualRate = Number(document.getElementById('interest-rate').value);
+            const termMonths = Number(document.getElementById('loan-term').value);
+
+            if (!principal || !annualRate || !termMonths) {
+                return;
+            }
+
+            const monthlyRate = annualRate / 12 / 100;
+            const factor = Math.pow(1 + monthlyRate, termMonths);
+            const monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
+            const totalPayment = monthlyPayment * termMonths;
+            const totalInterest = totalPayment - principal;
+
+            monthlyPaymentEl.textContent = formatCurrency(monthlyPayment);
+            totalPaymentEl.textContent = formatCurrency(totalPayment);
+            totalInterestEl.textContent = formatCurrency(totalInterest);
+
+            scheduleBody.innerHTML = '';
+            let remainingBalance = principal;
+            const rowLimit = Math.min(termMonths, 12);
+
+            for (let month = 1; month <= rowLimit; month += 1) {
+                const interestPayment = remainingBalance * monthlyRate;
+                const principalPayment = monthlyPayment - interestPayment;
+                remainingBalance = Math.max(remainingBalance - principalPayment, 0);
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${month}</td>
+                    <td>${formatCurrency(principalPayment)}</td>
+                    <td>${formatCurrency(interestPayment)}</td>
+                    <td>${formatCurrency(remainingBalance)}</td>
+                `;
+                scheduleBody.appendChild(row);
+            }
         });
 
-        calculatorForm.addEventListener('reset', () => {
-            window.setTimeout(calculateLoan, 0);
-        });
-
-        calculateLoan();
+        loanProductEl.addEventListener('change', handleLoanProductChange);
+        window.addEventListener('DOMContentLoaded', loadLoanProducts);
     </script>
     <script src="../js/main.js"></script>
 </body>
