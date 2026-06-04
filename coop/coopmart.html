@@ -4,117 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraLink | CoopMart</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .page-section-hidden {
-            display: none !important;
-        }
-        .coopmart-category {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        .coopmart-category .section-header {
-            margin: 0 auto 30px;
-            max-width: 720px;
-        }
-        .product-detail,
-        .product-preview {
-            padding-top: 30px;
-            display: flex;
-            justify-content: center;
-        }
-        .product-preview {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.48);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            overflow: auto;
-        }
-        .product-detail-panel {
-            width: 100%;
-            max-width: 980px;
-            padding: 36px;
-            background: rgba(255,255,255,0.98);
-            border: 1px solid rgba(36,71,30,0.12);
-            border-radius: 28px;
-            box-shadow: 0 24px 48px rgba(0,0,0,0.08);
-        }
-        .product-detail-panel .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 10px;
-        }
-        .product-detail-card {
-            padding: 0;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-        }
-        .product-detail-card h3 {
-            margin-top: 0;
-            font-size: 2rem;
-        }
-        .product-detail-card .product-price {
-            color: #23743B;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-        .product-badge {
-            display: inline-block;
-            padding: 10px 16px;
-            border-radius: 999px;
-            background: #E8F3E4;
-            color: #1b3d22;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-        .product-meta {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 24px;
-        }
-        .product-meta li {
-            color: #4A4A4A;
-            font-size: 0.98rem;
-        }
-        .product-feature-list p {
-            margin: 8px 0;
-            color: #505050;
-            font-size: 1rem;
-        }
-        .detail-grid .product-img {
-            min-height: 320px;
-            border-radius: 22px;
-            background-size: cover;
-            background-position: center;
-        }
-        .preview-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .product-detail .btn-secondary {
-            margin-top: 0;
-        }
-        @media (max-width: 900px) {
-            .detail-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
     <style>
@@ -172,57 +62,43 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <span class="logo-green">Terra</span><span class="logo-text">Link</span>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
-                        <a href="about/about-profile.html">Company Profile</a>
-                        <a href="about/about-history.html">History & Timeline</a>
-                        <a href="about/about-bod.html">BOD & Officers</a>
-                        <a href="about/about-officers.html">Corporate Officers</a>
-                        <a href="about/about-awards.html">Awards & Distinction</a>
-                        <a href="about/about-gallery.html">Event Gallery</a>
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a href="membership.html" class="nav-link">Membership</a>
-                </div>
-                <div class="dropdown">
-                    <a href="loans/loans-regular.html" class="nav-link">Loans</a>
+                <div class="dropdown"><a href="../membership.html" class="nav-link">Membership</a></div>
+                <div class="dropdown"><a href="../loans/loans-regular.html" class="nav-link">Loans</a></div>
+                <div class="dropdown"><a href="../investments/investments.html" class="nav-link">Investments</a></div>
+                <div class="dropdown"><a href="coopmart.html" class="nav-link">CoopMart</a></div>
+            <div class="dropdown"><a href="../news.html" class="nav-link">News</a></div>
+                <div class="dropdown"><a href="#" class="nav-link">Support</a>
                     <div class="dropdown-content">
-                        <a href="loans/loans-regular.html">Regular Loan</a>
-                        <a href="loans/loans-special.html">Special Loan</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                <a href="investments/investments.html" class="nav-link">Investments</a>
-                </div>
-                <div class="dropdown">
-                <a href="coop/coopmart.html" class="nav-link">CoopMart</a>
-                </div>
-                <div class="dropdown">
-                    <a href="news.html" class="nav-link">News</a>
-                </div>
-                <div class="dropdown">
-                    <a href="#" class="nav-link">Support</a>
-                    <div class="dropdown-content">
-                        <a href="support/support-helpdesk.html">Help Desk (FAQ)</a>
-                        <a href="support/support-calculator.html">Loan Calculator</a>
-                        <a href="support/support-application.html">Online Application</a>
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
+
 
     <!-- HERO -->
     <section class="hero-section" id="hero-container">
@@ -232,8 +108,8 @@
                 <h1 id="coopmart-hero-title">Fresh Products, Cooperative Values</h1>
                 <p id="coopmart-hero-subtitle">Enjoy curated member savings and locally sourced essentials in a premium shopping experience.</p>
                 <div class="hero-buttons">
-                    <a href="#featured-items" class="btn btn-primary" id="coopmart-hero-cta">Browse Featured Items</a>
-                    <a href="membership.html" class="btn btn-secondary">Join TerraLink</a>
+                    <a href="#featured-items" class="btn btn-primary">Browse Featured Items</a>
+                    <a href="../membership.html" class="btn btn-secondary">Join TerraLink</a>
                 </div>
             </div>
         </div>
@@ -266,14 +142,9 @@
         </div>
     </section>
 
-    <!-- FEATURED PRODUCTS -->
-    <section class="services-section" id="featured-items">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Products</h2>
-                <p>Selected items with member pricing — quality products at cooperative rates.</p>
-            </div>
-            <div class="grid-4">
+        <section class="products-list" id="featured-items">
+            <h2>Featured Products</h2>
+            <div class="grid-4 coopmart-product-grid">
                 <article class="product-card">
                     <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80');"></div>
                     <div class="product-body">
@@ -432,19 +303,19 @@
             <div class="footer-links">
                 <h5>Quick Links</h5>
                 <ul>
-                    <li><a href="about/about-profile.html">About Cooperative</a></li>
-                    <li><a href="membership.html">Membership Qualifications</a></li>
-                    <li><a href="loans/loans-regular.html">Loan Products</a></li>
-                    <li><a href="support/support-calculator.html">Amortization Calculator</a></li>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
+                    <li><a href="../membership.html">Membership Qualifications</a></li>
+                    <li><a href="../loans/loans-regular.html">Loan Products</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="investments/investments.html">Investment Dividends</a></li>
-                    <li><a href="coop/coopmart.html">CoopMart Stores</a></li>
-                    <li><a href="support/support-helpdesk.html">Help Desk & FAQ</a></li>
-                    <li><a href="support/support-application.html">Online Membership</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -510,7 +381,6 @@
             }
         });
     </script>
-    <script src="js/main.js"></script>
-
+    <script src="../js/main.js"></script>
 </body>
 </html>

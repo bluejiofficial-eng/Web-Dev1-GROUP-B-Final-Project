@@ -3,12 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraLink Cooperative | Help Desk & FAQ</title>
+    <title>TerraLink | Help Desk & FAQ</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        .faq-accordion {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid #e6e6e6;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(14, 44, 25, 0.06);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #16311f;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #f1f7f2;
+            color: #2c6b3f;
+            font-size: 1.1rem;
+            line-height: 1;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .faq-item[open] summary {
+            border-bottom: 1px solid #edf2ee;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            background: #dff0e4;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #5d6b63;
+            line-height: 1.75;
+        }
+
+        .faq-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            color: #5b7a65;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .support-contact-grid {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -16,7 +94,7 @@
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
@@ -40,82 +118,120 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
                     <div class="dropdown-content">
-                        <a href="support-helpdesk.html">Help Desk (FAQ)</a>
-                        <a href="support-calculator.html">Loan Calculator</a>
-                        <a href="support-application.html">Online Application</a>
+                        <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
+                        <a href="../support/support-calculator.html">Loan Calculator</a>
+                        <a href="../support/support-application.html">Online Application</a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
 
+
+
     <main>
         <section class="hero-section">
-            <div class="hero-slide helpdesk-hero">
+            <div class="hero-slide history-hero">
                 <div class="container hero-content">
                     <span class="badge">Support Center</span>
-                    <h1>How can we help you?</h1>
-                    <p>Find answers to common questions about membership, loans, and services.</p>
+                    <h1>Help Desk & FAQ</h1>
+                    <p>Find quick answers to common questions about membership, loans, online applications, and cooperative services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Browse the most common support topics for TerraLink members and applicants.</p>
+                </div>
+                <div class="faq-accordion">
+                    <details class="faq-item" open>
+                        <summary><span>How do I apply for membership?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Complete the membership form, prepare one valid ID, and submit your details at the service desk for verification. New applicants may also request a short orientation schedule before final approval.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What documents are required?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>For most requests, members only need a government-issued ID, an application form, and a recent 2x2 photo. Some loan-related concerns may require additional income documents.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>How long is processing time?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Standard requests are processed within 3 to 5 business days, depending on the completeness of the submitted documents and the number of active applications in the queue.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>Can I check loan options online?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>Yes. Members may review loan estimates online using the calculator page before visiting the branch for final review. This helps applicants compare monthly payments and choose the right option.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>What if I submitted an incomplete form?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The support team will contact you and explain which details need to be corrected or resubmitted. You can return the updated form to the branch or send it by email if the request is still open.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>When is the help desk available?</span></summary>
+                        <div class="faq-answer">
+                            <div class="faq-meta"></div>
+                            <p>The help desk is open Monday to Friday from 8:00 AM to 5:00 PM, excluding holidays. For quick questions, the hotline and email support channels are also available during office hours.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
 
         <section class="highlights-section">
-            <div class="container">
+            <div class="container support-contact-grid">
+                <div class="section-header">
+                    <h2>Support Channels</h2>
+                    <p>If your concern is not listed above, use one of the options below.</p>
+                </div>
                 <div class="grid-3">
-                    <article class="highlight-card">
-                        <div class="icon-box">👥</div>
-                        <h3>How do I become a member?</h3>
-                        <p>Complete the membership application form, submit one valid ID, and attend the orientation to finalize your enrollment.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">📄</div>
-                        <h3>What documents are needed for a loan?</h3>
-                        <p>Prepare a completed loan form, valid IDs, proof of income, and any required supporting documents based on the loan type.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">⏳</div>
-                        <h3>How long does loan approval take?</h3>
-                        <p>Most applications are reviewed within 3 to 7 business days after all required documents are submitted.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">💵</div>
-                        <h3>What is the minimum share capital?</h3>
-                        <p>The minimum initial share capital starts at PHP 1,000, subject to the cooperative's latest membership guidelines.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">🖥️</div>
-                        <h3>Can I apply for a loan online?</h3>
-                        <p>Yes. You can use our Online Application page to submit your request and receive updates from our support team.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">📈</div>
-                        <h3>What are the loan interest rates?</h3>
-                        <p>Interest rates vary by product. Visit the Loans page to compare current regular and special loan offers.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">🏦</div>
-                        <h3>How do I check my account balance?</h3>
-                        <p>You may check your balance through branch assistance, official support channels, or your registered member account access.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">🎯</div>
-                        <h3>What is the dividend payout schedule?</h3>
-                        <p>Dividend distributions are typically released annually after financial review and board approval.</p>
-                    </article>
-                    <article class="highlight-card">
-                        <div class="icon-box">✍️</div>
-                        <h3>How do I update my personal information?</h3>
-                        <p>Submit an update request at your nearest branch or through official online channels with valid supporting documents.</p>
-                    </article>
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/phone%20icon.png" alt="">
+                        </div>
+                        <h3>Hotline</h3>
+                        <p>Call +63 (32) 230-0100 for urgent membership and account concerns.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/mail%20icon.png" alt="">
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>Send your message to official.uscmpc@gmail.com for follow-up assistance.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon-box">
+                            <img src="../Images/assets/branch%20icon.png" alt="">
+                        </div>
+                        <h3>Branch Visit</h3>
+                        <p>Visit the front desk for membership, loan, account, and online application inquiries.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -148,16 +264,16 @@
                     <li><a href="../about/about-profile.html">About Cooperative</a></li>
                     <li><a href="../membership.html">Membership Qualifications</a></li>
                     <li><a href="../loans/loans-regular.html">Loan Products</a></li>
-                    <li><a href="support-calculator.html">Amortization Calculator</a></li>
+                    <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
-                    <li><a href="support-helpdesk.html">Help Desk & FAQ</a></li>
-                    <li><a href="support-application.html">Online Membership</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
+                    <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

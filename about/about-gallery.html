@@ -8,7 +8,8 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="about-page">
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -16,17 +17,17 @@
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
-                        <a href="about-profile.html">Company Profile</a>
-                        <a href="about-history.html">History & Timeline</a>
-                        <a href="about-bod.html">BOD & Officers</a>
-                        <a href="about-officers.html">Corporate Officers</a>
-                        <a href="about-awards.html">Awards & Distinction</a>
-                        <a href="about-gallery.html">Event Gallery</a>
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -40,10 +41,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -57,10 +61,12 @@
         </div>
     </header>
 
+
+
     <main>
         <section class="hero-section">
             <div class="hero-slide gallery-hero">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
                     <h1>Event Gallery</h1>
                     <p>Explore memorable moments from TerraLink programs, assemblies, outreach work, and member activities.</p>
@@ -68,56 +74,20 @@
             </div>
         </section>
 
-        <section class="news-section">
+        <section class="gallery-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header about-reveal">
                     <h2>Moments & Milestones</h2>
-                    <p>Snapshots of the people, partnerships, and events that keep our cooperative community connected.</p>
+                    <p>Browse cooperative events in the slideshow. Click any slide for the full description and date taken.</p>
                 </div>
-                <div class="grid-3">
-                    <article class="news-card">
-                        <div class="news-img gallery-img-annual"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Annual Meeting</span>
-                            <h4>Members gather for the annual general assembly and cooperative updates.</h4>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <div class="news-img gallery-img-outreach"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Outreach</span>
-                            <h4>Community volunteers extend support to local families and partner groups.</h4>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <div class="news-img gallery-img-training"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Training</span>
-                            <h4>Members join financial literacy and cooperative leadership workshops.</h4>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <div class="news-img gallery-img-coopmart"></div>
-                        <div class="news-body">
-                            <span class="news-tag">CoopMart</span>
-                            <h4>Local producers showcase sustainable goods through TerraLink CoopMart.</h4>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <div class="news-img gallery-img-tree"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Eco Drive</span>
-                            <h4>Members and officers participate in TerraLink's community tree planting event.</h4>
-                        </div>
-                    </article>
-                    <article class="news-card">
-                        <div class="news-img gallery-img-membership"></div>
-                        <div class="news-body">
-                            <span class="news-tag">Membership</span>
-                            <h4>New members complete orientation and begin their cooperative journey.</h4>
-                        </div>
-                    </article>
+                <div class="gallery-slideshow about-reveal" id="gallery-slideshow">
+                    <div class="gallery-slideshow__track" id="gallery-slideshow-track" aria-live="polite"></div>
+                    <button type="button" class="gallery-slideshow__btn gallery-slideshow__btn--prev" id="gallery-prev" aria-label="Previous slide">&#8592;</button>
+                    <button type="button" class="gallery-slideshow__btn gallery-slideshow__btn--next" id="gallery-next" aria-label="Next slide">&#8594;</button>
+                    <div class="gallery-slideshow__dots" id="gallery-dots"></div>
                 </div>
+                <p class="gallery-slideshow__hint about-reveal">Click the active slide to view event details and date taken.</p>
+                <div class="gallery-thumbs about-reveal" id="gallery-thumbs"></div>
             </div>
         </section>
     </main>
@@ -140,8 +110,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -175,5 +145,7 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
+    <script src="../js/about-pages.js"></script>
 </body>
 </html>

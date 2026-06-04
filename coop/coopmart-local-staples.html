@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraLink | History & Timeline</title>
+    <title>TerraLink | CoopMart Local Staples</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body class="history-page about-page">
-    <!-- NAVBAR  -->
+<body>
+
+<!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -31,26 +32,26 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../membership.html" class="nav-link">Membership</a>
+                <a href="../membership.html" class="nav-link">Membership</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
+                <a href="../loans/loans-regular.html" class="nav-link">Loans</a>
                     <div class="dropdown-content">
-                        <a href="../loans/loans-regular.html">Regular Loan</a>
-                        <a href="../loans/loans-special.html">Special Loan</a>
+                    <a href="../loans/loans-regular.html">Regular Loan</a>
+                    <a href="../loans/loans-special.html">Special Loan</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments/investments.html" class="nav-link">Investments</a>
+                <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                <a href="coopmart.html" class="nav-link">CoopMart</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../news.html" class="nav-link">News</a>
+                <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
-                    <a href="#" class="nav-link">Support</a>
+                <a href="#" class="nav-link">Support</a>
                     <div class="dropdown-content">
                         <a href="../support/support-helpdesk.html">Help Desk (FAQ)</a>
                         <a href="../support/support-calculator.html">Loan Calculator</a>
@@ -62,53 +63,51 @@
     </header>
 
 
-
-    <main>
-        <section class="hero-section">
-            <div class="hero-slide history-hero">
-                <div class="container hero-content about-hero__content history-hero__content">
-                    <span class="badge">About TerraLink Cooperative</span>
-                    <h1>Our Journey Through Time</h1>
-                    <p>From a small member-owned cooperative to a trusted community partner — explore the milestones that built TerraLink's legacy of service, solidarity, and growth.</p>
-                    <div class="history-stats" aria-label="Timeline summary">
-                        <div class="history-stat">
-                            <strong id="years-active-stat">0</strong>
-                            <span>Years Active</span>
-                        </div>
-                        <div class="history-stat">
-                            <strong id="milestone-count-stat">0</strong>
-                            <span>Milestones</span>
-                        </div>
-                        <div class="history-stat">
-                            <strong id="founding-year-stat">—</strong>
-                            <span>Founded</span>
-                        </div>
-                    </div>
+    <section class="hero-section coopmart-hero">
+        <div class="hero-slide">
+            <div class="container hero-content">
+                <span class="badge">Local Staples</span>
+                <h1>Everyday essentials from trusted partners</h1>
+                <p>Browse staple goods sourced for affordability and cooperative value.</p>
+                <div class="hero-buttons">
+                    <a href="coopmart.html" class="btn btn-secondary">Back to CoopMart</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section-header">
+            <h1>Local Staples</h1>
+            <p>Product listing for staple goods, including member pricing and product specs.</p>
         </section>
 
-        <section class="history-intro">
-            <div class="container">
-                <div class="section-header about-reveal">
-                    <h2>Cooperative Milestones</h2>
-                    <p>Scroll through our story. Click any milestone to reveal the full chapter — dates, impact, and the people behind each achievement.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="history-section">
-            <div class="container">
-                <div class="history-timeline timeline-list" id="history-timeline" aria-live="polite">
-                    <div class="history-timeline__loading">
-                        <h3>Loading timeline...</h3>
-                        <p>Please wait while TerraLink history entries are loaded.</p>
-                    </div>
-                </div>
+        <section class="products-list" id="featured-items">
+            <h2>Featured Local Staples</h2>
+            <div class="grid-4 coopmart-product-grid">
+                <article class="product-card">
+                    <div class="product-img product-img-6"></div>
+                    <h4>Premium Rice 5kg</h4>
+                    <p>Member price: ₱420</p>
+                    <p class="product-specs">Specs: heirloom grain, premium milling, aroma-rich.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-7"></div>
+                    <h4>Virgin Coconut Oil</h4>
+                    <p>Member price: ₱260</p>
+                    <p class="product-specs">Specs: cold-pressed, unrefined, 1-liter bottle.</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-img product-img-8"></div>
+                    <h4>Cassava Flour</h4>
+                    <p>Member price: ₱150</p>
+                    <p class="product-specs">Specs: gluten-free, 500g pack, versatile for baking.</p>
+                </article>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container grid-4">
             <div class="footer-about">
@@ -118,7 +117,7 @@
             <div class="footer-links">
                 <h5>Quick Links</h5>
                 <ul>
-                    <li><a href="about-profile.html">About Cooperative</a></li>
+                    <li><a href="../about/about-profile.html">About Cooperative</a></li>
                     <li><a href="../membership.html">Membership Qualifications</a></li>
                     <li><a href="../loans/loans-regular.html">Loan Products</a></li>
                     <li><a href="../support/support-calculator.html">Amortization Calculator</a></li>
@@ -128,7 +127,7 @@
                 <h5>Services</h5>
                 <ul>
                     <li><a href="../investments/investments.html">Investment Dividends</a></li>
-                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -162,7 +161,5 @@
         });
     </script>
     <script src="../js/main.js"></script>
-    <script src="../js/about-animations.js"></script>
-    <script src="../js/about-history.js"></script>
 </body>
 </html>

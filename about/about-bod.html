@@ -8,7 +8,8 @@
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
-<body>
+<body class="about-page">
+  <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -16,17 +17,17 @@
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
-            </button>
+            </button>        
             <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown">
                     <a href="#" class="nav-link">About Us</a>
                     <div class="dropdown-content">
-                        <a href="about-profile.html">Company Profile</a>
-                        <a href="about-history.html">History & Timeline</a>
-                        <a href="about-bod.html">BOD & Officers</a>
-                        <a href="about-officers.html">Corporate Officers</a>
-                        <a href="about-awards.html">Awards & Distinction</a>
-                        <a href="about-gallery.html">Event Gallery</a>
+                        <a href="../about/about-profile.html">Company Profile</a>
+                        <a href="../about/about-history.html">History & Timeline</a>
+                        <a href="../about/about-bod.html">BOD & Officers</a>
+                        <a href="../about/about-officers.html">Corporate Officers</a>
+                        <a href="../about/about-awards.html">Awards & Distinction</a>
+                        <a href="../about/about-gallery.html">Event Gallery</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -40,10 +41,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="../investments.html" class="nav-link">Investments</a>
+                    <a href="../investments/investments.html" class="nav-link">Investments</a>
                 </div>
                 <div class="dropdown">
-                    <a href="../coopmart.html" class="nav-link">CoopMart</a>
+                    <a href="../coop/coopmart.html" class="nav-link">CoopMart</a>
+                </div>
+                <div class="dropdown">
+                    <a href="../news.html" class="nav-link">News</a>
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link">Support</a>
@@ -57,28 +61,32 @@
         </div>
     </header>
 
+
+
     <main>
         <section class="hero-section">
             <div class="hero-slide bod-hero">
-                <div class="container hero-content">
+                <div class="container hero-content about-hero__content">
                     <span class="badge">About TerraLink Cooperative</span>
-                    <h1>Board of Directors & Officers</h1>
+                    <h1>Board of Directors</h1>
                     <p>Meet the cooperative leaders guiding TerraLink through transparent governance and member-first service.</p>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section">
+        <section class="leader-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Meet the Leadership Team</h2>
-                    <p>Our directors and officers work together to protect member interests and strengthen cooperative growth.</p>
+                <div class="section-header about-reveal">
+                    <h2>Board of Directors</h2>
+                    <p>Hover over a profile to highlight, then click to view biography and contact details. Leadership data is loaded from Sanity CMS.</p>
                 </div>
-                <div class="grid-3" id="directors-container">
-                    <article class="highlight-card">
-                        <div class="director-avatar">TL</div>
-                        <h3>Loading leadership...</h3>
-                        <p class="director-role">Please wait while profiles are loaded from Sanity.</p>
+                <div id="directors-container" class="leader-grid">
+                    <article class="leader-card" aria-busy="true">
+                        <div class="leader-card__media leader-card__media--initials">TL</div>
+                        <div class="leader-card__info">
+                            <h3 class="leader-card__name">Loading leadership...</h3>
+                            <p class="leader-card__role">Please wait while profiles load.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -103,8 +111,8 @@
             <div class="footer-links">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="../investments.html">Investment Dividends</a></li>
-                    <li><a href="../coopmart.html">CoopMart Stores</a></li>
+                    <li><a href="../investments/investments.html">Investment Dividends</a></li>
+                    <li><a href="../coop/coopmart.html">CoopMart Stores</a></li>
                     <li><a href="../support/support-helpdesk.html">Help Desk & FAQ</a></li>
                     <li><a href="../support/support-application.html">Online Membership</a></li>
                 </ul>
@@ -138,5 +146,6 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/about-animations.js"></script>
 </body>
 </html>
