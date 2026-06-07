@@ -50,6 +50,54 @@
         "member-reliability": ICONS.compassion,
     };
 
+    // Loan product banner images (file names match loan titles).
+    const LOAN_IMAGE_TITLES = [
+        "Appliance & Home Improvement",
+        "Back-to-Back (Secured) Loan",
+        "Bereavement Support",
+        "Calamity & Disaster Relief",
+        "Commodity & Utility Support",
+        "Debt Redemption",
+        "Educational Advancement",
+        "Entrepreneurial & Business Loan",
+        "Holiday & Anniversary",
+        "Hospital Admission Facility",
+        "Housing & Renovation Loan",
+        "Medical & Health Care",
+        "Multipurpose Flexi-Loan",
+        "Pre-need & Future Security",
+        "Special Occasions",
+        "Travel & Vacation",
+        "Vehicle Purchase & Maintenance",
+        "Wedding & Union Loan",
+    ];
+
+    const normalizeTitle = (value) =>
+        String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+
+    const LOAN_IMAGE_MAP = LOAN_IMAGE_TITLES.reduce((map, title) => {
+        map[normalizeTitle(title)] = `../Images/loans_images/${encodeURIComponent(title)}.png`;
+        return map;
+    }, {});
+
+    function getLoanImage(title) {
+        const norm = normalizeTitle(title);
+        if (!norm) return null;
+        if (LOAN_IMAGE_MAP[norm]) return LOAN_IMAGE_MAP[norm];
+        // Fallback: CMS titles may add a parenthetical suffix
+        // (e.g. "Medical & Health Care (Immediate Family)").
+        // Match the image whose base title prefixes the loan title (longest wins).
+        let best = null;
+        let bestLen = 0;
+        Object.keys(LOAN_IMAGE_MAP).forEach((key) => {
+            if (norm.startsWith(key) && key.length > bestLen) {
+                best = LOAN_IMAGE_MAP[key];
+                bestLen = key.length;
+            }
+        });
+        return best;
+    }
+
     const TYPE_LABEL = loanCategory === "special" ? "special" : "regular";
 
     let allLoans = [];
@@ -117,6 +165,19 @@
         const card = document.createElement("article");
         card.className = "loan-card";
         card.dataset.category = loan.category || "";
+
+        const imageSrc = getLoanImage(loan.title);
+        if (imageSrc) {
+            const media = document.createElement("div");
+            media.className = "loan-card-media";
+            const mediaImg = document.createElement("img");
+            mediaImg.src = imageSrc;
+            mediaImg.alt = loan.title || "Loan product";
+            mediaImg.loading = "lazy";
+            mediaImg.addEventListener("error", () => media.remove());
+            media.appendChild(mediaImg);
+            card.appendChild(media);
+        }
 
         const header = document.createElement("div");
         header.className = "loan-card-header";
