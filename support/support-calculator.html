@@ -77,30 +77,35 @@
                             <form id="loan-calculator-form" class="calculator-form">
                                 <p class="form-field">
                                     <label for="loan-product">Loan Product</label>
-                                    <select id="loan-product" name="loanProduct">
+                                    <select id="loan-product" name="loanProduct" required>
                                         <option value="">Loading regular loans...</option>
                                     </select>
                                     <small id="loan-product-hint">Select a loan product to auto-fill its typical rate and term.</small>
                                 </p>
                                 <p class="form-field">
                                     <label for="loan-amount">Loan Amount</label>
-                                    <input type="number" id="loan-amount" name="loanAmount" min="10000" max="500000" placeholder="PHP 10,000 - PHP 500,000" required>
+                                    <input type="number" id="loan-amount" name="loanAmount" placeholder="Enter loan amount" required>
                                 </p>
                                 <p class="form-field">
                                     <label for="interest-rate">Annual Interest Rate</label>
-                                    <input type="number" id="interest-rate" name="interestRate" min="0.1" step="0.01" placeholder="e.g. 12%" required>
+                                    <input type="number" id="interest-rate" name="interestRate" min="0" step="0.01" placeholder="Auto-filled by loan product" required readonly>
                                 </p>
                                 <p class="form-field">
                                     <label for="loan-term">Loan Term</label>
                                     <select id="loan-term" name="loanTerm" required>
                                         <option value="">Select term</option>
+                                        <option value="1">1 month</option>
+                                        <option value="2">2 months</option>
+                                        <option value="3">3 months</option>
+                                        <option value="4">4 months</option>
+                                        <option value="5">5 months</option>
                                         <option value="6">6 months</option>
+                                        <option value="7">7 months</option>
+                                        <option value="8">8 months</option>
+                                        <option value="9">9 months</option>
+                                        <option value="10">10 months</option>
+                                        <option value="11">11 months</option>
                                         <option value="12">12 months</option>
-                                        <option value="18">18 months</option>
-                                        <option value="24">24 months</option>
-                                        <option value="36">36 months</option>
-                                        <option value="48">48 months</option>
-                                        <option value="60">60 months</option>
                                     </select>
                                 </p>
                                 <p class="form-action">
@@ -241,6 +246,9 @@
         const form = document.getElementById('loan-calculator-form');
         const loanProductEl = document.getElementById('loan-product');
         const loanProductHintEl = document.getElementById('loan-product-hint');
+        const loanAmountEl = document.getElementById('loan-amount');
+        const interestRateEl = document.getElementById('interest-rate');
+        const loanTermEl = document.getElementById('loan-term');
         const monthlyPaymentEl = document.getElementById('monthly-payment');
         const totalPaymentEl = document.getElementById('total-payment');
         const totalInterestEl = document.getElementById('total-interest');
@@ -255,19 +263,22 @@
         });
 
         const LOAN_OPTIONS_QUERY = `*[_type == "loan" && loanCategory == "regular"]{
-            title, interestRate, maxTerm
+            title, interestRate, maxTerm, minAmount, maxAmount
         } | order(title asc)`;
 
-        const parseRateNumber = (rateValue) => {
-            if (typeof rateValue === 'number') {
-                return rateValue;
+        const parseNumericValue = (value) => {
+            if (typeof value === 'number') {
+                return value;
             }
 
-            if (typeof rateValue !== 'string') {
+            if (typeof value !== 'string') {
                 return null;
             }
 
-            const cleaned = rateValue.replace(/[^0-9.]/g, '');
+            const cleaned = value.replace(/[^0-9.]/g, '');
+            if (!cleaned) {
+                return null;
+            }
             const parsed = Number(cleaned);
             return Number.isFinite(parsed) ? parsed : null;
         };
@@ -300,7 +311,7 @@
         };
 
         const getNearestAvailableTerm = (months) => {
-            const termOptions = Array.from(document.getElementById('loan-term').options)
+            const termOptions = Array.from(loanTermEl.options)
                 .map((option) => Number(option.value))
                 .filter((value) => Number.isFinite(value) && value > 0)
                 .sort((a, b) => a - b);
@@ -327,6 +338,8 @@
                 option.textContent = loan.title || `Regular Loan ${index + 1}`;
                 option.dataset.rate = loan.interestRate ?? '';
                 option.dataset.maxTerm = loan.maxTerm ?? '';
+                option.dataset.minAmount = loan.minAmount ?? '';
+                option.dataset.maxAmount = loan.maxAmount ?? '';
                 loanProductEl.appendChild(option);
             });
 
@@ -339,20 +352,37 @@
         const handleLoanProductChange = () => {
             const selectedOption = loanProductEl.options[loanProductEl.selectedIndex];
             if (!selectedOption || !selectedOption.value) {
+                interestRateEl.value = '';
                 loanProductHintEl.textContent = 'Select a loan product to auto-fill its typical rate and term.';
+                loanAmountEl.removeAttribute('min');
+                loanAmountEl.removeAttribute('max');
                 return;
             }
 
-            const rate = parseRateNumber(selectedOption.dataset.rate);
+            const rate = parseNumericValue(selectedOption.dataset.rate);
             const maxTermMonths = parseMaxTermMonths(selectedOption.dataset.maxTerm);
+            const minAmount = parseNumericValue(selectedOption.dataset.minAmount);
+            const maxAmount = parseNumericValue(selectedOption.dataset.maxAmount);
 
             if (Number.isFinite(rate)) {
-                document.getElementById('interest-rate').value = rate;
+                interestRateEl.value = rate;
             }
 
             const nearestTerm = getNearestAvailableTerm(maxTermMonths);
             if (nearestTerm) {
-                document.getElementById('loan-term').value = String(nearestTerm);
+                loanTermEl.value = String(nearestTerm);
+            }
+
+            if (Number.isFinite(minAmount)) {
+                loanAmountEl.min = String(minAmount);
+            } else {
+                loanAmountEl.removeAttribute('min');
+            }
+
+            if (Number.isFinite(maxAmount)) {
+                loanAmountEl.max = String(maxAmount);
+            } else {
+                loanAmountEl.removeAttribute('max');
             }
 
             const details = [];
@@ -361,6 +391,9 @@
             }
             if (selectedOption.dataset.maxTerm) {
                 details.push(`Max Term: ${selectedOption.dataset.maxTerm}`);
+            }
+            if (selectedOption.dataset.minAmount || selectedOption.dataset.maxAmount) {
+                details.push(`Amount: ${selectedOption.dataset.minAmount || 'No min'} - ${selectedOption.dataset.maxAmount || 'No max'}`);
             }
 
             loanProductHintEl.textContent = details.length
@@ -396,7 +429,7 @@
             const annualRate = Number(document.getElementById('interest-rate').value);
             const termMonths = Number(document.getElementById('loan-term').value);
 
-            if (!principal || !annualRate || !termMonths) {
+            if (!principal || !annualRate || !termMonths || termMonths > 12) {
                 return;
             }
 
