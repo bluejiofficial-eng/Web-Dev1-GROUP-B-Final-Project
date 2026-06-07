@@ -65,29 +65,37 @@
 
     <main>
         <!-- INVESTMENTS HERO / BANNER -->
-        <section class="highlights-section" id="investments-hero">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge">Investment Opportunities</span>
-                    <h1>Grow Your Future with TerraLink Investments</h1>
-                    <p>Build long-term financial security through safe, member-centered investment opportunities designed for cooperative members and future investors.</p>
-                    <a href="#investment-options" class="btn btn-primary">View Investment Options</a>
-                    <a href="../membership.html" class="btn btn-secondary">Apply for Membership</a>
+        <section class="hero-section">
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1920&q=80');">
+                <div class="container hero-content" style="text-align: center; margin: 0 auto; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+                    <span class="badge reveal-on-scroll">Investment Opportunities</span>
+                    <h1 class="reveal-on-scroll" style="transition-delay: 0.1s;">Grow Your Future with TerraLink Investments</h1>
+                    <p class="reveal-on-scroll" style="transition-delay: 0.2s;">Build long-term financial security through safe, member-centered investment opportunities designed for cooperative members and future investors.</p>
+                    <div class="hero-buttons reveal-on-scroll" style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; width: 100%; transition-delay: 0.3s;">
+                        <a href="#investment-options" class="btn btn-primary" style="margin: 0;">View Options</a>
+                        <a href="../membership.html" class="btn btn-secondary" style="margin: 0;">Apply Now</a>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS SECTION -->
+        <section class="highlights-section">
+            <div class="container">
                 <div class="grid-3">
-                    <div class="highlight-card">
-                        <span class="badge">Secure Cooperative Plans</span>
-                        <h3>Trusted Investment Support</h3>
+                    <div class="highlight-card reveal-on-scroll">
+                        <div class="icon-box"><img src="../Images/assets/shield%20icon.png" alt="Secure Cooperative Plans"></div>
+                        <h3>Trusted Support</h3>
                         <p>Plans are guided by cooperative values and responsible member-focused service.</p>
                     </div>
-                    <div class="highlight-card">
-                        <span class="badge">Flexible Terms</span>
-                        <h3>Options That Fit Your Goals</h3>
+                    <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="icon-box"><img src="../Images/assets/milestone%20icon.png" alt="Flexible Terms"></div>
+                        <h3>Options That Fit</h3>
                         <p>Members can choose investment opportunities that match their savings timeline.</p>
                     </div>
-                    <div class="highlight-card">
-                        <span class="badge">Member-Focused Growth</span>
-                        <h3>Growth With Shared Purpose</h3>
+                    <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="icon-box"><img src="../Images/assets/graph%20icon.png" alt="Member-Focused Growth"></div>
+                        <h3>Shared Purpose</h3>
                         <p>Investment participation supports personal goals and cooperative development.</p>
                     </div>
                 </div>
@@ -95,47 +103,51 @@
         </section>
 
         <!-- INVESTMENT OPTIONS SECTION -->
-        <section class="services-section" id="investment-options">
+        <section class="services-section" id="investment-options" style="background-color: #f4f8f5;">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal-on-scroll">
                     <h2>Investment Options</h2>
                     <p>Choose from flexible cooperative investment plans designed to help members save, grow, and participate in shared financial success.</p>
                 </div>
                 <div class="grid-4">
-                    <article class="service-box">
-                        <div class="service-icon">&#8369;</div>
-                        <h4>Savings Investment Plan</h4>
-                        <p>A simple and accessible investment option for members who want steady savings growth while keeping funds manageable.</p>
-                        <p><strong>Minimum Investment:</strong> &#8369;1,000</p>
-                        <p><strong>Term:</strong> Flexible</p>
-                        <p><strong>Benefit:</strong> Ideal for beginners and regular savers.</p>
+                    <article class="service-box reveal-on-scroll">
+                        <div class="service-icon"><img src="../Images/assets/plant%20icon.png" alt=""></div>
+                        <h4>Savings Plan</h4>
+                        <p>A simple option for members who want steady savings growth while keeping funds manageable.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;"><strong>Min:</strong> &#8369;1,000</li>
+                            <li><strong>Term:</strong> Flexible</li>
+                        </ul>
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
-                    <article class="service-box">
-                        <div class="service-icon">TD</div>
-                        <h4>Time Deposit Investment</h4>
-                        <p>A fixed-term investment option that allows members to earn better returns by keeping funds deposited for a chosen period.</p>
-                        <p><strong>Minimum Investment:</strong> &#8369;5,000</p>
-                        <p><strong>Term:</strong> 6 to 12 months</p>
-                        <p><strong>Benefit:</strong> Better earning potential with secure placement.</p>
+                    <article class="service-box reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <div class="service-icon"><img src="../Images/assets/shield%20icon.png" alt=""></div>
+                        <h4>Time Deposit</h4>
+                        <p>A fixed-term option that allows members to earn better returns by keeping funds deposited.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;"><strong>Min:</strong> &#8369;5,000</li>
+                            <li><strong>Term:</strong> 6 to 12 months</li>
+                        </ul>
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
-                    <article class="service-box">
-                        <div class="service-icon">SC</div>
-                        <h4>Cooperative Share Capital</h4>
-                        <p>An ownership-based investment where members contribute capital and may receive dividends based on cooperative performance.</p>
-                        <p><strong>Minimum Investment:</strong> &#8369;2,000</p>
-                        <p><strong>Term:</strong> Long-term membership</p>
-                        <p><strong>Benefit:</strong> Builds member ownership and cooperative participation.</p>
+                    <article class="service-box reveal-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="service-icon"><img src="../Images/assets/participants%20icon.png" alt=""></div>
+                        <h4>Share Capital</h4>
+                        <p>An ownership-based investment where members contribute capital and receive dividends.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;"><strong>Min:</strong> &#8369;2,000</li>
+                            <li><strong>Term:</strong> Long-term</li>
+                        </ul>
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
-                    <article class="service-box">
-                        <div class="service-icon">GP</div>
-                        <h4>Growth Investment Plan</h4>
-                        <p>A goal-oriented investment option for members who want to prepare for future needs such as education, business, or family plans.</p>
-                        <p><strong>Minimum Investment:</strong> &#8369;3,000</p>
-                        <p><strong>Term:</strong> 12 months or more</p>
-                        <p><strong>Benefit:</strong> Supports long-term financial planning.</p>
+                    <article class="service-box reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="service-icon"><img src="../Images/assets/graph%20icon.png" alt=""></div>
+                        <h4>Growth Plan</h4>
+                        <p>A goal-oriented investment option for members preparing for future education or business needs.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;"><strong>Min:</strong> &#8369;3,000</li>
+                            <li><strong>Term:</strong> 12+ months</li>
+                        </ul>
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
                 </div>
@@ -145,51 +157,42 @@
         <!-- WHY INVEST WITH TERRALINK SECTION -->
         <section class="highlights-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal-on-scroll">
                     <h2>Why Invest With TerraLink?</h2>
                 </div>
                 <div class="grid-3">
-                    <div class="highlight-card">
-                        <div class="icon-box">01</div>
+                    <div class="highlight-card reveal-on-scroll">
+                        <div class="icon-box" style="font-size: 3rem; color: #23743B; font-weight: 800;">01</div>
                         <h3>Community-Based Growth</h3>
                         <p>Every investment supports cooperative growth while helping members access better financial opportunities.</p>
                     </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">02</div>
-                        <h3>Transparent Cooperative Management</h3>
+                    <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="icon-box" style="font-size: 3rem; color: #23743B; font-weight: 800;">02</div>
+                        <h3>Transparent Management</h3>
                         <p>TerraLink values responsible handling of member funds, clear policies, and cooperative accountability.</p>
                     </div>
-                    <div class="highlight-card">
-                        <div class="icon-box">03</div>
-                        <h3>Member-Centered Opportunities</h3>
+                    <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="icon-box" style="font-size: 3rem; color: #23743B; font-weight: 800;">03</div>
+                        <h3>Member-Centered</h3>
                         <p>Investment options are designed around members' needs, goals, and long-term financial security.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MEMBER REMINDER AND RESPONSIBLE INVESTING SECTION -->
-        <section class="services-section" id="investment-reminder-group">
-            <div class="container">
-                <div class="section-header" id="member-reminder-box">
-                    <span class="badge">Member Reminder</span>
-
-                </div>
-                <div class="section-header">
-                    <h2>Invest Responsibly</h2>
-                    <p>Investment returns may vary depending on cooperative performance, selected plans, and approved terms. Members are encouraged to review all requirements and investment details before participating.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- FINAL CALL-TO-ACTION SECTION -->
-        <section class="highlights-section" id="investment-cta">
+        <section class="services-section" id="investment-cta" style="background: linear-gradient(135deg, #1b3d22, #23743B); color: #ffffff;">
             <div class="container">
-                <div class="section-header">
-                    <h2>Start Building Your Financial Future Today</h2>
-                    <p>Join TerraLink Cooperative and explore investment opportunities designed to help members save, grow, and participate in shared success.</p>
-                    <a href="../membership.html" class="btn btn-primary">Apply for Membership</a>
-                    <a href="../support/support-helpdesk.html" class="btn btn-secondary">Contact Support</a>
+                <div class="section-header reveal-on-scroll" style="max-width: 800px; margin: 0 auto; margin-bottom: 0;">
+                    <span class="badge" style="background-color: #FFFDD0; color: #1b3d22; margin-bottom: 20px;">Invest Responsibly</span>
+                    <h2 style="color: #ffffff;">Start Building Your Financial Future Today</h2>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 30px;">
+                        Investment returns may vary depending on cooperative performance, selected plans, and approved terms. Join TerraLink Cooperative and explore investment opportunities designed to help members save and grow.
+                    </p>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="../membership.html" class="btn btn-primary" style="background-color: #FFFDD0; color: #1b3d22; margin: 0;">Apply for Membership</a>
+                        <a href="../support/support-helpdesk.html" class="btn btn-secondary" style="background-color: transparent; border: 2px solid #FFFDD0; color: #FFFDD0; margin: 0;">Contact Support</a>
+                    </div>
                 </div>
             </div>
         </section>
