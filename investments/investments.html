@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
+    <style>
+        /* Investment cards: full-bleed images instead of small icons */
+        .highlight-card {
+            overflow: hidden;
+        }
+        .highlight-card .icon-box:has(img) {
+            margin: -40px -30px 24px;
+        }
+        .highlight-card .icon-box img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+        .service-box {
+            overflow: hidden;
+        }
+        .service-box .service-icon:has(img) {
+            margin: -35px -25px 20px;
+        }
+        .service-box .service-icon img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -84,17 +113,17 @@
             <div class="container">
                 <div class="grid-3">
                     <div class="highlight-card reveal-on-scroll">
-                        <div class="icon-box"><img src="../Images/assets/shield%20icon.png" alt="Secure Cooperative Plans"></div>
+                        <div class="icon-box"><img src="../Images/investment%20images/Trusted%20Investment%20Support.png" alt="Trusted Support"></div>
                         <h3>Trusted Support</h3>
                         <p>Plans are guided by cooperative values and responsible member-focused service.</p>
                     </div>
                     <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.15s;">
-                        <div class="icon-box"><img src="../Images/assets/milestone%20icon.png" alt="Flexible Terms"></div>
+                        <div class="icon-box"><img src="../Images/investment%20images/Options%20That%20Fit%20Your%20Goals.png" alt="Options That Fit"></div>
                         <h3>Options That Fit</h3>
                         <p>Members can choose investment opportunities that match their savings timeline.</p>
                     </div>
                     <div class="highlight-card reveal-on-scroll" style="transition-delay: 0.3s;">
-                        <div class="icon-box"><img src="../Images/assets/graph%20icon.png" alt="Member-Focused Growth"></div>
+                        <div class="icon-box"><img src="../Images/investment%20images/Growth%20With%20Shared%20Purpose.png" alt="Shared Purpose"></div>
                         <h3>Shared Purpose</h3>
                         <p>Investment participation supports personal goals and cooperative development.</p>
                     </div>
@@ -111,7 +140,7 @@
                 </div>
                 <div class="grid-4">
                     <article class="service-box reveal-on-scroll">
-                        <div class="service-icon"><img src="../Images/assets/plant%20icon.png" alt=""></div>
+                        <div class="service-icon"><img src="../Images/investment%20images/Savings%20Investment%20Plan.png" alt="Savings Plan"></div>
                         <h4>Savings Plan</h4>
                         <p>A simple option for members who want steady savings growth while keeping funds manageable.</p>
                         <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
@@ -121,7 +150,7 @@
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
                     <article class="service-box reveal-on-scroll" style="transition-delay: 0.1s;">
-                        <div class="service-icon"><img src="../Images/assets/shield%20icon.png" alt=""></div>
+                        <div class="service-icon"><img src="../Images/investment%20images/Time%20Deposit%20Investment.png" alt="Time Deposit"></div>
                         <h4>Time Deposit</h4>
                         <p>A fixed-term option that allows members to earn better returns by keeping funds deposited.</p>
                         <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
@@ -131,7 +160,7 @@
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
                     <article class="service-box reveal-on-scroll" style="transition-delay: 0.2s;">
-                        <div class="service-icon"><img src="../Images/assets/participants%20icon.png" alt=""></div>
+                        <div class="service-icon"><img src="../Images/investment%20images/Cooperative%20Share%20Capital.png" alt="Share Capital"></div>
                         <h4>Share Capital</h4>
                         <p>An ownership-based investment where members contribute capital and receive dividends.</p>
                         <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
@@ -141,7 +170,7 @@
                         <a href="../support/support-helpdesk.html" class="text-link">Learn More &rarr;</a>
                     </article>
                     <article class="service-box reveal-on-scroll" style="transition-delay: 0.3s;">
-                        <div class="service-icon"><img src="../Images/assets/graph%20icon.png" alt=""></div>
+                        <div class="service-icon"><img src="../Images/investment%20images/Growth%20Investment%20Plan.png" alt="Growth Plan"></div>
                         <h4>Growth Plan</h4>
                         <p>A goal-oriented investment option for members preparing for future education or business needs.</p>
                         <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555; font-size: 0.9rem;">
