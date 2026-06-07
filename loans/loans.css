@@ -271,6 +271,25 @@ body.loans-page {
     background-color: #ffffff;
 }
 
+.loan-card-media {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8f3eb 0%, #fffdd0 100%);
+}
+
+.loan-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.loan-card:hover .loan-card-media img {
+    transform: scale(1.05);
+}
+
 .loan-card-header {
     padding: 24px 24px 16px;
     border-bottom: 1px solid #f0f2f0;
