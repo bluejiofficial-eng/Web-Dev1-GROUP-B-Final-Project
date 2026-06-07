@@ -211,10 +211,12 @@ It offers an excellent opportunity for family bonding while taking real, measura
 let currentNewsPage = 1;
 const NEWS_PER_PAGE = 6;
 
-<<<<<<< HEAD
-    document.getElementById('modal-close').addEventListener('click', closeModal);
-    document.getElementById('modal-overlay').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('modal-overlay')) closeModal();
+function createModal() {
+    const modalClose = document.getElementById('modal-close');
+    const modalOverlay = document.getElementById('modal-overlay');
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
@@ -294,12 +296,7 @@ function initProductCards() {
 }
 
 // ============================================================
-// RENDER — Static 6 news cards
-// ============================================================
-function renderStaticNews() {
-=======
 function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-desc', page = 1) {
->>>>>>> main
     const container = document.getElementById('news-container');
     if (!container) return;
     container.innerHTML = '';
@@ -1010,11 +1007,9 @@ function observeElements() {
 // INIT
 // ============================================================
 window.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
     createModal();
     createProductModal();
-    renderStaticNews();
-=======
+
     // Search & Sort Elements for news.html
     const searchInput = document.getElementById('news-search');
     const searchType = document.getElementById('news-search-type');
@@ -1036,15 +1031,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     renderNewsDetail();
->>>>>>> main
     loadHeroCarousel();
     loadDirectors();
     loadTimeline();
     loadSiteSettings();    
     loadCoopVision(); 
-<<<<<<< HEAD
     initProductCards();
-=======
     observeElements();
->>>>>>> main
 });
