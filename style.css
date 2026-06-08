@@ -1815,6 +1815,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 12px;
 }
 
+.footer-contact .contact-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: -3px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+}
+
 .footer-bottom {
     background-color: #1b3d22;
     padding: 25px 0;

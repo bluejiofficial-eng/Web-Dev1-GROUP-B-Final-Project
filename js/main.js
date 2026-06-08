@@ -923,6 +923,34 @@ async function loadTimeline() {
 // ============================================================
 // SANITY — Site Settings 
 // ============================================================
+function getAssetPrefix() {
+    const link = document.querySelector('link[rel="stylesheet"]');
+    const href = link ? link.getAttribute('href') : '';
+    return href && href.startsWith('../') ? '../' : '';
+}
+
+function createContactIcon(fileName, alt) {
+    const img = document.createElement('img');
+    img.className = 'contact-icon';
+    img.src = `${getAssetPrefix()}Images/assets/${fileName}`;
+    img.alt = alt;
+    return img;
+}
+
+function setContactLine(el, fileName, alt, text) {
+    el.textContent = '';
+    el.appendChild(createContactIcon(fileName, alt));
+    el.appendChild(document.createTextNode(` ${text}`));
+}
+
+function renderFooterPhoneIcon() {
+    const phoneEl = Array.from(document.querySelectorAll('.footer-contact p'))
+        .find((p) => p.textContent.includes('📞') || p.textContent.includes('+63'));
+    if (!phoneEl) return;
+    const number = phoneEl.textContent.replace(/[^\d+()\s-]/g, '').trim();
+    setContactLine(phoneEl, 'phone icon.png', 'Phone', number);
+}
+
 async function loadSiteSettings() {
     if (!mainSanityClient) return;
  
@@ -936,10 +964,10 @@ async function loadSiteSettings() {
             const emailEl   = document.getElementById('footer-email');
  
             if (addressEl && settings.address)
-                addressEl.textContent = `📍 ${settings.address}`;
+                setContactLine(addressEl, 'location icon.png', 'Location', settings.address);
  
             if (emailEl && settings.emails && settings.emails.length > 0)
-                emailEl.textContent = `📧 ${settings.emails[0]}`;
+                setContactLine(emailEl, 'mail icon.png', 'Email', settings.emails[0]);
 
         }
     } catch (err) {
@@ -1038,4 +1066,5 @@ window.addEventListener('DOMContentLoaded', () => {
     loadCoopVision(); 
     initProductCards();
     observeElements();
+    renderFooterPhoneIcon();
 });
