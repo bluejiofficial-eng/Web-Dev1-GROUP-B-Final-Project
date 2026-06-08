@@ -288,8 +288,8 @@ For each page in the assigned section, automatically create the corresponding HT
 | Buttons | `.btn.btn-primary` / `.btn.btn-secondary` |
 | Tag / Badge | `.badge` / `.news-tag` |
 | Text link | `.text-link` |
-| Scroll Reveal | `.reveal-on-scroll` (추가 시 스크롤 등장 애니메이션 적용) |
-| Article Base | `.article-section` (기사 본문 섹션용 패딩 적용) |
+| Scroll Reveal | `.reveal-on-scroll`  |
+| Article Base | `.article-section`  |
 
 ---
 
