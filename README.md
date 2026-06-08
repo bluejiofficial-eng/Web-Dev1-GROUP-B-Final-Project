@@ -19,7 +19,8 @@
  │    └── about-gallery.html
  ├── 📁 loans/
  │    ├── loans-regular.html
- │    └── loans-special.html
+ │    ├── loans-special.html
+ │    └── loans.js
  ├── 📁 support/
  │    ├── support-helpdesk.html
  │    ├── support-application.html
@@ -29,13 +30,9 @@
  │    ├── investments.css
  │    └── investments.js
  ├── 📁 coop/
- │    ├── coopmart.html
- │    ├── coopmart-fresh-produce.html
- │    ├── coopmart-local-staples.html
- │    └── coopmart-eco-goods.html
+ │    └── coopmart.html
  ├── 📁 js/
  │    ├── main.js
- │    ├── about-animations.js
  │    ├── about-history.js
  │    └── about-pages.js
  ├── index.html
