@@ -7,58 +7,6 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/@sanity/client@6/umd/sanityClient.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
-    <style>
-        /* Product card */
-        .product-card {
-            background: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transform: translateY(-4px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .product-body {
-            padding: 20px;
-        }
-
-        .product-body h4 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-            color: #1b3d22;
-        }
-
-        .product-price {
-            color: #23743B;
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 6px;
-        }
-
-        .product-specs {
-            color: #666;
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        /* Category section spacing */
-        .category-section {
-            padding: 60px 0;
-            border-top: 1px solid #eaeaea;
-        }
-    </style>
 </head>
 <body>
 
@@ -101,197 +49,208 @@
 
 
     <!-- HERO -->
-    <section class="hero-section" id="hero-container">
-        <div class="hero-slide" id="coopmart-hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=80');">
+    <section class="hero-section">
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=80');">
             <div class="container hero-content">
                 <span class="badge">CoopMart Marketplace</span>
-                <h1 id="coopmart-hero-title">Fresh Products, Cooperative Values</h1>
-                <p id="coopmart-hero-subtitle">Enjoy curated member savings and locally sourced essentials in a premium shopping experience.</p>
+                <h1>Cooperative Mart</h1>
+                <p>Enjoy curated member savings and locally sourced essentials in a premium shopping experience.</p>
                 <div class="hero-buttons">
-                    <a href="#featured-items" class="btn btn-primary">Browse Featured Items</a>
+                    <a href="#featured-items" class="btn btn-primary">Browse Products</a>
                     <a href="../membership.html" class="btn btn-secondary">Join TerraLink</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HIGHLIGHTS — Category Overview -->
-    <section class="highlights-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What We Offer</h2>
-                <p>Local, organic, member-first retail — products from partner farms and community producers.</p>
+    <main>
+        <!-- WHAT WE OFFER -->
+        <section class="highlights-section">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2>What We Offer</h2>
+                    <p>Local, organic, member-first retail — products from partner farms and community producers.</p>
+                </div>
+                <div class="grid-3">
+                    <a href="#fresh-produce" class="highlight-card reveal-on-scroll" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="icon-box" style="font-size: 3.5rem;">🌾</div>
+                        <h3>Fresh Produce</h3>
+                        <p>Seasonal vegetables and fruits sourced directly from our partner farms.</p>
+                    </a>
+                    <a href="#local-staples" class="highlight-card reveal-on-scroll" style="transition-delay: 0.15s; text-decoration: none; color: inherit; display: block;">
+                        <div class="icon-box" style="font-size: 3.5rem;">🍚</div>
+                        <h3>Local Staples</h3>
+                        <p>Certified rice, grains, and household essentials at cooperative pricing.</p>
+                    </a>
+                    <a href="#eco-goods" class="highlight-card reveal-on-scroll" style="transition-delay: 0.3s; text-decoration: none; color: inherit; display: block;">
+                        <div class="icon-box" style="font-size: 3.5rem;">🧴</div>
+                        <h3>Eco Goods</h3>
+                        <p>Sustainable toiletries, cleaning items, and zero-waste alternatives.</p>
+                    </a>
+                </div>
             </div>
-            <div class="grid-3">
-                <a href="#fresh-produce" class="highlight-card" style="text-decoration: none;">
-                    <div class="icon-box">🌾</div>
-                    <h3>Fresh Produce</h3>
-                    <p>Seasonal vegetables and fruits sourced directly from our partner farms.</p>
-                </a>
-                <a href="#local-staples" class="highlight-card" style="text-decoration: none;">
-                    <div class="icon-box">🍚</div>
-                    <h3>Local Staples</h3>
-                    <p>Certified rice, grains, and household essentials at cooperative pricing.</p>
-                </a>
-                <a href="#eco-goods" class="highlight-card" style="text-decoration: none;">
-                    <div class="icon-box">🧴</div>
-                    <h3>Eco Goods</h3>
-                    <p>Sustainable toiletries, cleaning items, and zero-waste alternatives.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-        <section class="products-list" id="featured-items">
-            <h2>Featured Products</h2>
-            <div class="grid-4 coopmart-product-grid">
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Organic Vegetables Box</h4>
-                        <p class="product-price">Member price: ₱250</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Local Rice (5kg)</h4>
-                        <p class="product-price">Member price: ₱400</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1547793548-7a0e7dfdb24f?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Handmade Soap Set</h4>
-                        <p class="product-price">Member price: ₱120</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Compost Starter Kit</h4>
-                        <p class="product-price">Member price: ₱350</p>
-                    </div>
-                </article>
+        <!-- FEATURED PRODUCTS -->
+        <section class="news-section" id="featured-items" style="background-color: #f4f8f5;">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2>Featured Products</h2>
+                    <p>Top selections highly recommended by our cooperative members.</p>
+                </div>
+                <div class="grid-4">
+                    <article class="news-card product-card reveal-on-scroll">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Organic Vegetables Box</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱250</p>
+                            <p class="product-caption">Assorted fresh vegetables delivered daily.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Local Rice (5kg)</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱400</p>
+                            <p class="product-caption">High-quality grains sourced from local farmers.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1547793548-7a0e7dfdb24f?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Handmade Soap Set</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱120</p>
+                            <p class="product-caption">Natural ingredients, perfect for sensitive skin.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Compost Starter Kit</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱350</p>
+                            <p class="product-caption">Start your own organic compost at home easily.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FRESH PRODUCE -->
-    <section class="category-section" id="fresh-produce">
-        <div class="container">
-            <div class="section-header">
-                <h2>Fresh Produce</h2>
-                <p>Market-fresh produce made for members — locally grown bundles and seasonal picks.</p>
+        <!-- FRESH PRODUCE -->
+        <section class="news-section" id="fresh-produce">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2>Fresh Produce</h2>
+                    <p>Market-fresh produce made for members — locally grown bundles and seasonal picks.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="news-card product-card reveal-on-scroll">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Seasonal Vegetable Basket</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱280</p>
+                            <p class="product-caption">5–6 varieties, organic greens, ready for meal prep.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Organic Fruit Pack</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱320</p>
+                            <p class="product-caption">Mixed fruits, pesticide-free, 6 pieces per pack.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Herb Garden Bundle</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱180</p>
+                            <p class="product-caption">Basil, cilantro, mint — fresh-cut herbs in one bundle.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="grid-3">
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Seasonal Vegetable Basket</h4>
-                        <p class="product-price">Member price: ₱280</p>
-                        <p class="product-specs">5–6 varieties, organic greens, ready for meal prep.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Organic Fruit Pack</h4>
-                        <p class="product-price">Member price: ₱320</p>
-                        <p class="product-specs">Mixed fruits, pesticide-free, 6 pieces per pack.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Herb Garden Bundle</h4>
-                        <p class="product-price">Member price: ₱180</p>
-                        <p class="product-specs">Basil, cilantro, mint — fresh-cut herbs in one bundle.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- LOCAL STAPLES -->
-    <section class="category-section" id="local-staples">
-        <div class="container">
-            <div class="section-header">
-                <h2>Local Staples</h2>
-                <p>Everyday essentials sourced from trusted partners at cooperative pricing.</p>
+        <!-- LOCAL STAPLES -->
+        <section class="news-section" id="local-staples" style="background-color: #f4f8f5;">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2>Local Staples</h2>
+                    <p>Everyday essentials sourced from trusted partners at cooperative pricing.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="news-card product-card reveal-on-scroll">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Premium Rice 5kg</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱420</p>
+                            <p class="product-caption">Heirloom grain, premium milling, aroma-rich.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Virgin Coconut Oil</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱260</p>
+                            <p class="product-caption">Cold-pressed, unrefined, 1-liter bottle.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Cassava Flour</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱150</p>
+                            <p class="product-caption">Gluten-free, 500g pack, versatile for baking.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="grid-3">
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Premium Rice 5kg</h4>
-                        <p class="product-price">Member price: ₱420</p>
-                        <p class="product-specs">Heirloom grain, premium milling, aroma-rich.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Virgin Coconut Oil</h4>
-                        <p class="product-price">Member price: ₱260</p>
-                        <p class="product-specs">Cold-pressed, unrefined, 1-liter bottle.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Cassava Flour</h4>
-                        <p class="product-price">Member price: ₱150</p>
-                        <p class="product-specs">Gluten-free, 500g pack, versatile for baking.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ECO GOODS -->
-    <section class="category-section" id="eco-goods">
-        <div class="container">
-            <div class="section-header">
-                <h2>Eco Goods</h2>
-                <p>Earth-friendly essentials: toiletries, reusable items, and zero-waste alternatives.</p>
+        <!-- ECO GOODS -->
+        <section class="news-section" id="eco-goods">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2>Eco Goods</h2>
+                    <p>Earth-friendly essentials: toiletries, reusable items, and zero-waste alternatives.</p>
+                </div>
+                <div class="grid-4">
+                    <article class="news-card product-card reveal-on-scroll">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1547793548-7a0e7dfdb24f?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Handmade Soap Set</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱120</p>
+                            <p class="product-caption">4 natural bars, aromatic herbs, plastic-free packaging.</p>
+                        </div>
+                    </article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Bamboo Toothbrush Pack</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱95</p>
+                            <p class="product-caption">4-brush set, biodegradable handles, soft bristles.</p>
+                        </div>
+                    </article>
+<article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.2s;">
+    <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80');"></div>
+    <div class="news-body">
+        <h4>Reusable Produce Bags</h4>
+        <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱140</p>
+        <p class="product-caption">5 mesh bags, washable cotton, lightweight.</p>
+    </div>
+</article>
+                    <article class="news-card product-card reveal-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="news-img product-img" style="background-image: url('https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-body">
+                            <h4>Beeswax Wrap Set</h4>
+                            <p style="color: #23743B; font-weight: 700; margin-bottom: 5px;">Member price: ₱220</p>
+                            <p class="product-caption">3 sizes, washable and reusable for food storage.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="grid-4">
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1547793548-7a0e7dfdb24f?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Handmade Soap Set</h4>
-                        <p class="product-price">Member price: ₱120</p>
-                        <p class="product-specs">4 natural bars, aromatic herbs, plastic-free packaging.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Bamboo Toothbrush Pack</h4>
-                        <p class="product-price">Member price: ₱95</p>
-                        <p class="product-specs">4-brush set, biodegradable handles, soft bristles.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1590683908470-6e33b8c3b741?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Reusable Produce Bags</h4>
-                        <p class="product-price">Member price: ₱140</p>
-                        <p class="product-specs">5 mesh bags, washable cotton, lightweight.</p>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="product-body">
-                        <h4>Beeswax Wrap Set</h4>
-                        <p class="product-price">Member price: ₱220</p>
-                        <p class="product-specs">3 sizes, washable and reusable for food storage.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -346,39 +305,6 @@
                 hamburger.classList.remove('open');
                 navMenu.classList.remove('open');
             });
-        });
-
-        // Load CoopMart hero from Sanity
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                if (!globalThis.SanityClient || !globalThis.SanityImageUrlBuilder) return;
-
-                const client = globalThis.SanityClient.createClient({
-                    projectId: "ltk0qh4a",
-                    dataset: "production",
-                    apiVersion: "2024-01-01",
-                    useCdn: true,
-                });
-                const builder = globalThis.SanityImageUrlBuilder(client);
-                const urlFor  = (source) => builder.image(source);
-
-                const data = await client.fetch(
-                    `*[_type == "hero" && title == "Cooperative Mart"][0]{ title, subtitle, ctaLabel, backgroundImage }`
-                );
-
-                if (data) {
-                    const slide = document.getElementById('coopmart-hero-slide');
-                    if (data.backgroundImage && slide) {
-                        const imgUrl = urlFor(data.backgroundImage).width(1920).height(1080).fit('crop').url();
-                        slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${imgUrl}')`;
-                    }
-                    if (data.title)    document.getElementById('coopmart-hero-title').textContent    = data.title;
-                    if (data.subtitle) document.getElementById('coopmart-hero-subtitle').textContent = data.subtitle;
-                    if (data.ctaLabel) document.getElementById('coopmart-hero-cta').textContent      = data.ctaLabel;
-                }
-            } catch (err) {
-                console.warn('CoopMart hero fetch failed:', err);
-            }
         });
     </script>
     <script src="../js/main.js"></script>
