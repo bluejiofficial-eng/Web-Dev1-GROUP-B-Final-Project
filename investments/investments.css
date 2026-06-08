@@ -14,7 +14,7 @@ body.investments-page {
 
 .investments-page .section-header p {
     max-width: 700px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .investments-page .hero-slide .hero-content > *,
@@ -290,11 +290,15 @@ body.investments-page {
 }
 
 /* CTA */
+/* CTA */
 .investment-cta {
     position: relative;
     overflow: hidden;
-    padding: 74px 0;
-    background: linear-gradient(135deg, #1b3d22 0%, #23743b 58%, #2d8a4a 100%);
+    padding: 86px 0 90px;
+    background:
+        radial-gradient(circle at top right, rgba(255, 253, 208, 0.18), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.12), transparent 30%),
+        linear-gradient(135deg, #14351d 0%, #1f6533 52%, #287d42 100%);
     color: #ffffff;
 }
 
@@ -302,24 +306,26 @@ body.investments-page {
 .investment-cta::after {
     position: absolute;
     content: "";
-    border-radius: 50%;
+    border-radius: 999px;
     pointer-events: none;
 }
 
 .investment-cta::before {
-    width: 320px;
-    height: 320px;
-    top: -160px;
-    right: -90px;
-    background-color: rgba(255, 253, 208, 0.1);
+    width: 340px;
+    height: 340px;
+    top: -145px;
+    right: -80px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .investment-cta::after {
-    width: 230px;
-    height: 230px;
-    bottom: -110px;
-    left: -70px;
-    background-color: rgba(255, 255, 255, 0.06);
+    width: 250px;
+    height: 250px;
+    bottom: -120px;
+    left: -75px;
+    background: rgba(255, 253, 208, 0.1);
+    border: 1px solid rgba(255, 253, 208, 0.14);
 }
 
 .investment-cta .container,
@@ -329,99 +335,90 @@ body.investments-page {
 }
 
 .investment-cta-content {
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto;
+    padding: 38px 34px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: 0 24px 60px rgba(10, 32, 16, 0.22);
+    backdrop-filter: blur(8px);
+}
+
+.investment-cta .badge {
+    background-color: #fffdd0;
+    color: #1b3d22;
 }
 
 .investment-cta h2 {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
     color: #ffffff;
-    font-size: clamp(1.8rem, 3.2vw, 2.45rem);
-    line-height: 1.18;
+    font-size: clamp(2rem, 3.5vw, 2.85rem);
+    line-height: 1.12;
 }
 
 .investment-cta p {
-    max-width: 640px;
-    color: #000000;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.03rem;
+    line-height: 1.7;
 }
 
 .investment-disclaimer {
-    margin: 18px auto 28px;
-    border: 1px solid rgba(255, 253, 208, 0.35);
-    border-radius: 8px;
-    padding: 13px 16px;
-    background-color: rgba(255, 253, 208, 0.12);
-    color: #000000;
-    font-size: 0.94rem;
+    margin: 22px auto 30px;
+    border: 1px solid rgba(255, 253, 208, 0.32);
+    border-radius: 14px;
+    padding: 16px 20px;
+    background: rgba(255, 253, 208, 0.13);
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 0.96rem;
+    line-height: 1.65;
 }
 
 .investment-cta .btn-primary {
     background-color: #fffdd0;
     color: #1b3d22;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
 }
 
 .investment-cta .btn-primary:hover {
     background-color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .investment-cta .btn-secondary {
-    border: 2px solid rgba(255, 255, 255, 0.72);
-    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.06);
     color: #ffffff;
 }
 
 .investment-cta .btn-secondary:hover {
     border-color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .investments-hero,
-    .investments-hero .hero-slide {
-        min-height: auto;
-    }
-
-    .investments-hero .hero-slide {
-        padding: 46px 0 52px;
-    }
-
-    .investments-hero-content h1 {
-        font-size: 2.15rem;
-    }
-
-    .investment-highlights,
-    .investment-options-section,
-    .investment-benefits-section,
-    .investment-cta {
-        padding-top: 54px;
-        padding-bottom: 58px;
-    }
-
-    .investment-plan-grid,
-    .investment-benefit-grid,
-    .investment-highlights .grid-3 {
-        gap: 20px;
-    }
+.investment-cta-main {
+    max-width: 720px;
+    margin: 0 auto 26px;
 }
 
-@media (max-width: 560px) {
-    .investments-hero-actions,
-    .investment-cta-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
+.investment-cta-actions {
+    margin-bottom: 22px;
+}
 
-    .investments-hero-actions .btn,
-    .investment-cta-actions .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .investment-plan-meta {
-        grid-template-columns: 1fr;
-    }
-
-    .investment-card-media,
-    .investment-highlight-card .icon-box img {
-        height: 168px;
-    }
+.investment-disclaimer {
+    max-width: 680px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 253, 208, 0.28);
+    border-radius: 12px;
+    padding: 13px 18px;
+    background: rgba(255, 253, 208, 0.1);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.9rem;
+    line-height: 1.55;
 }
