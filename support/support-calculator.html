@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@sanity/image-url@1.0.2/lib/browser/image-url.umd.js"></script>
 </head>
 <body>
+   <!-- NAVBAR  -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
@@ -436,6 +437,11 @@
                 return;
             }
 
+            const monthlyRate = annualRate / 12 / 100;
+            const factor = Math.pow(1 + monthlyRate, termMonths);
+            const monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
+            const totalPayment = monthlyPayment * termMonths;
+            const totalInterest = totalPayment - principal;
             const monthlyRate = annualRate / 12 / 100;
             const factor = Math.pow(1 + monthlyRate, termMonths);
             const monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
