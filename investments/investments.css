@@ -1,456 +1,427 @@
-:root {
-  --inv-green: #23743b;
-  --inv-green-dark: #165229;
-  --inv-beige: #f5e6c8;
-  --inv-cream: #fffdd0;
-  --inv-white: #ffffff;
-  --inv-ink: #183324;
-  --inv-muted: #647067;
-  --inv-border: rgba(35, 116, 59, 0.16);
-  --inv-shadow: 0 18px 45px rgba(24, 51, 36, 0.12);
-  --inv-soft-shadow: 0 10px 28px rgba(24, 51, 36, 0.09);
+/* TerraLink Investments page refinements */
+
+body.investments-page {
+    background-color: #f8faf8;
 }
 
-.inv-module,
-.inv-module * {
-  box-sizing: border-box;
+.investments-page .btn-primary {
+    margin-right: 0;
 }
 
-body.inv-page-body {
-  margin: 0;
-  background: var(--inv-white);
+.investments-page .section-header .badge {
+    margin-bottom: 14px;
 }
 
-.inv-module {
-  background: var(--inv-white);
-  color: var(--inv-ink);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+.investments-page .section-header p {
+    max-width: 700px;
+    color: #000000;
 }
 
-.inv-banner {
-  position: relative;
-  overflow: hidden;
-  padding: 96px 24px;
-  background:
-    radial-gradient(circle at top right, rgba(255, 253, 208, 0.95), transparent 34%),
-    linear-gradient(135deg, var(--inv-white) 0%, #f8fff9 48%, var(--inv-beige) 100%);
+.investments-page .hero-slide .hero-content > *,
+.investments-page .section-header.reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    animation: none;
 }
 
-.inv-banner::before,
-.inv-banner::after {
-  position: absolute;
-  content: "";
-  border-radius: 999px;
-  pointer-events: none;
+/* Hero */
+.investments-hero {
+    height: auto;
+    min-height: 500px;
 }
 
-.inv-banner::before {
-  width: 320px;
-  height: 320px;
-  right: -120px;
-  top: -90px;
-  background: rgba(35, 116, 59, 0.1);
+.investments-hero .hero-slide {
+    min-height: 500px;
+    padding: 58px 0 64px;
+    background-position: center;
 }
 
-.inv-banner::after {
-  width: 180px;
-  height: 180px;
-  left: 8%;
-  bottom: -90px;
-  background: rgba(245, 230, 200, 0.75);
-}
-
-.inv-banner-content {
-  position: relative;
-  z-index: 1;
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.inv-eyebrow {
-  margin: 0 0 12px;
-  color: var(--inv-green);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.inv-banner-title {
-  max-width: 850px;
-  margin: 0 auto;
-  color: var(--inv-ink);
-  font-size: clamp(2.15rem, 5vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: 0;
-}
-
-.inv-banner-text {
-  max-width: 720px;
-  margin: 24px auto 0;
-  color: var(--inv-muted);
-  font-size: 1.08rem;
-}
-
-.inv-banner-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 34px;
-}
-
-.inv-btn,
-.inv-learn-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  border: 0;
-  border-radius: 999px;
-  padding: 14px 24px;
-  font: inherit;
-  font-weight: 800;
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    border-color 180ms ease;
-}
-
-.inv-btn:hover,
-.inv-learn-btn:hover {
-  transform: translateY(-3px);
-}
-
-.inv-btn:focus-visible,
-.inv-learn-btn:focus-visible,
-.inv-modal-close:focus-visible {
-  outline: 3px solid rgba(35, 116, 59, 0.32);
-  outline-offset: 3px;
-}
-
-.inv-btn-primary {
-  background: var(--inv-green);
-  color: var(--inv-white);
-  box-shadow: 0 14px 30px rgba(35, 116, 59, 0.28);
-}
-
-.inv-btn-primary:hover {
-  background: var(--inv-green-dark);
-}
-
-.inv-btn-secondary {
-  background: var(--inv-white);
-  color: var(--inv-green);
-  border: 1px solid var(--inv-border);
-  box-shadow: var(--inv-soft-shadow);
-}
-
-.inv-btn-secondary:hover {
-  background: var(--inv-cream);
-}
-
-.inv-trust-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.inv-badge {
-  border: 1px solid rgba(35, 116, 59, 0.18);
-  border-radius: 999px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--inv-green-dark);
-  font-size: 0.92rem;
-  font-weight: 800;
-  box-shadow: 0 8px 22px rgba(24, 51, 36, 0.07);
-}
-
-.inv-options {
-  padding: 86px 24px 96px;
-  background: var(--inv-white);
-}
-
-.inv-section-heading {
-  max-width: 760px;
-  margin: 0 auto 44px;
-  text-align: center;
-}
-
-.inv-section-title {
-  margin: 0;
-  color: var(--inv-ink);
-  font-size: clamp(1.85rem, 3vw, 3rem);
-  line-height: 1.15;
-}
-
-.inv-section-text {
-  margin: 16px auto 0;
-  color: var(--inv-muted);
-  font-size: 1rem;
-}
-
-.inv-card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.inv-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  border: 1px solid var(--inv-border);
-  border-radius: 8px;
-  padding: 26px;
-  background: var(--inv-white);
-  box-shadow: var(--inv-soft-shadow);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease,
-    border-color 200ms ease;
-}
-
-.inv-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(35, 116, 59, 0.34);
-  box-shadow: var(--inv-shadow);
-}
-
-.inv-card-top {
-  flex: 1;
-}
-
-.inv-plan-label {
-  display: inline-flex;
-  margin-bottom: 16px;
-  border-radius: 999px;
-  padding: 6px 12px;
-  background: var(--inv-cream);
-  color: var(--inv-green-dark);
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.inv-card-title {
-  margin: 0;
-  color: var(--inv-ink);
-  font-size: 1.25rem;
-  line-height: 1.25;
-}
-
-.inv-card-description {
-  margin: 14px 0 0;
-  color: var(--inv-muted);
-  font-size: 0.96rem;
-}
-
-.inv-plan-details {
-  display: grid;
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.inv-detail-row {
-  border-top: 1px solid rgba(35, 116, 59, 0.12);
-  padding-top: 12px;
-}
-
-.inv-detail-row dt {
-  margin: 0;
-  color: var(--inv-muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.inv-detail-row dd {
-  margin: 4px 0 0;
-  color: var(--inv-ink);
-  font-weight: 800;
-}
-
-.inv-learn-btn {
-  width: 100%;
-  margin-top: auto;
-  background: var(--inv-green);
-  color: var(--inv-white);
-  box-shadow: 0 12px 24px rgba(35, 116, 59, 0.22);
-}
-
-.inv-learn-btn:hover {
-  background: var(--inv-green-dark);
-}
-
-.inv-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 180ms ease,
-    visibility 180ms ease;
-}
-
-.inv-modal.inv-modal-active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.inv-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(11, 24, 16, 0.62);
-  backdrop-filter: blur(5px);
-}
-
-.inv-modal-panel {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 600px);
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 8px;
-  padding: 34px;
-  background: var(--inv-white);
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.26);
-  transform: translateY(16px) scale(0.98);
-  transition: transform 180ms ease;
-}
-
-.inv-modal.inv-modal-active .inv-modal-panel {
-  transform: translateY(0) scale(1);
-}
-
-.inv-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--inv-border);
-  border-radius: 999px;
-  background: var(--inv-white);
-  color: var(--inv-green-dark);
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-  transition:
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.inv-modal-close:hover {
-  background: var(--inv-green);
-  color: var(--inv-white);
-  transform: rotate(90deg);
-}
-
-.inv-modal-title {
-  margin: 0;
-  padding-right: 44px;
-  color: var(--inv-ink);
-  font-size: clamp(1.7rem, 4vw, 2.35rem);
-  line-height: 1.15;
-}
-
-.inv-modal-description {
-  margin: 18px 0 0;
-  color: var(--inv-muted);
-}
-
-.inv-modal-details {
-  display: grid;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.inv-modal-detail {
-  border: 1px solid var(--inv-border);
-  border-radius: 8px;
-  padding: 16px;
-  background: linear-gradient(135deg, rgba(255, 253, 208, 0.72), rgba(245, 230, 200, 0.34));
-}
-
-.inv-modal-detail span {
-  display: block;
-  color: var(--inv-muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.inv-modal-detail strong {
-  display: block;
-  margin-top: 5px;
-  color: var(--inv-green-dark);
-  font-size: 1rem;
-}
-
-body.inv-modal-open {
-  overflow: hidden;
-}
-
-@media (max-width: 1080px) {
-  .inv-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 680px) {
-  .inv-banner {
-    padding: 72px 18px;
-  }
-
-  .inv-options {
-    padding: 64px 18px 72px;
-  }
-
-  .inv-banner-title {
-    font-size: 2.25rem;
-  }
-
-  .inv-banner-actions,
-  .inv-trust-badges {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .inv-btn,
-  .inv-badge {
+.investments-hero-content {
     width: 100%;
-  }
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-  .inv-card-grid {
-    grid-template-columns: 1fr;
-  }
+.investments-hero-content h1 {
+    width: 100%;
+    max-width: 740px;
+    font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+    line-height: 1.12;
+}
 
-  .inv-card {
-    padding: 22px;
-  }
+.investments-hero-content p {
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.94);
+}
 
-  .inv-modal {
-    padding: 16px;
-  }
+.investments-hero-actions,
+.investment-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
 
-  .inv-modal-panel {
-    padding: 28px 22px;
-  }
+/* Original highlights section */
+.investment-highlights {
+    padding-top: 64px;
+    padding-bottom: 66px;
+    margin-bottom: 0;
+    background-color: #ffffff;
+}
+
+.investment-highlights .grid-3 {
+    gap: 26px;
+}
+
+.investment-highlight-card {
+    overflow: hidden;
+    padding: 0;
+    border-color: rgba(35, 116, 59, 0.12);
+    box-shadow: 0 10px 28px rgba(27, 61, 34, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.investment-highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(35, 116, 59, 0.26);
+    box-shadow: 0 18px 40px rgba(35, 116, 59, 0.11);
+}
+
+.investment-highlight-card .icon-box {
+    margin: 0 0 22px;
+}
+
+.investment-highlight-card .icon-box img {
+    display: block;
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+}
+
+.investment-highlight-card h3,
+.investment-highlight-card p {
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.investment-highlight-card p {
+    padding-bottom: 30px;
+    color: #536158;
+    line-height: 1.6;
+}
+
+/* Investment options */
+.investment-options-section {
+    padding-top: 72px;
+    padding-bottom: 78px;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8f5 100%);
+}
+
+.investment-plan-grid {
+    align-items: stretch;
+    gap: 26px;
+}
+
+.investment-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    border-color: rgba(35, 116, 59, 0.12);
+    background-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(27, 61, 34, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.investment-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(35, 116, 59, 0.34);
+    background-color: #ffffff;
+    box-shadow: 0 20px 48px rgba(35, 116, 59, 0.13);
+}
+
+.investment-card-media {
+    width: 100%;
+    height: 178px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8f3eb 0%, #fffdd0 100%);
+}
+
+.investment-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.investment-card:hover .investment-card-media img {
+    transform: scale(1.05);
+}
+
+.investment-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.investment-plan-badge {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    padding: 5px 11px;
+    background-color: #f5e6c8;
+    color: #1b3d22;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.investment-card h4 {
+    margin-bottom: 10px;
+    color: #1b3d22;
+    font-size: 1.18rem;
+    line-height: 1.32;
+}
+
+.investment-card p {
+    color: #536158;
+    line-height: 1.6;
+}
+
+.investment-plan-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 20px 0 14px;
+}
+
+.investment-plan-meta div {
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #f5f9f6;
+    text-align: center;
+}
+
+.investment-plan-meta dt {
+    margin-bottom: 4px;
+    color: #647067;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.investment-plan-meta dd {
+    margin: 0;
+    color: #23743b;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.investment-card-note {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+}
+
+.investment-card .text-link {
+    margin-top: auto;
+}
+
+/* Original why-invest section */
+.investment-benefits-section {
+    padding-top: 68px;
+    padding-bottom: 72px;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(35, 116, 59, 0.08);
+}
+
+.investment-benefit-grid {
+    gap: 26px;
+}
+
+.investment-benefit-card {
+    padding: 32px 28px;
+    text-align: left;
+    border-color: rgba(35, 116, 59, 0.12);
+    box-shadow: 0 12px 30px rgba(27, 61, 34, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.investment-benefit-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(35, 116, 59, 0.24);
+    box-shadow: 0 18px 42px rgba(35, 116, 59, 0.12);
+}
+
+.investment-benefit-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background-color: #23743b;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(35, 116, 59, 0.24);
+}
+
+.investment-benefit-card h3 {
+    margin-bottom: 10px;
+}
+
+.investment-benefit-card p {
+    margin: 0;
+    color: #4a5c4e;
+}
+
+/* CTA */
+.investment-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 74px 0;
+    background: linear-gradient(135deg, #1b3d22 0%, #23743b 58%, #2d8a4a 100%);
+    color: #ffffff;
+}
+
+.investment-cta::before,
+.investment-cta::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.investment-cta::before {
+    width: 320px;
+    height: 320px;
+    top: -160px;
+    right: -90px;
+    background-color: rgba(255, 253, 208, 0.1);
+}
+
+.investment-cta::after {
+    width: 230px;
+    height: 230px;
+    bottom: -110px;
+    left: -70px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.investment-cta .container,
+.investment-cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.investment-cta-content {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.investment-cta h2 {
+    color: #ffffff;
+    font-size: clamp(1.8rem, 3.2vw, 2.45rem);
+    line-height: 1.18;
+}
+
+.investment-cta p {
+    max-width: 640px;
+    color: #000000;
+}
+
+.investment-disclaimer {
+    margin: 18px auto 28px;
+    border: 1px solid rgba(255, 253, 208, 0.35);
+    border-radius: 8px;
+    padding: 13px 16px;
+    background-color: rgba(255, 253, 208, 0.12);
+    color: #000000;
+    font-size: 0.94rem;
+}
+
+.investment-cta .btn-primary {
+    background-color: #fffdd0;
+    color: #1b3d22;
+}
+
+.investment-cta .btn-primary:hover {
+    background-color: #ffffff;
+}
+
+.investment-cta .btn-secondary {
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.investment-cta .btn-secondary:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 768px) {
+    .investments-hero,
+    .investments-hero .hero-slide {
+        min-height: auto;
+    }
+
+    .investments-hero .hero-slide {
+        padding: 46px 0 52px;
+    }
+
+    .investments-hero-content h1 {
+        font-size: 2.15rem;
+    }
+
+    .investment-highlights,
+    .investment-options-section,
+    .investment-benefits-section,
+    .investment-cta {
+        padding-top: 54px;
+        padding-bottom: 58px;
+    }
+
+    .investment-plan-grid,
+    .investment-benefit-grid,
+    .investment-highlights .grid-3 {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .investments-hero-actions,
+    .investment-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .investments-hero-actions .btn,
+    .investment-cta-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .investment-plan-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .investment-card-media,
+    .investment-highlight-card .icon-box img {
+        height: 168px;
+    }
 }
