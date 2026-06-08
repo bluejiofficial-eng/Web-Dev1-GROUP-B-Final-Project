@@ -211,6 +211,91 @@ It offers an excellent opportunity for family bonding while taking real, measura
 let currentNewsPage = 1;
 const NEWS_PER_PAGE = 6;
 
+function createModal() {
+    const modalClose = document.getElementById('modal-close');
+    const modalOverlay = document.getElementById('modal-overlay');
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+}
+
+function openModal(article) {
+    document.getElementById('modal-img').style.backgroundImage = `url('${article.img}')`;
+    document.getElementById('modal-tag').textContent  = article.tag;
+    document.getElementById('modal-title').textContent = article.title;
+    document.getElementById('modal-body-text').textContent = article.body;
+    document.getElementById('modal-date').textContent  = article.date;
+    document.getElementById('modal-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const newsOverlay = document.getElementById('modal-overlay');
+    if (newsOverlay) newsOverlay.classList.remove('active');
+    const productOverlay = document.getElementById('product-modal-overlay');
+    if (productOverlay) productOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function createProductModal() {
+    const modal = document.createElement('div');
+    modal.id = 'product-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" id="product-modal-overlay">
+            <div class="modal-box">
+                <button class="modal-close" id="product-modal-close">&times;</button>
+                <div class="modal-img" id="product-modal-img"></div>
+                <div class="modal-body">
+                    <h3 id="product-modal-title"></h3>
+                    <p id="product-modal-price"></p>
+                    <p id="product-modal-caption"></p>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('product-modal-close').addEventListener('click', closeModal);
+    document.getElementById('product-modal-overlay').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('product-modal-overlay')) closeModal();
+    });
+}
+
+function openProductModal(product) {
+    const imgEl = document.getElementById('product-modal-img');
+    if (imgEl) imgEl.style.backgroundImage = product.imgUrl || 'none';
+    document.getElementById('product-modal-title').textContent = product.title || '';
+    document.getElementById('product-modal-price').textContent = product.price || '';
+    document.getElementById('product-modal-caption').textContent = product.caption || '';
+    document.getElementById('product-modal-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function initProductCards() {
+    const cards = document.querySelectorAll('.product-card:not([data-product-id])');
+    if (!cards.length) return;
+
+    cards.forEach((card) => {
+        const imgDiv = card.querySelector('.product-img');
+        if (!imgDiv) return;
+
+        const title = card.querySelector('h4')?.textContent || 'Product';
+        const price = card.querySelector('p:not(.product-caption)')?.textContent || '';
+        const caption = card.querySelector('.product-caption')?.textContent || '';
+
+        card.addEventListener('click', () => {
+            const imageStyle = window.getComputedStyle(imgDiv).backgroundImage;
+            const imgUrl = imageStyle && imageStyle !== 'none' ? imageStyle : '';
+            openProductModal({ title, price, caption, imgUrl });
+        });
+    });
+}
+
+// ============================================================
 function renderStaticNews(searchTerm = '', searchType = 'all', sortBy = 'date-desc', page = 1) {
     const container = document.getElementById('news-container');
     if (!container) return;
@@ -922,6 +1007,9 @@ function observeElements() {
 // INIT
 // ============================================================
 window.addEventListener('DOMContentLoaded', () => {
+    createModal();
+    createProductModal();
+
     // Search & Sort Elements for news.html
     const searchInput = document.getElementById('news-search');
     const searchType = document.getElementById('news-search-type');
@@ -948,5 +1036,6 @@ window.addEventListener('DOMContentLoaded', () => {
     loadTimeline();
     loadSiteSettings();    
     loadCoopVision(); 
+    initProductCards();
     observeElements();
 });

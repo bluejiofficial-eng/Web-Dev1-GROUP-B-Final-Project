@@ -13,6 +13,8 @@ body.loans-page {
 .loans-page .hero-slide {
     min-height: 480px;
     padding: 48px 0 56px;
+    background-size: cover;
+    background-position: center center;
 }
 
 .loans-page .hero-content {
@@ -201,6 +203,8 @@ body.loans-page {
     justify-content: space-between;
     gap: 16px;
     margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(35, 116, 59, 0.08);
 }
 
 .loans-toolbar-label {
@@ -222,7 +226,10 @@ body.loans-page {
 }
 
 .loans-page .loan-category-tabs {
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 36px;
 }
 
@@ -262,6 +269,25 @@ body.loans-page {
     box-shadow: 0 20px 48px rgba(35, 116, 59, 0.12);
     border-color: rgba(35, 116, 59, 0.35);
     background-color: #ffffff;
+}
+
+.loan-card-media {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8f3eb 0%, #fffdd0 100%);
+}
+
+.loan-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.loan-card:hover .loan-card-media img {
+    transform: scale(1.05);
 }
 
 .loan-card-header {
@@ -448,7 +474,7 @@ body.loans-page {
 }
 
 .loan-card-footer {
-    padding: 0 24px 24px;
+    padding: 20px 24px 24px;
 }
 
 .loan-card-footer .btn {
@@ -540,7 +566,7 @@ body.loans-page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 14px;
+    gap: 16px;
 }
 
 .loans-cta .btn-primary {
@@ -611,5 +637,9 @@ body.loans-page {
 
     .loan-stats {
         grid-template-columns: 1fr;
+    }
+
+    .loan-card-footer .btn {
+        width: 100%;
     }
 }
